@@ -167,10 +167,10 @@ export const GradientPlaneExpertise = () => {
   const uniforms = useMemo(
     () => ({
       uTime: { value: 0 },
-      uColor1: { value: new THREE.Color("#041432") },
-      uColor2: { value: new THREE.Color("#0a2460") },
-      uColor3: { value: new THREE.Color("#5F024E") },
-      uColor4: { value: new THREE.Color("#3a012f") },
+      uColor1: { value: new THREE.Color("#0a0620") },
+      uColor2: { value: new THREE.Color("#2d1b69") },
+      uColor3: { value: new THREE.Color("#7c3aed") },
+      uColor4: { value: new THREE.Color("#c084fc") },
     }),
     []
   );
