@@ -5037,6 +5037,11 @@ details[open] .footer-arrow-icon {
   }
 }
 
+.expertise-hero-subheadline {
+  color: #fde4c3;
+  text-shadow: 0 1px 12px rgba(10, 6, 4, 0.45);
+}
+
 .ai-hero-subline {
   font-family: 'Barlow', sans-serif;
   font-size: 17px;
