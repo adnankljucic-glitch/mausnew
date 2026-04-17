@@ -5,7 +5,7 @@ import HeroServicesWrapper from '../components/HeroServicesWrapper';
 export default function CasesPage() {
   return (
     <>
-      <HeroServicesWrapper variant="default">
+      <HeroServicesWrapper variant="cases">
         <CasesPageHero />
       </HeroServicesWrapper>
       <CaseStudiesGrid />
