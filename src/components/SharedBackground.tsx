@@ -134,10 +134,10 @@ export const GradientPlaneCases = () => {
   const uniforms = useMemo(
     () => ({
       uTime: { value: 0 },
-      uColor1: { value: new THREE.Color("#02040a") },
-      uColor2: { value: new THREE.Color("#134e4a") },
-      uColor3: { value: new THREE.Color("#10b981") },
-      uColor4: { value: new THREE.Color("#34d399") },
+      uColor1: { value: new THREE.Color("#0a0a0a") },
+      uColor2: { value: new THREE.Color("#262626") },
+      uColor3: { value: new THREE.Color("#525252") },
+      uColor4: { value: new THREE.Color("#d4d4d4") },
     }),
     []
   );
@@ -167,10 +167,10 @@ export const GradientPlaneExpertise = () => {
   const uniforms = useMemo(
     () => ({
       uTime: { value: 0 },
-      uColor1: { value: new THREE.Color("#0a0a0a") },
-      uColor2: { value: new THREE.Color("#262626") },
-      uColor3: { value: new THREE.Color("#525252") },
-      uColor4: { value: new THREE.Color("#d4d4d4") },
+      uColor1: { value: new THREE.Color("#0a0604") },
+      uColor2: { value: new THREE.Color("#451a03") },
+      uColor3: { value: new THREE.Color("#b45309") },
+      uColor4: { value: new THREE.Color("#d97706") },
     }),
     []
   );
