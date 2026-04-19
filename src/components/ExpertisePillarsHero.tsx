@@ -93,7 +93,11 @@ export default function ExpertisePillarsHero() {
                 </ul>
                 <div className="pillar-hero-tech">
                   <span className="pillar-hero-tech-label">Key technologies</span>
-                  <span className="pillar-hero-tech-list">{item.keyTech}</span>
+                  <ul className="pillar-hero-tech-pills">
+                    {item.keyTech.split(' · ').map((tech, idx) => (
+                      <li key={idx} className="pillar-hero-tech-pill">{tech}</li>
+                    ))}
+                  </ul>
                 </div>
               </motion.div>
 
