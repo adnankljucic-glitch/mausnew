@@ -131,8 +131,8 @@ function IndustriesSection({ visible }: IndustriesSectionProps) {
   return (
     <section id="industries" className={`work-section industries-light ${visible ? 'work-visible' : ''}`} style={{ background: '#FFFFFF' }}>
       <div className="manyone-grid">
-        <p className="work-eyebrow" style={{ color: '#020817' }}>INDUSTRIES</p>
-        <h2 className="work-headline" style={{ color: '#020817' }}>Industries we serve</h2>
+        <p className="work-eyebrow">INDUSTRIES</p>
+        <h2 className="work-headline">Industries we serve</h2>
         <p className="work-subheadline" style={{ color: '#4a5568' }}>Driving innovation across key industries</p>
 
         <div className="work-scroll-wrapper">
