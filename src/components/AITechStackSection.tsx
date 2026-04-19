@@ -54,6 +54,7 @@ export default function AITechStackSection() {
                 alt="AI technology and data visualization"
                 className="ai-tech-stack-image"
               />
+              <div className="ai-tech-stack-image-overlay" />
             </div>
           </motion.div>
 

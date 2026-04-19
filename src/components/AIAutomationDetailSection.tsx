@@ -53,6 +53,7 @@ export default function AIAutomationDetailSection() {
                 alt="AI Neural Network"
                 className="cross-industry-image"
               />
+              <div className="cross-industry-image-overlay" />
             </div>
             <motion.div
               className="cross-industry-left-description"

@@ -137,6 +137,7 @@ export default function IndustriesBento() {
                   alt={industry.title}
                   className="industries-bento-card-image"
                 />
+                <div className="industries-bento-card-overlay" />
               </div>
               <div className="industries-bento-card-content">
                 <span className="industries-bento-card-category">{industry.category}</span>

@@ -96,7 +96,7 @@
      * Hero overlays are separate and remain unchanged.
      */
     /* Global heading + text colors */
-    --color-heading-on-light: #002395;
+    --color-heading-on-light: #020817;
     --color-subheading-on-light: #374151;
 
     /* Standardized card overlay (used on ALL sections below hero with images/videos) */
@@ -110,6 +110,25 @@
     font-family: var(--font-family-serif);
     font-weight: 600;
     margin: 0;
+  }
+
+  /*
+   * Global non-hero heading alignment.
+   * All h2/h3/h4 headings inside section-level components (except hero areas)
+   * share the same heading color + center alignment for a consistent hierarchy.
+   * Hero components keep their own alignment rules (already scoped via their
+   * dedicated class names like .pillar-hero-headline, .services-hero-title, etc.)
+   */
+  .work-headline,
+  .outcomes-headline,
+  .technology-headline,
+  .results-headline,
+  .industries-bento-headline,
+  .cross-industry-headline,
+  .how-we-work-headline,
+  .process-step-headline,
+  .bento-headline {
+    text-align: center;
   }
 
   h1 {
@@ -6828,7 +6847,7 @@ details[open] .footer-arrow-icon {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(13, 30, 33, 0.5);
+  background: var(--color-card-overlay);
   z-index: 1;
   pointer-events: none;
   border-radius: inherit;
@@ -7171,6 +7190,14 @@ details[open] .footer-arrow-icon {
   display: block;
 }
 
+.ready-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-card-overlay);
+  z-index: 1;
+  pointer-events: none;
+}
+
 /* INDUSTRIES BENTO SECTION */
 .industries-bento-section {
   background: #FFFFFF;
@@ -7244,8 +7271,9 @@ details[open] .footer-arrow-icon {
   font-weight: 600;
   font-size: var(--font-h2-mobile);
   line-height: 1.2;
-  color: #000020;
+  color: var(--color-heading-on-light);
   margin: 0 0 16px 0;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -7266,9 +7294,10 @@ details[open] .footer-arrow-icon {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.6;
-  color: #000020;
+  color: var(--color-subheading-on-light);
   margin: 0 auto;
   max-width: 700px;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -7344,6 +7373,14 @@ details[open] .footer-arrow-icon {
 
 .industries-bento-card:hover .industries-bento-card-image {
   transform: scale(1.05);
+}
+
+.industries-bento-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-card-overlay);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .industries-bento-card-content {
@@ -8391,10 +8428,19 @@ details[open] .footer-arrow-icon {
 }
 
 .ai-tech-stack-image-wrapper {
+  position: relative;
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: 4px;
+}
+
+.ai-tech-stack-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-card-overlay);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .ai-tech-stack-image {
@@ -9007,6 +9053,7 @@ details[open] .footer-arrow-icon {
 }
 
 .cross-industry-image-wrapper {
+  position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
@@ -9021,13 +9068,22 @@ details[open] .footer-arrow-icon {
   display: block;
 }
 
+.cross-industry-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-card-overlay);
+  z-index: 1;
+  pointer-events: none;
+}
+
 .cross-industry-headline {
   font-family: var(--font-family-serif);
   font-weight: 600;
   font-size: var(--font-h2-mobile);
   line-height: var(--lh-h2);
-  color: #000020;
+  color: var(--color-heading-on-light);
   margin: 0;
+  text-align: center;
 }
 
 @media (min-width: 768px) {

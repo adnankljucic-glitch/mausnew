@@ -81,6 +81,7 @@ export default function ReadySection({ headline = "Ready for our customer-centri
               alt="Team member at work"
               className="ready-image"
             />
+            <div className="ready-image-overlay" />
           </motion.div>
         </div>
       </div>
