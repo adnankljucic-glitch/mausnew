@@ -10434,6 +10434,16 @@ details[open] .footer-arrow-icon {
   border-radius: 4px;
   overflow: hidden;
   aspect-ratio: 4 / 3;
+  position: relative;
+}
+
+.ai-bento-main-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(2, 8, 23, 0.25) 0%, rgba(2, 8, 23, 0.65) 100%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 @media (min-width: 1024px) {
