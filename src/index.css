@@ -11178,16 +11178,20 @@ details[open] .footer-arrow-icon {
   overflow: hidden;
 }
 
-.pillar-hero-row-dark {
-  background: #1f0a42;
-}
-
-.pillar-hero-row-darker {
-  background: #26104d;
-}
-
-.pillars-hero-section > .pillar-hero-row:first-child {
+.pillars-hero-section > .pillar-hero-row:nth-child(1) {
   background: #05000f;
+}
+
+.pillars-hero-section > .pillar-hero-row:nth-child(2) {
+  background: #0f0a1f;
+}
+
+.pillars-hero-section > .pillar-hero-row:nth-child(3) {
+  background: #191430;
+}
+
+.pillars-hero-section > .pillar-hero-row:nth-child(4) {
+  background: #231e41;
 }
 
 @media (min-width: 768px) {
