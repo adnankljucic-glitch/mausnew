@@ -11179,11 +11179,15 @@ details[open] .footer-arrow-icon {
 }
 
 .pillar-hero-row-dark {
-  background: #14062b;
+  background: #1f0a42;
 }
 
 .pillar-hero-row-darker {
-  background: #1c0a3a;
+  background: #26104d;
+}
+
+.pillars-hero-section > .pillar-hero-row:first-child {
+  background: #05000f;
 }
 
 @media (min-width: 768px) {
