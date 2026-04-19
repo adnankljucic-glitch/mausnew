@@ -141,7 +141,7 @@ export default function OutcomesSection({ backgroundColor }: OutcomesSectionProp
                   />
                 )}
               </div>
-              <div className={`outcome-card-overlay ${card.id === 4 ? 'outcome-card-overlay-light' : ''}`} />
+              <div className="outcome-card-overlay" />
               <div className="outcome-card-content">
                 <h3 className="outcome-card-title">{card.title}</h3>
                 <p className="outcome-card-description">{card.description}</p>
@@ -187,7 +187,7 @@ export default function OutcomesSection({ backgroundColor }: OutcomesSectionProp
                   transition={{ duration: 8, ease: "linear" }}
                 />
               )}
-              <div className={`outcome-slide-overlay ${outcomeCards[currentSlide].id === 4 ? 'outcome-slide-overlay-light' : ''}`} />
+              <div className="outcome-slide-overlay" />
               <div className="outcome-slide-content">
                 <h3 className="outcome-slide-title">
                   {outcomeCards[currentSlide].title}

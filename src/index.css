@@ -96,7 +96,7 @@
      * Hero overlays are separate and remain unchanged.
      */
     /* Global heading + text colors */
-    --color-heading-on-light: #020817;
+    --color-heading-on-light: #002395;
     --color-subheading-on-light: #374151;
 
     /* Standardized card overlay (used on ALL sections below hero with images/videos) */
@@ -1877,20 +1877,20 @@
   .outcome-card-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, var(--color-card-overlay-gradient-top) 0%, var(--color-card-overlay-gradient-mid) 50%, transparent 100%);
+    background: var(--color-card-overlay);
     transition: background 0.5s ease;
   }
 
   .outcome-card:hover .outcome-card-overlay {
-    background: linear-gradient(to top, rgba(13, 30, 33, 0.7) 0%, rgba(13, 30, 33, 0.2) 50%, transparent 100%);
+    background: var(--color-card-overlay);
   }
 
   .outcome-card-overlay-light {
-    background: linear-gradient(to top, var(--color-card-overlay-gradient-top) 0%, var(--color-card-overlay-gradient-mid) 50%, transparent 100%);
+    background: var(--color-card-overlay);
   }
 
   .outcome-card:hover .outcome-card-overlay-light {
-    background: linear-gradient(to top, rgba(13, 30, 33, 0.7) 0%, rgba(13, 30, 33, 0.2) 50%, transparent 100%);
+    background: var(--color-card-overlay);
   }
 
   .outcome-card-content {
@@ -1982,11 +1982,11 @@
   .outcome-slide-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, var(--color-card-overlay-gradient-top) 0%, var(--color-card-overlay-gradient-mid) 50%, transparent 100%);
+    background: var(--color-card-overlay);
   }
 
   .outcome-slide-overlay-light {
-    background: linear-gradient(to top, var(--color-card-overlay-gradient-top) 0%, var(--color-card-overlay-gradient-mid) 50%, transparent 100%);
+    background: var(--color-card-overlay);
   }
 
   .outcome-slide-content {
