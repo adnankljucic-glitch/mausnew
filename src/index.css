@@ -78,6 +78,31 @@
     --color-brand-accent: #C26B78;
     --color-brand-white: #ffffff;
     --color-brand-muted: rgba(255, 255, 255, 0.6);
+
+    /*
+     * DESIGN SYSTEM RULES (applies to all sections BELOW hero)
+     *
+     * Headlines H1–H4 on LIGHT backgrounds:
+     *   → use var(--color-heading-on-light) (MAUS blue #002395)
+     *
+     * Subheadlines / description text on LIGHT backgrounds:
+     *   → use var(--color-subheading-on-light) (slate grey #374151)
+     *
+     * All text on DARK backgrounds stays WHITE (unchanged).
+     *
+     * All cards with images or videos (work cards, case cards, outcome cards,
+     * and any future card component) MUST use var(--color-card-overlay) as
+     * the overlay background, or the gradient variables for fade-up overlays.
+     * Hero overlays are separate and remain unchanged.
+     */
+    /* Global heading + text colors */
+    --color-heading-on-light: #002395;
+    --color-subheading-on-light: #374151;
+
+    /* Standardized card overlay (used on ALL sections below hero with images/videos) */
+    --color-card-overlay: rgba(13, 30, 33, 0.55);
+    --color-card-overlay-gradient-top: rgba(13, 30, 33, 0.6);
+    --color-card-overlay-gradient-mid: rgba(13, 30, 33, 0.1);
   }
 
   /* Base Heading Styles - Apply to all heading elements */
@@ -1739,7 +1764,7 @@
     font-weight: 600;
     font-size: var(--font-h2-mobile);
     line-height: var(--lh-h2);
-    color: #020817;
+    color: var(--color-heading-on-light);
     margin: 0 0 16px 0;
     max-width: 530px;
     text-align: center;
@@ -1773,7 +1798,7 @@
     font-weight: 400;
     font-size: var(--font-lead-mobile);
     line-height: var(--lh-lead);
-    color: #4B5563;
+    color: var(--color-subheading-on-light);
     margin: 0 0 32px 0;
     max-width: 800px;
   }
@@ -1833,7 +1858,7 @@
   .outcome-card-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(13, 30, 33, 0.6) 0%, rgba(13, 30, 33, 0.1) 50%, transparent 100%);
+    background: linear-gradient(to top, var(--color-card-overlay-gradient-top) 0%, var(--color-card-overlay-gradient-mid) 50%, transparent 100%);
     transition: background 0.5s ease;
   }
 
@@ -1842,7 +1867,7 @@
   }
 
   .outcome-card-overlay-light {
-    background: linear-gradient(to top, rgba(13, 30, 33, 0.6) 0%, rgba(13, 30, 33, 0.1) 50%, transparent 100%);
+    background: linear-gradient(to top, var(--color-card-overlay-gradient-top) 0%, var(--color-card-overlay-gradient-mid) 50%, transparent 100%);
   }
 
   .outcome-card:hover .outcome-card-overlay-light {
@@ -1938,11 +1963,11 @@
   .outcome-slide-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(13, 30, 33, 0.6) 0%, rgba(13, 30, 33, 0.1) 50%, transparent 100%);
+    background: linear-gradient(to top, var(--color-card-overlay-gradient-top) 0%, var(--color-card-overlay-gradient-mid) 50%, transparent 100%);
   }
 
   .outcome-slide-overlay-light {
-    background: linear-gradient(to top, rgba(13, 30, 33, 0.6) 0%, rgba(13, 30, 33, 0.1) 50%, transparent 100%);
+    background: linear-gradient(to top, var(--color-card-overlay-gradient-top) 0%, var(--color-card-overlay-gradient-mid) 50%, transparent 100%);
   }
 
   .outcome-slide-content {
@@ -2165,7 +2190,7 @@
   }
 
   section#work .work-headline {
-    color: #000020 !important;
+    color: var(--color-heading-on-light) !important;
     opacity: 1 !important;
     transform: translateY(0) !important;
     text-align: center;
@@ -2212,7 +2237,7 @@
   }
 
   section#work .work-subheadline {
-    color: #000020 !important;
+    color: var(--color-subheading-on-light) !important;
     opacity: 1 !important;
     transform: translateY(0) !important;
     text-align: center;
@@ -2344,7 +2369,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(13, 30, 33, 0.55);
+    background: var(--color-card-overlay);
     z-index: 1;
     pointer-events: none;
   }
@@ -2635,7 +2660,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(13, 30, 33, 0.55);
+    background: var(--color-card-overlay);
     z-index: 1;
     pointer-events: none;
   }
@@ -2878,14 +2903,14 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: #6b7280;
+    color: var(--color-subheading-on-light);
     margin: 0 0 16px 0;
   }
 
   .results-headline {
     font-family: var(--font-family-serif);
     font-weight: 600;
-    color: #000020;
+    color: var(--color-heading-on-light);
     font-size: var(--font-h2-mobile);
     line-height: var(--lh-h2);
     margin: 0;
@@ -2971,7 +2996,7 @@
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: #6b7280;
+    color: var(--color-subheading-on-light);
     margin: 0 0 8px 0;
   }
 
@@ -2979,7 +3004,7 @@
     font-family: var(--font-family-serif);
     font-size: var(--font-h3-mobile);
     font-weight: 600;
-    color: #000020;
+    color: var(--color-heading-on-light);
     margin: 0 0 8px 0;
     line-height: var(--lh-h3);
     transition: color 300ms ease;
@@ -3005,7 +3030,7 @@
     font-family: 'Barlow', sans-serif;
     font-size: 16px;
     font-weight: 400;
-    color: #6b7280;
+    color: var(--color-subheading-on-light);
     margin: 0;
     line-height: 1.6;
   }
@@ -3154,7 +3179,7 @@
   font-weight: 600;
   font-size: var(--font-h2-mobile);
   line-height: var(--lh-h2);
-  color: #000020;
+  color: var(--color-heading-on-light);
   text-align: center;
   margin: 0 0 24px 0;
   max-width: 900px;
@@ -3186,7 +3211,7 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 1.7;
-  color: #000020;
+  color: var(--color-subheading-on-light);
   text-align: center;
   margin: 0 auto 64px auto;
   max-width: 800px;
@@ -3338,7 +3363,7 @@
   font-weight: 600;
   font-size: var(--font-h4-mobile);
   line-height: var(--lh-h4);
-  color: #000020;
+  color: var(--color-heading-on-light);
   margin: 0;
   transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -3365,7 +3390,7 @@
   font-weight: 400;
   font-size: 15px;
   line-height: 1.65;
-  color: #000020;
+  color: var(--color-subheading-on-light);
   margin: 0;
   max-height: 0;
   overflow: hidden;
