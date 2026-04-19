@@ -2571,6 +2571,20 @@
     background: #020817;
   }
 
+  .industries-light .work-headline {
+    color: var(--color-heading-on-light) !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  .industries-light .work-eyebrow {
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .industries-light .work-subheadline {
+    color: #4a5568;
+  }
+
   /* CASES SECTION */
   section#work .manyone-grid {
     position: relative;
@@ -3182,7 +3196,7 @@
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.5);
-  text-align: center;
+  text-align: left;
   margin: 0 0 16px 0;
 }
 
@@ -3199,11 +3213,9 @@
   font-size: var(--font-h2-mobile);
   line-height: var(--lh-h2);
   color: var(--color-heading-on-light);
-  text-align: center;
+  text-align: left;
   margin: 0 0 24px 0;
   max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 @media (min-width: 768px) {
@@ -3231,8 +3243,8 @@
   font-size: 18px;
   line-height: 1.7;
   color: var(--color-subheading-on-light);
-  text-align: center;
-  margin: 0 auto 64px auto;
+  text-align: left;
+  margin: 0 0 64px 0;
   max-width: 800px;
 }
 
@@ -3367,6 +3379,7 @@
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.5);
+  text-align: left;
   margin: 0 0 8px 0;
 }
 
@@ -3383,6 +3396,7 @@
   font-size: var(--font-h4-mobile);
   line-height: var(--lh-h4);
   color: var(--color-heading-on-light);
+  text-align: left;
   margin: 0;
   transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -3410,6 +3424,7 @@
   font-size: 15px;
   line-height: 1.65;
   color: var(--color-subheading-on-light);
+  text-align: left;
   margin: 0;
   max-height: 0;
   overflow: hidden;
