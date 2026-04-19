@@ -82,7 +82,6 @@ export default function ExpertisePillarsHero() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               >
-                <div className="pillar-hero-number">{item.number}</div>
                 <p className="pillar-hero-label">{item.label}</p>
                 <h2 className="pillar-hero-headline">{item.headline}</h2>
                 <p className="pillar-hero-intro">{item.intro}</p>
