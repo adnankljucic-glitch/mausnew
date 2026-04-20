@@ -11457,9 +11457,9 @@ details[open] .footer-arrow-icon {
 }
 
 .pillar-hero-tech-pill:hover {
-  border-color: rgba(168, 85, 247, 0.6);
+  border-color: #0A1B9F;
   color: #ffffff;
-  background: rgba(168, 85, 247, 0.08);
+  background: #0A1B9F;
 }
 
 .pillar-hero-media {
