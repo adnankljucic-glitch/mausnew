@@ -1,9 +1,9 @@
 import AIAutomationHero from '../components/AIAutomationHero';
 import HeroServicesWrapper from '../components/HeroServicesWrapper';
 import AIServicesBentoSection from '../components/AIServicesBentoSection';
-import SoftwareEngineeringSection from '../components/SoftwareEngineeringSection';
-import LegacyModernizationServiceSection from '../components/LegacyModernizationServiceSection';
 import AIAutomationServiceSection from '../components/AIAutomationServiceSection';
+import LegacyModernizationServiceSection from '../components/LegacyModernizationServiceSection';
+import AISoftwareEngineeringSection from '../components/AISoftwareEngineeringSection';
 import CoreOfferingsSection from '../components/CoreOfferingsSection';
 import DedicatedTeamBanner from '../components/DedicatedTeamBanner';
 import WorkSection from '../components/worksection';
@@ -28,7 +28,7 @@ export default function AIAutomationPage() {
 
       <SectionDivider />
 
-      <SoftwareEngineeringSection />
+      <AIAutomationServiceSection />
 
       <SectionDivider />
 
@@ -36,7 +36,7 @@ export default function AIAutomationPage() {
 
       <SectionDivider />
 
-      <AIAutomationServiceSection />
+      <AISoftwareEngineeringSection />
 
       <SectionDivider />
 
