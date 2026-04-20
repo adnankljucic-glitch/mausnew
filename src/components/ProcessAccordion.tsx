@@ -9,6 +9,7 @@ interface AccordionItem {
 interface ProcessAccordionProps {
   title?: string;
   items?: AccordionItem[];
+  backgroundColor?: string;
 }
 
 const defaultItems: AccordionItem[] = [
@@ -26,7 +27,7 @@ const defaultItems: AccordionItem[] = [
   }
 ];
 
-export default function ProcessAccordion({ title, items }: ProcessAccordionProps) {
+export default function ProcessAccordion({ title, items, backgroundColor }: ProcessAccordionProps) {
   const accordionItems = items || defaultItems;
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -35,7 +36,7 @@ export default function ProcessAccordion({ title, items }: ProcessAccordionProps
   };
 
   return (
-    <section id="how-we-work" className="process-accordion-section">
+    <section id="how-we-work" className="process-accordion-section" style={backgroundColor ? { backgroundColor } : undefined}>
       <div className="manyone-grid">
         <div className="process-accordion-container">
           <div>

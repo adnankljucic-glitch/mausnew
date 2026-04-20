@@ -74,6 +74,7 @@ function HomePage() {
       </div>
 
       <ProcessAccordion
+        backgroundColor="#ECEBEC"
         title={"Our Methodology\nEngineering beyond the surface"}
         items={[
           {
