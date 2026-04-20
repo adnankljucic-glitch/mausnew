@@ -39,7 +39,7 @@ export default function ProcessAccordion({ title, items }: ProcessAccordionProps
       <div className="manyone-grid">
         <div className="process-accordion-container">
           <div>
-            <h2 className="process-accordion-title">
+            <h2 className="process-accordion-title" style={{ whiteSpace: 'pre-line' }}>
               {title || 'We have defined a collaborative process with our clients'}
             </h2>
           </div>

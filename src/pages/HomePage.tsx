@@ -74,7 +74,7 @@ function HomePage() {
       </div>
 
       <ProcessAccordion
-        title="Our Methodology: Engineering beyond the surface"
+        title={"Our Methodology\nEngineering beyond the surface"}
         items={[
           {
             title: "Deep technical diagnostics",
