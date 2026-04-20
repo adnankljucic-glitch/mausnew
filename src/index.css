@@ -11476,24 +11476,17 @@ details[open] .footer-arrow-icon {
   }
 }
 
-.ai-bento-section .manyone-grid {
-  max-width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .ai-bento-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
   width: 100%;
-  max-width: 100%;
   align-items: start;
 }
 
 @media (min-width: 1024px) {
   .ai-bento-grid {
-    grid-template-columns: minmax(280px, 1fr) minmax(400px, 2fr) minmax(280px, 1fr);
+    grid-template-columns: 1fr 2fr 1fr;
     gap: 32px;
     align-items: stretch;
   }
@@ -11501,7 +11494,6 @@ details[open] .footer-arrow-icon {
 
 @media (min-width: 1440px) {
   .ai-bento-grid {
-    grid-template-columns: minmax(320px, 1fr) minmax(480px, 2fr) minmax(320px, 1fr);
     gap: 40px;
   }
 }
