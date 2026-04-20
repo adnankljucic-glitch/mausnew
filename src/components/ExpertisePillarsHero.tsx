@@ -72,6 +72,7 @@ export default function ExpertisePillarsHero() {
         <article
           key={item.number}
           className={`pillar-hero-row ${index % 2 === 0 ? 'pillar-hero-row-image-right' : 'pillar-hero-row-image-left'} ${index % 2 === 0 ? 'pillar-hero-row-dark' : 'pillar-hero-row-darker'}`}
+          style={item.headline === 'Secure, Scalable Cloud Foundations' ? { backgroundColor: '#2C2A39' } : undefined}
         >
           <div className="manyone-grid">
             <div className="pillar-hero-inner">
