@@ -11750,7 +11750,8 @@ details[open] .footer-arrow-icon {
 
 .tech-grid-intro {
   max-width: 720px;
-  margin: 0 0 64px;
+  margin: 0 auto 64px;
+  text-align: center;
 }
 
 .tech-grid-eyebrow {
@@ -11764,20 +11765,33 @@ details[open] .footer-arrow-icon {
 }
 
 .tech-grid-headline {
-  font-family: 'Inria Serif', serif;
-  font-weight: 400;
-  font-size: clamp(30px, 3.5vw, 48px);
-  line-height: 1.15;
-  color: #0d0d0d;
+  font-family: var(--font-family-serif);
+  font-weight: 600;
+  font-size: var(--font-h2-mobile);
+  line-height: 1.3;
+  color: #0A1B9F;
   margin-bottom: 18px;
+}
+
+@media (min-width: 768px) {
+  .tech-grid-headline {
+    font-size: var(--font-h2-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .tech-grid-headline {
+    font-size: var(--font-h2-desktop);
+  }
 }
 
 .tech-grid-sub {
   font-family: 'Barlow', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.65;
-  color: rgba(0, 0, 0, 0.55);
+  color: rgba(0, 0, 0, 0.6);
   max-width: 580px;
+  margin: 0 auto;
 }
 
 .tech-grid-cards {
@@ -11811,7 +11825,7 @@ details[open] .footer-arrow-icon {
 }
 
 .tech-card:hover {
-  background-color: #edecea;
+  background-color: #dce8f5;
 }
 
 .tech-card-top {
@@ -11841,10 +11855,10 @@ details[open] .footer-arrow-icon {
 
 .tech-card-headline {
   font-family: 'Inria Serif', serif;
-  font-weight: 400;
+  font-weight: 600;
   font-size: clamp(22px, 2vw, 28px);
   line-height: 1.2;
-  color: #0d0d0d;
+  color: #0A1B9F;
   margin-bottom: 20px;
 }
 
