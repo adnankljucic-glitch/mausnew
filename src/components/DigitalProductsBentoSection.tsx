@@ -18,7 +18,7 @@ export default function DigitalProductsBentoSection() {
             <h2 className="ai-bento-headline text-white">
               Digital product design & Strategic UX
             </h2>
-            <p className="ai-bento-description text-white/80">
+            <p className="ai-bento-description text-white/80" style={{ color: 'rgba(255,255,255,0.8)' }}>
               In a world of complex Legacy Systems, the interface is only as good as the logic behind it. At MAUS, we combine deep Discovery with Specs Driven Development (SDD) to design digital products that aren't just intuitive, they are engineered to perform.
             </p>
           </motion.div>
