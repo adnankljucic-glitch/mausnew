@@ -11509,7 +11509,7 @@ details[open] .footer-arrow-icon {
 .ai-bento-headline {
   font-family: var(--font-family-serif);
   font-weight: 600;
-  font-size: var(--font-h3-mobile);
+  font-size: 32px;
   line-height: 1.15;
   color: #002395;
   margin: 0 0 32px 0;
@@ -11518,21 +11518,21 @@ details[open] .footer-arrow-icon {
 
 @media (min-width: 768px) {
   .ai-bento-headline {
-    font-size: var(--font-h3-tablet);
+    font-size: 40px;
     margin-bottom: 40px;
   }
 }
 
 @media (min-width: 1024px) {
   .ai-bento-headline {
-    font-size: 32px;
+    font-size: 44px;
     margin-bottom: 48px;
   }
 }
 
 @media (min-width: 1440px) {
   .ai-bento-headline {
-    font-size: 36px;
+    font-size: 48px;
   }
 }
 
