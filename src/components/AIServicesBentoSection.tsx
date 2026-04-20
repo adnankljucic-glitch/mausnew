@@ -6,7 +6,7 @@ export default function AIServicesBentoSection() {
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
   return (
-    <section ref={sectionRef} className="ai-bento-section" style={{ background: '#1C1237' }}>
+    <section ref={sectionRef} className="ai-bento-section" style={{ background: '#040F39' }}>
       <div className="manyone-grid">
         <div className="ai-bento-grid">
           <motion.div
