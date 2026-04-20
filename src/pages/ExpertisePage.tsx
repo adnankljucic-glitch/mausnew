@@ -11,7 +11,7 @@ export default function ExpertisePage() {
         <ExpertiseHero />
       </HeroServicesWrapper>
       <ExpertisePillarsHero />
-      <OutcomesSection />
+      <OutcomesSection backgroundColor="#ecebec" />
       <ProcessAccordion />
       <ReadySection />
     </>
