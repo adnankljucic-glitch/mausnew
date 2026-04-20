@@ -219,7 +219,7 @@ export default function ServicesPage() {
 
       <WorkSection />
 
-      <ProcessAccordion title="Our engineering lifecycle: Built for scale" />
+      <ProcessAccordion title="Our engineering lifecycle: Built for scale" backgroundColor="#ECEBEC" />
 
       <ReadySection headline="Ready to modernize your technical foundation?" />
     </>
