@@ -1,6 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { industryCards } from '../../data';
 
 interface IndustriesSectionProps {
@@ -8,209 +7,69 @@ interface IndustriesSectionProps {
 }
 
 function IndustriesSection({ visible }: IndustriesSectionProps) {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const cardRefs = useRef<(HTMLAnchorElement | null)[]>([]);
-  const [revealedCards, setRevealedCards] = useState<Set<number>>(new Set());
-  const touchStartX = useRef(0);
-  const touchEndX = useRef(0);
+  const sectionRef = useRef<HTMLElement>(null);
 
-  const scrollWork = (direction: 'left' | 'right') => {
-    const container = scrollContainerRef.current;
-    if (!container) return;
-
-    const firstCard = container.firstElementChild;
-    if (!firstCard) return;
-
-    const cardWidth = firstCard.getBoundingClientRect().width;
-    const gap = parseFloat(getComputedStyle(container).gap);
-    const scrollAmount = cardWidth + gap;
-
-    const newScrollLeft = direction === 'left'
-      ? container.scrollLeft - scrollAmount
-      : container.scrollLeft + scrollAmount;
-
-    container.scrollTo({
-      left: newScrollLeft,
-      behavior: 'smooth'
-    });
-  };
-
-  const updateScrollButtons = () => {
-    const container = scrollContainerRef.current;
-    if (!container) return;
-
-    setCanScrollLeft(container.scrollLeft > 0);
-    setCanScrollRight(
-      container.scrollLeft < container.scrollWidth - container.clientWidth - 1
-    );
-
-    const maxScroll = container.scrollWidth - container.clientWidth;
-    const progress = maxScroll > 0 ? (container.scrollLeft / maxScroll) * 100 : 0;
-    setScrollProgress(progress);
-  };
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    touchEndX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = () => {
-    const diff = touchStartX.current - touchEndX.current;
-    const threshold = 50;
-
-    if (Math.abs(diff) > threshold) {
-      if (diff > 0) {
-        scrollWork('right');
-      } else {
-        scrollWork('left');
-      }
-    }
-  };
-
-  useEffect(() => {
-    const container = scrollContainerRef.current;
-    if (!container) return;
-
-    const handleScroll = () => {
-      updateScrollButtons();
-    };
-
-    const handleWheel = (e: WheelEvent) => {
-      if (e.shiftKey) {
-        e.preventDefault();
-        container.scrollLeft += e.deltaY;
-      }
-    };
-
-    container.addEventListener('scroll', handleScroll);
-    container.addEventListener('wheel', handleWheel, { passive: false });
-    updateScrollButtons();
-
-    return () => {
-      container.removeEventListener('scroll', handleScroll);
-      container.removeEventListener('wheel', handleWheel);
-    };
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = cardRefs.current.findIndex((ref) => ref === entry.target);
-            if (index !== -1 && !revealedCards.has(index)) {
-              setRevealedCards((prev) => new Set(prev).add(index));
-            }
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    cardRefs.current.forEach((card) => {
-      if (card) {
-        observer.observe(card);
-      }
-    });
-
-    return () => {
-      cardRefs.current.forEach((card) => {
-        if (card) {
-          observer.unobserve(card);
-        }
-      });
-    };
-  }, [revealedCards]);
+  const featured = industryCards[0];
+  const rest = industryCards.slice(1, 5);
 
   return (
-    <section id="industries" className={`work-section industries-light ${visible ? 'work-visible' : ''}`} style={{ background: '#FFFFFF' }}>
+    <section
+      id="industries"
+      ref={sectionRef}
+      className={`industries-grid-section ${visible ? 'industries-grid-visible' : ''}`}
+    >
       <div className="manyone-grid">
-        <p className="work-eyebrow">INDUSTRIES</p>
-        <h2 className="work-headline">Industries we serve</h2>
-        <p className="work-subheadline" style={{ color: '#4a5568' }}>Driving innovation across key industries</p>
+        <div className="industries-grid-header">
+          <div>
+            <p className="industries-grid-eyebrow">INDUSTRIES</p>
+            <h2 className="industries-grid-headline">Industries we serve</h2>
+            <p className="industries-grid-sub">Driving innovation across key industries</p>
+          </div>
+        </div>
 
-        <div className="work-scroll-wrapper">
-          <div
-            className="work-cards-wrapper"
-            ref={scrollContainerRef}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
-            {industryCards.map((card, index) => {
-              const isInternal = card.linkUrl.startsWith('/');
-              const cardContent = (
-                <>
-                  <img src={card.image} alt={card.title} className="work-card-bg-image" />
-                  <div className="work-card-overlay"></div>
-                  <div className="work-card-content">
-                    <span className="work-card-category">{card.category}</span>
-                    <h4 className="work-card-title">{card.title}</h4>
-                    <p className="work-card-description">{card.description}</p>
+        <div className="industries-grid-layout">
+          {featured.linkUrl.startsWith('/') ? (
+            <Link to={featured.linkUrl} className="industries-grid-card industries-grid-card--featured">
+              <img src={featured.image} alt={featured.title} className="industries-grid-card-img" />
+              <div className="industries-grid-card-overlay" />
+              <div className="industries-grid-card-content">
+                <span className="industries-grid-card-cat">{featured.category}</span>
+                <h3 className="industries-grid-card-title">{featured.title}</h3>
+              </div>
+            </Link>
+          ) : (
+            <a href={featured.linkUrl} className="industries-grid-card industries-grid-card--featured">
+              <img src={featured.image} alt={featured.title} className="industries-grid-card-img" />
+              <div className="industries-grid-card-overlay" />
+              <div className="industries-grid-card-content">
+                <span className="industries-grid-card-cat">{featured.category}</span>
+                <h3 className="industries-grid-card-title">{featured.title}</h3>
+              </div>
+            </a>
+          )}
+
+          <div className="industries-grid-secondary">
+            {rest.map((card, i) =>
+              card.linkUrl.startsWith('/') ? (
+                <Link key={i} to={card.linkUrl} className="industries-grid-card industries-grid-card--small">
+                  <img src={card.image} alt={card.title} className="industries-grid-card-img" />
+                  <div className="industries-grid-card-overlay" />
+                  <div className="industries-grid-card-content">
+                    <span className="industries-grid-card-cat">{card.category}</span>
+                    <h3 className="industries-grid-card-title">{card.title}</h3>
                   </div>
-                </>
-              );
-
-              return isInternal ? (
-                <Link
-                  key={index}
-                  to={card.linkUrl}
-                  className={`work-card ${revealedCards.has(index) ? 'work-card-revealed' : ''}`}
-                  ref={(el) => (cardRefs.current[index] = el)}
-                  style={{
-                    transitionDelay: revealedCards.has(index) ? `${index * 90}ms` : '0ms'
-                  }}
-                >
-                  {cardContent}
                 </Link>
               ) : (
-                <a
-                  key={index}
-                  href={card.linkUrl}
-                  className={`work-card ${revealedCards.has(index) ? 'work-card-revealed' : ''}`}
-                  ref={(el) => (cardRefs.current[index] = el)}
-                  style={{
-                    transitionDelay: revealedCards.has(index) ? `${index * 90}ms` : '0ms'
-                  }}
-                >
-                  {cardContent}
+                <a key={i} href={card.linkUrl} className="industries-grid-card industries-grid-card--small">
+                  <img src={card.image} alt={card.title} className="industries-grid-card-img" />
+                  <div className="industries-grid-card-overlay" />
+                  <div className="industries-grid-card-content">
+                    <span className="industries-grid-card-cat">{card.category}</span>
+                    <h3 className="industries-grid-card-title">{card.title}</h3>
+                  </div>
                 </a>
-              );
-            })}
-          </div>
-
-          <div className="work-controls">
-            <button
-              className="work-scroll-left"
-              onClick={() => scrollWork('left')}
-              aria-label="Scroll left"
-              disabled={!canScrollLeft}
-            >
-              <ChevronLeft size={20} strokeWidth={1.5} />
-            </button>
-
-            <div className="work-progress-bar">
-              <div className="work-progress-track"></div>
-              <div
-                className="work-progress-fill"
-                style={{ width: `${scrollProgress}%` }}
-              ></div>
-            </div>
-
-            <button
-              className="work-scroll-right"
-              onClick={() => scrollWork('right')}
-              aria-label="Scroll right"
-              disabled={!canScrollRight}
-            >
-              <ChevronRight size={20} strokeWidth={1.5} />
-            </button>
+              )
+            )}
           </div>
         </div>
       </div>
