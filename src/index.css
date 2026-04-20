@@ -11457,7 +11457,7 @@ details[open] .footer-arrow-icon {
 
 /* AI SERVICES BENTO — LAYOUT FIX (overrides any earlier rules) */
 .ai-bento-section {
-  background: hsl(30 20% 96%);
+  background: #5A5958;
   padding: 60px 0;
   position: relative;
   overflow: hidden;
@@ -11511,7 +11511,7 @@ details[open] .footer-arrow-icon {
   font-weight: 600;
   font-size: 32px;
   line-height: 1.15;
-  color: #002395;
+  color: #FFFFFF;
   margin: 0 0 32px 0;
   text-wrap: balance;
 }
@@ -11547,7 +11547,7 @@ details[open] .footer-arrow-icon {
   font-weight: 500;
   font-size: 15px;
   line-height: 1.4;
-  color: #374151;
+  color: rgba(255, 255, 255, 0.9);
   margin: 0;
   padding: 14px 0;
 }
@@ -11562,7 +11562,7 @@ details[open] .footer-arrow-icon {
 .ai-bento-divider {
   width: 100%;
   height: 1px;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .ai-bento-main-image {
