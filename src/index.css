@@ -11738,3 +11738,197 @@ details[open] .footer-arrow-icon {
 .ai-hero h2 {
   color: #FFFFFF;
 }
+
+/* ========================================
+   EXPERTISE PILLARS GRID SECTION
+   ======================================== */
+.pillars-grid-section {
+  background-color: #0b0d12;
+  padding: 96px 0 120px;
+  color: #e8e8ea;
+}
+
+.pillars-grid-intro {
+  max-width: 760px;
+  margin: 0 0 64px;
+}
+
+.pillars-grid-eyebrow {
+  font-family: 'Barlow', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 24px;
+}
+
+.pillars-grid-headline {
+  font-family: 'Inria Serif', serif;
+  font-weight: 400;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.pillars-grid-sub {
+  font-family: 'Barlow', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 620px;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  background-color: #0f1117;
+}
+
+.pillar-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 440px;
+  padding: 56px 56px 48px;
+  background-color: #0f1117;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background-color 0.35s ease;
+}
+
+.pillar-card:nth-child(2n) {
+  border-right: none;
+}
+
+.pillar-card:nth-last-child(-n + 2) {
+  border-bottom: none;
+}
+
+.pillar-card-accent {
+  background-color: #c7dccd;
+  color: #12241a;
+}
+
+.pillar-card-accent .pillar-card-number,
+.pillar-card-accent .pillar-card-headline,
+.pillar-card-accent .pillar-card-description,
+.pillar-card-accent .pillar-card-tag,
+.pillar-card-accent .pillar-card-link {
+  color: #12241a;
+}
+
+.pillar-card-accent .pillar-card-tag {
+  border-color: rgba(18, 36, 26, 0.3);
+}
+
+.pillar-card:hover:not(.pillar-card-accent) {
+  background-color: #13161d;
+}
+
+.pillar-card-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar-card-number {
+  font-family: 'Barlow', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 28px;
+}
+
+.pillar-card-headline {
+  font-family: 'Inria Serif', serif;
+  font-weight: 400;
+  font-size: clamp(24px, 2.2vw, 30px);
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.pillar-card-headline-line {
+  display: block;
+}
+
+.pillar-card-description {
+  font-family: 'Barlow', sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 32px;
+}
+
+.pillar-card-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.pillar-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pillar-card-tag {
+  font-family: 'Barlow', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.75);
+  border-radius: 2px;
+  background: transparent;
+}
+
+.pillar-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-decoration: none;
+  transition: gap 0.25s ease;
+}
+
+.pillar-card-link:hover {
+  gap: 14px;
+}
+
+.pillar-card-link-arrow {
+  font-size: 14px;
+  transition: transform 0.25s ease;
+}
+
+@media (max-width: 900px) {
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .pillar-card {
+    padding: 40px 28px;
+    min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .pillar-card:last-child {
+    border-bottom: none;
+  }
+}

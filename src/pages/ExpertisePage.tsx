@@ -1,6 +1,6 @@
 import ExpertiseHero from '../components/ExpertiseHero';
 import HeroServicesWrapper from '../components/HeroServicesWrapper';
-import ExpertisePillarsHero from '../components/ExpertisePillarsHero';
+import ExpertisePillarsGrid from '../components/ExpertisePillarsGrid';
 import OutcomesSection from '../components/OutcomesSection';
 import ProcessAccordion from '../components/ProcessAccordion';
 import ReadySection from '../components/ReadySection';
@@ -10,7 +10,7 @@ export default function ExpertisePage() {
       <HeroServicesWrapper variant="expertise">
         <ExpertiseHero />
       </HeroServicesWrapper>
-      <ExpertisePillarsHero />
+      <ExpertisePillarsGrid />
       <OutcomesSection backgroundColor="#ecebec" />
       <ProcessAccordion />
       <ReadySection />
