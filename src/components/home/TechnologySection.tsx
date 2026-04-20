@@ -32,7 +32,7 @@ function TechnologySection() {
   ];
 
   return (
-    <section id="technology" className="technology-section">
+    <section id="technology" className="technology-section" style={{ backgroundColor: '#ECEBEC' }}>
       <div className="manyone-grid">
         <p className="technology-eyebrow">EXPERTISE</p>
         <h2 className="technology-headline">AI designed for real business, not demos</h2>
