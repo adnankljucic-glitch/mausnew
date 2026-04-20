@@ -8,6 +8,7 @@ interface PillarHeroItem {
   bullets: string[];
   keyTech: string;
   image: string;
+  backgroundColor: string;
 }
 
 const pillarItems: PillarHeroItem[] = [
@@ -22,7 +23,8 @@ const pillarItems: PillarHeroItem[] = [
       "Evaluation frameworks that measure business ROI, not just model accuracy"
     ],
     keyTech: "Azure OpenAI · Semantic Kernel · Vector databases · .NET 8",
-    image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200"
+    image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    backgroundColor: "#2A2838"
   },
   {
     number: "02",
@@ -35,7 +37,8 @@ const pillarItems: PillarHeroItem[] = [
       "Compliance and security hardening for regulated industries"
     ],
     keyTech: "Azure · Kubernetes · Terraform · GitHub Actions",
-    image: "https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=1200"
+    image: "https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    backgroundColor: "#2C2A39"
   },
   {
     number: "03",
@@ -48,7 +51,8 @@ const pillarItems: PillarHeroItem[] = [
       "Continuous delivery pipelines with automated testing and observability"
     ],
     keyTech: ".NET 8 · C# · PostgreSQL · Azure Service Bus · OpenTelemetry",
-    image: "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=1200"
+    image: "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    backgroundColor: "#312E3D"
   },
   {
     number: "04",
@@ -61,7 +65,8 @@ const pillarItems: PillarHeroItem[] = [
       "Design systems that stay consistent across every platform and team"
     ],
     keyTech: "Flutter · React · Next.js · TypeScript · Storybook",
-    image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1200"
+    image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    backgroundColor: "#34303F"
   }
 ];
 
@@ -72,7 +77,7 @@ export default function ExpertisePillarsHero() {
         <article
           key={item.number}
           className={`pillar-hero-row ${index % 2 === 0 ? 'pillar-hero-row-image-right' : 'pillar-hero-row-image-left'} ${index % 2 === 0 ? 'pillar-hero-row-dark' : 'pillar-hero-row-darker'}`}
-          style={item.headline === 'Secure, Scalable Cloud Foundations' ? { backgroundColor: '#2C2A39' } : undefined}
+          style={{ backgroundColor: item.backgroundColor }}
         >
           <div className="manyone-grid">
             <div className="pillar-hero-inner">
