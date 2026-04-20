@@ -106,9 +106,17 @@
   }
 
   /* Base Heading Styles - Apply to all heading elements */
-  h1, h2, h3, h4, h5 {
+  h1, h2, h3, h4 {
     font-family: var(--font-family-serif);
     font-weight: 600;
+    color: #002395;
+    margin: 0;
+  }
+
+  h5 {
+    font-family: var(--font-family-serif);
+    font-weight: 600;
+    color: #374151;
     margin: 0;
   }
 
@@ -11662,4 +11670,26 @@ details[open] .footer-arrow-icon {
   .ai-bento-quote-text {
     font-size: 15px;
   }
+}
+
+/* Dark-background sections — ensure bare headings stay white */
+.hero-section h1,
+.hero-section h2,
+.hero-section h3,
+.hero-section h4,
+.solution-section h2,
+.solution-section h3,
+.solution-section-static h2,
+.solution-section-static h3,
+.work-section h2,
+.work-section h3,
+.testimonials-section h2,
+.testimonials-section h3,
+.pillar-hero-row h2,
+.pillar-hero-row h3,
+.pillars-hero-section h2,
+.pillars-hero-section h3,
+.ai-hero h1,
+.ai-hero h2 {
+  color: #FFFFFF;
 }
