@@ -12880,26 +12880,23 @@ details[open] .footer-arrow-icon {
   display: block;
 }
 
-.pillar-row-image-gradient {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(36, 34, 50, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
-  pointer-events: none;
-}
-
 .pillar-row-image-overlay {
   position: absolute;
   inset: 0;
+  background: rgba(13, 30, 33, 0.45);
+  pointer-events: none;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+}
+
+.pillar-row-image-overlay-content {
   padding: 32px;
-  background: linear-gradient(to top, rgba(13, 30, 33, 0.75) 0%, rgba(13, 30, 33, 0.2) 50%, transparent 100%);
-  pointer-events: none;
+  background: linear-gradient(to top, rgba(13, 30, 33, 0.6) 0%, rgba(13, 30, 33, 0.15) 60%, transparent 100%);
 }
 
 @media (min-width: 768px) {
-  .pillar-row-image-overlay {
+  .pillar-row-image-overlay-content {
     padding: 40px;
   }
 }

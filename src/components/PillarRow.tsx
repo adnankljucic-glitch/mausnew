@@ -130,17 +130,16 @@ export default function PillarRow({
               className="pillar-row-image"
               style={{ y }}
             />
-            {imageOverlayTitle && (
-              <div className="pillar-row-image-overlay">
-                <h3 className="pillar-row-image-title">{imageOverlayTitle}</h3>
-                {imageOverlaySubtitle && (
-                  <p className="pillar-row-image-subtitle">{imageOverlaySubtitle}</p>
-                )}
-              </div>
-            )}
-            {!imageOverlayTitle && (
-              <div className="pillar-row-image-gradient" />
-            )}
+            <div className="pillar-row-image-overlay">
+              {imageOverlayTitle && (
+                <div className="pillar-row-image-overlay-content">
+                  <h3 className="pillar-row-image-title">{imageOverlayTitle}</h3>
+                  {imageOverlaySubtitle && (
+                    <p className="pillar-row-image-subtitle">{imageOverlaySubtitle}</p>
+                  )}
+                </div>
+              )}
+            </div>
           </motion.div>
         </div>
       </div>
