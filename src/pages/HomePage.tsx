@@ -69,10 +69,6 @@ function HomePage() {
 
       <TechnologySection />
 
-      <div ref={workSectionRef}>
-        <IndustriesSection visible={workVisible} />
-      </div>
-
       <ProcessAccordion
         backgroundColor="#ECEBEC"
         title={"Our Methodology\nEngineering beyond the surface"}
@@ -91,6 +87,10 @@ function HomePage() {
           }
         ]}
       />
+
+      <div ref={workSectionRef}>
+        <IndustriesSection visible={workVisible} />
+      </div>
 
       <WorkSection />
 
