@@ -36,7 +36,7 @@ export default function ProcessAccordion({ title, items, backgroundColor }: Proc
   };
 
   return (
-    <section id="how-we-work" className="process-accordion-section" style={backgroundColor ? { backgroundColor } : undefined}>
+    <section id="how-we-work" className="process-accordion-section" style={backgroundColor ? { backgroundColor, backgroundImage: 'none' } : undefined}>
       <div className="manyone-grid">
         <div className="process-accordion-container">
           <div>
