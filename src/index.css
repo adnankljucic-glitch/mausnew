@@ -2898,22 +2898,16 @@
   }
 
   @media (min-width: 640px) {
-    .industries-grid-card--tall .industries-grid-card-title {
-      font-size: 26px;
-    }
-
+    .industries-grid-card--tall .industries-grid-card-title,
     .industries-grid-card--short .industries-grid-card-title {
-      font-size: 17px;
+      font-size: 22px;
     }
   }
 
   @media (min-width: 1024px) {
-    .industries-grid-card--tall .industries-grid-card-title {
-      font-size: 32px;
-    }
-
+    .industries-grid-card--tall .industries-grid-card-title,
     .industries-grid-card--short .industries-grid-card-title {
-      font-size: 18px;
+      font-size: 26px;
     }
   }
 
