@@ -11743,9 +11743,9 @@ details[open] .footer-arrow-icon {
    HOME TECHNOLOGY GRID SECTION
    ======================================== */
 .tech-grid-section {
-  background-color: #020817;
+  background-color: #ECEBEC;
   padding: 96px 0 80px;
-  color: #e8e8ea;
+  color: #0d0d0d;
 }
 
 .tech-grid-intro {
@@ -11759,7 +11759,7 @@ details[open] .footer-arrow-icon {
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(0, 0, 0, 0.45);
   margin-bottom: 20px;
 }
 
@@ -11768,7 +11768,7 @@ details[open] .footer-arrow-icon {
   font-weight: 400;
   font-size: clamp(30px, 3.5vw, 48px);
   line-height: 1.15;
-  color: #ffffff;
+  color: #0d0d0d;
   margin-bottom: 18px;
 }
 
@@ -11776,7 +11776,7 @@ details[open] .footer-arrow-icon {
   font-family: 'Barlow', sans-serif;
   font-size: 16px;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(0, 0, 0, 0.55);
   max-width: 580px;
 }
 
@@ -11784,21 +11784,21 @@ details[open] .footer-arrow-icon {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 2px;
   overflow: hidden;
-  margin-bottom: 80px;
+  margin-bottom: 56px;
 }
 
 .tech-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 420px;
+  min-height: 380px;
   padding: 52px 52px 44px;
-  background-color: #070b14;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #f5f4f4;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
 }
 
@@ -11811,7 +11811,7 @@ details[open] .footer-arrow-icon {
 }
 
 .tech-card:hover {
-  background-color: #0d1120;
+  background-color: #edecea;
 }
 
 .tech-card-top {
@@ -11824,7 +11824,7 @@ details[open] .footer-arrow-icon {
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.2em;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(0, 0, 0, 0.35);
   margin-bottom: 16px;
 }
 
@@ -11834,7 +11834,7 @@ details[open] .footer-arrow-icon {
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(0, 0, 0, 0.45);
   margin-bottom: 16px;
   line-height: 1.4;
 }
@@ -11844,7 +11844,7 @@ details[open] .footer-arrow-icon {
   font-weight: 400;
   font-size: clamp(22px, 2vw, 28px);
   line-height: 1.2;
-  color: #ffffff;
+  color: #0d0d0d;
   margin-bottom: 20px;
 }
 
@@ -11856,7 +11856,7 @@ details[open] .footer-arrow-icon {
   font-family: 'Barlow', sans-serif;
   font-size: 15px;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.6);
   margin-bottom: 32px;
 }
 
@@ -11882,9 +11882,15 @@ details[open] .footer-arrow-icon {
   letter-spacing: 0.13em;
   text-transform: uppercase;
   padding: 5px 11px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(0, 0, 0, 0.22);
+  color: rgba(0, 0, 0, 0.6);
   border-radius: 2px;
+}
+
+.tech-grid-cta {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
 }
 
 .tech-card-link {
@@ -11896,14 +11902,14 @@ details[open] .footer-arrow-icon {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(0, 0, 0, 0.6);
   text-decoration: none;
   transition: gap 0.25s ease, color 0.25s ease;
 }
 
 .tech-card-link:hover {
   gap: 14px;
-  color: #ffffff;
+  color: #0d0d0d;
 }
 
 .tech-card-link-arrow {
@@ -11918,7 +11924,7 @@ details[open] .footer-arrow-icon {
     padding: 40px 28px;
     min-height: auto;
     border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
   .tech-card:last-child {
     border-bottom: none;

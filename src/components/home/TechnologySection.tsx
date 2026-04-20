@@ -77,14 +77,22 @@ function TechnologySection() {
                     <li key={tag} className="tech-card-tag">{tag}</li>
                   ))}
                 </ul>
-                <a href="/expertise" className="tech-card-link">
-                  <span>READ MORE</span>
-                  <span className="tech-card-link-arrow">&rarr;</span>
-                </a>
               </div>
             </motion.article>
           ))}
         </div>
+
+        <motion.div
+          className="tech-grid-cta"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <a href="/expertise" className="technology-cta">
+            Read more
+          </a>
+        </motion.div>
 
         <LogoCarousel />
       </div>
