@@ -18,7 +18,7 @@ export default function ScalePerformanceBentoSection() {
             <h2 className="ai-bento-headline text-white">
               Eliminating technical debt through architectural integrity
             </h2>
-            <p className="ai-bento-description text-white/80">
+            <p className="ai-bento-description text-white/80" style={{ color: 'rgba(255,255,255,0.8)' }}>
               In a world of complex Legacy Systems, performance is not optional. At MAUS, we combine deep technical analysis with proven optimization strategies to transform sluggish platforms into high-performance systems that scale with your business.
             </p>
           </motion.div>
