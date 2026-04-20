@@ -6,11 +6,29 @@ interface IndustriesSectionProps {
   visible: boolean;
 }
 
+function CardLink({ card, className }: { card: typeof industryCards[0]; className: string }) {
+  const inner = (
+    <>
+      <img src={card.image} alt={card.title} className="industries-grid-card-img" />
+      <div className="industries-grid-card-overlay" />
+      <div className="industries-grid-card-content">
+        <span className="industries-grid-card-cat">{card.category}</span>
+        <h3 className="industries-grid-card-title">{card.title}</h3>
+      </div>
+    </>
+  );
+  if (card.linkUrl.startsWith('/')) {
+    return <Link to={card.linkUrl} className={className}>{inner}</Link>;
+  }
+  return <a href={card.linkUrl} className={className}>{inner}</a>;
+}
+
 function IndustriesSection({ visible }: IndustriesSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
 
-  const featured = industryCards[0];
-  const rest = industryCards.slice(1, 5);
+  const healthcare = industryCards[1];
+  const booking = industryCards[2];
+  const bottom = [industryCards[0], industryCards[3], industryCards[4]];
 
   return (
     <section
@@ -28,48 +46,15 @@ function IndustriesSection({ visible }: IndustriesSectionProps) {
         </div>
 
         <div className="industries-grid-layout">
-          {featured.linkUrl.startsWith('/') ? (
-            <Link to={featured.linkUrl} className="industries-grid-card industries-grid-card--featured">
-              <img src={featured.image} alt={featured.title} className="industries-grid-card-img" />
-              <div className="industries-grid-card-overlay" />
-              <div className="industries-grid-card-content">
-                <span className="industries-grid-card-cat">{featured.category}</span>
-                <h3 className="industries-grid-card-title">{featured.title}</h3>
-              </div>
-            </Link>
-          ) : (
-            <a href={featured.linkUrl} className="industries-grid-card industries-grid-card--featured">
-              <img src={featured.image} alt={featured.title} className="industries-grid-card-img" />
-              <div className="industries-grid-card-overlay" />
-              <div className="industries-grid-card-content">
-                <span className="industries-grid-card-cat">{featured.category}</span>
-                <h3 className="industries-grid-card-title">{featured.title}</h3>
-              </div>
-            </a>
-          )}
+          <div className="industries-grid-top-row">
+            <CardLink card={healthcare} className="industries-grid-card industries-grid-card--tall" />
+            <CardLink card={booking} className="industries-grid-card industries-grid-card--tall" />
+          </div>
 
-          <div className="industries-grid-secondary">
-            {rest.map((card, i) =>
-              card.linkUrl.startsWith('/') ? (
-                <Link key={i} to={card.linkUrl} className="industries-grid-card industries-grid-card--small">
-                  <img src={card.image} alt={card.title} className="industries-grid-card-img" />
-                  <div className="industries-grid-card-overlay" />
-                  <div className="industries-grid-card-content">
-                    <span className="industries-grid-card-cat">{card.category}</span>
-                    <h3 className="industries-grid-card-title">{card.title}</h3>
-                  </div>
-                </Link>
-              ) : (
-                <a key={i} href={card.linkUrl} className="industries-grid-card industries-grid-card--small">
-                  <img src={card.image} alt={card.title} className="industries-grid-card-img" />
-                  <div className="industries-grid-card-overlay" />
-                  <div className="industries-grid-card-content">
-                    <span className="industries-grid-card-cat">{card.category}</span>
-                    <h3 className="industries-grid-card-title">{card.title}</h3>
-                  </div>
-                </a>
-              )
-            )}
+          <div className="industries-grid-bottom-row">
+            {bottom.map((card, i) => (
+              <CardLink key={i} card={card} className="industries-grid-card industries-grid-card--short" />
+            ))}
           </div>
         </div>
       </div>
