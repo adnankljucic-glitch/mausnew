@@ -2596,7 +2596,7 @@
   .industries-grid-section {
     width: 100%;
     padding: 80px 0 100px 0;
-    background: #020817;
+    background: #FDFDFD;
     position: relative;
   }
 
@@ -2637,7 +2637,7 @@
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(10, 27, 79, 0.55);
     margin: 0 0 14px 0;
     opacity: 0;
     transform: translateY(12px);
@@ -2687,7 +2687,7 @@
   .industries-grid-sub {
     font-family: var(--font-family-sans);
     font-size: var(--font-lead-mobile);
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(10, 27, 79, 0.6);
     margin: 0;
     opacity: 0;
     transform: translateY(12px);
