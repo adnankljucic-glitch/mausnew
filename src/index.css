@@ -12850,12 +12850,20 @@ details[open] .footer-arrow-icon {
   overflow: hidden;
   border-radius: 4px;
   justify-self: center;
+  order: -1;
+}
+
+@media (min-width: 768px) {
+  .pillar-row-media {
+    max-height: 520px;
+  }
 }
 
 @media (min-width: 1024px) {
   .pillar-row-media {
     max-width: 560px;
     max-height: 700px;
+    order: auto;
   }
 }
 
