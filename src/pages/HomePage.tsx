@@ -67,11 +67,11 @@ function HomePage() {
         </div>
       </HeroServicesWrapper>
 
+      <TechnologySection />
+
       <div ref={workSectionRef}>
         <IndustriesSection visible={workVisible} />
       </div>
-
-      <TechnologySection />
 
       <ProcessAccordion
         title="Our Methodology: Engineering beyond the surface"
