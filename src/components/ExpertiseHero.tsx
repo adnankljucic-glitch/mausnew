@@ -1,8 +1,9 @@
 import React from "react";
+import ScrollIndicator from "./ScrollIndicator";
 
 export default function ExpertiseHero() {
   return (
-    <section className="ai-hero">
+    <section className="ai-hero relative">
       <div className="manyone-grid ai-hero-content">
 
         <h1 className="ai-hero-headline">
@@ -14,6 +15,7 @@ export default function ExpertiseHero() {
         </p>
 
       </div>
+      <ScrollIndicator />
     </section>
   );
 }
