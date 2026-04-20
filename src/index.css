@@ -10259,7 +10259,7 @@ details[open] .footer-arrow-icon {
 }
 
 .ai-bento-section {
-  background: #2D2A3E;
+  background: #ECEBEC;
   padding: 60px 0;
 }
 
@@ -11457,7 +11457,7 @@ details[open] .footer-arrow-icon {
 
 /* AI SERVICES BENTO — LAYOUT FIX (overrides any earlier rules) */
 .ai-bento-section {
-  background: #2D2A3E;
+  background: #ECEBEC;
   padding: 60px 0;
   position: relative;
   overflow: hidden;
