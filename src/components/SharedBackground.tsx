@@ -168,9 +168,9 @@ export const GradientPlaneExpertise = () => {
     () => ({
       uTime: { value: 0 },
       uColor1: { value: new THREE.Color("#242232") },
-      uColor2: { value: new THREE.Color("#2a0a4a") },
-      uColor3: { value: new THREE.Color("#61028d") },
-      uColor4: { value: new THREE.Color("#a855f7") },
+      uColor2: { value: new THREE.Color("#3a2060") },
+      uColor3: { value: new THREE.Color("#4a1a6a") },
+      uColor4: { value: new THREE.Color("#7c3aad") },
     }),
     []
   );

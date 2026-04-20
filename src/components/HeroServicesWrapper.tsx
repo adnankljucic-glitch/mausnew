@@ -28,7 +28,9 @@ export default function HeroServicesWrapper({ children, variant = "default", aut
       <div
         className="absolute inset-0 z-[1] pointer-events-none"
         style={{
-          background: "linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6))",
+          background: variant === "expertise"
+            ? "linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.25))"
+            : "linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.45))",
         }}
       ></div>
 
