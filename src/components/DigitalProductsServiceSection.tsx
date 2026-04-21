@@ -19,7 +19,7 @@ export default function DigitalProductsServiceSection() {
   return (
     <PillarRow
       variant="light"
-      bgOverride="#ECEBEC"
+      bgOverride="#F7F8FA"
       headline="Optimizing the end-to-end Customer Ecosystem."
       intro='Digital products do not exist in a vacuum. Service Design is about looking at the entire lifecycle of a customer interaction—from the first touchpoint to the backend fulfillment. We help you map and optimize the "invisible" processes that make your digital products successful.'
       bulletsTitled={bulletPoints}
