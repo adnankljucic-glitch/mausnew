@@ -10650,91 +10650,11 @@ details[open] .footer-arrow-icon {
 }
 
 .ai-bento-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 24px;
-}
-
-@media (min-width: 1024px) {
-  .ai-bento-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.4fr;
-    gap: 28px;
-    align-items: stretch;
-    grid-template-rows: auto;
-    height: auto;
-  }
-
-  .ai-bento-text-column {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  .ai-bento-main-image {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  .ai-bento-right-column {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin-top: 0;
-  }
-
-  .ai-bento-small-image {
-    aspect-ratio: 16 / 9;
-  }
-}
-
-@media (min-width: 1280px) {
-  .ai-bento-grid {
-    grid-template-columns: 1fr 1.6fr 1fr;
-    gap: 32px;
-    grid-template-rows: auto;
-    height: 520px;
-  }
-
-  .ai-bento-text-column {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  .ai-bento-main-image {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  .ai-bento-right-column {
-    grid-column: 3;
-    grid-row: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    margin-top: 0;
-  }
-
-  .ai-bento-small-image {
-    aspect-ratio: 4 / 3;
-    flex: 1;
-  }
-}
-
-@media (min-width: 1440px) {
-  .ai-bento-grid {
-    grid-template-columns: 1fr 1.8fr 1fr;
-    gap: 40px;
-    height: 540px;
-  }
-}
-
-@media (min-width: 1600px) {
-  .ai-bento-grid {
-    gap: 40px;
-    height: 560px;
-  }
+  width: 100%;
+  align-items: start;
 }
 
 .ai-bento-text-column {
@@ -10780,13 +10700,6 @@ details[open] .footer-arrow-icon {
 @media (min-width: 768px) {
   .ai-bento-headline {
     font-size: 40px;
-  }
-}
-
-@media (min-width: 1024px) and (max-width: 1279px) {
-  .ai-bento-headline {
-    font-size: 34px;
-    line-height: 1.15;
   }
 }
 
@@ -10907,21 +10820,6 @@ details[open] .footer-arrow-icon {
   z-index: 1;
 }
 
-@media (min-width: 1024px) and (max-width: 1279px) {
-  .ai-bento-main-image {
-    aspect-ratio: 4 / 3;
-    height: auto;
-    max-height: 480px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .ai-bento-main-image {
-    aspect-ratio: unset;
-    height: 100%;
-    min-height: 480px;
-  }
-}
 
 .ai-bento-main-image img {
   width: 100%;
@@ -10931,48 +10829,7 @@ details[open] .footer-arrow-icon {
 }
 
 .ai-bento-right-column {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-@media (min-width: 768px) {
-  .ai-bento-right-column {
-    flex-direction: row;
-    gap: 20px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .ai-bento-right-column {
-    display: grid;
-  }
-}
-
-.ai-bento-small-image {
   display: none;
-}
-
-@media (min-width: 768px) {
-  .ai-bento-small-image {
-    display: block;
-    border-radius: 4px;
-    overflow: hidden;
-    flex: 1;
-    aspect-ratio: auto;
-    height: 200px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .ai-bento-small-image {
-    display: block;
-    border-radius: 4px;
-    overflow: hidden;
-    flex: 1;
-    height: auto;
-    aspect-ratio: auto;
-  }
 }
 
 .ai-bento-small-image img {
@@ -11975,16 +11832,24 @@ details[open] .footer-arrow-icon {
   align-items: start;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .ai-bento-grid {
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1.4fr;
     gap: 32px;
     align-items: stretch;
   }
 }
 
+@media (min-width: 1280px) {
+  .ai-bento-grid {
+    grid-template-columns: 1fr 1.6fr 1fr;
+    gap: 32px;
+  }
+}
+
 @media (min-width: 1440px) {
   .ai-bento-grid {
+    grid-template-columns: 1fr 1.8fr 1fr;
     gap: 40px;
   }
 }
@@ -12066,9 +11931,10 @@ details[open] .footer-arrow-icon {
   min-width: 0;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .ai-bento-main-image {
     aspect-ratio: 3 / 4;
+    height: 100%;
   }
 }
 
@@ -12080,17 +11946,18 @@ details[open] .footer-arrow-icon {
 }
 
 .ai-bento-right-column {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  display: none;
   min-width: 0;
   max-width: 100%;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .ai-bento-right-column {
+    display: flex;
+    flex-direction: column;
     gap: 24px;
     height: 100%;
+    grid-column: 3;
   }
 }
 
