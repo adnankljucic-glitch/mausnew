@@ -76,7 +76,7 @@ function HomePage() {
       <WorkSection />
 
       <ProcessAccordion
-        backgroundColor="#ECEBEC"
+        backgroundColor="#F7F8FA"
         title={"Our Methodology\nEngineering beyond the surface"}
         items={[
           {
