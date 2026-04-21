@@ -78,7 +78,17 @@ function Header() {
             className={`premium-burger ${mobileMenuOpen ? 'menu-open' : ''}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X size={24} strokeWidth={2} /> : <Menu size={24} strokeWidth={2} />}
+            {mobileMenuOpen ? (
+              <>
+                <span className="premium-burger-label">CLOSE</span>
+                <X size={18} strokeWidth={2} />
+              </>
+            ) : (
+              <>
+                <span className="premium-burger-label">MENU</span>
+                <Menu size={18} strokeWidth={2} />
+              </>
+            )}
           </button>
         )}
       </div>

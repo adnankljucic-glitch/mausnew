@@ -1580,19 +1580,38 @@
     display: none;
     align-items: center;
     justify-content: center;
-    background: none;
-    border: none;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
     cursor: pointer;
-    padding: 8px;
+    padding: 8px 14px;
     flex-shrink: 0;
     color: #ffffff;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: background 0.2s ease, border-color 0.2s ease;
     position: relative;
     z-index: 1001;
   }
 
+  .premium-burger:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .premium-burger-label {
+    font-family: 'Barlow', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
   .premium-burger.menu-open {
-    transform: rotate(90deg);
+    background: rgba(255, 255, 255, 0.9);
+    border-color: transparent;
     color: #000000;
   }
 
