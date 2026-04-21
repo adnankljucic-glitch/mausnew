@@ -23,7 +23,7 @@ export default function AIAutomationServiceSection() {
   return (
     <PillarRow
       variant="light"
-      bgOverride="#ECEBEC"
+      bgOverride="#F7F8FA"
       headline="Intelligence applied to business complexity"
       intro="Transform your operations with intelligent automation that goes beyond simple workflows. We integrate advanced AI and machine learning directly into your infrastructure, enabling predictive analytics, automated decision-making, and scalable process optimization that amplifies your team's capabilities while maintaining data integrity."
       bulletsTitled={bulletPoints}
