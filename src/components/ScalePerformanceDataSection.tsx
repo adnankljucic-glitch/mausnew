@@ -19,7 +19,7 @@ export default function ScalePerformanceDataSection() {
   return (
     <PillarRow
       variant="light"
-      bgOverride="#ECEBEC"
+      bgOverride="#F7F8FA"
       headline="Data-driven optimization"
       intro="You cannot improve what you cannot measure. We implement comprehensive monitoring and analytics that give you complete visibility into your system's performance, enabling informed decisions and continuous improvement."
       bulletsTitled={bulletPoints}
