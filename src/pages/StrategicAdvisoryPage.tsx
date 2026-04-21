@@ -17,6 +17,7 @@ export default function StrategicAdvisoryPage() {
       <ProcessSection />
 
       <ProcessAccordion
+        backgroundColor="#F7F8FA"
         items={[
           {
             title: "How do you bridge the gap between business and IT?",
