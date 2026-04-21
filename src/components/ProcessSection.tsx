@@ -1,7 +1,4 @@
-import { motion, useInView, useScroll, useTransform } from 'framer-motion';
-import { ChevronRight } from 'lucide-react';
-import { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import PillarRow from './PillarRow';
 
 interface BulletPoint {
   title: string;
@@ -18,7 +15,6 @@ interface ProcessStep {
   imageAlt: string;
   imageHeadline: string;
   imageSubheadline: string;
-  caseSlug?: string;
 }
 
 const processSteps: ProcessStep[] = [
@@ -96,142 +92,23 @@ const processSteps: ProcessStep[] = [
   },
 ];
 
-function ProcessStepSection({ step, reverse }: { step: ProcessStep; reverse: boolean }) {
-  const sectionRef = useRef<HTMLElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
-
-  const { scrollYProgress } = useScroll({
-    target: imageRef,
-    offset: ['start end', 'end start'],
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], ['-5%', '5%']);
-
-  const containerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.7,
-        ease: 'easeOut',
-      },
-    },
-  };
-
-  const textVariants = {
-    hidden: { opacity: 0, y: 16 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: 'easeOut',
-        delay: 0.1,
-      },
-    },
-  };
-
-  const imageVariants = {
-    hidden: { opacity: 0, scale: 1.02 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.8,
-        ease: 'easeOut',
-        delay: 0.2,
-      },
-    },
-  };
-
-  return (
-    <motion.section
-      ref={sectionRef}
-      className="process-step-section"
-      initial="hidden"
-      animate={isInView ? 'visible' : 'hidden'}
-      variants={containerVariants}
-    >
-      <div className="manyone-grid">
-        <div className={`process-step-wrapper ${reverse ? 'process-step-reverse' : ''}`}>
-          <motion.div className="process-step-text-content" variants={textVariants}>
-            <h2 className="process-step-headline">{step.title}</h2>
-            <p className="process-step-paragraph">{step.description}</p>
-
-            <div className="process-step-capabilities">
-              <div className="process-step-list">
-                {step.bulletPoints.map((point, index) => (
-                  <motion.div
-                    key={index}
-                    className="process-step-capability-card"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-                    transition={{ duration: 0.5, ease: 'easeOut', delay: 0.4 + index * 0.1 }}
-                  >
-                    <div className="process-step-capability-icon">
-                      <ChevronRight size={16} strokeWidth={1.5} />
-                    </div>
-                    <div className="process-step-bullet-content">
-                      <span className="process-step-bullet-title">{point.title}</span>
-                      <span className="process-step-bullet-description">{point.description}</span>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-
-          {step.caseSlug ? (
-            <Link to={`/cases/${step.caseSlug}`} style={{ textDecoration: 'none' }}>
-              <motion.div
-                ref={imageRef}
-                className="process-step-image-wrapper process-step-image-link"
-                variants={imageVariants}
-              >
-                <motion.img
-                  src={step.image}
-                  alt={step.imageAlt}
-                  className="process-step-image"
-                  style={{ y }}
-                />
-                <div className="process-step-image-overlay">
-                  <h3 className="process-step-image-headline">{step.imageHeadline}</h3>
-                  <p className="process-step-image-subheadline">{step.imageSubheadline}</p>
-                </div>
-              </motion.div>
-            </Link>
-          ) : (
-            <motion.div
-              ref={imageRef}
-              className="process-step-image-wrapper"
-              variants={imageVariants}
-            >
-              <motion.img
-                src={step.image}
-                alt={step.imageAlt}
-                className="process-step-image"
-                style={{ y }}
-              />
-              <div className="process-step-image-overlay">
-                <h3 className="process-step-image-headline">{step.imageHeadline}</h3>
-                <p className="process-step-image-subheadline">{step.imageSubheadline}</p>
-              </div>
-            </motion.div>
-          )}
-        </div>
-      </div>
-    </motion.section>
-  );
-}
-
 export default function ProcessSection() {
   return (
-    <div className="process-section-container">
+    <>
       {processSteps.map((step, index) => (
-        <ProcessStepSection key={step.id} step={step} reverse={index % 2 === 1} />
+        <PillarRow
+          key={step.id}
+          variant="light"
+          reverse={index % 2 === 1}
+          headline={step.title}
+          intro={step.description}
+          bulletsTitled={step.bulletPoints}
+          image={step.image}
+          imageAlt={step.imageAlt}
+          imageOverlayTitle={step.imageHeadline}
+          imageOverlaySubtitle={step.imageSubheadline}
+        />
       ))}
-    </div>
+    </>
   );
 }
