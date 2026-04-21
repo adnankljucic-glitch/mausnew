@@ -12,6 +12,7 @@ function CardLink({ card, className }: { card: typeof industryCards[0]; classNam
       {card.videoUrl ? (
         <video
           src={card.videoUrl}
+          poster={card.image}
           autoPlay
           muted
           loop

@@ -19,6 +19,7 @@ export const industryCards: IndustryCard[] = [
     title: "Healthcare",
     description: "Partnered with one of Scandinavia's largest firms to develop healthcare systems used in hospitals.",
     image: "https://media.maus.ba/media/z1igwr1n/pexels-thirdman-8940510.jpg?width=1110&height=1536&v=1daf23ac1e423f0&mode=crop",
+    videoUrl: "https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/hospital.mp4",
     category: "Healthcare",
     linkUrl: "#"
   },
