@@ -9,7 +9,19 @@ interface IndustriesSectionProps {
 function CardLink({ card, className }: { card: typeof industryCards[0]; className: string }) {
   const inner = (
     <>
-      <img src={card.image} alt={card.title} className="industries-grid-card-img" />
+      {card.videoUrl ? (
+        <video
+          src={card.videoUrl}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="industries-grid-card-img"
+        />
+      ) : (
+        <img src={card.image} alt={card.title} className="industries-grid-card-img" />
+      )}
       <div className="industries-grid-card-overlay" />
       <div className="industries-grid-card-content">
         <span className="industries-grid-card-cat">{card.category}</span>

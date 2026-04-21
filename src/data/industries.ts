@@ -1,7 +1,8 @@
 export interface IndustryCard {
   title: string;
   description: string;
-  image: string;
+  image?: string;
+  videoUrl?: string;
   category: string;
   linkUrl: string;
 }
@@ -24,7 +25,7 @@ export const industryCards: IndustryCard[] = [
   {
     title: "Booking & Ticketing",
     description: "Our platform brings together advanced digital booking tools with data-driven marketing that improves your operations and your guests' experiences.",
-    image: "https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg?auto=compress&cs=tinysrgb&w=800",
+    videoUrl: "https://media.inetdesign.dk/media/0ylhnh0i/freepik__a-calm-coastal-landscape-with-a-fixed-camera-in-an__11200.mp4",
     category: "Tourism & Events",
     linkUrl: "/cases/run-events"
   },
