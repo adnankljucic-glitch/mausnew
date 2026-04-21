@@ -19,6 +19,7 @@ export default function AISoftwareEngineeringSection() {
   return (
     <PillarRow
       variant="light"
+      reverse={true}
       headline="Architecture that carries AI workloads"
       intro="AI systems fail at scale when the underlying engineering is weak. We build the software foundations that let intelligent features run reliably in production — event-driven backends, observable data pipelines, and infrastructure that doesn't buckle when you double your traffic."
       bulletsTitled={bulletPoints}
