@@ -12501,7 +12501,13 @@ details[open] .footer-arrow-icon {
   align-items: center;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
+  .pillar-row-inner {
+    gap: 56px;
+  }
+}
+
+@media (min-width: 1280px) {
   .pillar-row-inner {
     grid-template-columns: 1.1fr 1fr;
     gap: 80px;
@@ -12857,7 +12863,7 @@ details[open] .footer-arrow-icon {
   order: -1;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .pillar-row-media {
     order: unset;
   }
@@ -12865,14 +12871,19 @@ details[open] .footer-arrow-icon {
 
 @media (min-width: 768px) {
   .pillar-row-media {
-    max-height: 520px;
+    max-width: 720px;
+    max-height: 780px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .pillar-row-media {
     max-width: 560px;
     max-height: 700px;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
