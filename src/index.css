@@ -12185,12 +12185,25 @@ details[open] .footer-arrow-icon {
 }
 
 .tech-grid-sub {
-  font-family: 'Barlow', sans-serif;
-  font-size: 18px;
-  line-height: 1.65;
-  color: rgba(0, 0, 0, 0.6);
+  font-family: var(--font-family-sans);
+  font-weight: 400;
+  font-size: var(--font-lead-mobile);
+  line-height: var(--lh-lead);
+  color: var(--color-subheading-on-light);
   max-width: 580px;
   margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .tech-grid-sub {
+    font-size: var(--font-lead-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .tech-grid-sub {
+    font-size: var(--font-lead-desktop);
+  }
 }
 
 .tech-grid-cards {
