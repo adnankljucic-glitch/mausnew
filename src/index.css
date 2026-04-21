@@ -10733,6 +10733,21 @@ details[open] .footer-arrow-icon {
   }
 }
 
+.ai-bento-subheadline {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 12px 0 0 0;
+}
+
+@media (min-width: 1024px) {
+  .ai-bento-subheadline {
+    font-size: 16px;
+  }
+}
+
 .ai-bento-description {
   font-family: 'Barlow', sans-serif;
   font-weight: 400;

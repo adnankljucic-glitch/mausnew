@@ -16,6 +16,7 @@ export default function AIServicesBentoSection() {
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
             <h2 className="ai-bento-headline">From complex data to scalable business logic</h2>
+            <p className="ai-bento-subheadline">We turn raw data and legacy systems into intelligent, production-ready AI — built to perform at enterprise scale.</p>
             <div className="ai-bento-list">
               <h4>Custom AI Layer</h4>
               <div className="ai-bento-divider" />
