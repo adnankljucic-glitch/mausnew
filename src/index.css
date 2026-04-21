@@ -12554,20 +12554,20 @@ details[open] .footer-arrow-icon {
 /* PILLAR ROW — SHARED LAYOUT (used by expertise + services) */
 .pillar-row {
   width: 100%;
-  padding: 80px 0;
+  padding: 72px 0;
   position: relative;
   overflow: hidden;
 }
 
 @media (min-width: 768px) {
   .pillar-row {
-    padding: 100px 0;
+    padding: 90px 0;
   }
 }
 
 @media (min-width: 1024px) {
   .pillar-row {
-    padding: 120px 0;
+    padding: 108px 0;
   }
 }
 
@@ -12576,7 +12576,7 @@ details[open] .footer-arrow-icon {
 }
 
 .pillar-row-light {
-  background: #ffffff;
+  background: #ECEBEC;
 }
 
 .pillar-row-inner {
