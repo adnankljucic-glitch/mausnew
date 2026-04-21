@@ -10651,14 +10651,14 @@ details[open] .footer-arrow-icon {
   .ai-bento-grid {
     grid-template-columns: 1fr 1.4fr 0.9fr;
     gap: 20px;
-    height: 540px;
+    height: 600px;
   }
 }
 
 @media (min-width: 1400px) {
   .ai-bento-grid {
     gap: 24px;
-    height: 580px;
+    height: 620px;
   }
 }
 
@@ -12903,6 +12903,13 @@ details[open] .footer-arrow-icon {
   overflow: hidden;
   border-radius: 4px;
   justify-self: center;
+  order: -1;
+}
+
+@media (min-width: 1024px) {
+  .pillar-row-media {
+    order: unset;
+  }
 }
 
 @media (min-width: 768px) {
