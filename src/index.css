@@ -12569,10 +12569,6 @@ details[open] .footer-arrow-icon {
   }
 }
 
-@media (min-width: 1024px) {
-  .pillar-row-reverse .pillar-row-content { order: 2; }
-  .pillar-row-reverse .pillar-row-media { order: 1; }
-}
 
 .pillar-row-content {
   display: flex;
@@ -12902,7 +12898,6 @@ details[open] .footer-arrow-icon {
   overflow: hidden;
   border-radius: 4px;
   justify-self: center;
-  order: -1;
 }
 
 @media (min-width: 768px) {
@@ -12915,7 +12910,6 @@ details[open] .footer-arrow-icon {
   .pillar-row-media {
     max-width: 560px;
     max-height: 700px;
-    order: auto;
   }
 }
 
