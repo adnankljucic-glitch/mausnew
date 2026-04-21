@@ -1,9 +1,20 @@
 import StrategicAdvisoryHero from '../components/StrategicAdvisoryHero';
 import HeroServicesWrapper from '../components/HeroServicesWrapper';
-import StrategicSolutionsSection from '../components/StrategicSolutionsSection';
-import ProcessSection from '../components/ProcessSection';
-import ProcessAccordion from '../components/ProcessAccordion';
+import StrategicBentoSection from '../components/StrategicBentoSection';
+import StrategicAdvisoryServiceSection from '../components/StrategicAdvisoryServiceSection';
+import ProductConceptSection from '../components/ProductConceptSection';
+import DigitalTransformationSection from '../components/DigitalTransformationSection';
+import DedicatedTeamBanner from '../components/DedicatedTeamBanner';
+import WorkSection from '../components/worksection';
 import { ServicesSectionStatic } from '../components/home';
+
+function SectionDivider() {
+  return (
+    <div className="section-divider-container">
+      <div className="section-divider" />
+    </div>
+  );
+}
 
 export default function StrategicAdvisoryPage() {
   return (
@@ -12,26 +23,27 @@ export default function StrategicAdvisoryPage() {
         <StrategicAdvisoryHero />
       </HeroServicesWrapper>
 
-      <StrategicSolutionsSection />
+      <StrategicBentoSection />
 
-      <ProcessSection />
+      <SectionDivider />
 
-      <ProcessAccordion
-        items={[
-          {
-            title: "How do you bridge the gap between business and IT?",
-            content: "We act as the technical translator, ensuring business vision is backed by feasible engineering."
-          },
-          {
-            title: "Do you provide the teams to execute?",
-            content: "Yes, we offer specialized, senior-level engineers who integrate directly into your workflow."
-          },
-          {
-            title: "What is the first step?",
-            content: "A deep-dive audit to align technical possibilities with your commercial roadmap."
-          }
-        ]}
-      />
+      <StrategicAdvisoryServiceSection />
+
+      <SectionDivider />
+
+      <ProductConceptSection />
+
+      <SectionDivider />
+
+      <DigitalTransformationSection />
+
+      <SectionDivider />
+
+      <DedicatedTeamBanner />
+
+      <SectionDivider />
+
+      <WorkSection />
 
       <HeroServicesWrapper variant="default" autoHeight>
         <ServicesSectionStatic />
