@@ -3019,7 +3019,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--color-card-overlay);
+    background: linear-gradient(to top, rgba(13, 30, 33, 0.92) 0%, rgba(13, 30, 33, 0.55) 50%, rgba(13, 30, 33, 0.15) 100%);
     z-index: 1;
     pointer-events: none;
   }
@@ -3142,11 +3142,16 @@
     color: #FFFFFF;
     margin: 0;
     max-width: 80%;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   @media (min-width: 768px) {
     .cases-card-description {
       font-size: 14px;
+      -webkit-line-clamp: 5;
     }
   }
 
@@ -3154,12 +3159,14 @@
     .cases-card-description {
       font-size: 14px;
       max-width: 90%;
+      -webkit-line-clamp: 4;
     }
   }
 
   @media (min-width: 1280px) {
     .cases-card-description {
       font-size: 15px;
+      -webkit-line-clamp: 5;
     }
   }
 
