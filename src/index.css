@@ -12985,50 +12985,110 @@ details[open] .footer-arrow-icon {
 .pillar-row-image-overlay {
   position: absolute;
   inset: 0;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background: linear-gradient(to top, rgba(0, 0, 32, 0.65) 0%, rgba(0, 0, 32, 0.25) 45%, rgba(0, 0, 32, 0.05) 75%, transparent 100%);
+  padding: 24px;
+  gap: 8px;
+  background: rgba(13, 30, 33, 0.55);
+  overflow: hidden;
   pointer-events: none;
 }
 
-.pillar-row-image-overlay-content {
-  padding: 32px;
+@media (min-width: 768px) {
+  .pillar-row-image-overlay {
+    padding: 32px;
+    gap: 12px;
+  }
 }
 
-@media (min-width: 768px) {
-  .pillar-row-image-overlay-content {
-    padding: 40px;
+@media (min-width: 1024px) {
+  .pillar-row-image-overlay {
+    padding: 24px;
+    gap: 8px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .pillar-row-image-overlay {
+    padding: 32px;
+    gap: 12px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .pillar-row-image-overlay {
+    padding: 48px;
+    gap: 16px;
   }
 }
 
 .pillar-row-image-title {
-  font-family: var(--font-family-serif);
+  font-family: 'Inria Serif', serif;
   font-weight: 600;
-  font-size: var(--font-h4-mobile);
-  line-height: var(--lh-h4);
+  font-size: var(--font-h3-mobile);
+  line-height: 110%;
   color: #FFFFFF;
-  margin: 0 0 8px 0;
+  margin: 0;
+  max-width: 80%;
 }
 
 @media (min-width: 768px) {
   .pillar-row-image-title {
-    font-size: var(--font-h4-tablet);
+    font-size: var(--font-h3-tablet);
   }
 }
 
 @media (min-width: 1024px) {
   .pillar-row-image-title {
-    font-size: var(--font-h4-desktop);
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .pillar-row-image-title {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .pillar-row-image-title {
+    font-size: var(--font-h3-desktop);
   }
 }
 
 .pillar-row-image-subtitle {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Inria Serif', serif;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  line-height: 160%;
+  color: #FFFFFF;
   margin: 0;
-  max-width: 480px;
+  max-width: 80%;
+}
+
+@media (min-width: 768px) {
+  .pillar-row-image-subtitle {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pillar-row-image-subtitle {
+    font-size: 14px;
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .pillar-row-image-subtitle {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .pillar-row-image-subtitle {
+    font-size: 16px;
+  }
 }
