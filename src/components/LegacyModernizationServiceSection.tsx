@@ -20,13 +20,13 @@ export default function LegacyModernizationServiceSection() {
     <PillarRow
       variant="light"
       reverse
+      bgOverride="#FCFCFC"
       headline="Engineered for High-Volume reliability"
       intro="Managing complex bookings and transactions requires more than a simple interface—it requires a robust backend architecture. We specialize in building custom ticketing engines that handle high traffic, complex availability logic, and secure payment integrations."
       bulletsTitled={bulletPoints}
       image="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       imageOverlayTitle="Enterprise ticketing & booking solutions"
       imageAlt="Legacy Modernization"
-      bgOverride="#FCFCFC"
     />
   );
 }

@@ -19,12 +19,13 @@ export default function SoftwareEngineeringSection() {
   return (
     <PillarRow
       variant="light"
-      headline="Design that works as hard as your product"
+      bgOverride="#FFFFFF"
+      headline="Where business logic meets Human Centricity"
       intro="We don't just design for aesthetics; we design for conversion and operational efficiency. For larger organizations, this means creating design systems that can scale across departments and platforms while maintaining a seamless brand experience."
       bulletsTitled={bulletPoints}
       image="https://eheonmwcbdtoosllhgku.supabase.co/storage/v1/object/public/images/digital-products/ux2.webp"
-      imageOverlayTitle="UX/UI Design"
-      imageAlt="UX/UI Design"
+      imageOverlayTitle="High-Fidelity UX/UI Design"
+      imageAlt="High-Fidelity UX/UI Design"
     />
   );
 }
