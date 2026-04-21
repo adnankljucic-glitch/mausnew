@@ -12277,6 +12277,15 @@ details[open] .footer-arrow-icon {
   display: block;
 }
 
+@media (min-width: 1024px) {
+  .tech-card-headline-line {
+    display: inline;
+  }
+  .tech-card-headline-line + .tech-card-headline-line::before {
+    content: ' ';
+  }
+}
+
 .tech-card-text {
   font-family: 'Barlow', sans-serif;
   font-size: 15px;
