@@ -95,20 +95,24 @@ const processSteps: ProcessStep[] = [
 export default function ProcessSection() {
   return (
     <>
-      {processSteps.map((step, index) => (
-        <PillarRow
-          key={step.id}
-          variant="light"
-          reverse={index % 2 === 1}
-          headline={step.title}
-          intro={step.description}
-          bulletsTitled={step.bulletPoints}
-          image={step.image}
-          imageAlt={step.imageAlt}
-          imageOverlayTitle={step.imageHeadline}
-          imageOverlaySubtitle={step.imageSubheadline}
-        />
-      ))}
+      {processSteps.map((step, index) => {
+        const bgColors = ['#F7F8FA', '#FCFCFC', '#FFFFFF'];
+        return (
+          <PillarRow
+            key={step.id}
+            variant="light"
+            bgOverride={bgColors[index]}
+            reverse={index % 2 === 1}
+            headline={step.title}
+            intro={step.description}
+            bulletsTitled={step.bulletPoints}
+            image={step.image}
+            imageAlt={step.imageAlt}
+            imageOverlayTitle={step.imageHeadline}
+            imageOverlaySubtitle={step.imageSubheadline}
+          />
+        );
+      })}
     </>
   );
 }
