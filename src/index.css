@@ -10646,7 +10646,7 @@ details[open] .footer-arrow-icon {
 
 @media (min-width: 1200px) {
   .ai-bento-section {
-    padding: 120px 0;
+    padding: clamp(80px, 8vh, 120px) 0;
   }
 }
 
@@ -10670,20 +10670,20 @@ details[open] .footer-arrow-icon {
   .ai-bento-grid {
     grid-template-columns: 1fr 1.4fr 0.9fr;
     gap: 20px;
-    height: 600px;
+    height: min(600px, 72vh);
   }
 }
 
 @media (min-width: 1400px) {
   .ai-bento-grid {
     gap: 24px;
-    height: 620px;
+    height: min(620px, 74vh);
   }
 }
 
 @media (min-width: 1600px) {
   .ai-bento-grid {
-    height: 620px;
+    height: min(660px, 76vh);
   }
 }
 
