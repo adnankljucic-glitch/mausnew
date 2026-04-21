@@ -24,6 +24,7 @@ export interface PillarRowProps {
   imageOverlayTitle?: string;
   imageOverlaySubtitle?: string;
   imageAlt?: string;
+  bgOverride?: string;
 }
 
 export default function PillarRow({
@@ -39,6 +40,7 @@ export default function PillarRow({
   imageOverlayTitle,
   imageOverlaySubtitle,
   imageAlt,
+  bgOverride,
 }: PillarRowProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
@@ -143,6 +145,7 @@ export default function PillarRow({
       className={rowClass}
       initial="hidden"
       animate={isInView ? 'visible' : 'hidden'}
+      style={bgOverride ? { background: bgOverride } : undefined}
     >
       <div className="manyone-grid">
         <div className="pillar-row-inner">
