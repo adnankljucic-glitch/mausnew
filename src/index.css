@@ -10659,31 +10659,80 @@ details[open] .footer-arrow-icon {
   .ai-bento-grid {
     display: grid;
     grid-template-columns: 1fr 1.4fr;
-    gap: 20px;
+    gap: 28px;
     align-items: stretch;
+    grid-template-rows: auto;
     height: auto;
+  }
+
+  .ai-bento-text-column {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .ai-bento-main-image {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .ai-bento-right-column {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 0;
+  }
+
+  .ai-bento-small-image {
+    aspect-ratio: 16 / 9;
   }
 }
 
 @media (min-width: 1280px) {
   .ai-bento-grid {
-    grid-template-columns: 1fr 1.5fr;
-    gap: 20px;
-    height: 480px;
+    grid-template-columns: 1fr 1.6fr 1fr;
+    gap: 32px;
+    grid-template-rows: auto;
+    height: 520px;
+  }
+
+  .ai-bento-text-column {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .ai-bento-main-image {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .ai-bento-right-column {
+    grid-column: 3;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 0;
+  }
+
+  .ai-bento-small-image {
+    aspect-ratio: 4 / 3;
+    flex: 1;
   }
 }
 
 @media (min-width: 1440px) {
   .ai-bento-grid {
-    grid-template-columns: 1fr 1.4fr 0.9fr;
-    gap: 20px;
-    height: 520px;
+    grid-template-columns: 1fr 1.8fr 1fr;
+    gap: 40px;
+    height: 540px;
   }
 }
 
 @media (min-width: 1600px) {
   .ai-bento-grid {
-    gap: 24px;
+    gap: 40px;
     height: 560px;
   }
 }
@@ -10734,9 +10783,10 @@ details[open] .footer-arrow-icon {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1279px) {
   .ai-bento-headline {
-    font-size: 40px;
+    font-size: 34px;
+    line-height: 1.15;
   }
 }
 
@@ -10857,11 +10907,11 @@ details[open] .footer-arrow-icon {
   z-index: 1;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1279px) {
   .ai-bento-main-image {
-    aspect-ratio: unset;
-    height: 100%;
-    min-height: 420px;
+    aspect-ratio: 4 / 3;
+    height: auto;
+    max-height: 480px;
   }
 }
 
@@ -10895,17 +10945,7 @@ details[open] .footer-arrow-icon {
 
 @media (min-width: 1024px) {
   .ai-bento-right-column {
-    flex-direction: column;
-    gap: 20px;
-    display: none;
-  }
-}
-
-@media (min-width: 1440px) {
-  .ai-bento-right-column {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: grid;
   }
 }
 
