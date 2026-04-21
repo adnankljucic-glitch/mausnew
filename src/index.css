@@ -10646,7 +10646,13 @@ details[open] .footer-arrow-icon {
 
 @media (min-width: 1200px) {
   .ai-bento-section {
-    padding: clamp(80px, 8vh, 120px) 0;
+    padding: 80px 0;
+  }
+}
+
+@media (min-width: 1600px) {
+  .ai-bento-section {
+    padding: 100px 0;
   }
 }
 
@@ -10670,20 +10676,20 @@ details[open] .footer-arrow-icon {
   .ai-bento-grid {
     grid-template-columns: 1fr 1.4fr 0.9fr;
     gap: 20px;
-    height: min(600px, 72vh);
+    height: 520px;
   }
 }
 
 @media (min-width: 1400px) {
   .ai-bento-grid {
     gap: 24px;
-    height: min(620px, 74vh);
+    height: 580px;
   }
 }
 
 @media (min-width: 1600px) {
   .ai-bento-grid {
-    height: min(660px, 76vh);
+    height: 640px;
   }
 }
 
@@ -10858,15 +10864,17 @@ details[open] .footer-arrow-icon {
 
 @media (min-width: 1024px) {
   .ai-bento-main-image {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: unset;
     height: 100%;
+    min-height: 420px;
   }
 }
 
 @media (min-width: 1280px) {
   .ai-bento-main-image {
-    aspect-ratio: auto;
+    aspect-ratio: unset;
     height: 100%;
+    min-height: 480px;
   }
 }
 
