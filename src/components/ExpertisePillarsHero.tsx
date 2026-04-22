@@ -56,7 +56,7 @@ const pillarItems: PillarData[] = [
       { text: "Design systems that stay consistent across every platform and team" }
     ],
     keyTech: "Flutter · React · Next.js · TypeScript · Storybook",
-    image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1200"
+    image: "/integration.webp"
   }
 ];
 
