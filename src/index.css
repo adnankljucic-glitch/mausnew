@@ -998,7 +998,7 @@
 
   .solution-section {
     position: relative;
-    background: #000020;
+    background: #0A1F5C;
     padding: 80px 0 140px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
@@ -1094,7 +1094,7 @@
   /* STATIC SOLUTION SECTION - No animations, independent from home page */
   .solution-section-static {
     position: relative;
-    background: #000020;
+    background: #0A1F5C;
     padding: 80px 0 140px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
@@ -3849,7 +3849,7 @@
 
 /* TESTIMONIALS SECTION */
 .testimonials-section {
-  background: #000020;
+  background: #0A1F5C;
   padding: 60px 0;
   position: relative;
 }
@@ -4025,7 +4025,7 @@
 
 /* TESTIMONIALS SECTION - IMAGE CARDS */
 .testimonials-section {
-  background: #000020;
+  background: #0A1F5C;
   padding: 80px 0;
   position: relative;
 }
@@ -4819,7 +4819,7 @@
 
 /* FOOTER - MANYONE STYLE */
 .footer-section {
-  background: #000020;
+  background: #0A1F5C;
   padding: 0 0 40px;
   color: white;
 }
@@ -7349,7 +7349,7 @@ details[open] .footer-arrow-icon {
 
 .ready-section {
   position: relative;
-  background: #000020;
+  background: #0A1F5C;
   padding: 60px 0;
 }
 
