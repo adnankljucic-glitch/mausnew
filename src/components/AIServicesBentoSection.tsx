@@ -6,65 +6,48 @@ export default function AIServicesBentoSection() {
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
   return (
-    <section ref={sectionRef} className="ai-bento-section" style={{ background: '#040F39' }}>
+    <section ref={sectionRef} className="ai-bento-section">
       <div className="manyone-grid">
         <div className="ai-bento-grid">
-          <motion.div
-            className="ai-bento-text-column"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-          >
-            <h2 className="ai-bento-headline">From complex data to scalable business logic</h2>
-            <p className="ai-bento-subheadline">We turn raw data and legacy systems into intelligent, production-ready AI — built to perform at enterprise scale.</p>
-            <div className="ai-bento-list">
-              <h4>Custom AI Layer</h4>
-              <div className="ai-bento-divider" />
-              <h4>Enterprise Integration</h4>
-              <div className="ai-bento-divider" />
-              <h4>Cloud & Scalability</h4>
-              <div className="ai-bento-divider" />
-              <h4>Legacy Modernization</h4>
-            </div>
-                      </motion.div>
 
           <motion.div
-            className="ai-bento-main-image"
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.98 }}
-            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
+            className="ai-bento-label-column"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
           >
-            <img
-              src="/aibusiness.webp"
-              alt="AI and automation technology"
-            />
+            <div className="ai-bento-section-label">01 — AI Services</div>
           </motion.div>
 
-          <div className="ai-bento-right-column">
-            <motion.div
-              className="ai-bento-small-image"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
-            >
-              <img
-                src="/image_7.png"
-                alt="AI processor chip"
-              />
-            </motion.div>
+          <motion.div
+            className="ai-bento-content-column"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+          >
+            <h2 className="ai-bento-headline">
+              From complex data to<br />
+              scalable business logic
+            </h2>
 
-            <motion.div
-              className="ai-bento-accent-card"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
-            >
-              <span className="ai-bento-quote-mark">"</span>
-              <p className="ai-bento-quote-text">
-                By combining modern cloud-native architectures with a deep understanding of legacy environments, we ensure AI becomes a stable, high-performance asset for your operations.
+            <div className="ai-bento-body">
+              <p className="ai-bento-subheadline">
+                We turn raw data and legacy systems into intelligent, production-ready AI — built to perform at enterprise scale.
               </p>
-            </motion.div>
-          </div>
+
+              <div className="ai-bento-list">
+                <div className="ai-bento-list-item"><span>Custom AI Layer</span></div>
+                <div className="ai-bento-divider" />
+                <div className="ai-bento-list-item"><span>Enterprise Integration</span></div>
+                <div className="ai-bento-divider" />
+                <div className="ai-bento-list-item"><span>Cloud &amp; Scalability</span></div>
+                <div className="ai-bento-divider" />
+                <div className="ai-bento-list-item"><span>Legacy Modernization</span></div>
+                <div className="ai-bento-divider" />
+              </div>
+            </div>
+          </motion.div>
+
         </div>
       </div>
     </section>
