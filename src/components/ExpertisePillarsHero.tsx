@@ -20,7 +20,7 @@ const pillarItems: PillarData[] = [
       { text: "Evaluation frameworks that measure business ROI, not just model accuracy" }
     ],
     keyTech: "Azure OpenAI · Semantic Kernel · Vector databases · .NET 8",
-    image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200"
+    image: "/illustration-highlighting-concept-cloud-storage.webp"
   },
   {
     label: "Infrastructure, Scalability, and Security",
@@ -56,7 +56,7 @@ const pillarItems: PillarData[] = [
       { text: "Design systems that stay consistent across every platform and team" }
     ],
     keyTech: "Flutter · React · Next.js · TypeScript · Storybook",
-    image: "/illustration-highlighting-concept-cloud-storage.webp"
+    image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1200"
   }
 ];
 
