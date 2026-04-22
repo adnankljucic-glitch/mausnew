@@ -61,7 +61,7 @@ const processSteps: ProcessStep[] = [
         description: 'Building robust solutions optimized for the end-user on modern AWS and Azure ecosystems.',
       },
     ],
-    image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    image: '/office_kolega.webp',
     imageAlt: 'Product Development',
     imageHeadline: 'Product & concept development',
     imageSubheadline: 'Bringing a complex product to market requires more than code; it requires deep domain insight and structured development.',
