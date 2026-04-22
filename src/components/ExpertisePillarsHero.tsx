@@ -32,7 +32,7 @@ const pillarItems: PillarData[] = [
       { text: "Compliance and security hardening for regulated industries" }
     ],
     keyTech: "Azure · Kubernetes · Terraform · GitHub Actions",
-    image: "https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=1200"
+    image: "/server.webp"
   },
   {
     label: "Core Engineering",
