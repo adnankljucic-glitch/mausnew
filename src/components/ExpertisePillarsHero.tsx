@@ -44,7 +44,7 @@ const pillarItems: PillarData[] = [
       { text: "Continuous delivery pipelines with automated testing and observability" }
     ],
     keyTech: ".NET 8 · C# · PostgreSQL · Azure Service Bus · OpenTelemetry",
-    image: "/notes copy copy.webp"
+    image: "/office_kolega.webp"
   },
   {
     label: "Digital Experience (Mobile/Web)",

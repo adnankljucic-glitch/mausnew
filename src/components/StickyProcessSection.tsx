@@ -53,7 +53,7 @@ const defaultSteps: ProcessStep[] = [
 ];
 
 export default function StickyProcessSection({
-  backgroundImageUrl = "/power-lines-sunset.jpg",
+  backgroundImageUrl = "/aiback.webp",
   headline = "Our Process",
   subtext = "A clear, repeatable approach that turns ideas into reliable software—fast.",
   steps = defaultSteps,

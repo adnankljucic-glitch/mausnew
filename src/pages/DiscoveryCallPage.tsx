@@ -22,7 +22,7 @@ const specialists = [
     name: 'Almir Mesanovic',
     title: 'Technical Architect',
     email: 'almir@maus.ba',
-    image: '/almir.webp',
+    image: '/Almir.png',
   },
 ];
 

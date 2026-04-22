@@ -22,7 +22,7 @@ const slides: Slide[] = [
   },
   {
     id: 2,
-    backgroundImage: '/husejer.png',
+    backgroundImage: 'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1920',
     eyebrow: 'Web Design',
     headline: 'Inet Design',
     supportingText: 'Modern web platform delivering exceptional user experience and performance.',
