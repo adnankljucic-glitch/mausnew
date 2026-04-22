@@ -10588,7 +10588,7 @@ details[open] .footer-arrow-icon {
 
 /* AI BENTO SECTION — 2-column editorial layout */
 .ai-bento-section {
-  background: #F0EEE8;
+  background: #ffffff;
   padding: 80px 0;
 }
 
@@ -10613,14 +10613,14 @@ details[open] .footer-arrow-icon {
 .ai-bento-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 40px;
+  gap: 48px;
   width: 100%;
   align-items: start;
 }
 
 @media (min-width: 768px) {
   .ai-bento-grid {
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 0 64px;
     align-items: start;
   }
@@ -10628,21 +10628,21 @@ details[open] .footer-arrow-icon {
 
 @media (min-width: 1024px) {
   .ai-bento-grid {
-    grid-template-columns: 260px 1fr;
     gap: 0 80px;
   }
 }
 
 @media (min-width: 1280px) {
   .ai-bento-grid {
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 1.1fr 1fr;
     gap: 0 100px;
   }
 }
 
-/* Label column */
-.ai-bento-label-column {
-  padding-top: 6px;
+/* Left column */
+.ai-bento-left-column {
+  display: flex;
+  flex-direction: column;
 }
 
 .ai-bento-section-label {
@@ -10651,108 +10651,96 @@ details[open] .footer-arrow-icon {
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(10, 31, 92, 0.55);
+  color: rgba(10, 31, 92, 0.5);
   line-height: 1.4;
+  margin-bottom: 24px;
 }
 
 @media (min-width: 768px) {
   .ai-bento-section-label {
     font-size: 12px;
-    position: relative;
+    margin-bottom: 28px;
   }
-
-  .ai-bento-section-label::after {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 1px;
-    background: rgba(10, 31, 92, 0.25);
-    margin-top: 16px;
-  }
-}
-
-/* Content column */
-.ai-bento-content-column {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
 }
 
 .ai-bento-headline {
   font-family: var(--font-family-serif);
   font-weight: 400;
-  font-size: 40px;
+  font-size: 36px;
   line-height: 1.1;
   color: #0A1F5C;
-  margin: 0 0 48px 0;
+  margin: 0 0 28px 0;
   letter-spacing: -0.01em;
 }
 
 @media (min-width: 768px) {
   .ai-bento-headline {
-    font-size: 52px;
-    margin-bottom: 56px;
+    font-size: 44px;
+    margin-bottom: 32px;
   }
 }
 
 @media (min-width: 1024px) {
   .ai-bento-headline {
-    font-size: 64px;
-    margin-bottom: 64px;
+    font-size: 52px;
+    margin-bottom: 36px;
   }
 }
 
 @media (min-width: 1280px) {
   .ai-bento-headline {
-    font-size: 72px;
-    margin-bottom: 72px;
+    font-size: 56px;
   }
 }
 
 @media (min-width: 1600px) {
   .ai-bento-headline {
-    font-size: 80px;
+    font-size: 64px;
   }
 }
 
-.ai-bento-body {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
-}
-
-@media (min-width: 768px) {
-  .ai-bento-body {
-    grid-template-columns: 1fr 1fr;
-    gap: 0 64px;
-    align-items: start;
-  }
-}
-
-@media (min-width: 1280px) {
-  .ai-bento-body {
-    gap: 0 80px;
-  }
-}
-
-.ai-bento-subheadline {
+.ai-bento-description {
   font-family: 'Barlow', sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.7;
-  color: rgba(10, 31, 92, 0.65);
+  color: rgba(10, 31, 92, 0.55);
   margin: 0;
+  max-width: 480px;
 }
 
 @media (min-width: 768px) {
-  .ai-bento-subheadline {
-    font-size: 17px;
+  .ai-bento-description {
+    font-size: 16px;
   }
 }
 
-@media (min-width: 1280px) {
-  .ai-bento-subheadline {
-    font-size: 18px;
+/* Right column */
+.ai-bento-right-column {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0;
+}
+
+@media (min-width: 768px) {
+  .ai-bento-right-column {
+    padding-top: 8px;
+  }
+}
+
+.ai-bento-body-copy {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(10, 31, 92, 0.65);
+  margin: 0 0 40px 0;
+}
+
+@media (min-width: 768px) {
+  .ai-bento-body-copy {
+    font-size: 16px;
+    margin-bottom: 48px;
   }
 }
 
@@ -10768,20 +10756,20 @@ details[open] .footer-arrow-icon {
 .ai-bento-list-item span {
   font-family: 'Barlow', sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.4;
-  color: rgba(10, 31, 92, 0.75);
+  color: rgba(10, 31, 92, 0.7);
 }
 
 @media (min-width: 768px) {
   .ai-bento-list-item span {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 
 .ai-bento-divider {
   height: 1px;
-  background: rgba(10, 31, 92, 0.12);
+  background: rgba(10, 31, 92, 0.1);
   width: 100%;
 }
 
