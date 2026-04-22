@@ -108,48 +108,50 @@ export default function OutcomesSection({ backgroundColor }: OutcomesSectionProp
             In enterprise software, the most expensive code is the code you have to write twice. At MAUS, we eliminate "Development Drift" by shifting the complexity from the build phase to the discovery phase.
           </motion.p>
         </div>
+      </div>
 
-        <div className="outcomes-grid-desktop">
-          {outcomeCards.map((card, index) => (
-            <motion.div
-              key={card.id}
-              className="outcome-card"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <div className="outcome-card-image-wrapper">
-                {card.video ? (
-                  <motion.video
-                    src={card.video}
-                    className="outcome-card-image"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.7, ease: "easeOut" }}
-                  />
-                ) : (
-                  <motion.img
-                    src={card.image}
-                    alt={card.title}
-                    className="outcome-card-image"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.7, ease: "easeOut" }}
-                  />
-                )}
-              </div>
-              <div className="outcome-card-overlay" />
-              <div className="outcome-card-content">
-                <h3 className="outcome-card-title">{card.title}</h3>
-                <p className="outcome-card-description">{card.description}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+      <div className="outcomes-grid-desktop">
+        {outcomeCards.map((card, index) => (
+          <motion.div
+            key={card.id}
+            className="outcome-card"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
+            <div className="outcome-card-image-wrapper">
+              {card.video ? (
+                <motion.video
+                  src={card.video}
+                  className="outcome-card-image"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.7, ease: "easeOut" }}
+                />
+              ) : (
+                <motion.img
+                  src={card.image}
+                  alt={card.title}
+                  className="outcome-card-image"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.7, ease: "easeOut" }}
+                />
+              )}
+            </div>
+            <div className="outcome-card-overlay" />
+            <div className="outcome-card-content">
+              <h3 className="outcome-card-title">{card.title}</h3>
+              <p className="outcome-card-description">{card.description}</p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
 
+      <div className="manyone-grid">
         <div
           className="outcomes-slideshow-mobile"
           onTouchStart={handleTouchStart}
