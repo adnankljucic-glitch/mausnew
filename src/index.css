@@ -1883,8 +1883,7 @@
   .outcome-card {
     position: relative;
     overflow: hidden;
-    aspect-ratio: 4/5;
-    max-height: clamp(320px, 45vh, 500px);
+    height: clamp(320px, 45vh, 500px);
     background: #0A1929;
   }
 
