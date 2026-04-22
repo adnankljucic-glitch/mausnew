@@ -66,8 +66,8 @@ export default function ExpertisePillarsHero() {
       {pillarItems.map((item, index) => (
         <PillarRow
           key={item.headline}
-          variant={index === 0 || index === 1 || index === 2 ? 'light' : 'dark'}
-          bgOverride={index === 0 ? '#F7F8FA' : index === 1 ? '#F5F5F5' : index === 2 ? '#FAFAFA' : undefined}
+          variant={index === 0 || index === 1 || index === 2 || index === 3 ? 'light' : 'dark'}
+          bgOverride={index === 0 ? '#F7F8FA' : index === 1 ? '#F5F5F5' : index === 2 ? '#FAFAFA' : index === 3 ? '#FFFFFF' : undefined}
           reverse={index % 2 !== 0}
           eyebrow={item.label}
           headline={item.headline}
