@@ -8882,7 +8882,7 @@ details[open] .footer-arrow-icon {
   display: flex;
   align-items: center;
   padding: 60px 0;
-  background: linear-gradient(rgb(242, 240, 234) 0%, rgb(236, 234, 228) 100%);
+  background: #F7F8FA;
 }
 
 @media (min-width: 768px) {
