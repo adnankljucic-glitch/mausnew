@@ -3,15 +3,13 @@ import { Link, useLocation } from 'react-router-dom';
 import { X, Menu, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// ── Industry items (real content from IndustriesSection) ───────────────────
-
 const INDUSTRIES = [
   {
     label: 'Healthcare',
     to: '/industries/healthcare',
     desc: 'Secure, compliant clinical systems and patient platforms.',
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={24} height={24}>
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={22} height={22}>
         <path d="M16 28S5 22 5 14a6 6 0 0 1 11-3.5A6 6 0 0 1 27 14c0 8-11 14-11 14z" />
         <path d="M13 16h2l1-3 2 6 1-3h2" strokeWidth="1.2" />
       </svg>
@@ -19,10 +17,10 @@ const INDUSTRIES = [
   },
   {
     label: 'Booking & Ticketing',
-    to: '/cases/run-events',
+    to: '/cases',
     desc: 'High-concurrency reservation platforms built to scale.',
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={24} height={24}>
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={22} height={22}>
         <rect x="4" y="8" width="24" height="18" rx="2" />
         <path d="M4 14h24M10 4v6M22 4v6" />
         <circle cx="11" cy="21" r="1" fill="currentColor" />
@@ -36,7 +34,7 @@ const INDUSTRIES = [
     to: '/industries',
     desc: 'Fraud-resistant financial software with full compliance.',
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={24} height={24}>
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={22} height={22}>
         <rect x="3" y="9" width="26" height="16" rx="2" />
         <path d="M3 15h26M8 21h4M22 21h2" />
       </svg>
@@ -47,7 +45,7 @@ const INDUSTRIES = [
     to: '/industries',
     desc: 'Smart grid and resource management systems.',
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={24} height={24}>
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={22} height={22}>
         <path d="M18 3L6 18h8l-2 11 12-15h-8l2-11z" />
       </svg>
     ),
@@ -57,7 +55,7 @@ const INDUSTRIES = [
     to: '/industries',
     desc: 'Predictive IoT systems and smart factory automation.',
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={24} height={24}>
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={22} height={22}>
         <rect x="10" y="10" width="12" height="12" rx="1.5" />
         <path d="M16 3v4M16 25v4M3 16h4M25 16h4M7.5 7.5l2.5 2.5M22 7.5l-2.5 2.5M7.5 24.5l2.5-2.5M22 24.5l-2.5-2.5" />
         <circle cx="16" cy="16" r="2" />
@@ -69,7 +67,7 @@ const INDUSTRIES = [
     to: '/industries',
     desc: 'Automated valuation and tenant management portals.',
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={24} height={24}>
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={22} height={22}>
         <path d="M4 14l12-9 12 9v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V14z" />
         <path d="M13 30v-8h6v8" />
       </svg>
@@ -77,17 +75,16 @@ const INDUSTRIES = [
   },
 ];
 
-// ── Header ─────────────────────────────────────────────────────────────────
-
 function Header() {
-  const [mobileOpen, setMobileOpen]     = useState(false);
-  const [scrolled, setScrolled]         = useState(false);
-  const [visible, setVisible]           = useState(true);
-  const [lastY, setLastY]               = useState(0);
-  const [isMobile, setIsMobile]         = useState(window.innerWidth < 1024);
-  const [dropOpen, setDropOpen]         = useState(false);
-  const [mobileIndOpen, setMobileInd]   = useState(false);
-  const dropRef                         = useRef<HTMLDivElement>(null);
+  const [mobileOpen, setMobileOpen]   = useState(false);
+  const [scrolled, setScrolled]       = useState(false);
+  const [visible, setVisible]         = useState(true);
+  const [lastY, setLastY]             = useState(0);
+  const [isMobile, setIsMobile]       = useState(window.innerWidth < 1024);
+  const [dropOpen, setDropOpen]       = useState(false);
+  const [mobileIndOpen, setMobileInd] = useState(false);
+  const triggerRef                    = useRef<HTMLButtonElement>(null);
+  const megaRef                       = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
   useEffect(() => { setMobileOpen(false); setDropOpen(false); }, [location.pathname]);
@@ -114,104 +111,67 @@ function Header() {
   }, [lastY]);
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') { setDropOpen(false); setMobileOpen(false); } };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') { setDropOpen(false); setMobileOpen(false); }
+    };
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, []);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
-    const onClick = (e: MouseEvent) => {
-      if (dropRef.current && !dropRef.current.contains(e.target as Node)) setDropOpen(false);
+    const onDown = (e: MouseEvent) => {
+      if (
+        triggerRef.current && !triggerRef.current.contains(e.target as Node) &&
+        megaRef.current   && !megaRef.current.contains(e.target as Node)
+      ) {
+        setDropOpen(false);
+      }
     };
-    document.addEventListener('mousedown', onClick);
-    return () => document.removeEventListener('mousedown', onClick);
+    document.addEventListener('mousedown', onDown);
+    return () => document.removeEventListener('mousedown', onDown);
   }, []);
 
   return (
     <header className={`premium-header ${scrolled ? 'scrolled' : ''} ${visible ? 'header-visible' : 'header-hidden'}`}>
       <div className="manyone-grid premium-header-inner">
 
-        {/* Logo */}
         <Link className="premium-logo" to="/">
           <img src="/maus-logo-light.svg" className="maus-logo" alt="MAUS" />
         </Link>
 
-        {/* Desktop nav */}
         {!isMobile && (
           <>
             <nav className="premium-nav">
               <Link to="/services"  className="nav-link">Services</Link>
               <Link to="/expertise" className="nav-link">Expertise</Link>
 
-              {/* Industries with dropdown */}
-              <div ref={dropRef} style={{ position: 'relative' }}>
-                <button
-                  className="nav-link industries-trigger"
-                  onClick={() => setDropOpen(o => !o)}
-                  aria-expanded={dropOpen}
-                  aria-haspopup="true"
-                >
-                  Industries
-                  <ChevronDown
-                    size={13}
-                    strokeWidth={2.2}
-                    style={{
-                      display: 'inline-block',
-                      marginLeft: 4,
-                      verticalAlign: 'middle',
-                      transition: 'transform 0.2s ease',
-                      transform: dropOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-                    }}
-                  />
-                </button>
-
-                <AnimatePresence>
-                  {dropOpen && (
-                    <motion.div
-                      className="ind-mega"
-                      initial={{ opacity: 0, y: -8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -8 }}
-                      transition={{ duration: 0.18, ease: 'easeOut' }}
-                    >
-                      {/* Left: headline */}
-                      <div className="ind-mega-left">
-                        <p className="ind-mega-eyebrow">INDUSTRIES</p>
-                        <h3 className="ind-mega-headline">
-                          Deep sector expertise across the industries{' '}
-                          <em>we know best</em>.
-                        </h3>
-                      </div>
-
-                      {/* Right: 2×3 grid */}
-                      <div className="ind-mega-grid">
-                        {INDUSTRIES.map((item) => (
-                          <Link
-                            key={item.label}
-                            to={item.to}
-                            className="ind-mega-card"
-                            onClick={() => setDropOpen(false)}
-                          >
-                            <span className="ind-mega-icon">{item.icon}</span>
-                            <span className="ind-mega-card-title">{item.label}</span>
-                            <span className="ind-mega-card-desc">{item.desc}</span>
-                          </Link>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+              <button
+                ref={triggerRef}
+                className="industries-trigger"
+                onClick={() => setDropOpen(o => !o)}
+                aria-expanded={dropOpen}
+                aria-haspopup="true"
+              >
+                Industries
+                <ChevronDown
+                  size={13}
+                  strokeWidth={2.2}
+                  style={{
+                    marginLeft: 4,
+                    transition: 'transform 0.2s ease',
+                    transform: dropOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                  }}
+                />
+              </button>
 
               <Link to="/cases"   className="nav-link">Cases</Link>
               <a    href="#about" className="nav-link">About Us</a>
             </nav>
+
             <Link className="premium-cta" to="/discovery">Let's Talk</Link>
           </>
         )}
 
-        {/* Mobile burger */}
         {isMobile && (
           <button
             className={`premium-burger ${mobileOpen ? 'menu-open' : ''}`}
@@ -226,7 +186,50 @@ function Header() {
         )}
       </div>
 
-      {/* Mobile full-screen menu */}
+      {/* ── Industries mega-dropdown — direct child of <header> so fixed pos works from viewport edge ── */}
+      <AnimatePresence>
+        {!isMobile && dropOpen && (
+          <motion.div
+            ref={megaRef}
+            className="ind-mega"
+            role="menu"
+            aria-label="Industries submenu"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.18, ease: 'easeOut' }}
+          >
+            {/* Left: intro text */}
+            <div className="ind-mega-left">
+              <span className="ind-mega-rule" />
+              <p className="ind-mega-eyebrow">INDUSTRIES</p>
+              <h3 className="ind-mega-headline">
+                Deep sector expertise across the industries{' '}
+                <em>we know best</em>.
+              </h3>
+            </div>
+
+            {/* Right: 3×2 grid */}
+            <div className="ind-mega-grid">
+              {INDUSTRIES.map((item) => (
+                <Link
+                  key={item.label}
+                  to={item.to}
+                  role="menuitem"
+                  className="ind-mega-card"
+                  onClick={() => setDropOpen(false)}
+                >
+                  <span className="ind-mega-icon">{item.icon}</span>
+                  <span className="ind-mega-card-title">{item.label}</span>
+                  <span className="ind-mega-card-desc">{item.desc}</span>
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ── Mobile full-screen menu ── */}
       <AnimatePresence>
         {isMobile && mobileOpen && (
           <motion.div
@@ -239,7 +242,6 @@ function Header() {
             <Link to="/services"  onClick={() => setMobileOpen(false)}>Services</Link>
             <Link to="/expertise" onClick={() => setMobileOpen(false)}>Expertise</Link>
 
-            {/* Industries accordion on mobile */}
             <button
               className="mobile-ind-trigger"
               onClick={() => setMobileInd(o => !o)}
