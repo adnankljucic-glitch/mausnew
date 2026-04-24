@@ -199,16 +199,6 @@ export default function HealthcareSections() {
             ))}
           </div>
 
-          <motion.div
-            className="hc-tech-row"
-            initial={{ opacity: 0 }}
-            animate={expertiseInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.5 }}
-          >
-            {techStack.map((tech) => (
-              <span key={tech}>{tech}</span>
-            ))}
-          </motion.div>
         </div>
       </section>
 
