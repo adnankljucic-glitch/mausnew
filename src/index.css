@@ -8521,14 +8521,14 @@ details[open] .footer-arrow-icon {
   }
 }
 
-.hc-intro-grid {
+.manyone-grid.hc-intro-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 40px;
 }
 
 @media (min-width: 900px) {
-  .hc-intro-grid {
+  .manyone-grid.hc-intro-grid {
     grid-template-columns: 1fr 1.7fr;
     gap: 80px;
     align-items: start;
