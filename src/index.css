@@ -1697,9 +1697,9 @@
     gap: 4px;
     color: #ffffff !important;
     font-family: 'Barlow', sans-serif;
-    font-size: 11px;
+    font-size: 15px;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     transition: color 0.3s ease;
   }
