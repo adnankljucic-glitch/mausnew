@@ -5570,13 +5570,13 @@ details[open] .footer-arrow-icon {
 
 @media (min-width: 1024px) {
   .ai-hero-headline {
-    max-width: 18ch;
+    max-width: 24ch;
   }
 }
 
 @media (min-width: 1440px) {
   .ai-hero-headline {
-    max-width: 20ch;
+    max-width: 24ch;
   }
 }
 
