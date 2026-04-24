@@ -217,76 +217,181 @@ export default function RunEventsSections() {
         </div>
       </section>
 
-      {/* ── STATS BAR ────────────────────────────────────────────────────── */}
-      <section style={{ background: '#F7F8FA', borderTop: '1px solid #E3E6EB', borderBottom: '1px solid #E3E6EB' }}>
+      {/* ── 02 — PLATFORM SECTION (stats + features + dashboard mockup) ── */}
+      <section ref={phasesRef} className="re-platform">
         <div className="manyone-grid">
-          <div className="re-stats-grid">
-            {[
-              { value: '<8s', label: 'Check-in time at scale' },
-              { value: '3',   label: 'Lifecycle phases unified' },
-              { value: '4+',  label: 'Specialized AI agents' },
-              { value: '5 yrs', label: 'Ongoing partnership' },
-            ].map((s) => (
-              <FadeIn key={s.label} className="re-stat">
-                <p className="re-stat-value">{s.value}</p>
-                <p className="re-stat-label">{s.label}</p>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
+          <div className="re-platform-inner">
 
-      {/* ── 02 — LIFECYCLE PHASES ────────────────────────────────────────── */}
-      <section ref={phasesRef} className="hc-expertise">
-        <div className="manyone-grid">
-          <motion.div
-            className="hc-expertise-header"
-            initial={{ opacity: 0, y: 20 }}
-            animate={phasesInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-          >
-            <p className="hc-eyebrow">Platform Architecture</p>
-            <h2 className="hc-expertise-headline">
-              Built around the full event lifecycle.
-            </h2>
-            <p className="hc-expertise-lead">
-              From early planning to post-event insights, run.events provides a structured approach that
-              connects every stage into one cohesive experience — for organizers and attendees alike.
-            </p>
-          </motion.div>
+            {/* LEFT: text + feature list */}
+            <motion.div
+              className="re-platform-left"
+              initial={{ opacity: 0, y: 28 }}
+              animate={phasesInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
+            >
+              {/* Eyebrow */}
+              <div className="re-platform-eyebrow-row">
+                <span className="re-platform-rule" />
+                <span className="re-platform-eyebrow">Our Platform</span>
+              </div>
 
-          <div className="hc-expertise-grid">
-            {phases.map((card, i) => (
-              <motion.div
-                key={i}
-                className="hc-exp-card"
-                initial={{ opacity: 0, y: 30 }}
-                animate={phasesInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 + i * 0.08 }}
-              >
-                <span className="hc-exp-num">{card.num}</span>
-                <p className="hc-exp-cat">{card.category}</p>
-                <h3 className="hc-exp-title">{card.title}</h3>
-                <p className="hc-exp-body">{card.body}</p>
-                <div className="hc-exp-tags">
-                  {card.tags.map((tag) => (
-                    <span key={tag} className="hc-exp-tag">{tag}</span>
-                  ))}
+              {/* Headline */}
+              <h2 className="re-platform-headline">
+                A complete event<br />management ecosystem.
+              </h2>
+
+              {/* Lead */}
+              <p className="re-platform-lead">
+                run.events combines powerful planning tools, real-time on-site execution, and deep
+                analytics — replacing five disconnected tools with one unified, AI-augmented platform.
+              </p>
+
+              {/* Stats row */}
+              <div className="re-platform-stats">
+                {[
+                  { value: '<8s',   label: 'Check-in time at scale' },
+                  { value: '3',     label: 'Lifecycle phases unified' },
+                  { value: '4+',    label: 'Specialized AI agents' },
+                  { value: '5 yrs', label: 'Ongoing partnership' },
+                ].map((s) => (
+                  <div key={s.label} className="re-platform-stat">
+                    <p className="re-platform-stat-value">{s.value}</p>
+                    <p className="re-platform-stat-label">{s.label}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Feature list */}
+              <ul className="re-platform-features">
+                {[
+                  {
+                    icon: (
+                      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" width={18} height={18}>
+                        <rect x="2" y="4" width="16" height="13" rx="1.5" />
+                        <path d="M2 8h16M6 2v3M14 2v3" />
+                      </svg>
+                    ),
+                    title: 'End-to-end event planning',
+                    desc: 'Agendas, speakers, sponsors, ticketing, and marketing campaigns in one drag-and-drop workspace.',
+                  },
+                  {
+                    icon: (
+                      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" width={18} height={18}>
+                        <path d="M4 16l3-4 3 2 4-6" />
+                        <circle cx="16" cy="4" r="2" />
+                        <path d="M14.5 4H3" />
+                      </svg>
+                    ),
+                    title: 'Real-time analytics & reporting',
+                    desc: 'Revenue, attendee behavior, session performance, and sponsor ROI — updated live during the event.',
+                  },
+                  {
+                    icon: (
+                      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" width={18} height={18}>
+                        <rect x="5" y="2" width="10" height="16" rx="1.5" />
+                        <path d="M8 5h4M9 15h2" />
+                        <rect x="7" y="8" width="6" height="4" rx="0.5" />
+                      </svg>
+                    ),
+                    title: 'White-label mobile app',
+                    desc: 'Fully branded attendee app with session schedules, networking, gamification, and live notifications.',
+                  },
+                  {
+                    icon: (
+                      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" width={18} height={18}>
+                        <circle cx="10" cy="10" r="7" />
+                        <path d="M10 3v7l4 2" />
+                      </svg>
+                    ),
+                    title: 'Sub-8-second on-site check-in',
+                    desc: 'Kiosks, staffed desks, and mobile check-in with real-time badge printing and live arrival dashboards.',
+                  },
+                ].map((f, i) => (
+                  <motion.li
+                    key={i}
+                    className="re-platform-feature"
+                    initial={{ opacity: 0, x: -12 }}
+                    animate={phasesInView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.5, ease: 'easeOut', delay: 0.3 + i * 0.1 }}
+                  >
+                    <span className="re-platform-feature-icon">{f.icon}</span>
+                    <div>
+                      <p className="re-platform-feature-title">{f.title}</p>
+                      <p className="re-platform-feature-desc">{f.desc}</p>
+                    </div>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* RIGHT: browser-framed dashboard mockup */}
+            <motion.div
+              className="re-platform-right"
+              initial={{ opacity: 0, y: 32 }}
+              animate={phasesInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            >
+              <div className="re-dashboard">
+                {/* Browser chrome */}
+                <div className="re-dashboard-chrome">
+                  <div className="re-dashboard-dots">
+                    <span /><span /><span />
+                  </div>
+                  <div className="re-dashboard-url">run.events — Admin Dashboard</div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
 
-          <motion.div
-            className="hc-tech-row"
-            initial={{ opacity: 0 }}
-            animate={phasesInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.5 }}
-          >
-            {techStack.map((tech) => (
-              <span key={tech}>{tech}</span>
-            ))}
-          </motion.div>
+                {/* Dashboard body */}
+                <div className="re-dashboard-body">
+                  {/* Stat cards */}
+                  <div className="re-db-stats">
+                    <div className="re-db-stat-card re-db-stat-primary">
+                      <p className="re-db-stat-val">1,284</p>
+                      <p className="re-db-stat-lbl">Registered attendees</p>
+                    </div>
+                    <div className="re-db-stat-card">
+                      <p className="re-db-stat-val re-db-green">↑ 22%</p>
+                      <p className="re-db-stat-lbl">vs. last event</p>
+                    </div>
+                    <div className="re-db-stat-card">
+                      <p className="re-db-stat-val">94%</p>
+                      <p className="re-db-stat-lbl">Check-in rate</p>
+                    </div>
+                  </div>
+
+                  {/* Bar chart */}
+                  <div className="re-db-chart-section">
+                    <p className="re-db-section-label">Registrations — last 7 days</p>
+                    <div className="re-db-bars">
+                      {[38, 55, 42, 68, 90, 75, 100].map((h, i) => (
+                        <div key={i} className="re-db-bar-wrap">
+                          <div
+                            className={`re-db-bar${i === 4 ? ' re-db-bar-active' : ''}`}
+                            style={{ height: `${h}%` }}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Session table */}
+                  <div className="re-db-table">
+                    {[
+                      { name: 'Opening Keynote',        val: '486 attendees', badge: '+18%' },
+                      { name: 'AI in Event Tech',       val: '312 attendees', badge: '+14%' },
+                      { name: 'Networking Lunch',       val: '284 attendees', badge: '→ Stable' },
+                    ].map((row, i) => (
+                      <div key={i} className="re-db-row">
+                        <span className="re-db-row-name">{row.name}</span>
+                        <span className="re-db-row-val">{row.val}</span>
+                        <span className={`re-db-badge${row.badge.startsWith('→') ? ' re-db-badge-neutral' : ''}`}>{row.badge}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+          </div>
         </div>
       </section>
 

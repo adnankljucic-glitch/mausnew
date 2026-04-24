@@ -13683,3 +13683,362 @@ details[open] .footer-arrow-icon {
   line-height: 1.7;
   color: rgba(0,0,0,0.6);
 }
+
+/* ─────────────────────────────────────────────
+   RUN.EVENTS — PLATFORM SECTION
+───────────────────────────────────────────── */
+
+.re-platform {
+  background: #ffffff;
+  padding: 100px 0;
+}
+
+@media (min-width: 768px) {
+  .re-platform {
+    padding: 120px 0;
+  }
+}
+
+.re-platform-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .re-platform-inner {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 80px;
+    align-items: center;
+  }
+}
+
+/* ── Left column ── */
+.re-platform-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.re-platform-eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.re-platform-rule {
+  display: block;
+  width: 36px;
+  height: 1.5px;
+  background: #0B1F64;
+  flex-shrink: 0;
+}
+
+.re-platform-eyebrow {
+  font-family: 'Barlow', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #0B1F64;
+}
+
+.re-platform-headline {
+  font-family: var(--font-family-serif);
+  font-size: clamp(36px, 4.5vw, 58px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #0B1F64;
+  margin-bottom: 20px;
+}
+
+.re-platform-lead {
+  font-family: var(--font-family-sans);
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 36px;
+  max-width: 480px;
+}
+
+/* Stats mini-row */
+.re-platform-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-bottom: 40px;
+  border-top: 1px solid #E3E6EB;
+  border-left: 1px solid #E3E6EB;
+}
+
+.re-platform-stat {
+  flex: 1 1 100px;
+  padding: 16px 20px 14px;
+  border-right: 1px solid #E3E6EB;
+  border-bottom: 1px solid #E3E6EB;
+}
+
+.re-platform-stat-value {
+  font-family: var(--font-family-serif);
+  font-size: clamp(22px, 2.8vw, 32px);
+  font-weight: 700;
+  color: #0B1F64;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 5px;
+}
+
+.re-platform-stat-label {
+  font-family: var(--font-family-sans);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6B7280;
+  font-weight: 500;
+}
+
+/* Feature list */
+.re-platform-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.re-platform-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid #E3E6EB;
+}
+
+.re-platform-feature:first-child {
+  border-top: 1px solid #E3E6EB;
+}
+
+.re-platform-feature-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #0B1F64;
+  line-height: 0;
+}
+
+.re-platform-feature-title {
+  font-family: var(--font-family-sans);
+  font-size: 14px;
+  font-weight: 700;
+  color: #0B1F64;
+  margin-bottom: 4px;
+  letter-spacing: 0.01em;
+}
+
+.re-platform-feature-desc {
+  font-family: var(--font-family-sans);
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+/* ── Right column — browser mockup ── */
+.re-platform-right {
+  position: relative;
+}
+
+.re-dashboard {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px -12px rgba(11, 31, 100, 0.22), 0 4px 16px -4px rgba(11, 31, 100, 0.12);
+  border: 1px solid rgba(11, 31, 100, 0.12);
+}
+
+/* Browser chrome bar */
+.re-dashboard-chrome {
+  background: #0B1F64;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.re-dashboard-dots {
+  display: flex;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.re-dashboard-dots span {
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.re-dashboard-url {
+  font-family: 'Barlow', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.01em;
+  flex: 1;
+  text-align: center;
+}
+
+/* Dashboard body */
+.re-dashboard-body {
+  background: #F4F6FB;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Stat cards row */
+.re-db-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.re-db-stat-card {
+  background: #ffffff;
+  border: 1px solid #E3E6EB;
+  border-radius: 6px;
+  padding: 14px 16px;
+}
+
+.re-db-stat-primary {
+  background: #0B1F64;
+  border-color: #0B1F64;
+}
+
+.re-db-stat-primary .re-db-stat-val {
+  color: #ffffff;
+}
+
+.re-db-stat-primary .re-db-stat-lbl {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.re-db-stat-val {
+  font-family: var(--font-family-serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: #0B1F64;
+  line-height: 1;
+  margin-bottom: 5px;
+  letter-spacing: -0.01em;
+}
+
+.re-db-green {
+  color: #1a7a4a !important;
+}
+
+.re-db-stat-lbl {
+  font-family: var(--font-family-sans);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6B7280;
+  font-weight: 500;
+}
+
+/* Bar chart */
+.re-db-chart-section {
+  background: #ffffff;
+  border: 1px solid #E3E6EB;
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.re-db-section-label {
+  font-family: var(--font-family-sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B7280;
+  margin-bottom: 14px;
+}
+
+.re-db-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 72px;
+}
+
+.re-db-bar-wrap {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.re-db-bar {
+  width: 100%;
+  background: #C5CEEA;
+  border-radius: 3px 3px 0 0;
+  transition: background 0.2s;
+}
+
+.re-db-bar-active {
+  background: #0B1F64;
+}
+
+/* Session table */
+.re-db-table {
+  background: #ffffff;
+  border: 1px solid #E3E6EB;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.re-db-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 16px;
+  border-bottom: 1px solid #F0F2F7;
+}
+
+.re-db-row:last-child {
+  border-bottom: none;
+}
+
+.re-db-row-name {
+  font-family: var(--font-family-sans);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #0B1F64;
+  flex: 1;
+}
+
+.re-db-row-val {
+  font-family: var(--font-family-sans);
+  font-size: 12px;
+  color: #4B5466;
+  font-weight: 500;
+}
+
+.re-db-badge {
+  font-family: var(--font-family-sans);
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #1a7a4a;
+  background: #e6f4ed;
+  padding: 3px 8px;
+  border-radius: 20px;
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+}
+
+.re-db-badge-neutral {
+  color: #4B5466;
+  background: #f0f2f7;
+}
