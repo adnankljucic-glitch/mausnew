@@ -10688,7 +10688,7 @@ details[open] .footer-arrow-icon {
   line-height: 1.6;
   color: rgba(10, 31, 92, 0.6);
   margin: 0;
-  max-width: 100%;
+  max-width: 50%;
 }
 
 @media (min-width: 768px) {
