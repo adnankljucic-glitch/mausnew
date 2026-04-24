@@ -1709,6 +1709,16 @@
     color: #FFCD00 !important;
   }
 
+  /* ── MEGA CARD hover (background only — rest is inline) ── */
+  .mega-card-hover:hover {
+    background: rgba(0, 0, 0, 0.025);
+  }
+
+  /* Remove right border on every 3rd card */
+  .mega-card-hover:nth-child(3n) {
+    border-right: none !important;
+  }
+
   /* ── MOBILE INDUSTRIES SECTION ── */
   .mobile-industries-section {
     width: 100%;

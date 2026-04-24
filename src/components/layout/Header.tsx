@@ -12,20 +12,22 @@ interface IndustryItem {
   desc: string;
 }
 
-// ── SVG helpers ────────────────────────────────────────────────────────────
+// ── Arrow icon ─────────────────────────────────────────────────────────────
 
-const ArrowSvg = () => (
-  <svg
-    viewBox="0 0 14 14"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5"
-    strokeLinecap="round"
-    className="w-[13px] h-[13px] absolute top-4 right-4 opacity-0 text-[rgba(0,0,0,0.2)] transition-all duration-150 group-hover:opacity-100 group-hover:text-brand-secondary"
-  >
-    <path d="M3 11L11 3M6 3h5v5" />
-  </svg>
-);
+function ArrowIcon() {
+  return (
+    <svg
+      viewBox="0 0 14 14"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      style={{ width: 13, height: 13 }}
+    >
+      <path d="M3 11L11 3M6 3h5v5" />
+    </svg>
+  );
+}
 
 // ── Industry data ──────────────────────────────────────────────────────────
 
@@ -35,7 +37,7 @@ const industries: IndustryItem[] = [
     to: '/industries/healthcare',
     desc: 'Secure, compliant clinical systems and patient platforms.',
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" style={{ width: '100%', height: '100%' }}>
         <path d="M16 28s-11-6-11-14a6 6 0 0 1 11-3.5A6 6 0 0 1 27 14c0 8-11 14-11 14z" />
         <path d="M13 16h2l1-3 2 6 1-3h2" strokeWidth="1.2" />
       </svg>
@@ -46,7 +48,7 @@ const industries: IndustryItem[] = [
     to: '/#industries',
     desc: 'High-concurrency reservation platforms built to scale.',
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" style={{ width: '100%', height: '100%' }}>
         <rect x="4" y="8" width="24" height="18" rx="2" />
         <path d="M4 14h24M10 4v6M22 4v6" />
         <circle cx="11" cy="19" r="1" fill="currentColor" />
@@ -60,7 +62,7 @@ const industries: IndustryItem[] = [
     to: '/#industries',
     desc: 'Fraud-resistant financial software with full compliance.',
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" style={{ width: '100%', height: '100%' }}>
         <rect x="3" y="9" width="26" height="16" rx="2" />
         <path d="M3 15h26" />
         <path d="M8 20h4M20 20h4" />
@@ -73,7 +75,7 @@ const industries: IndustryItem[] = [
     to: '/#industries',
     desc: 'Smart grid and resource management systems.',
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" style={{ width: '100%', height: '100%' }}>
         <path d="M18 3L6 18h8l-2 11 12-15h-8l2-11z" />
       </svg>
     ),
@@ -83,7 +85,7 @@ const industries: IndustryItem[] = [
     to: '/#industries',
     desc: 'Predictive IoT systems and smart factory automation.',
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" style={{ width: '100%', height: '100%' }}>
         <rect x="10" y="10" width="12" height="12" rx="1.5" />
         <path d="M16 3v4M16 25v4M3 16h4M25 16h4M7 7l3 3M22 7l-3 3M7 25l3-3M22 25l-3-3" />
         <circle cx="16" cy="16" r="2" />
@@ -95,7 +97,7 @@ const industries: IndustryItem[] = [
     to: '/#industries',
     desc: 'Automated valuation and tenant management portals.',
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" style={{ width: '100%', height: '100%' }}>
         <path d="M4 14l12-9 12 9v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V14z" />
         <path d="M13 30v-8h6v8" />
       </svg>
@@ -106,9 +108,9 @@ const industries: IndustryItem[] = [
 // ── Framer Motion variants ─────────────────────────────────────────────────
 
 const megaVariants = {
-  hidden: { opacity: 0, y: -8 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.2, ease: 'easeOut' } },
-  exit:   { opacity: 0, y: -6, transition: { duration: 0.14, ease: 'easeIn' } },
+  hidden:  { opacity: 0, y: -10 },
+  visible: { opacity: 1, y: 0,   transition: { duration: 0.22, ease: 'easeOut' } },
+  exit:    { opacity: 0, y: -8,  transition: { duration: 0.15, ease: 'easeIn' } },
 };
 
 const mobileExpandVariants = {
@@ -119,38 +121,91 @@ const mobileExpandVariants = {
 
 // ── MegaCard ──────────────────────────────────────────────────────────────
 
-function MegaCard({ item, onClick }: { item: IndustryItem; onClick: () => void }) {
+function MegaCard({ item, onClick, isLast3 }: { item: IndustryItem; onClick: () => void; isLast3: boolean }) {
   return (
     <Link
       to={item.to}
       onClick={onClick}
       role="menuitem"
-      className="
-        group relative flex flex-col gap-3.5
-        px-7 pt-9 pb-8
-        border-r border-b border-black/[0.08]
-        text-decoration-none transition-colors duration-150
-        hover:bg-black/[0.025]
-        [&:nth-child(3n)]:border-r-0
-        [&:nth-child(n+4)]:border-b-0
-      "
+      style={{
+        position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 14,
+        padding: '32px 28px 28px',
+        textDecoration: 'none',
+        transition: 'background 0.15s ease',
+        cursor: 'pointer',
+        borderRight: '1px solid rgba(0,0,0,0.08)',
+        borderBottom: isLast3 ? 'none' : '1px solid rgba(0,0,0,0.08)',
+        overflow: 'visible',
+      }}
+      className="mega-card-hover group"
     >
-      <ArrowSvg />
+      {/* Arrow — top right */}
+      <span
+        className="group-hover:opacity-100 group-hover:text-[#002395]"
+        style={{
+          position: 'absolute',
+          top: 16,
+          right: 16,
+          opacity: 0,
+          color: 'rgba(0,0,0,0.2)',
+          transition: 'opacity 0.15s ease, color 0.15s ease',
+          lineHeight: 0,
+        }}
+      >
+        <ArrowIcon />
+      </span>
 
       {/* Icon */}
-      <div className="w-8 h-8 text-[#0d1b3e] transition-colors duration-150 group-hover:text-brand-secondary flex-shrink-0">
+      <span
+        className="group-hover:text-[#002395]"
+        style={{
+          width: 28,
+          height: 28,
+          flexShrink: 0,
+          color: '#0d1b3e',
+          transition: 'color 0.15s ease',
+          display: 'block',
+        }}
+      >
         {item.icon}
-      </div>
+      </span>
 
       {/* Title */}
-      <div className="font-sans text-sm font-bold text-[#0d1b3e] leading-tight tracking-[0.01em] transition-colors duration-150 group-hover:text-brand-secondary">
+      <span
+        className="group-hover:text-[#002395]"
+        style={{
+          fontFamily: "'Barlow', sans-serif",
+          fontSize: 14,
+          fontWeight: 700,
+          color: '#0d1b3e',
+          lineHeight: 1.25,
+          letterSpacing: '0.01em',
+          transition: 'color 0.15s ease',
+          whiteSpace: 'normal',
+          wordBreak: 'normal',
+        }}
+      >
         {item.label}
-      </div>
+      </span>
 
       {/* Description */}
-      <div className="font-sans text-[12.5px] font-normal text-black/50 leading-relaxed">
+      <span
+        style={{
+          fontFamily: "'Barlow', sans-serif",
+          fontSize: 12.5,
+          fontWeight: 400,
+          color: 'rgba(0,0,0,0.48)',
+          lineHeight: 1.6,
+          whiteSpace: 'normal',
+          wordBreak: 'normal',
+          overflow: 'visible',
+        }}
+      >
         {item.desc}
-      </div>
+      </span>
     </Link>
   );
 }
@@ -158,18 +213,18 @@ function MegaCard({ item, onClick }: { item: IndustryItem; onClick: () => void }
 // ── Header ────────────────────────────────────────────────────────────────
 
 function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen]       = useState(false);
-  const [scrolled, setScrolled]                   = useState(false);
-  const [headerVisible, setHeaderVisible]         = useState(true);
-  const [lastScrollY, setLastScrollY]             = useState(0);
-  const [isMobile, setIsMobile]                   = useState(window.innerWidth < 1024);
-  const [industriesOpen, setIndustriesOpen]       = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen]             = useState(false);
+  const [scrolled, setScrolled]                         = useState(false);
+  const [headerVisible, setHeaderVisible]               = useState(true);
+  const [lastScrollY, setLastScrollY]                   = useState(0);
+  const [isMobile, setIsMobile]                         = useState(window.innerWidth < 1024);
+  const [industriesOpen, setIndustriesOpen]             = useState(false);
   const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
 
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const location   = useLocation();
 
-  const openMenu  = () => { if (closeTimer.current) clearTimeout(closeTimer.current); setIndustriesOpen(true); };
+  const openMenu      = () => { if (closeTimer.current) clearTimeout(closeTimer.current); setIndustriesOpen(true); };
   const scheduleClose = () => { closeTimer.current = setTimeout(() => setIndustriesOpen(false), 120); };
 
   useEffect(() => {
@@ -208,6 +263,10 @@ function Header() {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [handleKeyDown]);
 
+  // Split industries into two rows of 3 for border handling
+  const row1 = industries.slice(0, 3);
+  const row2 = industries.slice(3, 6);
+
   return (
     <header className={`premium-header ${scrolled ? 'scrolled' : ''} ${headerVisible ? 'header-visible' : 'header-hidden'}`}>
       <div className="manyone-grid premium-header-inner">
@@ -224,9 +283,9 @@ function Header() {
               <Link to="/services"  className="nav-link">Services</Link>
               <Link to="/expertise" className="nav-link">Expertise</Link>
 
-              {/* Industries trigger + mega panel */}
+              {/* Industries trigger */}
               <div
-                className="relative"
+                style={{ position: 'relative' }}
                 onMouseEnter={openMenu}
                 onMouseLeave={scheduleClose}
               >
@@ -238,6 +297,7 @@ function Header() {
                   Industries
                 </button>
 
+                {/* ── MEGA PANEL ── */}
                 <AnimatePresence>
                   {industriesOpen && (
                     <motion.div
@@ -246,39 +306,115 @@ function Header() {
                       animate="visible"
                       exit="exit"
                       role="menu"
+                      aria-label="Industries menu"
                       onMouseEnter={openMenu}
                       onMouseLeave={scheduleClose}
-                      className="
-                        fixed left-0 right-0 w-full z-[200]
-                        bg-[#f5f5f3]
-                        border-t border-b border-black/[0.08]
-                        shadow-[0_20px_60px_rgba(0,0,0,0.08)]
-                      "
-                      style={{ top: '72px' }}
+                      style={{
+                        position: 'fixed',
+                        top: 72,
+                        left: 0,
+                        right: 0,
+                        width: '100%',
+                        zIndex: 200,
+                        background: '#f5f5f3',
+                        borderTop: '1px solid rgba(0,0,0,0.08)',
+                        borderBottom: '1px solid rgba(0,0,0,0.08)',
+                        boxShadow: '0 20px 60px rgba(0,0,0,0.08)',
+                        overflow: 'visible',
+                      }}
                     >
-                      {/* Inner: aside + grid */}
-                      <div className="grid mx-auto px-12 max-w-[1280px]" style={{ gridTemplateColumns: '280px 1fr' }}>
-
+                      {/* Inner layout: aside + 3-col grid */}
+                      <div
+                        style={{
+                          display: 'grid',
+                          gridTemplateColumns: '260px 1fr',
+                          maxWidth: 1280,
+                          margin: '0 auto',
+                          padding: '0 48px',
+                        }}
+                      >
                         {/* Left aside */}
-                        <div className="flex flex-col justify-center gap-[22px] py-11 pr-10 border-r border-black/[0.08]">
-                          <span className="font-sans text-[10px] font-semibold tracking-[0.2em] uppercase text-black/40">
+                        <div
+                          style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            gap: 18,
+                            padding: '40px 36px 40px 0',
+                            borderRight: '1px solid rgba(0,0,0,0.08)',
+                          }}
+                        >
+                          <span
+                            style={{
+                              fontFamily: "'Barlow', sans-serif",
+                              fontSize: 10,
+                              fontWeight: 600,
+                              letterSpacing: '0.2em',
+                              textTransform: 'uppercase',
+                              color: 'rgba(0,0,0,0.38)',
+                            }}
+                          >
                             Industries
                           </span>
-                          <p className="font-sans text-[26px] font-bold text-[#0d1b3e] leading-[1.28] m-0">
+                          <p
+                            style={{
+                              fontFamily: "'Barlow', sans-serif",
+                              fontSize: 24,
+                              fontWeight: 700,
+                              color: '#0d1b3e',
+                              lineHeight: 1.3,
+                              margin: 0,
+                            }}
+                          >
                             Deep sector expertise across the industries{' '}
-                            <em className="font-normal italic text-[#6b7a99]">we know best</em>.
+                            <em
+                              style={{
+                                fontStyle: 'italic',
+                                fontWeight: 400,
+                                color: '#6b7a99',
+                              }}
+                            >
+                              we know best
+                            </em>
+                            .
                           </p>
                         </div>
 
-                        {/* Cards grid — 3 columns */}
-                        <div className="grid grid-cols-3">
-                          {industries.map((item) => (
-                            <MegaCard
-                              key={item.label}
-                              item={item}
-                              onClick={() => setIndustriesOpen(false)}
-                            />
-                          ))}
+                        {/* Right: 2 rows × 3 cols */}
+                        <div>
+                          {/* Row 1 */}
+                          <div
+                            style={{
+                              display: 'grid',
+                              gridTemplateColumns: 'repeat(3, 1fr)',
+                            }}
+                          >
+                            {row1.map((item, i) => (
+                              <MegaCard
+                                key={item.label}
+                                item={item}
+                                isLast3={false}
+                                onClick={() => setIndustriesOpen(false)}
+                              />
+                            ))}
+                          </div>
+
+                          {/* Row 2 — no bottom border on cards */}
+                          <div
+                            style={{
+                              display: 'grid',
+                              gridTemplateColumns: 'repeat(3, 1fr)',
+                            }}
+                          >
+                            {row2.map((item, i) => (
+                              <MegaCard
+                                key={item.label}
+                                item={item}
+                                isLast3={true}
+                                onClick={() => setIndustriesOpen(false)}
+                              />
+                            ))}
+                          </div>
                         </div>
                       </div>
                     </motion.div>
@@ -349,7 +485,9 @@ function Header() {
                         className="mobile-industry-item"
                         onClick={() => setMobileMenuOpen(false)}
                       >
-                        <span className="mobile-industry-icon w-[18px] h-[18px] text-[#0d1b3e]">
+                        <span
+                          style={{ width: 18, height: 18, display: 'block', color: '#0d1b3e', flexShrink: 0 }}
+                        >
                           {item.icon}
                         </span>
                         {item.label}
