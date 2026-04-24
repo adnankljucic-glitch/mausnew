@@ -38,10 +38,10 @@ export const industryCards: IndustryCard[] = [
     linkUrl: "#"
   },
   {
-    title: "Manufacturing",
+    title: "IoT & Smart Devices",
     description: "Partnered with Sanovo to deliver advanced solutions for egg processing machinery.",
     image: "https://media.maus.ba/media/heqh5ti4/sanovo.webp?width=2280&height=1536&v=1daee53c8107930&mode=crop",
-    category: "Manufacturing",
+    category: "Smart Home",
     linkUrl: "#"
   },
   {
