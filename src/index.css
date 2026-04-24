@@ -3641,7 +3641,7 @@
 
 /* TECHNOLOGY SECTION */
 .technology-section {
-  background: hsl(30 20% 96%);
+  background: #F7F8FA;
   padding: 80px 0;
   position: relative;
   overflow: hidden;
@@ -11324,7 +11324,7 @@ details[open] .footer-arrow-icon {
 }
 
 .ai-bento-section--warm {
-  background: hsl(30 20% 96%);
+  background: #F7F8FA;
 }
 
 @media (min-width: 768px) {

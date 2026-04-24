@@ -6,7 +6,7 @@ export default function ScalePerformanceBentoSection() {
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
   return (
-    <section ref={sectionRef} className="ai-bento-section">
+    <section ref={sectionRef} className="ai-bento-section ai-bento-section--warm">
       <div className="manyone-grid">
         <div className="ai-bento-grid">
 
