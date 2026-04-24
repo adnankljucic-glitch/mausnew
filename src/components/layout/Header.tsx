@@ -11,12 +11,12 @@ interface IndustryItem {
 }
 
 const industries: IndustryItem[] = [
-  { label: 'Healthcare', to: '/industries/healthcare', icon: <Heart size={15} strokeWidth={1.5} />, desc: 'Secure, compliant clinical systems' },
-  { label: 'Booking & Ticketing', to: '/#industries', icon: <Calendar size={15} strokeWidth={1.5} />, desc: 'High-concurrency reservation platforms' },
-  { label: 'Fintech & Payments', to: '/#industries', icon: <ShoppingCart size={15} strokeWidth={1.5} />, desc: 'Fraud-resistant financial software' },
-  { label: 'Energy & Utilities', to: '/#industries', icon: <Droplets size={15} strokeWidth={1.5} />, desc: 'Smart grid and resource management' },
-  { label: 'AI & Manufacturing', to: '/#industries', icon: <Zap size={15} strokeWidth={1.5} />, desc: 'Predictive IoT and smart factory' },
-  { label: 'Real Estate & PropTech', to: '/#industries', icon: <Building2 size={15} strokeWidth={1.5} />, desc: 'Automated valuation and portals' },
+  { label: 'Healthcare', to: '/industries/healthcare', icon: <Heart size={18} strokeWidth={1.5} />, desc: 'Secure, compliant clinical systems and patient platforms.' },
+  { label: 'Booking & Ticketing', to: '/#industries', icon: <Calendar size={18} strokeWidth={1.5} />, desc: 'High-concurrency reservation platforms built to scale.' },
+  { label: 'Fintech & Payments', to: '/#industries', icon: <ShoppingCart size={18} strokeWidth={1.5} />, desc: 'Fraud-resistant financial software with full compliance.' },
+  { label: 'Energy & Utilities', to: '/#industries', icon: <Droplets size={18} strokeWidth={1.5} />, desc: 'Smart grid and resource management systems.' },
+  { label: 'AI & Manufacturing', to: '/#industries', icon: <Zap size={18} strokeWidth={1.5} />, desc: 'Predictive IoT systems and smart factory automation.' },
+  { label: 'Real Estate & PropTech', to: '/#industries', icon: <Building2 size={18} strokeWidth={1.5} />, desc: 'Automated valuation and tenant management portals.' },
 ];
 
 const dropdownVariants = {
@@ -134,25 +134,34 @@ function Header() {
                       exit="exit"
                       role="menu"
                     >
-                      <div className="nav-dropdown-header">
-                        <span>Industries</span>
-                      </div>
-                      <div className="nav-dropdown-grid">
-                        {industries.map((item) => (
-                          <Link
-                            key={item.label}
-                            to={item.to}
-                            className="nav-dropdown-item"
-                            role="menuitem"
-                            onClick={() => setIndustriesOpen(false)}
-                          >
-                            <span className="nav-dropdown-icon">{item.icon}</span>
-                            <span className="nav-dropdown-text">
-                              <span className="nav-dropdown-label">{item.label}</span>
-                              <span className="nav-dropdown-desc">{item.desc}</span>
-                            </span>
-                          </Link>
-                        ))}
+                      <div className="nav-dropdown-inner">
+                        {/* Left editorial panel */}
+                        <div className="nav-dropdown-panel">
+                          <span className="nav-dropdown-eyebrow">Industries</span>
+                          <p className="nav-dropdown-headline">
+                            Deep sector expertise across the industries{' '}
+                            <em>we know best</em>.
+                          </p>
+                        </div>
+
+                        {/* Right grid */}
+                        <div className="nav-dropdown-grid">
+                          {industries.map((item) => (
+                            <Link
+                              key={item.label}
+                              to={item.to}
+                              className="nav-dropdown-item"
+                              role="menuitem"
+                              onClick={() => setIndustriesOpen(false)}
+                            >
+                              <span className="nav-dropdown-icon">{item.icon}</span>
+                              <span className="nav-dropdown-text">
+                                <span className="nav-dropdown-label">{item.label}</span>
+                                <span className="nav-dropdown-desc">{item.desc}</span>
+                              </span>
+                            </Link>
+                          ))}
+                        </div>
                       </div>
                     </motion.div>
                   )}
