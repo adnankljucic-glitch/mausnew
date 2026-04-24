@@ -8541,18 +8541,24 @@ details[open] .footer-arrow-icon {
 /* ── INTRO / LANDSCAPE ── */
 .hc-intro {
   background: #ffffff;
-  padding: 100px 0 100px;
+  padding: 40px 0 60px;
 }
 
 @media (min-width: 768px) {
   .hc-intro {
-    padding: 120px 0 120px;
+    padding: 60px 0 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hc-intro {
+    padding: 80px 0 120px;
   }
 }
 
 @media (min-width: 1200px) {
   .hc-intro {
-    padding: 140px 0 140px;
+    padding: 80px 0 140px;
   }
 }
 
