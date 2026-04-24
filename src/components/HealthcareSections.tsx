@@ -222,7 +222,7 @@ export default function HealthcareSections() {
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
             <p className="hc-eyebrow hc-eyebrow">Capabilities</p>
-            <h2 className="hc-capabilities-headline">Everything you need to build<br />digital healthcare.</h2>
+            <h2 className="hc-capabilities-headline">Everything you need to build digital healthcare.</h2>
             <p className="hc-capabilities-lead">
               A full-spectrum team delivering strategy, architecture, and engineering across platforms —
               one partner for the entire lifecycle.

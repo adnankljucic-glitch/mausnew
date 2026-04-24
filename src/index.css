@@ -8795,6 +8795,7 @@ details[open] .footer-arrow-icon {
 @media (min-width: 1200px) {
   .hc-capabilities-headline {
     font-size: var(--font-h2-desktop);
+    max-width: 50%;
   }
 }
 
