@@ -13689,22 +13689,44 @@ details[open] .footer-arrow-icon {
 ───────────────────────────────────────────── */
 
 .re-platform {
-  /* inherits background from .work-section — no override needed */
+  /* inherits background from .work-section */
   padding: 0;
 }
 
 .re-platform-inner {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 60px;
-  align-items: start;
+  gap: 40px;
+  align-items: center;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .re-platform-inner {
-    grid-template-columns: 1fr 1.1fr;
+    gap: 56px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .re-platform-inner {
+    grid-template-columns: 1.1fr 1fr;
     gap: 80px;
-    align-items: center;
+  }
+}
+
+@media (min-width: 1440px) {
+  .re-platform-inner {
+    grid-template-columns: 1.15fr 1fr;
+    gap: 100px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .re-platform-inner {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 120px;
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -13713,6 +13735,7 @@ details[open] .footer-arrow-icon {
   display: flex;
   flex-direction: column;
   gap: 0;
+  max-width: 620px;
 }
 
 .re-platform-eyebrow-row {
