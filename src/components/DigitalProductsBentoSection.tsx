@@ -6,59 +6,48 @@ export default function DigitalProductsBentoSection() {
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
   return (
-    <section ref={sectionRef} className="ai-bento-section" style={{ background: '#040F39' }}>
+    <section ref={sectionRef} className="ai-bento-section">
       <div className="manyone-grid">
         <div className="ai-bento-grid">
+
+          {/* Left column — headline + description */}
           <motion.div
-            className="ai-bento-text-column"
+            className="ai-bento-left-column"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
-            <h2 className="ai-bento-headline text-white">
+            <h2 className="ai-bento-headline">
               Digital product design & Strategic UX
             </h2>
-            <p className="ai-bento-description text-white/80" style={{ color: 'rgba(255,255,255,0.8)' }}>
-              In a world of complex Legacy Systems, the interface is only as good as the logic behind it. At MAUS, we combine deep Discovery with Specs Driven Development (SDD) to design digital products that aren't just intuitive, they are engineered to perform.
+            <p className="ai-bento-description">
+              In a world of complex legacy systems, the interface is only as good as the logic behind it — we combine deep discovery with engineering to build products that perform.
             </p>
           </motion.div>
 
+          {/* Right column — body copy + list */}
           <motion.div
-            className="ai-bento-main-image"
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.98 }}
-            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
+            className="ai-bento-right-column"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.15 }}
           >
-            <img
-              src="https://eheonmwcbdtoosllhgku.supabase.co/storage/v1/object/public/images/digital-products/agency.webp"
-              alt="Designer working at desk"
-            />
+            <p className="ai-bento-body-copy">
+              At MAUS, we combine deep Discovery with Specs Driven Development (SDD) to design digital products that aren't just intuitive — they are engineered to perform. Every interface decision is grounded in research, validated through iteration, and built to scale alongside your business.
+            </p>
+
+            <div className="ai-bento-list">
+              <div className="ai-bento-list-item"><span>UX Research & Discovery</span></div>
+              <div className="ai-bento-divider" />
+              <div className="ai-bento-list-item"><span>Specs Driven Development</span></div>
+              <div className="ai-bento-divider" />
+              <div className="ai-bento-list-item"><span>Design Systems</span></div>
+              <div className="ai-bento-divider" />
+              <div className="ai-bento-list-item"><span>Product Strategy</span></div>
+              <div className="ai-bento-divider" />
+            </div>
           </motion.div>
 
-          <div className="ai-bento-right-column">
-            <motion.div
-              className="ai-bento-small-image"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
-            >
-              <img
-                src="https://eheonmwcbdtoosllhgku.supabase.co/storage/v1/object/public/images/digital-products/ux2.webp"
-                alt="UX design interface on MacBook"
-              />
-            </motion.div>
-
-            <motion.div
-              className="ai-bento-accent-card"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
-            >
-              <p className="ai-bento-quote-text">
-                Bridging user expectations with enterprise scalability
-              </p>
-            </motion.div>
-          </div>
         </div>
       </div>
     </section>
