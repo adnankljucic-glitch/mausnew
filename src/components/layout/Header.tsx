@@ -3,6 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { X, Menu } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+// ── Types ──────────────────────────────────────────────────────────────────
+
 interface IndustryItem {
   label: string;
   to: string;
@@ -10,11 +12,22 @@ interface IndustryItem {
   desc: string;
 }
 
-const ArrowIcon = () => (
-  <svg className="mega-card-arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+// ── SVG helpers ────────────────────────────────────────────────────────────
+
+const ArrowSvg = () => (
+  <svg
+    viewBox="0 0 14 14"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    className="w-[13px] h-[13px] absolute top-4 right-4 opacity-0 text-[rgba(0,0,0,0.2)] transition-all duration-150 group-hover:opacity-100 group-hover:text-brand-secondary"
+  >
     <path d="M3 11L11 3M6 3h5v5" />
   </svg>
 );
+
+// ── Industry data ──────────────────────────────────────────────────────────
 
 const industries: IndustryItem[] = [
   {
@@ -22,7 +35,7 @@ const industries: IndustryItem[] = [
     to: '/industries/healthcare',
     desc: 'Secure, compliant clinical systems and patient platforms.',
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
         <path d="M16 28s-11-6-11-14a6 6 0 0 1 11-3.5A6 6 0 0 1 27 14c0 8-11 14-11 14z" />
         <path d="M13 16h2l1-3 2 6 1-3h2" strokeWidth="1.2" />
       </svg>
@@ -33,7 +46,7 @@ const industries: IndustryItem[] = [
     to: '/#industries',
     desc: 'High-concurrency reservation platforms built to scale.',
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
         <rect x="4" y="8" width="24" height="18" rx="2" />
         <path d="M4 14h24M10 4v6M22 4v6" />
         <circle cx="11" cy="19" r="1" fill="currentColor" />
@@ -47,7 +60,7 @@ const industries: IndustryItem[] = [
     to: '/#industries',
     desc: 'Fraud-resistant financial software with full compliance.',
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
         <rect x="3" y="9" width="26" height="16" rx="2" />
         <path d="M3 15h26" />
         <path d="M8 20h4M20 20h4" />
@@ -60,7 +73,7 @@ const industries: IndustryItem[] = [
     to: '/#industries',
     desc: 'Smart grid and resource management systems.',
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
         <path d="M18 3L6 18h8l-2 11 12-15h-8l2-11z" />
       </svg>
     ),
@@ -70,7 +83,7 @@ const industries: IndustryItem[] = [
     to: '/#industries',
     desc: 'Predictive IoT systems and smart factory automation.',
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
         <rect x="10" y="10" width="12" height="12" rx="1.5" />
         <path d="M16 3v4M16 25v4M3 16h4M25 16h4M7 7l3 3M22 7l-3 3M7 25l3-3M22 25l-3-3" />
         <circle cx="16" cy="16" r="2" />
@@ -82,7 +95,7 @@ const industries: IndustryItem[] = [
     to: '/#industries',
     desc: 'Automated valuation and tenant management portals.',
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
         <path d="M4 14l12-9 12 9v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V14z" />
         <path d="M13 30v-8h6v8" />
       </svg>
@@ -90,29 +103,74 @@ const industries: IndustryItem[] = [
   },
 ];
 
+// ── Framer Motion variants ─────────────────────────────────────────────────
+
 const megaVariants = {
   hidden: { opacity: 0, y: -8 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.2, ease: 'easeOut' } },
-  exit: { opacity: 0, y: -6, transition: { duration: 0.14, ease: 'easeIn' } },
+  exit:   { opacity: 0, y: -6, transition: { duration: 0.14, ease: 'easeIn' } },
 };
 
 const mobileExpandVariants = {
-  hidden: { height: 0, opacity: 0 },
+  hidden:  { height: 0, opacity: 0 },
   visible: { height: 'auto', opacity: 1, transition: { duration: 0.25, ease: 'easeOut' } },
-  exit: { height: 0, opacity: 0, transition: { duration: 0.18, ease: 'easeIn' } },
+  exit:    { height: 0, opacity: 0, transition: { duration: 0.18, ease: 'easeIn' } },
 };
 
+// ── MegaCard ──────────────────────────────────────────────────────────────
+
+function MegaCard({ item, onClick }: { item: IndustryItem; onClick: () => void }) {
+  return (
+    <Link
+      to={item.to}
+      onClick={onClick}
+      role="menuitem"
+      className="
+        group relative flex flex-col gap-3.5
+        px-7 pt-9 pb-8
+        border-r border-b border-black/[0.08]
+        text-decoration-none transition-colors duration-150
+        hover:bg-black/[0.025]
+        [&:nth-child(3n)]:border-r-0
+        [&:nth-child(n+4)]:border-b-0
+      "
+    >
+      <ArrowSvg />
+
+      {/* Icon */}
+      <div className="w-8 h-8 text-[#0d1b3e] transition-colors duration-150 group-hover:text-brand-secondary flex-shrink-0">
+        {item.icon}
+      </div>
+
+      {/* Title */}
+      <div className="font-sans text-sm font-bold text-[#0d1b3e] leading-tight tracking-[0.01em] transition-colors duration-150 group-hover:text-brand-secondary">
+        {item.label}
+      </div>
+
+      {/* Description */}
+      <div className="font-sans text-[12.5px] font-normal text-black/50 leading-relaxed">
+        {item.desc}
+      </div>
+    </Link>
+  );
+}
+
+// ── Header ────────────────────────────────────────────────────────────────
+
 function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [headerVisible, setHeaderVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
-  const [industriesOpen, setIndustriesOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen]       = useState(false);
+  const [scrolled, setScrolled]                   = useState(false);
+  const [headerVisible, setHeaderVisible]         = useState(true);
+  const [lastScrollY, setLastScrollY]             = useState(0);
+  const [isMobile, setIsMobile]                   = useState(window.innerWidth < 1024);
+  const [industriesOpen, setIndustriesOpen]       = useState(false);
   const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
 
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  const location = useLocation();
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const location   = useLocation();
+
+  const openMenu  = () => { if (closeTimer.current) clearTimeout(closeTimer.current); setIndustriesOpen(true); };
+  const scheduleClose = () => { closeTimer.current = setTimeout(() => setIndustriesOpen(false), 120); };
 
   useEffect(() => {
     setIndustriesOpen(false);
@@ -131,63 +189,49 @@ function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setScrolled(currentScrollY > 40);
-      if (currentScrollY > 80) {
-        if (Math.abs(currentScrollY - lastScrollY) > 10) {
-          setHeaderVisible(currentScrollY < lastScrollY);
-        }
-      } else {
-        setHeaderVisible(true);
-      }
-      setLastScrollY(currentScrollY);
+      const y = window.scrollY;
+      setScrolled(y > 40);
+      if (y > 80 && Math.abs(y - lastScrollY) > 10) setHeaderVisible(y < lastScrollY);
+      else if (y <= 80) setHeaderVisible(true);
+      setLastScrollY(y);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  const handleClickOutside = useCallback((e: MouseEvent) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-      setIndustriesOpen(false);
-    }
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (e.key === 'Escape') { setIndustriesOpen(false); setMobileMenuOpen(false); }
   }, []);
 
   useEffect(() => {
-    if (industriesOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [industriesOpen, handleClickOutside]);
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setIndustriesOpen(false);
-        setMobileMenuOpen(false);
-      }
-    };
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [handleKeyDown]);
 
   return (
     <header className={`premium-header ${scrolled ? 'scrolled' : ''} ${headerVisible ? 'header-visible' : 'header-hidden'}`}>
       <div className="manyone-grid premium-header-inner">
+
+        {/* Logo */}
         <Link className="premium-logo" to="/">
           <img src="/maus-logo-light.svg" className="maus-logo" alt="MAUS" />
         </Link>
 
+        {/* Desktop nav */}
         {!isMobile && (
           <>
             <nav className="premium-nav">
-              <Link to="/services" className="nav-link">Services</Link>
+              <Link to="/services"  className="nav-link">Services</Link>
               <Link to="/expertise" className="nav-link">Expertise</Link>
 
-              {/* Industries mega menu */}
-              <div className="nav-industries-wrapper" ref={dropdownRef}>
+              {/* Industries trigger + mega panel */}
+              <div
+                className="relative"
+                onMouseEnter={openMenu}
+                onMouseLeave={scheduleClose}
+              >
                 <button
                   className={`nav-link nav-industries-trigger ${industriesOpen ? 'active' : ''}`}
-                  onClick={() => setIndustriesOpen(o => !o)}
                   aria-expanded={industriesOpen}
                   aria-haspopup="true"
                 >
@@ -197,38 +241,43 @@ function Header() {
                 <AnimatePresence>
                   {industriesOpen && (
                     <motion.div
-                      className="mega"
                       variants={megaVariants}
                       initial="hidden"
                       animate="visible"
                       exit="exit"
                       role="menu"
+                      onMouseEnter={openMenu}
+                      onMouseLeave={scheduleClose}
+                      className="
+                        fixed left-0 right-0 w-full z-[200]
+                        bg-[#f5f5f3]
+                        border-t border-b border-black/[0.08]
+                        shadow-[0_20px_60px_rgba(0,0,0,0.08)]
+                      "
+                      style={{ top: '72px' }}
                     >
-                      <div className="mega-inner">
-                        {/* Left editorial panel */}
-                        <div className="mega-aside">
-                          <div className="mega-eyebrow">Industries</div>
-                          <p className="mega-tagline">
+                      {/* Inner: aside + grid */}
+                      <div className="grid mx-auto px-12 max-w-[1280px]" style={{ gridTemplateColumns: '280px 1fr' }}>
+
+                        {/* Left aside */}
+                        <div className="flex flex-col justify-center gap-[22px] py-11 pr-10 border-r border-black/[0.08]">
+                          <span className="font-sans text-[10px] font-semibold tracking-[0.2em] uppercase text-black/40">
+                            Industries
+                          </span>
+                          <p className="font-sans text-[26px] font-bold text-[#0d1b3e] leading-[1.28] m-0">
                             Deep sector expertise across the industries{' '}
-                            <em>we know best</em>.
+                            <em className="font-normal italic text-[#6b7a99]">we know best</em>.
                           </p>
                         </div>
 
-                        {/* Cards grid */}
-                        <div className="mega-grid">
+                        {/* Cards grid — 3 columns */}
+                        <div className="grid grid-cols-3">
                           {industries.map((item) => (
-                            <Link
+                            <MegaCard
                               key={item.label}
-                              to={item.to}
-                              className="mega-card"
-                              role="menuitem"
+                              item={item}
                               onClick={() => setIndustriesOpen(false)}
-                            >
-                              <ArrowIcon />
-                              <div className="mega-icon">{item.icon}</div>
-                              <div className="mega-card-title">{item.label}</div>
-                              <div className="mega-card-desc">{item.desc}</div>
-                            </Link>
+                            />
                           ))}
                         </div>
                       </div>
@@ -237,14 +286,15 @@ function Header() {
                 </AnimatePresence>
               </div>
 
-              <Link to="/cases" className="nav-link">Cases</Link>
-              <a href="#about" className="nav-link">About Us</a>
+              <Link to="/cases"  className="nav-link">Cases</Link>
+              <a href="#about"   className="nav-link">About Us</a>
             </nav>
 
             <Link className="premium-cta" to="/discovery">Let's Talk</Link>
           </>
         )}
 
+        {/* Mobile burger */}
         {isMobile && (
           <button
             className={`premium-burger ${mobileMenuOpen ? 'menu-open' : ''}`}
@@ -252,21 +302,15 @@ function Header() {
             aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
           >
             {mobileMenuOpen ? (
-              <>
-                <span className="premium-burger-label">CLOSE</span>
-                <X size={18} strokeWidth={2} />
-              </>
+              <><span className="premium-burger-label">CLOSE</span><X size={18} strokeWidth={2} /></>
             ) : (
-              <>
-                <span className="premium-burger-label">MENU</span>
-                <Menu size={18} strokeWidth={2} />
-              </>
+              <><span className="premium-burger-label">MENU</span><Menu size={18} strokeWidth={2} /></>
             )}
           </button>
         )}
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile full-screen menu */}
       <AnimatePresence>
         {isMobile && mobileMenuOpen && (
           <motion.div
@@ -276,9 +320,10 @@ function Header() {
             exit={{ opacity: 0, x: '100%' }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
-            <Link to="/services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+            <Link to="/services"  onClick={() => setMobileMenuOpen(false)}>Services</Link>
             <Link to="/expertise" onClick={() => setMobileMenuOpen(false)}>Expertise</Link>
 
+            {/* Industries accordion */}
             <div className="mobile-industries-section">
               <button
                 className="mobile-industries-trigger"
@@ -304,7 +349,9 @@ function Header() {
                         className="mobile-industry-item"
                         onClick={() => setMobileMenuOpen(false)}
                       >
-                        <span className="mobile-industry-icon">{item.icon}</span>
+                        <span className="mobile-industry-icon w-[18px] h-[18px] text-[#0d1b3e]">
+                          {item.icon}
+                        </span>
                         {item.label}
                       </Link>
                     ))}
@@ -314,8 +361,10 @@ function Header() {
             </div>
 
             <Link to="/cases" onClick={() => setMobileMenuOpen(false)}>Cases</Link>
-            <a href="#about" onClick={() => setMobileMenuOpen(false)}>About Us</a>
-            <Link className="premium-cta mobile" to="/discovery" onClick={() => setMobileMenuOpen(false)}>Let's Talk</Link>
+            <a href="#about"  onClick={() => setMobileMenuOpen(false)}>About Us</a>
+            <Link className="premium-cta mobile" to="/discovery" onClick={() => setMobileMenuOpen(false)}>
+              Let's Talk
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>
