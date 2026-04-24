@@ -14,6 +14,7 @@ import ProcessDemoPage from './pages/ProcessDemoPage';
 import CaseStudyPage from './pages/CaseStudyPage';
 import DiscoveryCallPage from './pages/DiscoveryCallPage';
 import HealthcarePage from './pages/HealthcarePage';
+import RunEventsPage from './pages/RunEventsPage';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path="/cases/:slug" element={<CaseStudyPage />} />
           <Route path="/discovery" element={<DiscoveryCallPage />} />
           <Route path="/industries/healthcare" element={<HealthcarePage />} />
+          <Route path="/cases/run-events" element={<RunEventsPage />} />
         </Routes>
         <Footer />
       </div>
