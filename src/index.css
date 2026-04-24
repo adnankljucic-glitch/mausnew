@@ -8776,6 +8776,12 @@ details[open] .footer-arrow-icon {
   margin: 0 0 64px;
 }
 
+@media (min-width: 1200px) {
+  .hc-capabilities-header {
+    max-width: 50%;
+  }
+}
+
 .hc-capabilities-headline {
   font-family: var(--font-family-serif);
   font-size: var(--font-h2-mobile);
@@ -8795,7 +8801,7 @@ details[open] .footer-arrow-icon {
 @media (min-width: 1200px) {
   .hc-capabilities-headline {
     font-size: var(--font-h2-desktop);
-    max-width: 50%;
+    max-width: unset;
   }
 }
 
