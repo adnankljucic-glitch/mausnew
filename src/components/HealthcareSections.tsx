@@ -145,7 +145,7 @@ export default function HealthcareSections() {
       <section className="hc-intro">
         <div className="manyone-grid hc-intro-grid">
           <FadeIn>
-            <span className="hc-section-label">01 — The Landscape</span>
+            <span className="hc-section-label">01 — Healthcare</span>
           </FadeIn>
           <FadeIn delay={0.1}>
             <h2 className="hc-intro-headline">
