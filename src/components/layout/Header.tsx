@@ -30,7 +30,7 @@ const INDUSTRIES = [
     ),
   },
   {
-    label: 'Fintech & Payments',
+    label: 'Fintech & Payment Systems',
     to: '/industries',
     desc: 'Fraud-resistant financial software with full compliance.',
     icon: (
@@ -41,19 +41,20 @@ const INDUSTRIES = [
     ),
   },
   {
-    label: 'Energy & Utilities',
+    label: 'Sustainability & Water Cycle',
     to: '/industries',
-    desc: 'Smart grid and resource management systems.',
+    desc: 'Environmental monitoring and smart water management systems.',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={22} height={22}>
-        <path d="M18 3L6 18h8l-2 11 12-15h-8l2-11z" />
+        <path d="M16 4c0 0-9 8-9 15a9 9 0 0 0 18 0C25 12 16 4 16 4z" />
+        <path d="M10 22c1 2 3.5 3 6 3" />
       </svg>
     ),
   },
   {
-    label: 'AI & Manufacturing',
+    label: 'IoT & Smart Devices',
     to: '/industries',
-    desc: 'Predictive IoT systems and smart factory automation.',
+    desc: 'Connected device platforms and real-time sensor intelligence.',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={22} height={22}>
         <rect x="10" y="10" width="12" height="12" rx="1.5" />
