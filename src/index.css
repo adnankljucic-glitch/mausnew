@@ -13689,14 +13689,8 @@ details[open] .footer-arrow-icon {
 ───────────────────────────────────────────── */
 
 .re-platform {
-  background: #ffffff;
-  padding: 100px 0;
-}
-
-@media (min-width: 768px) {
-  .re-platform {
-    padding: 120px 0;
-  }
+  /* inherits background from .work-section — no override needed */
+  padding: 0;
 }
 
 .re-platform-inner {
@@ -13732,7 +13726,7 @@ details[open] .footer-arrow-icon {
   display: block;
   width: 36px;
   height: 1.5px;
-  background: #0B1F64;
+  background: rgba(255, 255, 255, 0.35);
   flex-shrink: 0;
 }
 
@@ -13742,7 +13736,7 @@ details[open] .footer-arrow-icon {
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #0B1F64;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .re-platform-headline {
@@ -13751,17 +13745,23 @@ details[open] .footer-arrow-icon {
   font-weight: 700;
   line-height: 1.08;
   letter-spacing: -0.02em;
-  color: #0B1F64;
-  margin-bottom: 20px;
+  color: #ffffff;
+  margin-bottom: 28px;
 }
 
-.re-platform-lead {
+/* Vision body text (3 paragraphs) */
+.re-platform-vision {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 36px;
+}
+
+.re-platform-vision p {
   font-family: var(--font-family-sans);
   font-size: 15px;
-  line-height: 1.7;
-  color: rgba(0, 0, 0, 0.6);
-  margin-bottom: 36px;
-  max-width: 480px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* Stats mini-row */
@@ -13770,22 +13770,22 @@ details[open] .footer-arrow-icon {
   flex-wrap: wrap;
   gap: 0;
   margin-bottom: 40px;
-  border-top: 1px solid #E3E6EB;
-  border-left: 1px solid #E3E6EB;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  border-left: 1px solid rgba(255,255,255,0.12);
 }
 
 .re-platform-stat {
   flex: 1 1 100px;
   padding: 16px 20px 14px;
-  border-right: 1px solid #E3E6EB;
-  border-bottom: 1px solid #E3E6EB;
+  border-right: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 
 .re-platform-stat-value {
   font-family: var(--font-family-serif);
   font-size: clamp(22px, 2.8vw, 32px);
   font-weight: 700;
-  color: #0B1F64;
+  color: #ffffff;
   line-height: 1;
   letter-spacing: -0.02em;
   margin-bottom: 5px;
@@ -13796,7 +13796,7 @@ details[open] .footer-arrow-icon {
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #6B7280;
+  color: rgba(255,255,255,0.4);
   font-weight: 500;
 }
 
@@ -13814,17 +13814,17 @@ details[open] .footer-arrow-icon {
   align-items: flex-start;
   gap: 16px;
   padding: 18px 0;
-  border-bottom: 1px solid #E3E6EB;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .re-platform-feature:first-child {
-  border-top: 1px solid #E3E6EB;
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 .re-platform-feature-icon {
   flex-shrink: 0;
   margin-top: 2px;
-  color: #0B1F64;
+  color: rgba(255,255,255,0.7);
   line-height: 0;
 }
 
@@ -13832,7 +13832,7 @@ details[open] .footer-arrow-icon {
   font-family: var(--font-family-sans);
   font-size: 14px;
   font-weight: 700;
-  color: #0B1F64;
+  color: #ffffff;
   margin-bottom: 4px;
   letter-spacing: 0.01em;
 }
@@ -13841,7 +13841,7 @@ details[open] .footer-arrow-icon {
   font-family: var(--font-family-sans);
   font-size: 13px;
   line-height: 1.6;
-  color: rgba(0, 0, 0, 0.55);
+  color: rgba(255,255,255,0.5);
 }
 
 /* ── Right column — browser mockup ── */

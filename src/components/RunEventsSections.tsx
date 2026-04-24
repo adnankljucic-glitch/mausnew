@@ -187,42 +187,12 @@ export default function RunEventsSections() {
 
   return (
     <>
-      {/* ── 01 — INTRO / VISION ─────────────────────────────────────────── */}
-      <section className="hc-intro">
-        <div className="manyone-grid hc-intro-grid">
-          <FadeIn>
-            <span className="hc-section-label">01 — The Vision</span>
-          </FadeIn>
-          <FadeIn delay={0.1}>
-            <h2 className="hc-intro-headline">
-              One platform for the <em>entire event lifecycle</em>.
-            </h2>
-            <div className="hc-intro-body">
-              <p>
-                run.events envisioned a modern, cloud-based platform capable of handling every aspect of event
-                management — from planning to execution and analytics. Over five years, our teams worked closely
-                together, transforming raw ideas and early wireframes into a polished, scalable product.
-              </p>
-              <p>
-                From day one the goal was clear: create an intuitive, powerful platform that removes friction
-                for organizers and improves experiences for attendees. The result is a unified suite that
-                replaces multiple disconnected tools with a single, AI-augmented ecosystem.
-              </p>
-              <p>
-                Today, run.events helps professional organizers plan, sell, execute, and analyze events of any
-                size — with gamification, real-time intelligence, and data-driven insights baked into every workflow.
-              </p>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* ── 02 — PLATFORM SECTION (stats + features + dashboard mockup) ── */}
-      <section ref={phasesRef} className="re-platform">
+      {/* ── 01 — PLATFORM SECTION ───────────────────────────────────────── */}
+      <section ref={phasesRef} className="re-platform work-section">
         <div className="manyone-grid">
           <div className="re-platform-inner">
 
-            {/* LEFT: text + feature list */}
+            {/* LEFT: vision text + stats + feature list */}
             <motion.div
               className="re-platform-left"
               initial={{ opacity: 0, y: 28 }}
@@ -240,11 +210,23 @@ export default function RunEventsSections() {
                 A complete event<br />management ecosystem.
               </h2>
 
-              {/* Lead */}
-              <p className="re-platform-lead">
-                run.events combines powerful planning tools, real-time on-site execution, and deep
-                analytics — replacing five disconnected tools with one unified, AI-augmented platform.
-              </p>
+              {/* Vision text */}
+              <div className="re-platform-vision">
+                <p>
+                  run.events envisioned a modern, cloud-based platform capable of handling every aspect of event
+                  management — from planning to execution and analytics. Over five years, our teams worked closely
+                  together, transforming raw ideas and early wireframes into a polished, scalable product.
+                </p>
+                <p>
+                  From day one the goal was clear: create an intuitive, powerful platform that removes friction
+                  for organizers and improves experiences for attendees. The result is a unified suite that
+                  replaces multiple disconnected tools with a single, AI-augmented ecosystem.
+                </p>
+                <p>
+                  Today, run.events helps professional organizers plan, sell, execute, and analyze events of any
+                  size — with gamification, real-time intelligence, and data-driven insights baked into every workflow.
+                </p>
+              </div>
 
               {/* Stats row */}
               <div className="re-platform-stats">
@@ -332,17 +314,13 @@ export default function RunEventsSections() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             >
               <div className="re-dashboard">
-                {/* Browser chrome */}
                 <div className="re-dashboard-chrome">
                   <div className="re-dashboard-dots">
                     <span /><span /><span />
                   </div>
                   <div className="re-dashboard-url">run.events — Admin Dashboard</div>
                 </div>
-
-                {/* Dashboard body */}
                 <div className="re-dashboard-body">
-                  {/* Stat cards */}
                   <div className="re-db-stats">
                     <div className="re-db-stat-card re-db-stat-primary">
                       <p className="re-db-stat-val">1,284</p>
@@ -357,8 +335,6 @@ export default function RunEventsSections() {
                       <p className="re-db-stat-lbl">Check-in rate</p>
                     </div>
                   </div>
-
-                  {/* Bar chart */}
                   <div className="re-db-chart-section">
                     <p className="re-db-section-label">Registrations — last 7 days</p>
                     <div className="re-db-bars">
@@ -372,18 +348,16 @@ export default function RunEventsSections() {
                       ))}
                     </div>
                   </div>
-
-                  {/* Session table */}
                   <div className="re-db-table">
                     {[
-                      { name: 'Opening Keynote',        val: '486 attendees', badge: '+18%' },
-                      { name: 'AI in Event Tech',       val: '312 attendees', badge: '+14%' },
-                      { name: 'Networking Lunch',       val: '284 attendees', badge: '→ Stable' },
+                      { name: 'Opening Keynote',  val: '486 attendees', badge: '+18%' },
+                      { name: 'AI in Event Tech', val: '312 attendees', badge: '+14%' },
+                      { name: 'Networking Lunch', val: '284 attendees', badge: '→ Stable' },
                     ].map((row, i) => (
                       <div key={i} className="re-db-row">
                         <span className="re-db-row-name">{row.name}</span>
                         <span className="re-db-row-val">{row.val}</span>
-                        <span className={`re-db-badge${row.badge.startsWith('→') ? ' re-db-badge-neutral' : ''}`}>{row.badge}</span>
+                        <span className={['re-db-badge', row.badge.startsWith('\u2192') ? 're-db-badge-neutral' : ''].filter(Boolean).join(' ')}>{row.badge}</span>
                       </div>
                     ))}
                   </div>
