@@ -8553,7 +8553,7 @@ details[open] .footer-arrow-icon {
   font-weight: 600;
   line-height: var(--lh-h2);
   letter-spacing: -0.02em;
-  color: #000020;
+  color: var(--color-heading-on-light);
   margin-bottom: 32px;
 }
 
@@ -8614,7 +8614,7 @@ details[open] .footer-arrow-icon {
   font-weight: 600;
   line-height: var(--lh-h2);
   letter-spacing: -0.015em;
-  color: #000020;
+  color: var(--color-heading-on-light);
   margin-bottom: 20px;
 }
 
@@ -8713,7 +8713,7 @@ details[open] .footer-arrow-icon {
   font-size: 22px;
   font-weight: 600;
   line-height: 1.2;
-  color: #000020;
+  color: var(--color-heading-on-light);
   margin-bottom: 14px;
 }
 
@@ -8782,7 +8782,7 @@ details[open] .footer-arrow-icon {
   font-weight: 600;
   line-height: var(--lh-h2);
   letter-spacing: -0.015em;
-  color: #000020;
+  color: var(--color-heading-on-light);
   margin-bottom: 18px;
 }
 
@@ -8852,7 +8852,7 @@ details[open] .footer-arrow-icon {
   width: 34px;
   height: 34px;
   margin-bottom: 18px;
-  color: #0A1F5C;
+  color: var(--color-heading-on-light);
 }
 
 .hc-cap-icon svg {
@@ -8864,7 +8864,7 @@ details[open] .footer-arrow-icon {
   font-family: var(--font-family-serif);
   font-size: 20px;
   font-weight: 600;
-  color: #000020;
+  color: var(--color-heading-on-light);
   margin-bottom: 8px;
   line-height: 1.25;
 }
