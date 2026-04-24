@@ -39,9 +39,8 @@ function CardLink({ card, className }: { card: typeof industryCards[0]; classNam
 function IndustriesSection({ visible }: IndustriesSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
 
-  const healthcare = industryCards[1];
-  const booking = industryCards[2];
-  const bottom = [industryCards[0], industryCards[3], industryCards[4]];
+  const topRow = [industryCards[1], industryCards[2]];
+  const bottomRow = [industryCards[0], industryCards[3], industryCards[4], industryCards[6]];
 
   return (
     <section
@@ -60,12 +59,13 @@ function IndustriesSection({ visible }: IndustriesSectionProps) {
 
         <div className="industries-grid-layout">
           <div className="industries-grid-top-row">
-            <CardLink card={healthcare} className="industries-grid-card industries-grid-card--tall" />
-            <CardLink card={booking} className="industries-grid-card industries-grid-card--tall" />
+            {topRow.map((card, i) => (
+              <CardLink key={i} card={card} className="industries-grid-card industries-grid-card--tall" />
+            ))}
           </div>
 
-          <div className="industries-grid-bottom-row">
-            {bottom.map((card, i) => (
+          <div className="industries-grid-bottom-row industries-grid-bottom-row--4">
+            {bottomRow.map((card, i) => (
               <CardLink key={i} card={card} className="industries-grid-card industries-grid-card--short" />
             ))}
           </div>

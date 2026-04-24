@@ -3009,15 +3009,27 @@
     gap: 12px;
   }
 
+  .industries-grid-bottom-row--4 {
+    grid-template-columns: 1fr 1fr;
+  }
+
   @media (min-width: 640px) {
     .industries-grid-bottom-row {
       grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+    }
+    .industries-grid-bottom-row--4 {
+      grid-template-columns: 1fr 1fr;
       gap: 14px;
     }
   }
 
   @media (min-width: 1024px) {
     .industries-grid-bottom-row {
+      gap: 14px;
+    }
+    .industries-grid-bottom-row--4 {
+      grid-template-columns: repeat(4, 1fr);
       gap: 14px;
     }
   }
