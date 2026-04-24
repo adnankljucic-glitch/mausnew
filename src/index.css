@@ -3038,6 +3038,7 @@
     position: relative;
     overflow: hidden;
     display: block;
+    border-radius: 4px;
     text-decoration: none;
     border-radius: 2px;
     background: #0d1a2e;
