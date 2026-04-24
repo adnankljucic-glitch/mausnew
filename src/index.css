@@ -8705,16 +8705,23 @@ details[open] .footer-arrow-icon {
 
 .hc-expertise-lead {
   font-family: var(--font-family-sans);
+  font-weight: 400;
   font-size: var(--font-lead-mobile);
   line-height: var(--lh-lead);
   color: rgba(0, 0, 0, 0.65);
-  max-width: 640px;
+  max-width: 780px;
   margin: 0 auto;
 }
 
 @media (min-width: 768px) {
   .hc-expertise-lead {
     font-size: var(--font-lead-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hc-expertise-lead {
+    font-size: var(--font-lead-desktop);
   }
 }
 
@@ -11497,8 +11504,8 @@ details[open] .footer-arrow-icon {
 .ai-bento-description {
   font-family: 'Barlow', sans-serif;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: var(--font-lead-mobile);
+  line-height: var(--lh-lead);
   color: var(--color-subheading-on-light);
   margin: 0;
   max-width: 50%;
@@ -11506,13 +11513,13 @@ details[open] .footer-arrow-icon {
 
 @media (min-width: 768px) {
   .ai-bento-description {
-    font-size: 20px;
+    font-size: var(--font-lead-tablet);
   }
 }
 
 @media (min-width: 1024px) {
   .ai-bento-description {
-    font-size: 22px;
+    font-size: var(--font-lead-desktop);
   }
 }
 
@@ -11532,15 +11539,15 @@ details[open] .footer-arrow-icon {
 .ai-bento-body-copy {
   font-family: 'Barlow', sans-serif;
   font-weight: 400;
-  font-size: 15px;
-  line-height: 1.75;
+  font-size: 14px;
+  line-height: 1.55;
   color: rgba(10, 31, 92, 0.65);
   margin: 0 0 40px 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .ai-bento-body-copy {
-    font-size: 16px;
+    font-size: 15px;
     margin-bottom: 48px;
   }
 }
