@@ -21,7 +21,7 @@ export default function HealthcareHero() {
         style={{ backgroundColor: '#040F39', opacity: 0.6, zIndex: 1 }}
       />
 
-      <div className="manyone-grid ai-hero-content">
+      <div className="manyone-grid ai-hero-content" style={{ justifyContent: 'flex-end', paddingBottom: '10vh' }}>
 
         <motion.h1
           className="ai-hero-headline"
@@ -29,7 +29,7 @@ export default function HealthcareHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
         >
-          Secure, compliant software for modern healthcare
+          Secure, compliant software<br />for modern healthcare
         </motion.h1>
 
         <motion.p
