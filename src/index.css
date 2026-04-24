@@ -1709,68 +1709,210 @@
     color: #FFCD00 !important;
   }
 
-  /* ── MEGA CARD hover (background only — rest is inline) ── */
-  .mega-card-hover:hover {
-    background: rgba(0, 0, 0, 0.025);
-  }
-
-  /* Remove right border on every 3rd card */
-  .mega-card-hover:nth-child(3n) {
-    border-right: none !important;
-  }
-
-  /* ── MOBILE INDUSTRIES SECTION ── */
-  .mobile-industries-section {
-    width: 100%;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  }
-
-  .mobile-industries-trigger {
-    width: 100%;
+  /* ── INDUSTRIES TRIGGER button (looks like a nav-link) ── */
+  .industries-trigger {
     background: none;
     border: none;
     cursor: pointer;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    color: #ffffff !important;
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    position: relative;
+  }
+  .industries-trigger::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #FFCD00;
+    transition: width 0.3s ease;
+  }
+  .industries-trigger:hover,
+  .industries-trigger[aria-expanded="true"] {
+    color: #FFCD00 !important;
+  }
+  .industries-trigger:hover::after,
+  .industries-trigger[aria-expanded="true"]::after {
+    width: 100%;
+  }
+
+  /* ── MEGA DROPDOWN PANEL ── */
+  .ind-mega {
+    position: fixed;
+    top: var(--header-height, 72px);
+    left: 0;
+    right: 0;
+    background: #f5f5f0;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    display: flex;
+    z-index: 9999;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  }
+
+  /* Left column */
+  .ind-mega-left {
+    flex: 0 0 280px;
+    padding: 48px 40px 48px 48px;
+    border-right: 1px solid rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: flex-start;
+  }
+
+  .ind-mega-eyebrow {
+    font-family: 'Barlow', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.4);
+    margin-bottom: 4px;
+  }
+
+  /* Divider line under eyebrow */
+  .ind-mega-left::before {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 1px;
+    background: rgba(0,0,0,0.15);
+    margin-bottom: 8px;
+    order: -1;
+  }
+
+  .ind-mega-headline {
+    font-family: 'Barlow', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #0d1b3e;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+
+  .ind-mega-headline em {
+    font-family: 'Inria Serif', serif;
+    font-style: italic;
+    font-weight: 300;
+    color: #0d1b3e;
+  }
+
+  /* Right grid: 3 columns × 2 rows */
+  .ind-mega-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .ind-mega-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 32px 28px 28px;
+    text-decoration: none;
+    border-right: 1px solid rgba(0,0,0,0.08);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    transition: background 0.15s ease;
+    position: relative;
+  }
+
+  /* Remove right border on col 3 */
+  .ind-mega-card:nth-child(3n) {
+    border-right: none;
+  }
+
+  /* Remove bottom border on last row */
+  .ind-mega-card:nth-child(n+4) {
+    border-bottom: none;
+  }
+
+  .ind-mega-card:hover {
+    background: rgba(0,0,0,0.025);
+  }
+
+  .ind-mega-icon {
+    display: block;
+    color: #0d1b3e;
+    transition: color 0.15s ease;
+    line-height: 0;
+  }
+
+  .ind-mega-card:hover .ind-mega-icon {
+    color: #002395;
+  }
+
+  .ind-mega-card-title {
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #0d1b3e;
+    line-height: 1.25;
+    letter-spacing: 0.01em;
+    transition: color 0.15s ease;
+  }
+
+  .ind-mega-card:hover .ind-mega-card-title {
+    color: #002395;
+  }
+
+  .ind-mega-card-desc {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12.5px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.48);
+    line-height: 1.6;
+  }
+
+  /* ── MOBILE INDUSTRIES ACCORDION ── */
+  .mobile-ind-trigger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 18px 0;
     font-family: 'Barlow', sans-serif;
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: #000000;
-    line-height: 1;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
   }
 
-  .mobile-industries-list {
+  .mobile-ind-list {
     overflow: hidden;
-    padding-bottom: 8px;
-  }
-
-  .mobile-industry-item {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 11px 0 11px 4px;
+    flex-direction: column;
+    padding-left: 12px;
+  }
+
+  .mobile-ind-item {
+    display: block;
+    padding: 10px 0;
     font-family: 'Barlow', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
-    color: rgba(0, 0, 0, 0.6) !important;
+    color: rgba(255,255,255,0.7) !important;
     text-decoration: none;
-    letter-spacing: 0.03em;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
     transition: color 0.2s;
-    border-bottom: none;
   }
 
-  .mobile-industry-item:hover {
-    color: #002395 !important;
-  }
-
-  .mobile-industry-icon {
-    color: rgba(0, 0, 0, 0.35);
-    display: inline-flex;
-    flex-shrink: 0;
+  .mobile-ind-item:hover {
+    color: #FFCD00 !important;
   }
 
   .mobile-industry-all {

@@ -1,24 +1,101 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { X, Menu } from 'lucide-react';
+import { X, Menu, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+// ── Industry items (real content from IndustriesSection) ───────────────────
+
+const INDUSTRIES = [
+  {
+    label: 'Healthcare',
+    to: '/industries/healthcare',
+    desc: 'Secure, compliant clinical systems and patient platforms.',
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={24} height={24}>
+        <path d="M16 28S5 22 5 14a6 6 0 0 1 11-3.5A6 6 0 0 1 27 14c0 8-11 14-11 14z" />
+        <path d="M13 16h2l1-3 2 6 1-3h2" strokeWidth="1.2" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Booking & Ticketing',
+    to: '/cases/run-events',
+    desc: 'High-concurrency reservation platforms built to scale.',
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={24} height={24}>
+        <rect x="4" y="8" width="24" height="18" rx="2" />
+        <path d="M4 14h24M10 4v6M22 4v6" />
+        <circle cx="11" cy="21" r="1" fill="currentColor" />
+        <circle cx="16" cy="21" r="1" fill="currentColor" />
+        <circle cx="21" cy="21" r="1" fill="currentColor" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Fintech & Payments',
+    to: '/industries',
+    desc: 'Fraud-resistant financial software with full compliance.',
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={24} height={24}>
+        <rect x="3" y="9" width="26" height="16" rx="2" />
+        <path d="M3 15h26M8 21h4M22 21h2" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Energy & Utilities',
+    to: '/industries',
+    desc: 'Smart grid and resource management systems.',
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={24} height={24}>
+        <path d="M18 3L6 18h8l-2 11 12-15h-8l2-11z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'AI & Manufacturing',
+    to: '/industries',
+    desc: 'Predictive IoT systems and smart factory automation.',
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={24} height={24}>
+        <rect x="10" y="10" width="12" height="12" rx="1.5" />
+        <path d="M16 3v4M16 25v4M3 16h4M25 16h4M7.5 7.5l2.5 2.5M22 7.5l-2.5 2.5M7.5 24.5l2.5-2.5M22 24.5l-2.5-2.5" />
+        <circle cx="16" cy="16" r="2" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Real Estate & PropTech',
+    to: '/industries',
+    desc: 'Automated valuation and tenant management portals.',
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={24} height={24}>
+        <path d="M4 14l12-9 12 9v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V14z" />
+        <path d="M13 30v-8h6v8" />
+      </svg>
+    ),
+  },
+];
+
+// ── Header ─────────────────────────────────────────────────────────────────
+
 function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled]             = useState(false);
-  const [headerVisible, setHeaderVisible]   = useState(true);
-  const [lastScrollY, setLastScrollY]       = useState(0);
-  const [isMobile, setIsMobile]             = useState(window.innerWidth < 1024);
+  const [mobileOpen, setMobileOpen]     = useState(false);
+  const [scrolled, setScrolled]         = useState(false);
+  const [visible, setVisible]           = useState(true);
+  const [lastY, setLastY]               = useState(0);
+  const [isMobile, setIsMobile]         = useState(window.innerWidth < 1024);
+  const [dropOpen, setDropOpen]         = useState(false);
+  const [mobileIndOpen, setMobileInd]   = useState(false);
+  const dropRef                         = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [location.pathname]);
+  useEffect(() => { setMobileOpen(false); setDropOpen(false); }, [location.pathname]);
 
   useEffect(() => {
     const onResize = () => {
       setIsMobile(window.innerWidth < 1024);
-      if (window.innerWidth >= 1024) setMobileMenuOpen(false);
+      if (window.innerWidth >= 1024) setMobileOpen(false);
     };
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
@@ -28,48 +105,120 @@ function Header() {
     const onScroll = () => {
       const y = window.scrollY;
       setScrolled(y > 40);
-      if (y > 80 && Math.abs(y - lastScrollY) > 10) setHeaderVisible(y < lastScrollY);
-      else if (y <= 80) setHeaderVisible(true);
-      setLastScrollY(y);
+      if (y > 80 && Math.abs(y - lastY) > 10) setVisible(y < lastY);
+      else if (y <= 80) setVisible(true);
+      setLastY(y);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
-  }, [lastScrollY]);
+  }, [lastY]);
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setMobileMenuOpen(false); };
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') { setDropOpen(false); setMobileOpen(false); } };
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, []);
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      if (dropRef.current && !dropRef.current.contains(e.target as Node)) setDropOpen(false);
+    };
+    document.addEventListener('mousedown', onClick);
+    return () => document.removeEventListener('mousedown', onClick);
+  }, []);
+
   return (
-    <header className={`premium-header ${scrolled ? 'scrolled' : ''} ${headerVisible ? 'header-visible' : 'header-hidden'}`}>
+    <header className={`premium-header ${scrolled ? 'scrolled' : ''} ${visible ? 'header-visible' : 'header-hidden'}`}>
       <div className="manyone-grid premium-header-inner">
 
+        {/* Logo */}
         <Link className="premium-logo" to="/">
           <img src="/maus-logo-light.svg" className="maus-logo" alt="MAUS" />
         </Link>
 
+        {/* Desktop nav */}
         {!isMobile && (
           <>
             <nav className="premium-nav">
-              <Link to="/services"   className="nav-link">Services</Link>
-              <Link to="/expertise"  className="nav-link">Expertise</Link>
-              <Link to="/industries" className="nav-link">Industries</Link>
-              <Link to="/cases"      className="nav-link">Cases</Link>
-              <a    href="#about"    className="nav-link">About Us</a>
+              <Link to="/services"  className="nav-link">Services</Link>
+              <Link to="/expertise" className="nav-link">Expertise</Link>
+
+              {/* Industries with dropdown */}
+              <div ref={dropRef} style={{ position: 'relative' }}>
+                <button
+                  className="nav-link industries-trigger"
+                  onClick={() => setDropOpen(o => !o)}
+                  aria-expanded={dropOpen}
+                  aria-haspopup="true"
+                >
+                  Industries
+                  <ChevronDown
+                    size={13}
+                    strokeWidth={2.2}
+                    style={{
+                      display: 'inline-block',
+                      marginLeft: 4,
+                      verticalAlign: 'middle',
+                      transition: 'transform 0.2s ease',
+                      transform: dropOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                    }}
+                  />
+                </button>
+
+                <AnimatePresence>
+                  {dropOpen && (
+                    <motion.div
+                      className="ind-mega"
+                      initial={{ opacity: 0, y: -8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -8 }}
+                      transition={{ duration: 0.18, ease: 'easeOut' }}
+                    >
+                      {/* Left: headline */}
+                      <div className="ind-mega-left">
+                        <p className="ind-mega-eyebrow">INDUSTRIES</p>
+                        <h3 className="ind-mega-headline">
+                          Deep sector expertise across the industries{' '}
+                          <em>we know best</em>.
+                        </h3>
+                      </div>
+
+                      {/* Right: 2×3 grid */}
+                      <div className="ind-mega-grid">
+                        {INDUSTRIES.map((item) => (
+                          <Link
+                            key={item.label}
+                            to={item.to}
+                            className="ind-mega-card"
+                            onClick={() => setDropOpen(false)}
+                          >
+                            <span className="ind-mega-icon">{item.icon}</span>
+                            <span className="ind-mega-card-title">{item.label}</span>
+                            <span className="ind-mega-card-desc">{item.desc}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              <Link to="/cases"   className="nav-link">Cases</Link>
+              <a    href="#about" className="nav-link">About Us</a>
             </nav>
             <Link className="premium-cta" to="/discovery">Let's Talk</Link>
           </>
         )}
 
+        {/* Mobile burger */}
         {isMobile && (
           <button
-            className={`premium-burger ${mobileMenuOpen ? 'menu-open' : ''}`}
-            onClick={() => setMobileMenuOpen(o => !o)}
-            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            className={`premium-burger ${mobileOpen ? 'menu-open' : ''}`}
+            onClick={() => setMobileOpen(o => !o)}
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           >
-            {mobileMenuOpen
+            {mobileOpen
               ? <><span className="premium-burger-label">CLOSE</span><X size={18} strokeWidth={2} /></>
               : <><span className="premium-burger-label">MENU</span><Menu size={18} strokeWidth={2} /></>
             }
@@ -77,8 +226,9 @@ function Header() {
         )}
       </div>
 
+      {/* Mobile full-screen menu */}
       <AnimatePresence>
-        {isMobile && mobileMenuOpen && (
+        {isMobile && mobileOpen && (
           <motion.div
             className="premium-mobile-menu menu-active"
             initial={{ opacity: 0, x: '100%' }}
@@ -86,12 +236,46 @@ function Header() {
             exit={{ opacity: 0, x: '100%' }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
-            <Link to="/services"   onClick={() => setMobileMenuOpen(false)}>Services</Link>
-            <Link to="/expertise"  onClick={() => setMobileMenuOpen(false)}>Expertise</Link>
-            <Link to="/industries" onClick={() => setMobileMenuOpen(false)}>Industries</Link>
-            <Link to="/cases"      onClick={() => setMobileMenuOpen(false)}>Cases</Link>
-            <a    href="#about"    onClick={() => setMobileMenuOpen(false)}>About Us</a>
-            <Link className="premium-cta mobile" to="/discovery" onClick={() => setMobileMenuOpen(false)}>
+            <Link to="/services"  onClick={() => setMobileOpen(false)}>Services</Link>
+            <Link to="/expertise" onClick={() => setMobileOpen(false)}>Expertise</Link>
+
+            {/* Industries accordion on mobile */}
+            <button
+              className="mobile-ind-trigger"
+              onClick={() => setMobileInd(o => !o)}
+            >
+              Industries
+              <ChevronDown
+                size={14}
+                style={{ transition: 'transform 0.2s', transform: mobileIndOpen ? 'rotate(180deg)' : 'none' }}
+              />
+            </button>
+            <AnimatePresence>
+              {mobileIndOpen && (
+                <motion.div
+                  className="mobile-ind-list"
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.22 }}
+                >
+                  {INDUSTRIES.map((item) => (
+                    <Link
+                      key={item.label}
+                      to={item.to}
+                      className="mobile-ind-item"
+                      onClick={() => { setMobileOpen(false); setMobileInd(false); }}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            <Link to="/cases"   onClick={() => setMobileOpen(false)}>Cases</Link>
+            <a    href="#about" onClick={() => setMobileOpen(false)}>About Us</a>
+            <Link className="premium-cta mobile" to="/discovery" onClick={() => setMobileOpen(false)}>
               Let's Talk
             </Link>
           </motion.div>
