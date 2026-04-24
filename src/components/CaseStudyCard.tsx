@@ -1,11 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Star } from 'lucide-react';
-
-interface Testimonial {
-  avatar: string;
-  quote: string;
-}
+import { ArrowUpRight } from 'lucide-react';
 
 interface CaseStudyCardProps {
   slug: string;
@@ -14,7 +9,7 @@ interface CaseStudyCardProps {
   imageUrl: string;
   variant: 'full' | 'half';
   contentPosition?: 'bottom' | 'top';
-  testimonial?: Testimonial;
+  tag?: string;
   index: number;
 }
 
@@ -25,7 +20,7 @@ export default function CaseStudyCard({
   imageUrl,
   variant,
   contentPosition = 'bottom',
-  testimonial,
+  tag,
   index,
 }: CaseStudyCardProps) {
   return (
@@ -34,23 +29,28 @@ export default function CaseStudyCard({
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-100px' }}
-      transition={{ duration: 0.7, ease: 'easeOut', delay: index * 0.1 }}
+      transition={{ duration: 0.7, ease: 'easeOut', delay: index * 0.06 }}
     >
       <Link to={`/cases/${slug}`} className="case-card-link">
+        {/* Background image */}
         <img src={imageUrl} alt={title} className="case-card-image" />
+
+        {/* Deep cinematic overlay — same pattern as hero sections */}
         <div className="case-card-overlay" />
 
+        {/* Content */}
         <div className={`case-card-content case-card-content-${contentPosition}`}>
           <div className="case-card-text">
+            {tag && <span className="case-card-tag">{tag}</span>}
             <h3 className="case-card-title">{title}</h3>
             {variant === 'full' && (
               <p className="case-card-description">{description}</p>
             )}
-            <span className="case-card-cta">
+            <span className="btn-primary case-card-btn">
               View Case Study
+              <ArrowUpRight size={16} strokeWidth={2} />
             </span>
           </div>
-
         </div>
       </Link>
     </motion.div>

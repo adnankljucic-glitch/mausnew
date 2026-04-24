@@ -4727,13 +4727,24 @@
   transform: scale(1.05);
 }
 
+.case-card-tag {
+  display: inline-block;
+  font-family: var(--font-family-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 12px;
+}
+
 .case-card-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(17, 24, 39, 0.2) 0%, rgba(17, 24, 39, 0.7) 100%);
+  background: linear-gradient(to bottom, rgba(2, 8, 23, 0.15) 0%, rgba(2, 8, 23, 0.55) 50%, rgba(2, 8, 23, 0.88) 100%);
   pointer-events: none;
 }
 
@@ -4784,7 +4795,7 @@
 
 .case-card-title {
   font-family: var(--font-family-serif);
-  font-weight: 400;
+  font-weight: 600;
   font-size: var(--font-h3-mobile);
   line-height: 1.2;
   color: #FFFFFF;
@@ -4841,33 +4852,21 @@
   }
 }
 
-.case-card-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  backdrop-filter: blur(12px);
-  font-family: var(--font-family-sans);
-  font-weight: 500;
-  font-size: 14px;
-  color: #FFFFFF;
-  transition: all 0.3s ease;
-  width: fit-content;
-  margin-top: 8px;
+.case-card-btn {
+  margin-top: 20px;
+  width: fit-content !important;
+  justify-content: center !important;
+  padding: 13px 28px !important;
+  font-size: 13px !important;
+  border-color: rgba(255, 255, 255, 0.6) !important;
+  color: #ffffff !important;
+  backdrop-filter: blur(8px);
 }
 
-@media (min-width: 768px) {
-  .case-card-cta {
-    font-size: 16px;
-  }
-}
-
-.case-card:hover .case-card-cta {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+.case-card:hover .case-card-btn {
+  background: #002395 !important;
+  border-color: #002395 !important;
+  color: #ffffff !important;
 }
 
 /* CASE CARD TESTIMONIAL */
