@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 interface Industry {
@@ -6,6 +7,7 @@ interface Industry {
   description: string;
   image: string;
   category: string;
+  linkUrl: string;
 }
 
 const industries: Industry[] = [
@@ -13,41 +15,48 @@ const industries: Industry[] = [
     title: "Fintech & Payment Systems",
     description: "Building secure, scalable payment solutions and financial technology platforms that handle millions of transactions.",
     image: "/pay.jpg",
-    category: "Financial Services"
+    category: "Financial Services",
+    linkUrl: "/industries/fintech"
   },
   {
     title: "Healthcare",
     description: "Partnered with Scandinavia's largest firms to develop healthcare systems used in hospitals across the region.",
     image: "https://media.maus.ba/media/z1igwr1n/pexels-thirdman-8940510.jpg?width=1110&height=1536&v=1daf23ac1e423f0&mode=crop",
-    category: "Healthcare"
+    category: "Healthcare",
+    linkUrl: "/industries/healthcare"
   },
   {
     title: "Booking & Ticketing",
     description: "Advanced digital booking tools with data-driven marketing that improves operations and guest experiences.",
     image: "https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: "Tourism & Events"
+    category: "Tourism & Events",
+    linkUrl: "/industries/booking-ticketing"
   },
   {
     title: "Sustainability & Water Cycle",
     description: "Modern, data-driven solutions for efficient water management and sustainability, replacing legacy systems.",
     image: "https://media.maus.ba/media/f0thtqcb/pexels-funda-izgi-236637469-18140302.jpg?width=2280&height=1536&v=1daeccff25c4690&mode=crop",
-    category: "Utilities"
+    category: "Utilities",
+    linkUrl: "/industries/sustainability"
   },
   {
-    title: "Manufacturing",
+    title: "IoT & Smart Devices",
     description: "Advanced solutions for manufacturing and processing machinery with real-time monitoring and control.",
     image: "https://media.maus.ba/media/heqh5ti4/sanovo.webp?width=2280&height=1536&v=1daee53c8107930&mode=crop",
-    category: "Manufacturing"
+    category: "Smart Home",
+    linkUrl: "/industries/iot-smart-devices"
   },
   {
     title: "Smart Home & IoT",
     description: "Advanced IoT technology with multiple measurement points for precise control and improved safety.",
     image: "https://media.maus.ba/media/gkkpxyed/7_750x.webp?width=3060&height=1536&v=1daf2e7c2e97d0&mode=crop",
-    category: "IoT & Smart Devices"
+    category: "IoT & Smart Devices",
+    linkUrl: "/industries/smart-home"
   }
 ];
 
 export default function IndustriesBento() {
+  const navigate = useNavigate();
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -128,8 +137,13 @@ export default function IndustriesBento() {
               ref={(el) => (cardRefs.current[index] = el)}
               className={`industries-bento-card ${revealedCards.has(index) ? 'industries-bento-card-revealed' : ''}`}
               style={{
-                transitionDelay: revealedCards.has(index) ? `${index * 80}ms` : '0ms'
+                transitionDelay: revealedCards.has(index) ? `${index * 80}ms` : '0ms',
+                cursor: 'pointer',
               }}
+              onClick={() => navigate(industry.linkUrl)}
+              role="link"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === 'Enter' && navigate(industry.linkUrl)}
             >
               <div className="industries-bento-card-image-wrapper">
                 <img
