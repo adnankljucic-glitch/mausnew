@@ -8833,8 +8833,11 @@ details[open] .footer-arrow-icon {
 
 /* ── CAPABILITIES ── */
 .hc-capabilities {
-  background: #ffffff;
+  background: #ffffff !important;
+  position: relative;
+  z-index: 1;
   padding: 100px 0;
+  border-top: 1px solid #e5e7eb;
 }
 
 @media (min-width: 768px) {
@@ -8905,6 +8908,7 @@ details[open] .footer-arrow-icon {
 }
 
 .hc-cap-item {
+  background: #ffffff;
   padding: 36px 28px;
   border-right: 1px solid #D9D9D0;
   border-bottom: 1px solid #D9D9D0;
