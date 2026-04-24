@@ -17,7 +17,6 @@ export default function AIServicesBentoSection() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
-            <div className="ai-bento-section-label">01 — AI Services</div>
             <h2 className="ai-bento-headline">
               From complex data to scalable business logic
             </h2>
