@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { X, Menu, ChevronDown, Heart, Calendar, ShoppingCart, Zap, Building2, Droplets } from 'lucide-react';
+import { X, Menu, Heart, Calendar, ShoppingCart, Zap, Building2, Droplets } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface IndustryItem {
@@ -12,11 +12,11 @@ interface IndustryItem {
 
 const industries: IndustryItem[] = [
   { label: 'Healthcare', to: '/industries/healthcare', icon: <Heart size={15} strokeWidth={1.5} />, desc: 'Secure, compliant clinical systems' },
-  { label: 'Booking & Ticketing', to: '/industries', icon: <Calendar size={15} strokeWidth={1.5} />, desc: 'High-concurrency reservation platforms' },
-  { label: 'Fintech & Payments', to: '/industries', icon: <ShoppingCart size={15} strokeWidth={1.5} />, desc: 'Fraud-resistant financial software' },
-  { label: 'Energy & Utilities', to: '/industries', icon: <Droplets size={15} strokeWidth={1.5} />, desc: 'Smart grid and resource management' },
-  { label: 'AI & Manufacturing', to: '/industries', icon: <Zap size={15} strokeWidth={1.5} />, desc: 'Predictive IoT and smart factory' },
-  { label: 'Real Estate & PropTech', to: '/industries', icon: <Building2 size={15} strokeWidth={1.5} />, desc: 'Automated valuation and portals' },
+  { label: 'Booking & Ticketing', to: '/#industries', icon: <Calendar size={15} strokeWidth={1.5} />, desc: 'High-concurrency reservation platforms' },
+  { label: 'Fintech & Payments', to: '/#industries', icon: <ShoppingCart size={15} strokeWidth={1.5} />, desc: 'Fraud-resistant financial software' },
+  { label: 'Energy & Utilities', to: '/#industries', icon: <Droplets size={15} strokeWidth={1.5} />, desc: 'Smart grid and resource management' },
+  { label: 'AI & Manufacturing', to: '/#industries', icon: <Zap size={15} strokeWidth={1.5} />, desc: 'Predictive IoT and smart factory' },
+  { label: 'Real Estate & PropTech', to: '/#industries', icon: <Building2 size={15} strokeWidth={1.5} />, desc: 'Automated valuation and portals' },
 ];
 
 const dropdownVariants = {
@@ -122,13 +122,6 @@ function Header() {
                   aria-haspopup="true"
                 >
                   Industries
-                  <motion.span
-                    animate={{ rotate: industriesOpen ? 180 : 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="nav-chevron"
-                  >
-                    <ChevronDown size={13} strokeWidth={2} />
-                  </motion.span>
                 </button>
 
                 <AnimatePresence>
@@ -160,11 +153,6 @@ function Header() {
                             </span>
                           </Link>
                         ))}
-                      </div>
-                      <div className="nav-dropdown-footer">
-                        <Link to="/industries" onClick={() => setIndustriesOpen(false)}>
-                          View all industries →
-                        </Link>
                       </div>
                     </motion.div>
                   )}
@@ -221,12 +209,6 @@ function Header() {
                 aria-expanded={mobileIndustriesOpen}
               >
                 Industries
-                <motion.span
-                  animate={{ rotate: mobileIndustriesOpen ? 180 : 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <ChevronDown size={16} strokeWidth={2} />
-                </motion.span>
               </button>
 
               <AnimatePresence>
@@ -249,13 +231,6 @@ function Header() {
                         {item.label}
                       </Link>
                     ))}
-                    <Link
-                      to="/industries"
-                      className="mobile-industry-all"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      View all industries →
-                    </Link>
                   </motion.div>
                 )}
               </AnimatePresence>

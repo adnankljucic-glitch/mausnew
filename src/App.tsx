@@ -5,7 +5,6 @@ import HomePage from './pages/HomePage';
 import CasesPage from './pages/CasesPage';
 import ServicesPage from './pages/ServicesPage';
 import ExpertisePage from './pages/ExpertisePage';
-import IndustriesPage from './pages/IndustriesPage';
 import AIAutomationPage from './pages/AIAutomationPage';
 import StrategicAdvisoryPage from './pages/StrategicAdvisoryPage';
 import DigitalProductsPage from './pages/DigitalProductsPage';
@@ -31,7 +30,6 @@ function App() {
           <Route path="/services/scale-and-performance" element={<ScalePerformancePage />} />
           <Route path="/strategic-advisory" element={<StrategicAdvisoryPage />} />
           <Route path="/expertise" element={<ExpertisePage />} />
-          <Route path="/industries" element={<IndustriesPage />} />
           <Route path="/upload-images" element={<ImageUploader />} />
           <Route path="/process" element={<ProcessDemoPage />} />
           <Route path="/cases/:slug" element={<CaseStudyPage />} />
