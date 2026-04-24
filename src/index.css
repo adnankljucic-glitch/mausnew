@@ -11378,9 +11378,9 @@ details[open] .footer-arrow-icon {
 
 .ai-bento-headline {
   font-family: var(--font-family-serif);
-  font-weight: 400;
-  font-size: 36px;
-  line-height: 1.1;
+  font-weight: 600;
+  font-size: var(--font-h2-mobile);
+  line-height: var(--lh-h2);
   color: var(--color-heading-on-light);
   margin: 0 0 28px 0;
   letter-spacing: -0.01em;
@@ -11388,27 +11388,21 @@ details[open] .footer-arrow-icon {
 
 @media (min-width: 768px) {
   .ai-bento-headline {
-    font-size: 44px;
+    font-size: var(--font-h2-tablet);
     margin-bottom: 32px;
   }
 }
 
 @media (min-width: 1024px) {
   .ai-bento-headline {
-    font-size: 52px;
+    font-size: var(--font-h2-desktop);
     margin-bottom: 36px;
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1440px) {
   .ai-bento-headline {
-    font-size: 56px;
-  }
-}
-
-@media (min-width: 1600px) {
-  .ai-bento-headline {
-    font-size: 64px;
+    font-size: var(--font-h2-wide);
   }
 }
 
