@@ -1709,7 +1709,8 @@
     color: #FFCD00 !important;
   }
 
-  .nav-dropdown {
+  /* ── MEGA MENU ── */
+  .mega {
     position: fixed;
     top: 72px;
     left: 0;
@@ -1719,117 +1720,135 @@
     border-top: 1px solid rgba(0, 0, 0, 0.08);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     z-index: 200;
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
   }
 
-  .nav-dropdown-inner {
+  .mega-inner {
     display: grid;
-    grid-template-columns: 320px 1fr;
-    max-width: 1200px;
+    grid-template-columns: 280px 1fr;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 48px;
   }
 
-  /* Left editorial panel */
-  .nav-dropdown-panel {
-    padding: 40px 48px 40px 0;
+  /* Left aside */
+  .mega-aside {
+    padding: 44px 40px 44px 0;
     border-right: 1px solid rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    justify-content: center;
+    gap: 22px;
   }
 
-  .nav-dropdown-eyebrow {
+  .mega-eyebrow {
     font-family: 'Barlow', sans-serif;
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgba(0, 0, 0, 0.4);
-    display: block;
+    color: rgba(0, 0, 0, 0.38);
   }
 
-  .nav-dropdown-headline {
+  .mega-tagline {
     font-family: 'Barlow', sans-serif;
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 700;
     color: #0d1b3e;
-    line-height: 1.25;
+    line-height: 1.28;
     margin: 0;
   }
 
-  .nav-dropdown-headline em {
+  .mega-tagline em {
     font-style: italic;
     font-weight: 400;
     color: #6b7a99;
   }
 
-  /* Right grid */
-  .nav-dropdown-grid {
+  /* Cards grid */
+  .mega-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 0;
-    gap: 0;
   }
 
-  .nav-dropdown-item {
+  .mega-card {
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    padding: 32px 28px;
+    gap: 14px;
+    padding: 36px 28px 32px;
     text-decoration: none;
-    border-right: 1px solid rgba(0, 0, 0, 0.07);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     transition: background 0.15s ease;
+    overflow: hidden;
   }
 
-  .nav-dropdown-item:nth-child(3n) {
+  .mega-card:nth-child(3n) {
     border-right: none;
   }
 
-  .nav-dropdown-item:nth-child(n+4) {
+  .mega-card:nth-child(n+4) {
     border-bottom: none;
   }
 
-  .nav-dropdown-item:hover {
-    background: rgba(0, 0, 0, 0.03);
+  .mega-card:hover {
+    background: rgba(0, 0, 0, 0.025);
   }
 
-  .nav-dropdown-icon {
-    flex-shrink: 0;
-    color: #0d1b3e;
-    transition: color 0.15s;
+  .mega-card-arrow {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 13px;
+    height: 13px;
+    color: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.15s ease, color 0.15s ease;
   }
 
-  .nav-dropdown-item:hover .nav-dropdown-icon {
+  .mega-card:hover .mega-card-arrow {
+    opacity: 1;
     color: #002395;
   }
 
-  .nav-dropdown-text {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+  .mega-icon {
+    width: 32px;
+    height: 32px;
+    color: #0d1b3e;
+    flex-shrink: 0;
+    transition: color 0.15s;
   }
 
-  .nav-dropdown-label {
+  .mega-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .mega-card:hover .mega-icon {
+    color: #002395;
+  }
+
+  .mega-card-title {
     font-family: 'Barlow', sans-serif;
     font-size: 14px;
     font-weight: 700;
     color: #0d1b3e;
     line-height: 1.2;
     letter-spacing: 0.01em;
+    transition: color 0.15s;
   }
 
-  .nav-dropdown-item:hover .nav-dropdown-label {
+  .mega-card:hover .mega-card-title {
     color: #002395;
   }
 
-  .nav-dropdown-desc {
+  .mega-card-desc {
     font-family: 'Barlow', sans-serif;
     font-size: 12.5px;
     font-weight: 400;
-    color: rgba(0, 0, 0, 0.5);
-    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.48);
+    line-height: 1.55;
   }
 
   /* ── MOBILE INDUSTRIES SECTION ── */

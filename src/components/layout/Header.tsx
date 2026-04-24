@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { X, Menu, Heart, Calendar, ShoppingCart, Zap, Building2, Droplets } from 'lucide-react';
+import { X, Menu } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface IndustryItem {
@@ -10,19 +10,90 @@ interface IndustryItem {
   desc: string;
 }
 
+const ArrowIcon = () => (
+  <svg className="mega-card-arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+    <path d="M3 11L11 3M6 3h5v5" />
+  </svg>
+);
+
 const industries: IndustryItem[] = [
-  { label: 'Healthcare', to: '/industries/healthcare', icon: <Heart size={18} strokeWidth={1.5} />, desc: 'Secure, compliant clinical systems and patient platforms.' },
-  { label: 'Booking & Ticketing', to: '/#industries', icon: <Calendar size={18} strokeWidth={1.5} />, desc: 'High-concurrency reservation platforms built to scale.' },
-  { label: 'Fintech & Payments', to: '/#industries', icon: <ShoppingCart size={18} strokeWidth={1.5} />, desc: 'Fraud-resistant financial software with full compliance.' },
-  { label: 'Energy & Utilities', to: '/#industries', icon: <Droplets size={18} strokeWidth={1.5} />, desc: 'Smart grid and resource management systems.' },
-  { label: 'AI & Manufacturing', to: '/#industries', icon: <Zap size={18} strokeWidth={1.5} />, desc: 'Predictive IoT systems and smart factory automation.' },
-  { label: 'Real Estate & PropTech', to: '/#industries', icon: <Building2 size={18} strokeWidth={1.5} />, desc: 'Automated valuation and tenant management portals.' },
+  {
+    label: 'Healthcare',
+    to: '/industries/healthcare',
+    desc: 'Secure, compliant clinical systems and patient platforms.',
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M16 28s-11-6-11-14a6 6 0 0 1 11-3.5A6 6 0 0 1 27 14c0 8-11 14-11 14z" />
+        <path d="M13 16h2l1-3 2 6 1-3h2" strokeWidth="1.2" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Booking & Ticketing',
+    to: '/#industries',
+    desc: 'High-concurrency reservation platforms built to scale.',
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="4" y="8" width="24" height="18" rx="2" />
+        <path d="M4 14h24M10 4v6M22 4v6" />
+        <circle cx="11" cy="19" r="1" fill="currentColor" />
+        <circle cx="16" cy="19" r="1" fill="currentColor" />
+        <circle cx="21" cy="19" r="1" fill="currentColor" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Fintech & Payments',
+    to: '/#industries',
+    desc: 'Fraud-resistant financial software with full compliance.',
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="9" width="26" height="16" rx="2" />
+        <path d="M3 15h26" />
+        <path d="M8 20h4M20 20h4" />
+        <circle cx="16" cy="20" r="2" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Energy & Utilities',
+    to: '/#industries',
+    desc: 'Smart grid and resource management systems.',
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M18 3L6 18h8l-2 11 12-15h-8l2-11z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'AI & Manufacturing',
+    to: '/#industries',
+    desc: 'Predictive IoT systems and smart factory automation.',
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="10" y="10" width="12" height="12" rx="1.5" />
+        <path d="M16 3v4M16 25v4M3 16h4M25 16h4M7 7l3 3M22 7l-3 3M7 25l3-3M22 25l-3-3" />
+        <circle cx="16" cy="16" r="2" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Real Estate & PropTech',
+    to: '/#industries',
+    desc: 'Automated valuation and tenant management portals.',
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4 14l12-9 12 9v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V14z" />
+        <path d="M13 30v-8h6v8" />
+      </svg>
+    ),
+  },
 ];
 
-const dropdownVariants = {
-  hidden: { opacity: 0, y: -6, scale: 0.98 },
-  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.18, ease: 'easeOut' } },
-  exit: { opacity: 0, y: -4, scale: 0.98, transition: { duration: 0.13, ease: 'easeIn' } },
+const megaVariants = {
+  hidden: { opacity: 0, y: -8 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.2, ease: 'easeOut' } },
+  exit: { opacity: 0, y: -6, transition: { duration: 0.14, ease: 'easeIn' } },
 };
 
 const mobileExpandVariants = {
@@ -43,7 +114,6 @@ function Header() {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
-  // Close dropdown when navigating
   useEffect(() => {
     setIndustriesOpen(false);
     setMobileMenuOpen(false);
@@ -113,7 +183,7 @@ function Header() {
               <Link to="/services" className="nav-link">Services</Link>
               <Link to="/expertise" className="nav-link">Expertise</Link>
 
-              {/* Industries dropdown */}
+              {/* Industries mega menu */}
               <div className="nav-industries-wrapper" ref={dropdownRef}>
                 <button
                   className={`nav-link nav-industries-trigger ${industriesOpen ? 'active' : ''}`}
@@ -127,38 +197,37 @@ function Header() {
                 <AnimatePresence>
                   {industriesOpen && (
                     <motion.div
-                      className="nav-dropdown"
-                      variants={dropdownVariants}
+                      className="mega"
+                      variants={megaVariants}
                       initial="hidden"
                       animate="visible"
                       exit="exit"
                       role="menu"
                     >
-                      <div className="nav-dropdown-inner">
+                      <div className="mega-inner">
                         {/* Left editorial panel */}
-                        <div className="nav-dropdown-panel">
-                          <span className="nav-dropdown-eyebrow">Industries</span>
-                          <p className="nav-dropdown-headline">
+                        <div className="mega-aside">
+                          <div className="mega-eyebrow">Industries</div>
+                          <p className="mega-tagline">
                             Deep sector expertise across the industries{' '}
                             <em>we know best</em>.
                           </p>
                         </div>
 
-                        {/* Right grid */}
-                        <div className="nav-dropdown-grid">
+                        {/* Cards grid */}
+                        <div className="mega-grid">
                           {industries.map((item) => (
                             <Link
                               key={item.label}
                               to={item.to}
-                              className="nav-dropdown-item"
+                              className="mega-card"
                               role="menuitem"
                               onClick={() => setIndustriesOpen(false)}
                             >
-                              <span className="nav-dropdown-icon">{item.icon}</span>
-                              <span className="nav-dropdown-text">
-                                <span className="nav-dropdown-label">{item.label}</span>
-                                <span className="nav-dropdown-desc">{item.desc}</span>
-                              </span>
+                              <ArrowIcon />
+                              <div className="mega-icon">{item.icon}</div>
+                              <div className="mega-card-title">{item.label}</div>
+                              <div className="mega-card-desc">{item.desc}</div>
                             </Link>
                           ))}
                         </div>
@@ -210,7 +279,6 @@ function Header() {
             <Link to="/services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
             <Link to="/expertise" onClick={() => setMobileMenuOpen(false)}>Expertise</Link>
 
-            {/* Mobile industries expandable */}
             <div className="mobile-industries-section">
               <button
                 className="mobile-industries-trigger"
