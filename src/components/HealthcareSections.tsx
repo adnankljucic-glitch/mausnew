@@ -249,45 +249,39 @@ export default function HealthcareSections() {
       </section>
 
       {/* ── PROVEN RESULTS / CASE ── */}
-      <section ref={caseRef} className="hc-case">
+      <motion.section
+        ref={caseRef}
+        className="pillar-row pillar-row-dark"
+        initial="hidden"
+        animate={caseInView ? 'visible' : 'hidden'}
+      >
         <div className="manyone-grid">
-          <motion.div
-            className="hc-case-header"
-            initial={{ opacity: 0, y: 20 }}
-            animate={caseInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-          >
-            <p className="hc-eyebrow hc-eyebrow--light">Proven Results</p>
-            <h2 className="hc-case-headline">Healthcare systems, shipped.</h2>
-            <p className="hc-case-sub">High-impact projects built on deep technical expertise and clinical collaboration.</p>
-          </motion.div>
-
-          <div className="hc-case-split">
+          <div className="pillar-row-inner">
             <motion.div
-              className="hc-case-text"
-              initial={{ opacity: 0, x: -30 }}
-              animate={caseInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+              className="pillar-row-content"
+              initial={{ opacity: 0, y: 20 }}
+              animate={caseInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="hc-case-label">Case — AI & Healthcare</span>
-              <h3 className="hc-case-title">Systematic Healthcare</h3>
-              <p>
+              <p className="pillar-row-eyebrow">Case — AI &amp; Healthcare</p>
+              <h2 className="pillar-row-headline">Systematic Healthcare</h2>
+              <p className="pillar-row-intro">
                 We partnered with Systematic — one of Scandinavia's largest healthcare software firms — to develop
                 systems used in hospitals across the region.
               </p>
-              <p>
+              <p className="pillar-row-intro">
                 Through our work on CURA, we transformed homecare documentation with automated form-filling,
                 letting caregivers focus on patient care instead of paperwork. The result: reduced administrative
                 overhead, improved accuracy, and seamless integration with existing healthcare systems.
               </p>
-              <Link to="/cases" className="hc-case-link">Read the case</Link>
+              <Link to="/cases" className="ready-cta-button" style={{ marginTop: '8px' }}>Read the case</Link>
             </motion.div>
 
             <motion.div
-              className="hc-case-media"
-              initial={{ opacity: 0, x: 30 }}
-              animate={caseInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+              className="pillar-row-media"
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={caseInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
             >
               <video
                 src="https://media.maus.ba/media/ghshptkb/intro_hosipital.mp4"
@@ -295,12 +289,18 @@ export default function HealthcareSections() {
                 muted
                 loop
                 playsInline
-                className="hc-case-video"
+                className="pillar-row-image"
               />
+              <div className="pillar-row-image-overlay">
+                <div className="pillar-row-image-overlay-content">
+                  <h3 className="pillar-row-image-title">Systematic Healthcare</h3>
+                  <p className="pillar-row-image-subtitle">AI-powered homecare documentation</p>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 }
