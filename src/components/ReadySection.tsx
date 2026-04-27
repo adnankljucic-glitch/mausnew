@@ -77,7 +77,7 @@ export default function ReadySection({ headline = "Ready for our customer-centri
 
           <motion.div className="ready-image-wrapper" variants={imageVariants}>
             <img
-              src="/MAUS_54.jpg"
+              src="/davor.webp"
               alt="Team member at work"
               className="ready-image"
             />

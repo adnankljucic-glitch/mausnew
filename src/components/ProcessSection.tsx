@@ -37,7 +37,7 @@ const processSteps: ProcessStep[] = [
         description: 'Ensuring your systems handle growth in both data and users without accumulating technical debt.',
       },
     ],
-    image: '/MAUS_54.jpg',
+    image: '/davor.webp',
     imageAlt: 'Strategic Advisory',
     imageHeadline: 'Strategic advisory',
     imageSubheadline: 'From market analysis to goal-setting, we craft a roadmap that aligns with your vision, ensuring every move is purposeful and impactful.',
