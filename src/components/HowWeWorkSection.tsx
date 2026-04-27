@@ -86,7 +86,7 @@ export default function HowWeWorkSection() {
     >
       <div className="absolute inset-0">
         <img
-          src="https://media.maus.ba/media/jizlnn2c/about.webp"
+          src="/office_kolega.webp"
           alt=""
           className="w-full h-full object-cover object-center"
         />

@@ -95,7 +95,7 @@ export default function IndustriesReadySection() {
 
           <motion.div className="ready-image-wrapper" variants={imageVariants}>
             <img
-              src="https://media.maus.ba/media/q3gjhw3a/maus_17.jpg?width=1140&height=1536&v=1da3b4a19da3340&mode=crop"
+              src="/MAUS_54.jpg"
               alt="Team member at work"
               className="ready-image"
             />

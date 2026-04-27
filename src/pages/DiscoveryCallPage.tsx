@@ -16,7 +16,7 @@ const specialists = [
     name: 'Davor Maus',
     title: 'Technical Architect',
     email: 'davor@maus.ba',
-    image: 'https://media.maus.ba/media/q3gjhw3a/maus_17.jpg?width=400&height=400&v=1da3b4a19da3340&mode=crop',
+    image: '/MAUS_54.jpg',
   },
   {
     name: 'Almir Mesanovic',

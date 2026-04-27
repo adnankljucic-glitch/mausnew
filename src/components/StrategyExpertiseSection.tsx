@@ -73,7 +73,7 @@ export default function StrategyExpertiseSection() {
             <div className="ai-expert-card">
               <div className="ai-expert-image-wrapper">
                 <img
-                  src="https://media.maus.ba/media/q3gjhw3a/maus_17.jpg?width=1140&height=1536&v=1da3b4a19da3340&mode=crop"
+                  src="/MAUS_54.jpg"
                   alt="Davor Zlotrg, MAUS CEO"
                   className="ai-expert-image"
                 />

@@ -274,7 +274,7 @@ export default function HealthcareSections() {
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
             >
               <video
-                src="https://media.maus.ba/media/ghshptkb/intro_hosipital.mp4"
+                src="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/hospital.mp4"
                 autoPlay
                 muted
                 loop

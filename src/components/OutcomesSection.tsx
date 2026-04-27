@@ -13,8 +13,8 @@ interface OutcomeCard {
 const outcomeCards: OutcomeCard[] = [
   {
     id: 1,
-    image: 'https://media.maus.ba/media/0nqfe3vu/header_real.webp?width=1110&height=1536&v=1dc0548ee54eec0&mode=crop',
-    video: 'https://media.maus.ba/media/rqspp3or/mobile.mp4',
+    image: '/dashboard.webp',
+    video: 'https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/runevents_intro.mp4',
     title: "Discovery",
     description: "We map your legacy systems and business logic."
   },
@@ -26,14 +26,14 @@ const outcomeCards: OutcomeCard[] = [
   },
   {
     id: 3,
-    image: 'https://media.maus.ba/media/oowp32aa/husejerforum-1-small.webp?width=1110&height=1536&v=1dc0549e08ae8a0&mode=crop',
-    video: 'https://media.maus.ba/media/czyd0sdv/ui.mp4',
+    image: '/devanalytics.webp',
+    video: 'https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/hospital.mp4',
     title: "Development",
     description: "We execute with surgical precision and maximum speed."
   },
   {
     id: 4,
-    image: 'https://media.maus.ba/media/0nqfe3vu/header_real.webp?width=1110&height=1536&v=1dc0548ee54eec0&mode=crop',
+    image: '/future_strategy.webp',
     title: "Delivery",
     description: "You receive a product that works as intended, no surprises."
   }
