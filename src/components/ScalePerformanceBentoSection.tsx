@@ -8,7 +8,7 @@ export default function ScalePerformanceBentoSection() {
   return (
     <section ref={sectionRef} className="ai-bento-section ai-bento-section--warm">
       <div className="manyone-grid">
-        <div className="ai-bento-grid">
+        <div className="pillar-row-inner ai-bento-grid" style={{ alignItems: 'start' }}>
 
           {/* Left column — headline only */}
           <motion.div
