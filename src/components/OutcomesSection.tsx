@@ -13,7 +13,7 @@ interface OutcomeCard {
 const outcomeCards: OutcomeCard[] = [
   {
     id: 1,
-    image: '/dashboard.webp',
+    image: '/discovery.webp',
     video: 'https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/runevents_intro.mp4',
     title: "Discovery",
     description: "We map your legacy systems and business logic."
