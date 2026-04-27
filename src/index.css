@@ -7613,7 +7613,7 @@ details[open] .footer-arrow-icon {
 
 .ready-section {
   position: relative;
-  background: #0A1F5C;
+  background: #0A1F5C !important;
   padding: 60px 0;
 }
 
