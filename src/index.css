@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Inria+Serif:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -96,7 +96,7 @@
      * Hero overlays are separate and remain unchanged.
      */
     /* Global heading + text colors */
-    --color-heading-on-light: #002395;
+    --color-heading-on-light: #0A1B9F;
     --color-subheading-on-light: #374151;
 
     /* Standardized card overlay (used on ALL sections below hero with images/videos) */
@@ -109,7 +109,7 @@
   h1, h2, h3, h4 {
     font-family: var(--font-family-serif);
     font-weight: 600;
-    color: #002395;
+    color: #0A1B9F;
     margin: 0;
   }
 
@@ -8668,9 +8668,10 @@ details[open] .footer-arrow-icon {
 
 .hc-intro-body {
   font-family: var(--font-family-sans);
+  font-weight: 400;
   font-size: var(--font-lead-mobile);
-  line-height: var(--lh-lead);
-  color: rgba(0, 0, 0, 0.7);
+  line-height: 30.6px;
+  color: #374151;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -8678,7 +8679,7 @@ details[open] .footer-arrow-icon {
 
 @media (min-width: 768px) {
   .hc-intro-body {
-    font-size: var(--font-lead-tablet);
+    font-size: 18px;
   }
 }
 
@@ -8818,9 +8819,10 @@ details[open] .footer-arrow-icon {
 
 .hc-exp-body {
   font-family: var(--font-family-sans);
-  font-size: 14px;
-  line-height: 1.7;
-  color: rgba(0, 0, 0, 0.65);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25.6px;
+  color: #374151;
   flex-grow: 1;
 }
 
@@ -8981,9 +8983,10 @@ details[open] .footer-arrow-icon {
 
 .hc-cap-desc {
   font-family: var(--font-family-sans);
-  font-size: 14px;
-  line-height: 1.65;
-  color: rgba(0, 0, 0, 0.65);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25.6px;
+  color: #374151;
 }
 
 /* ── CASE ── */
@@ -11555,18 +11558,17 @@ details[open] .footer-arrow-icon {
   }
 }
 
-.ai-bento-body-copy {
+.ai-bento-body {
   font-family: 'Barlow', sans-serif;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 1.55;
-  color: rgba(10, 31, 92, 0.65);
+  font-size: 15px;
+  line-height: 25.6px;
+  color: #374151;
   margin: 0 0 40px 0;
 }
 
 @media (min-width: 1024px) {
-  .ai-bento-body-copy {
-    font-size: 15px;
+  .ai-bento-body {
     margin-bottom: 48px;
   }
 }
@@ -12671,9 +12673,10 @@ details[open] .footer-arrow-icon {
 
 .tech-card-text {
   font-family: 'Barlow', sans-serif;
+  font-weight: 400;
   font-size: 15px;
-  line-height: 1.65;
-  color: rgba(0, 0, 0, 0.6);
+  line-height: 25.6px;
+  color: #374151;
   margin-bottom: 32px;
 }
 
@@ -13070,31 +13073,19 @@ details[open] .footer-arrow-icon {
 }
 
 .pillar-row-light .pillar-row-headline {
-  color: #002395;
+  color: #0A1B9F;
 }
 
 .pillar-row-intro {
   font-family: 'Barlow', sans-serif;
   font-weight: 400;
-  font-size: var(--font-lead-mobile);
-  line-height: var(--lh-lead);
+  font-size: 18px;
+  line-height: 30.6px;
   margin: 0;
 }
 
-@media (min-width: 768px) {
-  .pillar-row-intro {
-    font-size: var(--font-lead-tablet);
-  }
-}
-
-@media (min-width: 1024px) {
-  .pillar-row-intro {
-    font-size: var(--font-lead-desktop);
-  }
-}
-
 .pillar-row-dark .pillar-row-intro {
-  color: rgba(255, 255, 255, 0.85);
+  color: #ffffff;
 }
 
 .pillar-row-light .pillar-row-intro {

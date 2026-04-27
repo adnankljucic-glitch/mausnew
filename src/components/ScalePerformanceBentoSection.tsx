@@ -32,7 +32,7 @@ export default function ScalePerformanceBentoSection() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.15 }}
           >
-            <p className="ai-bento-body-copy">
+            <p className="ai-bento-body">
               At MAUS, we go beyond surface-level fixes. Our engineering teams diagnose root causes — from database bottlenecks to infrastructure misconfigurations — and rebuild the foundations that allow your product to handle growth without compromise in reliability, speed, or cost.
             </p>
 

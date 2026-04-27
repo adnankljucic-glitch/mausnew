@@ -32,7 +32,7 @@ export default function AIServicesBentoSection() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.15 }}
           >
-            <p className="ai-bento-body-copy">
+            <p className="ai-bento-body">
               We turn raw data and legacy systems into intelligent, production-ready AI. Our engineering teams work directly alongside your operations — embedding automation where it matters, reducing friction across workflows, and ensuring every system we build is stable, secure, and built to last at enterprise scale.
             </p>
 

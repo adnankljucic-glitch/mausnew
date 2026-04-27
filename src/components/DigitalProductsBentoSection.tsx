@@ -32,7 +32,7 @@ export default function DigitalProductsBentoSection() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.15 }}
           >
-            <p className="ai-bento-body-copy">
+            <p className="ai-bento-body">
               At MAUS, we combine deep Discovery with Specs Driven Development (SDD) to design digital products that aren't just intuitive — they are engineered to perform. Every interface decision is grounded in research, validated through iteration, and built to scale alongside your business.
             </p>
 
