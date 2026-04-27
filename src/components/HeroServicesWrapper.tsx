@@ -17,9 +17,11 @@ export default function HeroServicesWrapper({ children, variant = "default", aut
     variant === "discovery" ? GradientPlaneDiscovery :
     GradientPlane;
 
+  const forceAutoHeight = autoHeight || variant === 'industries';
+
   return (
     <div
-      className={`relative overflow-hidden ${autoHeight ? '' : 'min-h-screen'}`}
+      className={`relative overflow-hidden ${forceAutoHeight ? '' : 'min-h-screen'}`}
       style={variant === "expertise" ? { backgroundColor: "#1a1530" } : undefined}
     >
       <div className="absolute inset-0 z-0 pointer-events-none">
