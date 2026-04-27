@@ -47,18 +47,16 @@ export default function IndustriesReadySection() {
     <motion.section
       id="ready"
       ref={sectionRef}
-      className="ready-section"
+      className="ready-section pillar-row-dark"
       initial="hidden"
       animate={isInView ? 'visible' : 'hidden'}
       variants={containerVariants}
     >
       <div className="manyone-grid">
-        <div className="ready-content-wrapper">
-          <motion.div className="ready-text-content" variants={textVariants}>
-            <h2 className="ready-headline">
-              Would you like to know more?
-            </h2>
-            <p className="ready-paragraph">
+        <div className="pillar-row-inner">
+          <motion.div className="pillar-row-content" variants={textVariants}>
+            <h2 className="pillar-row-headline">Would you like to know more?</h2>
+            <p className="pillar-row-body">
               You are always welcome to contact us to find out more about what we can offer you. We are ready to hear about your business and advise based on your needs.
             </p>
             <div className="ready-contact-block">
@@ -69,11 +67,11 @@ export default function IndustriesReadySection() {
             </div>
           </motion.div>
 
-          <motion.div className="ready-image-wrapper" variants={imageVariants}>
+          <motion.div className="pillar-row-media" variants={imageVariants}>
             <img
               src="/davor.webp"
               alt="Team member at work"
-              className="ready-image"
+              className="pillar-row-image"
             />
           </motion.div>
         </div>

@@ -52,36 +52,34 @@ export default function ReadySection({ headline = "Ready for our customer-centri
     <motion.section
       id="ready"
       ref={sectionRef}
-      className="ready-section"
+      className="ready-section pillar-row-dark"
       initial="hidden"
       animate={isInView ? 'visible' : 'hidden'}
       variants={containerVariants}
     >
       <div className="manyone-grid">
-        <div className="ready-content-wrapper">
-          <motion.div className="ready-text-content" variants={textVariants}>
-            <h2 className="ready-headline">
-              {headline}
-            </h2>
-            <p className="ready-paragraph">
+        <div className="pillar-row-inner">
+          <motion.div className="pillar-row-content" variants={textVariants}>
+            <h2 className="pillar-row-headline">{headline}</h2>
+            <p className="pillar-row-body">
               We break down your project into manageable sprints, delivering a potentially shippable product increment after each cycle.
             </p>
-            <p className="ready-paragraph">
+            <p className="pillar-row-body">
               Let's embark on this journey together for your success, adapting quickly with tangible results that evolve based on your feedback and changing requirements. It's not just our goal; it's our commitment.
             </p>
-            <a href="/discovery" className="ready-cta-button">
+            <a href="/discovery" className="ready-cta-button" style={{ marginTop: '8px' }}>
               Contact us
               <ArrowRight size={20} strokeWidth={1.5} />
             </a>
           </motion.div>
 
-          <motion.div className="ready-image-wrapper" variants={imageVariants}>
+          <motion.div className="pillar-row-media" variants={imageVariants}>
             <img
               src="/davor.webp"
               alt="Team member at work"
-              className="ready-image"
+              className="pillar-row-image"
             />
-            <div className="ready-image-overlay" />
+            <div className="pillar-row-image-overlay" />
           </motion.div>
         </div>
       </div>
