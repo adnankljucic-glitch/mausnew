@@ -8651,24 +8651,24 @@ details[open] .footer-arrow-icon {
 /* Override pillar-row-inner column ratio for label + content layout */
 @media (min-width: 1280px) {
   .industry-intro-inner {
-    grid-template-columns: 1fr 2.2fr;
+    grid-template-columns: 1fr 2.65fr;
   }
 }
 
 @media (min-width: 1440px) {
   .industry-intro-inner {
-    grid-template-columns: 1fr 2.4fr;
+    grid-template-columns: 1fr 2.9fr;
   }
 }
 
 @media (min-width: 1920px) {
   .industry-intro-inner {
-    grid-template-columns: 1fr 2.6fr;
+    grid-template-columns: 1fr 3.1fr;
   }
 }
 
 .industry-intro-label-col {
-  padding-top: 4px;
+  padding-top: 10px;
 }
 
 .industry-intro-content {
