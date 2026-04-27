@@ -58,38 +58,14 @@ export default function IndustriesReadySection() {
             <h2 className="ready-headline">
               Would you like to know more?
             </h2>
-            <p className="ready-paragraph" style={{ marginBottom: '32px' }}>
-              You are always welcome to contact us to find out more about what we can offer you. We are ready to hear about your business and advise based on your needs
-            </p>
             <p className="ready-paragraph">
-              Reach out to
+              You are always welcome to contact us to find out more about what we can offer you. We are ready to hear about your business and advise based on your needs.
             </p>
-            <div style={{ marginTop: '12px' }}>
-              <h2 style={{
-                fontSize: '24px',
-                fontWeight: '600',
-                color: '#ffffff',
-                marginBottom: '4px'
-              }}>
-                Davor Zlotrg
-              </h2>
-              <h3 className="ready-subheadline" style={{ marginBottom: '8px', color: '#ffffff' }}>
-                CEO
-              </h3>
-              <h3 className="ready-subheadline" style={{
-                color: '#ffffff',
-                textDecoration: 'underline'
-              }}>
-                <a
-                  href="mailto:davor@maus.ba"
-                  style={{
-                    color: 'inherit',
-                    textDecoration: 'inherit'
-                  }}
-                >
-                  davor@maus.ba
-                </a>
-              </h3>
+            <div className="ready-contact-block">
+              <p className="ready-contact-label">Reach out to</p>
+              <p className="ready-contact-name">Davor Zlotrg</p>
+              <p className="ready-contact-title">CEO</p>
+              <a href="mailto:davor@maus.ba" className="ready-contact-email">davor@maus.ba</a>
             </div>
           </motion.div>
 

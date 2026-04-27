@@ -7744,6 +7744,60 @@ details[open] .footer-arrow-icon {
   }
 }
 
+.ready-contact-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 8px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.ready-contact-label {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 8px;
+}
+
+.ready-contact-name {
+  font-family: 'Inria Serif', serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0;
+}
+
+.ready-contact-title {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+.ready-contact-email {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin-top: 4px;
+  transition: color 0.2s ease;
+}
+
+.ready-contact-email:hover {
+  color: #FFCD00;
+}
+
 .ready-cta-button {
   display: inline-flex;
   align-items: center;
