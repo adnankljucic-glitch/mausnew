@@ -33,7 +33,7 @@ const outcomeCards: OutcomeCard[] = [
   },
   {
     id: 4,
-    image: '/future_strategy.webp',
+    image: '/mobile.png',
     title: "Delivery",
     description: "You receive a product that works as intended, no surprises."
   }
