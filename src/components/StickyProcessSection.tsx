@@ -58,7 +58,7 @@ export default function StickyProcessSection({
   subtext = "A clear, repeatable approach that turns ideas into reliable software—fast.",
   steps = defaultSteps,
   testimonial = {
-    avatarUrl: "https://framerusercontent.com/images/GivTprEDFLqcYVbNElXvL3ujDs.webp",
+    avatarUrl: "/adis.jpg",
     quote: "Elevated to industry leaders—grateful partnership."
   }
 }: StickyProcessSectionProps) {
