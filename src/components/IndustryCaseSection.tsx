@@ -72,12 +72,6 @@ export default function IndustryCaseSection({
         <img src={imageSrc} alt={imageAlt} className="ics-media-asset" />
       ) : null}
       <div className="ics-media-overlay" />
-      {(caseTitle || caseSubtitle) && (
-        <div className="ics-media-caption">
-          {caseTitle && <p className="ics-caption-title">{caseTitle}</p>}
-          {caseSubtitle && <p className="ics-caption-subtitle">{caseSubtitle}</p>}
-        </div>
-      )}
     </motion.div>
   );
 
