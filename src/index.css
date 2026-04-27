@@ -8669,6 +8669,7 @@ details[open] .footer-arrow-icon {
 
 .industry-intro-label-col {
   padding-top: 0;
+  align-self: start;
 }
 
 .industry-intro-content {
