@@ -2131,6 +2131,7 @@
   }
 
   .outcome-card-image-wrapper {
+    position: relative;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -2140,6 +2141,24 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  .outcome-card-image-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .outcome-card-video-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.55;
+    mix-blend-mode: luminosity;
   }
 
   .outcome-card-overlay {
