@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import IndustryCaseSection from './IndustryCaseSection';
 
 const expertiseCards = [
   {
@@ -134,10 +134,8 @@ function FadeIn({ children, delay = 0, className }: { children: React.ReactNode;
 export default function HealthcareSections() {
   const expertiseRef = useRef<HTMLElement>(null);
   const capRef = useRef<HTMLElement>(null);
-  const caseRef = useRef<HTMLElement>(null);
   const expertiseInView = useInView(expertiseRef, { once: true, amount: 0.05 });
   const capInView = useInView(capRef, { once: true, amount: 0.05 });
-  const caseInView = useInView(caseRef, { once: true, amount: 0.1 });
 
   return (
     <>
@@ -238,59 +236,20 @@ export default function HealthcareSections() {
         </div>
       </section>
 
-      {/* ── PROVEN RESULTS / CASE ── */}
-      <motion.section
-        ref={caseRef}
-        className="pillar-row pillar-row-dark"
-        initial="hidden"
-        animate={caseInView ? 'visible' : 'hidden'}
-      >
-        <div className="manyone-grid">
-          <div className="pillar-row-inner">
-            <motion.div
-              className="pillar-row-content"
-              initial={{ opacity: 0, y: 20 }}
-              animate={caseInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <p className="pillar-row-eyebrow">Case — AI &amp; Healthcare</p>
-              <h2 className="pillar-row-headline">Systematic Healthcare</h2>
-              <p className="pillar-row-body">
-                We partnered with Systematic — one of Scandinavia's largest healthcare software firms — to develop
-                systems used in hospitals across the region.
-              </p>
-              <p className="pillar-row-body">
-                Through our work on CURA, we transformed homecare documentation with automated form-filling,
-                letting caregivers focus on patient care instead of paperwork. The result: reduced administrative
-                overhead, improved accuracy, and seamless integration with existing healthcare systems.
-              </p>
-              <Link to="/cases" className="ready-cta-button" style={{ marginTop: '8px' }}>Read the case</Link>
-            </motion.div>
-
-            <motion.div
-              className="pillar-row-media"
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={caseInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-            >
-              <video
-                src="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/hospital.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="pillar-row-image"
-              />
-              <div className="pillar-row-image-overlay">
-                <div className="pillar-row-image-overlay-content">
-                  <h3 className="pillar-row-image-title">Systematic Healthcare</h3>
-                  <p className="pillar-row-image-subtitle">AI-powered homecare documentation</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </motion.section>
+      {/* ── INDUSTRY CASE ── */}
+      <IndustryCaseSection
+        eyebrow="Case — AI & Healthcare"
+        headline="Systematic Healthcare"
+        body={[
+          "We partnered with Systematic — one of Scandinavia's largest healthcare software firms — to develop systems used in hospitals across the region.",
+          "Through our work on CURA, we transformed homecare documentation with automated form-filling, letting caregivers focus on patient care instead of paperwork. The result: reduced administrative overhead, improved accuracy, and seamless integration with existing healthcare systems.",
+        ]}
+        ctaLabel="Read the case"
+        ctaHref="/cases"
+        videoSrc="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/hospital.mp4"
+        caseTitle="Systematic Healthcare"
+        caseSubtitle="AI-powered homecare documentation"
+      />
     </>
   );
 }
