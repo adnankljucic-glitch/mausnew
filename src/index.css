@@ -8620,7 +8620,63 @@ details[open] .footer-arrow-icon {
   color: rgba(255, 255, 255, 0.55);
 }
 
-/* ── INTRO / LANDSCAPE ── */
+/* ── INDUSTRY INTRO SECTION ── */
+.industry-intro-section {
+  background: #ffffff;
+  padding: 40px 0 60px;
+}
+
+@media (min-width: 768px) {
+  .industry-intro-section {
+    padding: 60px 0 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .industry-intro-section {
+    padding: 80px 0 120px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .industry-intro-section {
+    padding: 80px 0 140px;
+  }
+}
+
+.industry-intro-inner {
+  align-items: start;
+}
+
+/* Override pillar-row-inner column ratio for label + content layout */
+@media (min-width: 1280px) {
+  .industry-intro-inner {
+    grid-template-columns: 1fr 2.2fr;
+  }
+}
+
+@media (min-width: 1440px) {
+  .industry-intro-inner {
+    grid-template-columns: 1fr 2.4fr;
+  }
+}
+
+@media (min-width: 1920px) {
+  .industry-intro-inner {
+    grid-template-columns: 1fr 2.6fr;
+  }
+}
+
+.industry-intro-label-col {
+  padding-top: 4px;
+}
+
+.industry-intro-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── INTRO / LANDSCAPE (legacy) ── */
 .hc-intro {
   background: #ffffff;
   padding: 40px 0 60px;

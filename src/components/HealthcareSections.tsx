@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import IndustryCaseSection from './IndustryCaseSection';
+import IndustryIntroSection from './IndustryIntroSection';
 
 const expertiseCards = [
   {
@@ -139,24 +140,16 @@ export default function HealthcareSections() {
 
   return (
     <>
-      {/* ── LANDSCAPE INTRO ── */}
-      <section className="hc-intro">
-        <div className="manyone-grid hc-intro-grid">
-          <FadeIn>
-            <span className="hc-section-label">01 — Healthcare</span>
-          </FadeIn>
-          <FadeIn delay={0.1}>
-            <h2 className="hc-intro-headline">
-              A more complex world — and <em>greater potential</em> than ever.
-            </h2>
-            <div className="hc-intro-body">
-              <p>Healthcare is evolving fast. Digital self-service, big data, and AI are reshaping everything from diagnostics to preventive care and public health. New possibilities emerge — but so does complexity.</p>
-              <p>We understand healthcare is both about prevention and cure. About loneliness, pandemics, and precision medicine. About using vast amounts of data to personalise treatment, and AI to take care of the routine — so clinicians can focus on people.</p>
-              <p>Standing in the middle of this complexity is you. And you need to make something digital happen. That's where we come in.</p>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+      {/* ── INDUSTRY INTRO ── */}
+      <IndustryIntroSection
+        label="01 — Healthcare"
+        headline={<>A more complex world — and <em>greater potential</em> than ever.</>}
+        body={[
+          'Healthcare is evolving fast. Digital self-service, big data, and AI are reshaping everything from diagnostics to preventive care and public health. New possibilities emerge — but so does complexity.',
+          'We understand healthcare is both about prevention and cure. About loneliness, pandemics, and precision medicine. About using vast amounts of data to personalise treatment, and AI to take care of the routine — so clinicians can focus on people.',
+          'Standing in the middle of this complexity is you. And you need to make something digital happen. That\'s where we come in.',
+        ]}
+      />
 
       {/* ── EXPERTISE ── */}
       <section ref={expertiseRef} className="hc-expertise">
