@@ -18,7 +18,7 @@ export default function DigitalProductsBentoSection() {
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
             <h2 className="ai-bento-headline">
-              Digital product design & Strategic UX
+              AI gets you started. Complex products need experts.
             </h2>
           </motion.div>
 
