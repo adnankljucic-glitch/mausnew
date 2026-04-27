@@ -8,7 +8,7 @@ export default function AIServicesBentoSection() {
   return (
     <section ref={sectionRef} className="ai-bento-section">
       <div className="manyone-grid">
-        <div className="pillar-row-inner ai-bento-grid">
+        <div className="pillar-row-inner ai-bento-grid" style={{ alignItems: 'start' }}>
 
           {/* Left column — headline only */}
           <motion.div
