@@ -120,12 +120,24 @@
 }
 
 .ics-headline {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  font-size: clamp(30px, 3.2vw, 52px);
+  font-family: var(--font-family-serif);
+  font-weight: 600;
+  font-size: var(--font-h2-mobile);
   line-height: 1.1;
   color: #ffffff;
   margin: 0;
+}
+
+@media (min-width: 768px) {
+  .ics-headline {
+    font-size: var(--font-h2-tablet);
+  }
+}
+
+@media (min-width: 1280px) {
+  .ics-headline {
+    font-size: var(--font-h2-desktop);
+  }
 }
 
 .ics-body {
@@ -170,14 +182,14 @@
 }
 
 .ics-section--light .ready-cta-button.ics-cta {
-  background: #0d2818;
-  color: #ffffff;
-  border-color: #0d2818;
+  background: transparent;
+  color: #0d2818;
+  border-color: rgba(13, 40, 24, 0.5);
 }
 
 .ics-section--light .ready-cta-button.ics-cta:hover {
-  background: transparent;
-  color: #0d2818;
+  background: #0d2818;
+  color: #ffffff;
   border-color: #0d2818;
 }
 
