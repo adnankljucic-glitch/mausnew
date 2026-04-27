@@ -32,7 +32,7 @@ export default function DigitalProductsBentoSection() {
             <p className="ai-bento-description">
               In a world of complex legacy systems, the interface is only as good as the logic behind it — we combine deep discovery with engineering to build products that perform.
             </p>
-            <p className="ai-bento-body">
+            <p className="ai-bento-description">
               At MAUS, we combine deep Discovery with Specs Driven Development (SDD) to design digital products that aren't just intuitive — they are engineered to perform. Every interface decision is grounded in research, validated through iteration, and built to scale alongside your business.
             </p>
 
