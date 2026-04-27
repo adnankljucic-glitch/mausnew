@@ -94,12 +94,7 @@
 .ics-media-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    105deg,
-    rgba(10, 22, 40, 0.55) 0%,
-    rgba(10, 22, 40, 0.15) 60%,
-    transparent 100%
-  );
+  background: var(--color-card-overlay);
   pointer-events: none;
 }
 
