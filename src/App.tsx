@@ -15,6 +15,11 @@ import CaseStudyPage from './pages/CaseStudyPage';
 import DiscoveryCallPage from './pages/DiscoveryCallPage';
 import HealthcarePage from './pages/HealthcarePage';
 import RunEventsPage from './pages/RunEventsPage';
+import BookingTicketingPage from './pages/BookingTicketingPage';
+import FintechPage from './pages/FintechPage';
+import SustainabilityPage from './pages/SustainabilityPage';
+import RealEstatePage from './pages/RealEstatePage';
+import IoTPage from './pages/IoTPage';
 
 function App() {
   return (
@@ -36,6 +41,11 @@ function App() {
           <Route path="/cases/:slug" element={<CaseStudyPage />} />
           <Route path="/discovery" element={<DiscoveryCallPage />} />
           <Route path="/industries/healthcare" element={<HealthcarePage />} />
+          <Route path="/industries/booking-ticketing" element={<BookingTicketingPage />} />
+          <Route path="/industries/fintech-payment" element={<FintechPage />} />
+          <Route path="/industries/sustainability-water" element={<SustainabilityPage />} />
+          <Route path="/industries/real-estate-proptech" element={<RealEstatePage />} />
+          <Route path="/industries/iot-smart-devices" element={<IoTPage />} />
           <Route path="/cases/run-events" element={<RunEventsPage />} />
         </Routes>
         <Footer />

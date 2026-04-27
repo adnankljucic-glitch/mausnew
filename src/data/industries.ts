@@ -13,7 +13,7 @@ export const industryCards: IndustryCard[] = [
     description: "Our platform brings together advanced digital booking tools with data-driven marketing that improves your operations and your guests' experiences.",
     image: "/pay.jpg",
     category: "Fintech",
-    linkUrl: "#"
+    linkUrl: "/industries/fintech-payment"
   },
   {
     title: "Healthcare",
@@ -28,21 +28,21 @@ export const industryCards: IndustryCard[] = [
     description: "Our platform brings together advanced digital booking tools with data-driven marketing that improves your operations and your guests' experiences.",
     videoUrl: "https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/runevents_intro.mp4",
     category: "Tourism & Events",
-    linkUrl: "/cases/run-events"
+    linkUrl: "/industries/booking-ticketing"
   },
   {
     title: "Sustainability and water cycle",
     description: "Assisting companies with legacy software by providing modern, data-driven solutions for efficient water management and sustainability.",
     image: "https://images.pexels.com/photos/18140302/pexels-photo-18140302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     category: "Utilities",
-    linkUrl: "#"
+    linkUrl: "/industries/sustainability-water"
   },
   {
     title: "IoT & Smart Devices",
     description: "Partnered with Sanovo to deliver advanced solutions for egg processing machinery.",
     image: "/7_750x.webp",
     category: "Smart Home",
-    linkUrl: "#"
+    linkUrl: "/industries/iot-smart-devices"
   },
   {
     title: "Smart Home",
@@ -56,6 +56,6 @@ export const industryCards: IndustryCard[] = [
     description: "Automated valuation models, tenant management portals, and property intelligence platforms built for modern real estate.",
     image: "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     category: "PropTech",
-    linkUrl: "#"
+    linkUrl: "/industries/real-estate-proptech"
   }
 ];

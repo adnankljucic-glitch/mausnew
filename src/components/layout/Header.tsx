@@ -17,7 +17,7 @@ const INDUSTRIES = [
   },
   {
     label: 'Booking & Ticketing',
-    to: '/cases',
+    to: '/industries/booking-ticketing',
     desc: 'High-concurrency reservation platforms built to scale.',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={22} height={22}>
@@ -31,7 +31,7 @@ const INDUSTRIES = [
   },
   {
     label: 'Fintech & Payment Systems',
-    to: '/industries',
+    to: '/industries/fintech-payment',
     desc: 'Fraud-resistant financial software with full compliance.',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={22} height={22}>
@@ -42,7 +42,7 @@ const INDUSTRIES = [
   },
   {
     label: 'Sustainability & Water Cycle',
-    to: '/industries',
+    to: '/industries/sustainability-water',
     desc: 'Environmental monitoring and smart water management systems.',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={22} height={22}>
@@ -53,7 +53,7 @@ const INDUSTRIES = [
   },
   {
     label: 'IoT & Smart Devices',
-    to: '/industries',
+    to: '/industries/iot-smart-devices',
     desc: 'Connected device platforms and real-time sensor intelligence.',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={22} height={22}>
@@ -65,7 +65,7 @@ const INDUSTRIES = [
   },
   {
     label: 'Real Estate & PropTech',
-    to: '/industries',
+    to: '/industries/real-estate-proptech',
     desc: 'Automated valuation and tenant management portals.',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={22} height={22}>
