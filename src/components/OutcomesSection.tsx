@@ -5,7 +5,6 @@ import { ArrowRight } from 'lucide-react';
 interface OutcomeCard {
   id: number;
   image: string;
-  video?: string;
   title: string;
   description: string;
 }
@@ -14,7 +13,6 @@ const outcomeCards: OutcomeCard[] = [
   {
     id: 1,
     image: '/discovery.webp',
-    video: 'https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/runevents_intro.mp4',
     title: "Discovery",
     description: "We map your legacy systems and business logic."
   },
@@ -27,7 +25,6 @@ const outcomeCards: OutcomeCard[] = [
   {
     id: 3,
     image: '/devanalytics.webp',
-    video: 'https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/hospital.mp4',
     title: "Development",
     description: "We execute with surgical precision and maximum speed."
   },
@@ -121,35 +118,13 @@ export default function OutcomesSection({ backgroundColor }: OutcomesSectionProp
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
             <div className="outcome-card-image-wrapper">
-              {card.video ? (
-                <>
-                  <motion.img
-                    src={card.image}
-                    alt={card.title}
-                    className="outcome-card-image outcome-card-image-bg"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.7, ease: "easeOut" }}
-                  />
-                  <motion.video
-                    src={card.video}
-                    className="outcome-card-image outcome-card-video-overlay"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.7, ease: "easeOut" }}
-                  />
-                </>
-              ) : (
-                <motion.img
-                  src={card.image}
-                  alt={card.title}
-                  className="outcome-card-image"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.7, ease: "easeOut" }}
-                />
-              )}
+              <motion.img
+                src={card.image}
+                alt={card.title}
+                className="outcome-card-image"
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+              />
             </div>
             <div className="outcome-card-overlay" />
             <div className="outcome-card-content">
@@ -176,38 +151,14 @@ export default function OutcomesSection({ backgroundColor }: OutcomesSectionProp
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
-              {outcomeCards[currentSlide].video ? (
-                <>
-                  <motion.img
-                    src={outcomeCards[currentSlide].image}
-                    alt={outcomeCards[currentSlide].title}
-                    className="outcome-slide-image outcome-card-image-bg"
-                    initial={{ scale: 1 }}
-                    animate={{ scale: 1.05 }}
-                    transition={{ duration: 8, ease: "linear" }}
-                  />
-                  <motion.video
-                    src={outcomeCards[currentSlide].video}
-                    className="outcome-slide-image outcome-card-video-overlay"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    initial={{ scale: 1 }}
-                    animate={{ scale: 1.05 }}
-                    transition={{ duration: 8, ease: "linear" }}
-                  />
-                </>
-              ) : (
-                <motion.img
-                  src={outcomeCards[currentSlide].image}
-                  alt={outcomeCards[currentSlide].title}
-                  className="outcome-slide-image"
-                  initial={{ scale: 1 }}
-                  animate={{ scale: 1.05 }}
-                  transition={{ duration: 8, ease: "linear" }}
-                />
-              )}
+              <motion.img
+                src={outcomeCards[currentSlide].image}
+                alt={outcomeCards[currentSlide].title}
+                className="outcome-slide-image"
+                initial={{ scale: 1 }}
+                animate={{ scale: 1.05 }}
+                transition={{ duration: 8, ease: "linear" }}
+              />
               <div className="outcome-slide-overlay" />
               <div className="outcome-slide-content">
                 <h3 className="outcome-slide-title">
