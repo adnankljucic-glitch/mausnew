@@ -12936,22 +12936,22 @@ details[open] .footer-arrow-icon {
 
 @media (min-width: 1280px) {
   .pillar-row-inner {
-    grid-template-columns: 1.1fr 1fr;
-    gap: 80px;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 64px;
   }
 }
 
 @media (min-width: 1440px) {
   .pillar-row-inner {
-    grid-template-columns: 1.15fr 1fr;
-    gap: 100px;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 80px;
   }
 }
 
 @media (min-width: 1920px) {
   .pillar-row-inner {
-    grid-template-columns: 1.2fr 1fr;
-    gap: 120px;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 100px;
     max-width: 1800px;
     margin-left: auto;
     margin-right: auto;
@@ -12963,7 +12963,7 @@ details[open] .footer-arrow-icon {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 620px;
+  max-width: 680px;
 }
 
 .pillar-row-eyebrow {
@@ -13038,6 +13038,22 @@ details[open] .footer-arrow-icon {
 
 .pillar-row-light .pillar-row-intro {
   color: #374151;
+}
+
+.pillar-row-body {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.pillar-row-dark .pillar-row-body {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.pillar-row-light .pillar-row-body {
+  color: #4b5563;
 }
 
 /* Flat bullets (expertise style) */

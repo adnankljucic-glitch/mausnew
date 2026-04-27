@@ -255,11 +255,11 @@ export default function HealthcareSections() {
             >
               <p className="pillar-row-eyebrow">Case — AI &amp; Healthcare</p>
               <h2 className="pillar-row-headline">Systematic Healthcare</h2>
-              <p className="pillar-row-intro">
+              <p className="pillar-row-body">
                 We partnered with Systematic — one of Scandinavia's largest healthcare software firms — to develop
                 systems used in hospitals across the region.
               </p>
-              <p className="pillar-row-intro">
+              <p className="pillar-row-body">
                 Through our work on CURA, we transformed homecare documentation with automated form-filling,
                 letting caregivers focus on patient care instead of paperwork. The result: reduced administrative
                 overhead, improved accuracy, and seamless integration with existing healthcare systems.
