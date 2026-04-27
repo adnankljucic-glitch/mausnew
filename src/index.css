@@ -11538,34 +11538,29 @@ details[open] .footer-arrow-icon {
 
 @media (min-width: 768px) {
   .ai-bento-grid {
-    grid-template-columns: 1fr 2fr;
-    gap: 0 64px;
-    align-items: start;
-  }
-}
-
-@media (min-width: 1024px) {
-  .ai-bento-grid {
-    gap: 0 80px;
+    gap: 56px;
   }
 }
 
 @media (min-width: 1280px) {
   .ai-bento-grid {
-    grid-template-columns: 1fr 2.65fr;
-    gap: 0 100px;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 64px;
+    align-items: start;
   }
 }
 
 @media (min-width: 1440px) {
   .ai-bento-grid {
-    grid-template-columns: 1fr 2.9fr;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 80px;
   }
 }
 
 @media (min-width: 1920px) {
   .ai-bento-grid {
-    grid-template-columns: 1fr 3.1fr;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 100px;
   }
 }
 
