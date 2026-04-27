@@ -22,6 +22,7 @@ export default function IndustryIntroSection({ label, headline, body }: Industry
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
             <span className="hc-section-label">{label}</span>
+            <h2 className="hc-intro-headline">{headline}</h2>
           </motion.div>
           <motion.div
             className="industry-intro-content"
@@ -29,7 +30,6 @@ export default function IndustryIntroSection({ label, headline, body }: Industry
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.08 }}
           >
-            <h2 className="hc-intro-headline">{headline}</h2>
             <div className="hc-intro-body">
               {body.map((p, i) => <p key={i}>{p}</p>)}
             </div>
