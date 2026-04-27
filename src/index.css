@@ -8171,7 +8171,7 @@ details[open] .footer-arrow-icon {
 
 /* STRATEGIC SOLUTIONS SECTION */
 .strategic-solutions-section {
-  background: #040F39;
+  background: #FFFFFF;
   padding: 48px 0;
   position: relative;
 }
@@ -8343,17 +8343,17 @@ details[open] .footer-arrow-icon {
   }
 }
 
-/* Bento overrides for dark strategic-solutions-section */
+/* Bento overrides for strategic-solutions-section */
 .strategic-solutions-section .ai-bento-headline {
-  color: #FFFFFF;
+  color: var(--color-heading-on-light);
 }
 
 .strategic-solutions-section .ai-bento-description {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-text-on-light);
 }
 
 .strategic-solutions-section .ai-bento-body {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-text-secondary-on-light);
 }
 
 .strategic-solutions-section .ai-bento-list-item span {
@@ -8361,7 +8361,7 @@ details[open] .footer-arrow-icon {
 }
 
 .strategic-solutions-section .ai-bento-divider {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(10, 31, 92, 0.1);
 }
 
 /* AI STRATEGIC INTRO SECTION */
