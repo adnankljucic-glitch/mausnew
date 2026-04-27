@@ -40,7 +40,7 @@ export const industryCards: IndustryCard[] = [
   {
     title: "IoT & Smart Devices",
     description: "Partnered with Sanovo to deliver advanced solutions for egg processing machinery.",
-    image: "https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image: "/7_750x.webp",
     category: "Smart Home",
     linkUrl: "#"
   },
