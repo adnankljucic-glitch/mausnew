@@ -33,21 +33,21 @@ export const industryCards: IndustryCard[] = [
   {
     title: "Sustainability and water cycle",
     description: "Assisting companies with legacy software by providing modern, data-driven solutions for efficient water management and sustainability.",
-    image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image: "https://images.pexels.com/photos/18140302/pexels-photo-18140302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     category: "Utilities",
     linkUrl: "#"
   },
   {
     title: "IoT & Smart Devices",
     description: "Partnered with Sanovo to deliver advanced solutions for egg processing machinery.",
-    image: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image: "https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     category: "Smart Home",
     linkUrl: "#"
   },
   {
     title: "Smart Home",
     description: "Advanced cooking technology with multiple measurement points ensures precise cooking control and improved food safety.",
-    image: "https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image: "https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     category: "IoT",
     linkUrl: "#"
   },
