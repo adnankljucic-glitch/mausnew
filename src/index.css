@@ -8343,6 +8343,27 @@ details[open] .footer-arrow-icon {
   }
 }
 
+/* Bento overrides for dark strategic-solutions-section */
+.strategic-solutions-section .ai-bento-headline {
+  color: #FFFFFF;
+}
+
+.strategic-solutions-section .ai-bento-description {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.strategic-solutions-section .ai-bento-body {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.strategic-solutions-section .ai-bento-list-item span {
+  color: #1a56db;
+}
+
+.strategic-solutions-section .ai-bento-divider {
+  background: rgba(255, 255, 255, 0.12);
+}
+
 /* AI STRATEGIC INTRO SECTION */
 .ai-strategic-intro {
   background: #FFFFFF;

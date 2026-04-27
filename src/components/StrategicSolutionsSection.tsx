@@ -8,33 +8,42 @@ export default function StrategicSolutionsSection() {
   return (
     <section ref={sectionRef} className="strategic-solutions-section">
       <div className="manyone-grid">
-        <div className="strategic-solutions-grid">
+        <div className="pillar-row-inner ai-bento-grid" style={{ alignItems: 'start' }}>
+
           <motion.div
-            className="strategic-solutions-left"
+            className="ai-bento-left-column"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
-            <h2 className="strategic-solutions-headline">
+            <h2 className="ai-bento-headline">
               Bridge business goals with execution.
             </h2>
           </motion.div>
 
           <motion.div
-            className="strategic-solutions-right"
+            className="ai-bento-right-column"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.15 }}
           >
-            <p className="strategic-solutions-intro">
-              Experience strategic excellence with our specialized advisory services. Our guidance is crafted to meet the unique demands of high-stakes industries, ensuring full alignment between your commercial vision and technical reality. From cutting-edge technology roadmaps to senior-level team integration, we prioritize your path to operational dominance.
+            <p className="ai-bento-description">
+              Experience strategic excellence with our specialized advisory services — crafted to ensure full alignment between your commercial vision and technical reality.
             </p>
-            <p className="strategic-solutions-detail">
-              At MAUS, our commitment to technical precision and business-centricity defines our advisory philosophy. We dive deep into your strategic planning and operational efficiency to deliver transformative business solutions that scale.
+            <p className="ai-bento-body">
+              At MAUS, our commitment to technical precision and business-centricity defines our advisory philosophy. We dive deep into your strategic planning and operational efficiency to deliver transformative business solutions that scale — whether you are a scaling fintech or an established healthcare enterprise.
             </p>
-            <p className="strategic-solutions-detail">
-              Whether you are a scaling fintech or an established healthcare enterprise, our advisory services are designed to elevate your performance, amplify your engineering strengths, and guide you toward sustained market leadership.
-            </p>
+
+            <div className="ai-bento-list">
+              <div className="ai-bento-list-item"><span>Technology Roadmapping</span></div>
+              <div className="ai-bento-divider" />
+              <div className="ai-bento-list-item"><span>Fractional CTO & Leadership</span></div>
+              <div className="ai-bento-divider" />
+              <div className="ai-bento-list-item"><span>Operational Efficiency</span></div>
+              <div className="ai-bento-divider" />
+              <div className="ai-bento-list-item"><span>Market Entry Strategy</span></div>
+              <div className="ai-bento-divider" />
+            </div>
           </motion.div>
 
         </div>
