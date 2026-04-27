@@ -10,7 +10,7 @@ export default function ScalePerformanceBentoSection() {
       <div className="manyone-grid">
         <div className="ai-bento-grid">
 
-          {/* Left column — headline + description */}
+          {/* Left column — headline only */}
           <motion.div
             className="ai-bento-left-column"
             initial={{ opacity: 0, y: 30 }}
@@ -20,18 +20,18 @@ export default function ScalePerformanceBentoSection() {
             <h2 className="ai-bento-headline">
               Eliminating technical debt through architectural integrity
             </h2>
-            <p className="ai-bento-description">
-              Performance is not optional — we combine deep technical analysis with proven optimization strategies to transform sluggish platforms into systems that scale.
-            </p>
           </motion.div>
 
-          {/* Right column — body copy + list */}
+          {/* Right column — description + body copy + list */}
           <motion.div
             className="ai-bento-right-column"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.15 }}
           >
+            <p className="ai-bento-description">
+              Performance is not optional — we combine deep technical analysis with proven optimization strategies to transform sluggish platforms into systems that scale.
+            </p>
             <p className="ai-bento-body">
               At MAUS, we go beyond surface-level fixes. Our engineering teams diagnose root causes — from database bottlenecks to infrastructure misconfigurations — and rebuild the foundations that allow your product to handle growth without compromise in reliability, speed, or cost.
             </p>

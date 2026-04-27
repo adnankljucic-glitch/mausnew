@@ -10,7 +10,7 @@ export default function AIServicesBentoSection() {
       <div className="manyone-grid">
         <div className="ai-bento-grid">
 
-          {/* Left column — headline + description */}
+          {/* Left column — headline only */}
           <motion.div
             className="ai-bento-left-column"
             initial={{ opacity: 0, y: 30 }}
@@ -20,18 +20,18 @@ export default function AIServicesBentoSection() {
             <h2 className="ai-bento-headline">
               From complex data to scalable business logic
             </h2>
-            <p className="ai-bento-description">
-              From EHR systems and patient portals to telemedicine and AI-assisted diagnostics — we build secure, compliant, human-centered software for hospitals, clinics, and healthtech companies.
-            </p>
           </motion.div>
 
-          {/* Right column — body copy + list */}
+          {/* Right column — description + body copy + list */}
           <motion.div
             className="ai-bento-right-column"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.15 }}
           >
+            <p className="ai-bento-description">
+              From EHR systems and patient portals to telemedicine and AI-assisted diagnostics — we build secure, compliant, human-centered software for hospitals, clinics, and healthtech companies.
+            </p>
             <p className="ai-bento-body">
               We turn raw data and legacy systems into intelligent, production-ready AI. Our engineering teams work directly alongside your operations — embedding automation where it matters, reducing friction across workflows, and ensuring every system we build is stable, secure, and built to last at enterprise scale.
             </p>
