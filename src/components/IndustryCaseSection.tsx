@@ -16,6 +16,8 @@ interface IndustryCaseSectionProps {
   caseSubtitle?: string;
   /** Put media on the left, text on the right */
   mediaFirst?: boolean;
+  /** Background color of the text panel */
+  accentColor?: string;
 }
 
 export default function IndustryCaseSection({
@@ -30,6 +32,7 @@ export default function IndustryCaseSection({
   caseTitle,
   caseSubtitle,
   mediaFirst = false,
+  accentColor,
 }: IndustryCaseSectionProps) {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.08 });
@@ -75,8 +78,10 @@ export default function IndustryCaseSection({
     </motion.div>
   );
 
+  const isLight = !!accentColor;
+
   return (
-    <section ref={ref} className="ics-section">
+    <section ref={ref} className={`ics-section${isLight ? ' ics-section--light' : ''}`} style={accentColor ? { background: accentColor } : undefined}>
       <div className={`ics-layout${mediaFirst ? ' ics-layout--media-first' : ''}`}>
         {mediaFirst ? mediaPanel : textPanel}
         {mediaFirst ? textPanel : mediaPanel}

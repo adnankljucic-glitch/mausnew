@@ -156,6 +156,31 @@
   margin: 0;
 }
 
+/* ── LIGHT ACCENT VARIANT ── */
+.ics-section--light .ics-eyebrow {
+  color: rgba(10, 40, 20, 0.55);
+}
+
+.ics-section--light .ics-headline {
+  color: #0d2818;
+}
+
+.ics-section--light .ics-body {
+  color: #1a3a25;
+}
+
+.ics-section--light .ready-cta-button.ics-cta {
+  background: #0d2818;
+  color: #ffffff;
+  border-color: #0d2818;
+}
+
+.ics-section--light .ready-cta-button.ics-cta:hover {
+  background: transparent;
+  color: #0d2818;
+  border-color: #0d2818;
+}
+
 /* ── MEDIA-FIRST VARIANT (media left, text right) ── */
 .ics-layout--media-first {
   flex-direction: column-reverse;

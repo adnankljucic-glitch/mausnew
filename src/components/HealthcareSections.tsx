@@ -231,6 +231,7 @@ export default function HealthcareSections() {
 
       {/* ── INDUSTRY CASE ── */}
       <IndustryCaseSection
+        accentColor="#d4ede0"
         eyebrow="Case — AI & Healthcare"
         headline="Systematic Healthcare"
         body={[
