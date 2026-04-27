@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
+import './IndustryCaseSection.css';
 
 interface IndustryCaseSectionProps {
   eyebrow?: string;
@@ -13,7 +14,7 @@ interface IndustryCaseSectionProps {
   imageAlt?: string;
   caseTitle?: string;
   caseSubtitle?: string;
-  /** Swap so media is on the left and text on the right */
+  /** Put media on the left, text on the right */
   mediaFirst?: boolean;
 }
 
@@ -31,30 +32,32 @@ export default function IndustryCaseSection({
   mediaFirst = false,
 }: IndustryCaseSectionProps) {
   const ref = useRef<HTMLElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.1 });
+  const inView = useInView(ref, { once: true, amount: 0.08 });
 
-  const textBlock = (
+  const textPanel = (
     <motion.div
-      className="ics-text"
-      initial={{ opacity: 0, y: 24 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      className="ics-text-panel"
+      initial={{ opacity: 0, x: mediaFirst ? 32 : -32 }}
+      animate={inView ? { opacity: 1, x: 0 } : {}}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
     >
-      {eyebrow && <p className="ics-eyebrow">{eyebrow}</p>}
-      <h2 className="ics-headline">{headline}</h2>
-      {body.map((p, i) => (
-        <p key={i} className="ics-body">{p}</p>
-      ))}
-      <Link to={ctaHref} className="ready-cta-button ics-cta">{ctaLabel}</Link>
+      <div className="ics-text-inner">
+        {eyebrow && <p className="ics-eyebrow">{eyebrow}</p>}
+        <h2 className="ics-headline">{headline}</h2>
+        {body.map((p, i) => (
+          <p key={i} className="ics-body">{p}</p>
+        ))}
+        <Link to={ctaHref} className="ready-cta-button ics-cta">{ctaLabel}</Link>
+      </div>
     </motion.div>
   );
 
-  const mediaBlock = (
+  const mediaPanel = (
     <motion.div
-      className="ics-media"
-      initial={{ opacity: 0, scale: 0.97 }}
+      className="ics-media-panel"
+      initial={{ opacity: 0, scale: 1.04 }}
       animate={inView ? { opacity: 1, scale: 1 } : {}}
-      transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.12 }}
+      transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
     >
       {videoSrc ? (
         <video
@@ -68,28 +71,22 @@ export default function IndustryCaseSection({
       ) : imageSrc ? (
         <img src={imageSrc} alt={imageAlt} className="ics-media-asset" />
       ) : null}
+      <div className="ics-media-overlay" />
       {(caseTitle || caseSubtitle) && (
         <div className="ics-media-caption">
-          {caseTitle && <p className="ics-media-title">{caseTitle}</p>}
-          {caseSubtitle && <p className="ics-media-subtitle">{caseSubtitle}</p>}
+          {caseTitle && <p className="ics-caption-title">{caseTitle}</p>}
+          {caseSubtitle && <p className="ics-caption-subtitle">{caseSubtitle}</p>}
         </div>
       )}
     </motion.div>
   );
 
   return (
-    <motion.section
-      ref={ref}
-      className="industry-case-section"
-      initial="hidden"
-      animate={inView ? 'visible' : 'hidden'}
-    >
-      <div className="manyone-grid">
-        <div className={`ics-inner${mediaFirst ? ' ics-inner--media-first' : ''}`}>
-          {mediaFirst ? mediaBlock : textBlock}
-          {mediaFirst ? textBlock : mediaBlock}
-        </div>
+    <section ref={ref} className="ics-section">
+      <div className={`ics-layout${mediaFirst ? ' ics-layout--media-first' : ''}`}>
+        {mediaFirst ? mediaPanel : textPanel}
+        {mediaFirst ? textPanel : mediaPanel}
       </div>
-    </motion.section>
+    </section>
   );
 }
