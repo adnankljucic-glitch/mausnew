@@ -14236,6 +14236,7 @@ details[open] .footer-arrow-icon {
   max-width: 860px;
   margin: 0 auto 72px;
   text-align: center;
+  width: 100%;
 }
 
 .exp-intro-headline {
@@ -14290,6 +14291,14 @@ details[open] .footer-arrow-icon {
   .exp-phase-cards {
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .exp-phase-cards {
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
