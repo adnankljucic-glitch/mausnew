@@ -14227,8 +14227,9 @@ details[open] .footer-arrow-icon {
    EXPERTISE INTRO SECTION
    ======================================== */
 .exp-intro-section {
-  padding: 0 0 112px;
+  padding: 0 0 108px;
   color: #fff;
+  width: 100%;
 }
 
 .exp-intro-header {
@@ -14287,7 +14288,8 @@ details[open] .footer-arrow-icon {
 
 @media (min-width: 700px) {
   .exp-phase-cards {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
   }
 }
 
