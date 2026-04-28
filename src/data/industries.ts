@@ -24,18 +24,18 @@ export const industryCards: IndustryCard[] = [
     linkUrl: "/industries/healthcare"
   },
   {
-    title: "Booking & Ticketing",
-    description: "Our platform brings together advanced digital booking tools with data-driven marketing that improves your operations and your guests' experiences.",
+    title: "Events & Ticketing",
+    description: "Custom enterprise software for festivals, concerts, sports events, cultural venues and large conferences — built for scale and complexity.",
     videoUrl: "https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/runevents_intro.mp4",
-    category: "Tourism & Events",
-    linkUrl: "/industries/booking-ticketing"
+    category: "Events",
+    linkUrl: "/industries/events-ticketing"
   },
   {
-    title: "Sustainability and water cycle",
-    description: "Assisting companies with legacy software by providing modern, data-driven solutions for efficient water management and sustainability.",
-    image: "https://images.pexels.com/photos/18140302/pexels-photo-18140302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    category: "Utilities",
-    linkUrl: "/industries/sustainability-water"
+    title: "Booking & Tourism",
+    description: "Digital booking platforms and tourism tech solutions that streamline reservations, channel management, and guest experiences.",
+    image: "https://images.pexels.com/photos/1268855/pexels-photo-1268855.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    category: "Tourism",
+    linkUrl: "/industries/booking-tourism"
   },
   {
     title: "IoT & Smart Devices",

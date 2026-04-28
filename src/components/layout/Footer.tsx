@@ -61,10 +61,10 @@ function Footer() {
                 <div className="footer-accordion-content">
                   <a href="#industries" className="footer-tag">Fintech & Payment Systems</a>
                   <a href="#industries" className="footer-tag">Healthcare</a>
-                  <a href="#industries" className="footer-tag">Booking and ticketing</a>
-                  <a href="#industries" className="footer-tag">Sustainability and water cycle</a>
-                  <a href="#industries" className="footer-tag">Manufacturing</a>
-                  <a href="#industries" className="footer-tag">Smart Home</a>
+                  <a href="#industries" className="footer-tag">Events & Ticketing</a>
+                  <a href="#industries" className="footer-tag">Booking & Tourism</a>
+                  <a href="#industries" className="footer-tag">IoT & Smart Devices</a>
+                  <a href="#industries" className="footer-tag">Real Estate & PropTech</a>
                 </div>
               </details>
 

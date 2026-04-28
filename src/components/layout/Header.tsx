@@ -16,9 +16,9 @@ const INDUSTRIES = [
     ),
   },
   {
-    label: 'Booking & Ticketing',
-    to: '/industries/booking-ticketing',
-    desc: 'High-concurrency reservation platforms built to scale.',
+    label: 'Events & Ticketing',
+    to: '/industries/events-ticketing',
+    desc: 'Enterprise software for festivals, concerts, sports events and large conferences.',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={22} height={22}>
         <rect x="4" y="8" width="24" height="18" rx="2" />
@@ -41,13 +41,13 @@ const INDUSTRIES = [
     ),
   },
   {
-    label: 'Sustainability & Water Cycle',
-    to: '/industries/sustainability-water',
-    desc: 'Environmental monitoring and smart water management systems.',
+    label: 'Booking & Tourism',
+    to: '/industries/booking-tourism',
+    desc: 'Reservation platforms and tourism tech for modern hospitality.',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width={22} height={22}>
-        <path d="M16 4c0 0-9 8-9 15a9 9 0 0 0 18 0C25 12 16 4 16 4z" />
-        <path d="M10 22c1 2 3.5 3 6 3" />
+        <path d="M16 3C10.5 3 5 7.5 5 14c0 8 11 15 11 15s11-7 11-15c0-6.5-5.5-11-11-11z" />
+        <circle cx="16" cy="14" r="3.5" />
       </svg>
     ),
   },
