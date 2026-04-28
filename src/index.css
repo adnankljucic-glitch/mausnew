@@ -14222,3 +14222,143 @@ details[open] .footer-arrow-icon {
   color: #4B5466;
   background: #f0f2f7;
 }
+
+/* ========================================
+   EXPERTISE INTRO SECTION
+   ======================================== */
+.exp-intro-section {
+  background-color: #1a1530;
+  padding: 96px 0 104px;
+  color: #fff;
+}
+
+.exp-intro-header {
+  max-width: 640px;
+  margin-bottom: 64px;
+}
+
+.exp-intro-headline {
+  font-family: var(--font-family-serif);
+  font-weight: 600;
+  font-size: var(--font-h1-mobile);
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 28px;
+}
+
+@media (min-width: 768px) {
+  .exp-intro-headline {
+    font-size: var(--font-h1-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .exp-intro-headline {
+    font-size: clamp(52px, 5.5vw, 80px);
+  }
+}
+
+.exp-intro-em {
+  font-style: italic;
+  color: #7c6fcd;
+}
+
+.exp-intro-sub {
+  font-family: var(--font-family-sans);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 520px;
+}
+
+@media (min-width: 768px) {
+  .exp-intro-sub {
+    font-size: 18px;
+  }
+}
+
+.exp-phase-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 2px;
+}
+
+@media (min-width: 700px) {
+  .exp-phase-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.exp-phase-card {
+  padding: 36px 32px 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  transition: background 0.2s ease;
+}
+
+@media (min-width: 700px) {
+  .exp-phase-card {
+    border-bottom: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .exp-phase-card:last-child {
+    border-right: none;
+  }
+}
+
+.exp-phase-card:last-child {
+  border-bottom: none;
+}
+
+.exp-phase-card--active {
+  background-color: rgba(124, 111, 205, 0.12);
+  border-color: rgba(124, 111, 205, 0.35);
+}
+
+@media (min-width: 700px) {
+  .exp-phase-card--active {
+    border-right-color: rgba(124, 111, 205, 0.35);
+    border-left: 1px solid rgba(124, 111, 205, 0.35);
+    margin-left: -1px;
+    margin-right: -1px;
+  }
+}
+
+.exp-phase-label {
+  font-family: var(--font-family-sans);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(124, 111, 205, 0.85);
+  margin-bottom: 16px;
+}
+
+.exp-phase-card--active .exp-phase-label {
+  color: #a99fe0;
+}
+
+.exp-phase-title {
+  font-family: var(--font-family-serif);
+  font-weight: 400;
+  font-size: clamp(22px, 2.2vw, 30px);
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.exp-phase-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.exp-phase-bullet {
+  font-family: var(--font-family-sans);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.5;
+}
