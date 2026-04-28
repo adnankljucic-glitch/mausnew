@@ -19,6 +19,7 @@ import EventsTicketingPage from './pages/EventsTicketingPage';
 import FintechPage from './pages/FintechPage';
 import RealEstatePage from './pages/RealEstatePage';
 import IoTPage from './pages/IoTPage';
+import BookingTourismPage from './pages/BookingTourismPage';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path="/industries/fintech-payment" element={<FintechPage />} />
           <Route path="/industries/real-estate-proptech" element={<RealEstatePage />} />
           <Route path="/industries/iot-smart-devices" element={<IoTPage />} />
+          <Route path="/industries/booking-tourism" element={<BookingTourismPage />} />
           <Route path="/cases/run-events" element={<RunEventsPage />} />
         </Routes>
         <Footer />
