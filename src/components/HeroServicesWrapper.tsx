@@ -17,13 +17,13 @@ export default function HeroServicesWrapper({ children, variant = "default", aut
     variant === "discovery" ? GradientPlaneDiscovery :
     GradientPlane;
 
-  const forceAutoHeight = autoHeight || variant === 'industries';
+  const wrapperStyle: React.CSSProperties = {
+    ...(variant === "expertise" ? { backgroundColor: "#1a1530" } : {}),
+    ...(!autoHeight ? { minHeight: '100svh' } : {}),
+  };
 
   return (
-    <div
-      className={`relative overflow-hidden ${forceAutoHeight ? '' : 'min-h-screen'}`}
-      style={variant === "expertise" ? { backgroundColor: "#1a1530" } : undefined}
-    >
+    <div className="relative overflow-hidden" style={wrapperStyle}>
       <div className="absolute inset-0 z-0 pointer-events-none">
         <Canvas camera={{ position: [0, 0, 1] }} style={{ width: '100%', height: '100%' }}>
           <GradientComponent />
