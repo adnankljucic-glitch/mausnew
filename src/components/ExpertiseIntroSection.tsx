@@ -53,10 +53,10 @@ export default function ExpertiseIntroSection() {
               transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
             >
               <p className="exp-phase-label">{phase.phase}</p>
-              <h3 className="exp-phase-title">{phase.title}</h3>
+              <h3 className="service-card-title">{phase.title}</h3>
               <ul className="exp-phase-bullets">
                 {phase.bullets.map((b) => (
-                  <li key={b} className="exp-phase-bullet">— {b}</li>
+                  <li key={b} className="exp-phase-bullet">{b}</li>
                 ))}
               </ul>
             </motion.div>
