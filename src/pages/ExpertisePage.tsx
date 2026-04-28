@@ -10,8 +10,8 @@ export default function ExpertisePage() {
     <>
       <HeroServicesWrapper variant="expertise">
         <ExpertiseHero />
+        <ExpertiseIntroSection />
       </HeroServicesWrapper>
-      <ExpertiseIntroSection />
       <ExpertisePillarsHero />
       <OutcomesSection backgroundColor="#F7F8FA" />
       <ProcessAccordion />
