@@ -43,10 +43,10 @@ function TechnologySection() {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="tech-grid-eyebrow">EXPERTISE</p>
+          <p className="tech-grid-eyebrow">EXPERTISE — THE MAUS APPROACH</p>
           <h2 className="tech-grid-headline">AI designed for real business, not demos</h2>
           <p className="tech-grid-sub">
-            We combine secure enterprise foundations with real-world AI automation and full-stack expertise — powering scalable solutions, not experiments.
+            When you hire experts, you're not just buying software. You're buying insight from people who deeply understand user behaviour and have iterated hundreds of times to find what actually works.
           </p>
         </motion.div>
 
