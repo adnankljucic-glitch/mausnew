@@ -39,10 +39,10 @@ export default function ExpertisePillars() {
   return (
     <section id="expertise-pillars" className="technology-section">
       <div className="manyone-grid">
-        <p className="technology-eyebrow">EXPERTISE</p>
+        <p className="technology-eyebrow">EXPERTISE — THE MAUS APPROACH</p>
         <h2 className="technology-headline">AI designed for real business, not demos</h2>
         <p className="technology-description">
-          We combine secure enterprise foundations with real-world AI automation and full-stack expertise - powering scalable solutions, not experiments.
+          When you hire experts, you're not just buying software. You're buying insight from people who deeply understand user behaviour and have iterated hundreds of times to find what actually works.
         </p>
 
         <div className="bento-grid">
