@@ -14294,21 +14294,32 @@ details[open] .footer-arrow-icon {
 }
 
 .exp-phase-card {
-  background: #fff;
-  padding: 36px 32px 40px;
-  border-radius: 2px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 32px 24px;
+  transition: all 0.3s ease-out;
+}
+
+@media (min-width: 768px) {
+  .exp-phase-card {
+    padding: 40px 32px;
+  }
 }
 
 .exp-phase-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+  transform: translateY(-0.25rem);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: none;
 }
 
 .exp-phase-card--active {
-  background: #fff;
-  outline: 2px solid #0A1B9F;
-  outline-offset: -2px;
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
 .exp-phase-label {
@@ -14317,21 +14328,25 @@ details[open] .footer-arrow-icon {
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #0A1B9F;
+  color: rgba(255, 255, 255, 0.45);
   margin-bottom: 16px;
 }
 
 .exp-phase-card--active .exp-phase-label {
-  color: #0A1B9F;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .exp-phase-title {
   font-family: var(--font-family-serif);
   font-weight: 400;
   font-size: clamp(22px, 2.2vw, 30px);
-  color: #0d0d0d;
+  color: #ffffff;
   line-height: 1.2;
   margin-bottom: 24px;
+}
+
+.exp-phase-card:hover .exp-phase-title {
+  color: #FFCD00;
 }
 
 .exp-phase-bullets {
@@ -14344,6 +14359,6 @@ details[open] .footer-arrow-icon {
 .exp-phase-bullet {
   font-family: var(--font-family-sans);
   font-size: 14px;
-  color: rgba(13, 13, 13, 0.55);
+  color: rgba(255, 255, 255, 0.5);
   line-height: 1.5;
 }
