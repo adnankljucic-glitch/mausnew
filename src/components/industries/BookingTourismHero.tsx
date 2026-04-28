@@ -4,10 +4,14 @@ import ScrollIndicator from '../ScrollIndicator';
 export default function BookingTourismHero() {
   return (
     <section className="ai-hero">
-      <img
+      <video
         className="case-study-hero-media"
-        src="/drone.webp"
-        alt="Booking & Tourism"
+        src="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/strand.mp4"
+        poster="/drone.webp"
+        autoPlay
+        muted
+        loop
+        playsInline
         style={{ position: 'absolute', inset: 0, zIndex: 0, width: '100%', height: '100%', objectFit: 'cover' }}
       />
       <div
