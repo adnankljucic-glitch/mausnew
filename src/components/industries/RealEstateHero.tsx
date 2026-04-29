@@ -4,10 +4,13 @@ import ScrollIndicator from '../ScrollIndicator';
 export default function RealEstateHero() {
   return (
     <section className="ai-hero">
-      <img
+      <video
         className="case-study-hero-media"
-        src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-        alt="Real Estate & PropTech"
+        src="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/proptech.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
         style={{ position: 'absolute', inset: 0, zIndex: 0, width: '100%', height: '100%', objectFit: 'cover' }}
       />
       <div
