@@ -99,46 +99,6 @@ export default function BookingTourismSections() {
         ]}
       />
 
-      {/* FEATURES */}
-      <section ref={featuresRef} className="hc-expertise">
-        <div className="manyone-grid">
-          <motion.div
-            className="hc-expertise-header"
-            initial={{ opacity: 0, y: 20 }}
-            animate={featuresInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-          >
-            <p className="hc-eyebrow">Features</p>
-            <h2 className="hc-expertise-headline">Everything you need<br />in one platform.</h2>
-            <p className="hc-expertise-lead">
-              Built to scale with your business — from simple booking flows to advanced data-driven marketing campaigns.
-            </p>
-          </motion.div>
-
-          <div className="hc-expertise-grid">
-            {featureCards.map((card, i) => (
-              <motion.div
-                key={i}
-                className="hc-exp-card"
-                initial={{ opacity: 0, y: 30 }}
-                animate={featuresInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 + i * 0.08 }}
-              >
-                <span className="hc-exp-num">{card.num}</span>
-                <p className="hc-exp-cat">{card.category}</p>
-                <h3 className="hc-exp-title">{card.title}</h3>
-                <p className="hc-exp-body">{card.body}</p>
-                <div className="hc-exp-tags">
-                  {card.tags.map((tag) => (
-                    <span key={tag} className="hc-exp-tag">{tag}</span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* INTEGRATIONS */}
       <section ref={intRef} className="bt-integrations-section">
         <div className="manyone-grid bt-integrations-inner">
@@ -243,6 +203,46 @@ export default function BookingTourismSections() {
         </div>
       </section>
 
+      {/* FEATURES */}
+      <section ref={featuresRef} className="hc-expertise">
+        <div className="manyone-grid">
+          <motion.div
+            className="hc-expertise-header"
+            initial={{ opacity: 0, y: 20 }}
+            animate={featuresInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+          >
+            <p className="hc-eyebrow">Features</p>
+            <h2 className="hc-expertise-headline">Everything you need<br />in one platform.</h2>
+            <p className="hc-expertise-lead">
+              Built to scale with your business — from simple booking flows to advanced data-driven marketing campaigns.
+            </p>
+          </motion.div>
+
+          <div className="hc-expertise-grid">
+            {featureCards.map((card, i) => (
+              <motion.div
+                key={i}
+                className="hc-exp-card"
+                initial={{ opacity: 0, y: 30 }}
+                animate={featuresInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 + i * 0.08 }}
+              >
+                <span className="hc-exp-num">{card.num}</span>
+                <p className="hc-exp-cat">{card.category}</p>
+                <h3 className="hc-exp-title">{card.title}</h3>
+                <p className="hc-exp-body">{card.body}</p>
+                <div className="hc-exp-tags">
+                  {card.tags.map((tag) => (
+                    <span key={tag} className="hc-exp-tag">{tag}</span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* DATA HUB STATS */}
       <section ref={datahubRef} className="hc-expertise hc-expertise--light">
         <div className="manyone-grid">
@@ -297,3 +297,5 @@ export default function BookingTourismSections() {
     </>
   );
 }
+
+export default BookingTourismSections
