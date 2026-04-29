@@ -25,7 +25,7 @@ export default function BookingTourismHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
         >
-          Booking platforms built<br />for scale and experience
+          Datadrevet vækst<br />for turisme
         </motion.h1>
         <motion.p
           className="ai-hero-subheadline"
@@ -33,7 +33,7 @@ export default function BookingTourismHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: 'easeOut', delay: 0.4 }}
         >
-          From real-time availability engines and channel managers to loyalty platforms and dynamic pricing — we build the digital infrastructure that modern travel and tourism businesses rely on.
+          Værktøjer til booking, marketing og integration. Bedre drift, stærkere gæsteoplevelser, klar til fremtidens turisme.
         </motion.p>
       </div>
       <ScrollIndicator />
