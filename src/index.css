@@ -9157,7 +9157,13 @@ details[open] .footer-arrow-icon {
 }
 
 .bt-features-section {
-  padding-top: 0;
+  padding-top: 100px;
+}
+
+@media (min-width: 768px) {
+  .bt-features-section {
+    padding-top: 120px;
+  }
 }
 
 .bt-int-headline {
