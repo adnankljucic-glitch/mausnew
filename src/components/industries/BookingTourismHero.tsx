@@ -25,7 +25,7 @@ export default function BookingTourismHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
         >
-          Datadrevet vækst<br />for turisme
+          Data-driven growth<br />for tourism
         </motion.h1>
         <motion.p
           className="ai-hero-subheadline"
@@ -33,7 +33,7 @@ export default function BookingTourismHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: 'easeOut', delay: 0.4 }}
         >
-          Værktøjer til booking, marketing og integration. Bedre drift, stærkere gæsteoplevelser, klar til fremtidens turisme.
+          A complete platform for booking, marketing and integration. Better operations, stronger guest experiences, built for the future of tourism.
         </motion.p>
       </div>
       <ScrollIndicator />

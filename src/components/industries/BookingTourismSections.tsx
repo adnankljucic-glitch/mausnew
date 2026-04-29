@@ -7,44 +7,44 @@ const featureCards = [
   {
     num: '01',
     category: 'Booking',
-    title: 'Booking & reservationsstyring',
-    body: 'Komplet booking-univers med realtidsoversigt, kapacitetsstyring og automatiske bekræftelser. Integreret med alle større bookingsystemer.',
-    tags: ['Realtidsoversigt', 'Kapacitetsstyring', 'Auto-bekræftelse'],
+    title: 'Booking & reservation management',
+    body: 'A complete booking universe with real-time availability, capacity management, and automatic confirmations — integrated with all major booking systems.',
+    tags: ['Real-Time Availability', 'Capacity Management', 'Auto-Confirmation'],
   },
   {
     num: '02',
-    category: 'Datahub',
-    title: 'Datahub & analyse',
-    body: 'Unikke data-indsigter i overnatningsgæster. Detaljerede rapporter om bookingtrends, kanalperformance og gæsteadfærd — i realtid.',
-    tags: ['Realtidsdata', 'Kanalperformance', 'Gæsteadfærd'],
+    category: 'Data Hub',
+    title: 'Data hub & analytics',
+    body: 'Unique data insights into accommodation guests. Detailed reports on booking trends, channel performance, and guest behaviour — all in real time.',
+    tags: ['Real-Time Data', 'Channel Performance', 'Guest Behaviour'],
   },
   {
     num: '03',
     category: 'Marketing',
-    title: 'Marketingautomatisering',
-    body: 'Automatiserede e-mailkampagner, personaliseret kommunikation og SEO-optimering — alt baseret på dine bookingdata.',
-    tags: ['E-mail automation', 'Personalisering', 'SEO'],
+    title: 'Marketing automation',
+    body: 'Automated email campaigns, personalised communication, and SEO optimisation — all driven by your booking data.',
+    tags: ['Email Automation', 'Personalisation', 'SEO'],
   },
   {
     num: '04',
-    category: 'Gæste-univers',
-    title: 'Gæste self-service univers',
-    body: 'Gæsterne styrer bookinger, betalinger og samtykke i ét brandede self-service univers. Reducerer supporthenvendelser markant.',
-    tags: ['Self-service', 'Betalingsstyring', 'Samtykke'],
+    category: 'Guest Universe',
+    title: 'Guest self-service portal',
+    body: 'Guests manage bookings, payments, and consent in one branded self-service portal. Significantly reduces support enquiries.',
+    tags: ['Self-Service', 'Payment Management', 'Consent'],
   },
   {
     num: '05',
-    category: 'Prissætning',
-    title: 'Dynamisk prissætning',
-    body: 'Avancerede algoritmer der tilpasser priser baseret på efterspørgsel, sæson og konkurrenter. Øger omsætning automatisk.',
-    tags: ['AI-algoritmer', 'Sæsonpriser', 'Konkurrentdata'],
+    category: 'Pricing',
+    title: 'Dynamic pricing',
+    body: 'Advanced algorithms that adjust prices based on demand, season, and competitors — automatically increasing revenue.',
+    tags: ['AI Algorithms', 'Seasonal Pricing', 'Competitor Data'],
   },
   {
     num: '06',
     category: 'Omnichannel',
-    title: 'Omnichannel synlighed',
-    body: 'Optimer din tilstedeværelse på alle kanaler — Google, Meta, e-mail og OTA — fra ét centralt sted med fuld attributionsdata.',
-    tags: ['Google & Meta', 'OTA-kanaler', 'Attribution'],
+    title: 'Omnichannel visibility',
+    body: 'Optimise your presence across all channels — Google, Meta, email, and OTAs — from one central hub with full attribution data.',
+    tags: ['Google & Meta', 'OTA Channels', 'Attribution'],
   },
 ];
 
@@ -52,35 +52,35 @@ const integrations = [
   {
     badge: 'BS',
     name: 'BookingStudio',
-    desc: 'Fuld integration med Danmarks mest udbredte bookingsystem for feriehuse og sommerhuse. Realtidssynkronisering af tilgængelighed og priser.',
+    desc: 'Full integration with the most widely used booking system for holiday homes and cottages. Real-time synchronisation of availability and rates.',
   },
   {
     badge: 'TIG',
     name: 'Tiggets',
-    desc: 'Sømløs integration med Tiggets billetplatform — brugt af Nordic Seaplanes og mange andre oplevelsesvirksomheder.',
+    desc: 'Seamless integration with the Tiggets ticketing platform — used by Nordic Seaplanes and many other experience businesses.',
   },
   {
     badge: 'DW',
     name: 'Dynamicweb',
-    desc: 'Premium Solutions Partner. Fuld e-commerce integration med produkter, priser og kundedata synkroniseret i realtid.',
+    desc: 'Premium Solutions Partner. Full e-commerce integration with products, prices, and customer data synchronised in real time.',
   },
   {
     badge: 'PAY',
-    name: 'Betalingsgateway',
-    desc: 'Integration med Nets, Stripe, QuickPay og andre betalingsudbydere. PCI-kompatibel og sikker transaktionshåndtering.',
+    name: 'Payment Gateway',
+    desc: 'Integration with Nets, Stripe, QuickPay, and other payment providers. PCI-compliant and secure transaction handling.',
   },
   {
     badge: 'API',
-    name: 'Åben API',
-    desc: 'Fleksibel REST API der giver mulighed for custom integrationer med CRM, PMS og andre systemer efter behov.',
+    name: 'Open API',
+    desc: 'Flexible REST API enabling custom integrations with CRM, PMS, and other systems as needed.',
   },
 ];
 
 const datahubStats = [
-  { value: 'DKK 2B+', label: 'Behandlet omsætning' },
-  { value: '200+', label: 'Aktive klienter' },
-  { value: '28 år', label: 'Brancheerfaring' },
-  { value: 'Realtid', label: 'Datasynkronisering' },
+  { value: 'DKK 2B+', label: 'Revenue processed' },
+  { value: '200+', label: 'Active clients' },
+  { value: '28 years', label: 'Industry experience' },
+  { value: 'Real-time', label: 'Data synchronisation' },
 ];
 
 export default function BookingTourismSections() {
@@ -94,12 +94,12 @@ export default function BookingTourismSections() {
   return (
     <>
       <IndustryIntroSection
-        label="Service- og bookingplatform"
-        headline={<>Ét samlet system til turisme og <em>overnatning</em>.</>}
+        label="04 — Booking & Tourism"
+        headline={<>One unified platform for tourism and <em>accommodation</em>.</>}
         body={[
-          'INET Designs service- og bookingplatform er bygget specifikt til turisme- og overnatningsbranchen. Den forbinder dit bookingsystem med datadrevet marketing, gæstekommunikation og avanceret analyse — alt sammen ét sted.',
-          'Uanset om du driver ferieudlejning, camping, hotel eller attraktion, kan platformen tilpasses dine behov og integreres med de systemer, du allerede bruger.',
-          'Vi samler booking, marketing og data i én platform — så du kan fokusere på at skabe gode oplevelser.',
+          'Our service and booking platform is built specifically for the tourism and accommodation industry. It connects your booking system with data-driven marketing, guest communication, and advanced analytics — all in one place.',
+          'Whether you run holiday rentals, a campsite, a hotel, or an attraction, the platform adapts to your needs and integrates with the systems you already use.',
+          'We bring booking, marketing, and data together in one platform — so you can focus on creating great experiences.',
         ]}
       />
 
@@ -112,10 +112,10 @@ export default function BookingTourismSections() {
             animate={featuresInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
-            <p className="hc-eyebrow">Funktioner</p>
-            <h2 className="hc-expertise-headline">Alt hvad du har<br />brug for.</h2>
+            <p className="hc-eyebrow">Features</p>
+            <h2 className="hc-expertise-headline">Everything you need<br />in one platform.</h2>
             <p className="hc-expertise-lead">
-              Platformen er bygget til at skalere med din forretning — fra enkle bookingflows til avancerede datadrevne marketingkampagner.
+              Built to scale with your business — from simple booking flows to advanced data-driven marketing campaigns.
             </p>
           </motion.div>
 
@@ -152,10 +152,10 @@ export default function BookingTourismSections() {
             animate={intInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
-            <p className="hc-eyebrow">Integrationer</p>
-            <h2 className="hc-capabilities-headline">Plug-and-play med dine systemer.</h2>
+            <p className="hc-eyebrow">Integrations</p>
+            <h2 className="hc-capabilities-headline">Plug-and-play with your existing systems.</h2>
             <p className="hc-capabilities-lead">
-              Platformen er bygget til at arbejde med de systemer, du allerede bruger. Vi har dybe integrationer til de ledende bookingsystemer i branchen.
+              The platform is designed to work with the systems you already rely on. We have deep integrations with the leading booking systems in the industry.
             </p>
           </motion.div>
 
@@ -188,7 +188,7 @@ export default function BookingTourismSections() {
         </div>
       </section>
 
-      {/* DATAHUB STATS */}
+      {/* DATA HUB STATS */}
       <section ref={datahubRef} className="hc-expertise">
         <div className="manyone-grid">
           <motion.div
@@ -197,10 +197,10 @@ export default function BookingTourismSections() {
             animate={datahubInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
-            <p className="hc-eyebrow">Datahub</p>
-            <h2 className="hc-expertise-headline">Unikke data-indsigter<br />i turismebranchen.</h2>
+            <p className="hc-eyebrow">Data Hub</p>
+            <h2 className="hc-expertise-headline">Unique data insights<br />into the tourism industry.</h2>
             <p className="hc-expertise-lead">
-              Datahub er INETdesigns bankende datahjerte — og giver et enestående indblik i trends, målgrupper og segmenter inden for turisme- og overnatningsbranchen. Med adgang til aggregerede data fra hundredevis af overnatningsenheder kan vi hjælpe dig med at forstå markedet, positionere dig rigtigt og reagere hurtigt på ændringer.
+              Our Data Hub is the beating heart of the platform — providing unparalleled insight into trends, audiences, and segments across the tourism and accommodation industry. With access to aggregated data from hundreds of accommodation units, we help you understand the market, position yourself correctly, and respond quickly to change.
             </p>
           </motion.div>
 
@@ -225,19 +225,22 @@ export default function BookingTourismSections() {
 
       <IndustryCaseSection
         accentColor="#e8f4f0"
-        eyebrow="Klar til platformen?"
-        headline="Klar til at se platformen i aktion?"
+        eyebrow="Ready to get started?"
+        headline="See the platform in action"
         body={[
-          'Vi viser dig, hvad platformen kan gøre for din forretning — book en uforpligtende demo i dag.',
-          'Vi har hjulpet over 200 turisme- og overnatningsvirksomheder med at øge deres direkte bookinger, forbedre gæsteoplevelsen og optimere driften med datadrevne beslutninger.',
+          'We will show you exactly what the platform can do for your business — book a no-obligation demo today.',
+          'We have helped over 200 tourism and accommodation businesses grow their direct bookings, improve guest experiences, and optimise operations through data-driven decisions.',
         ]}
-        ctaLabel="Book en demo"
+        ctaLabel="Book a demo"
         ctaHref="/discovery"
         imageSrc="/drone.webp"
-        imageAlt="INET platform — turisme og overnatning"
-        caseTitle="Service- og bookingplatform"
-        caseSubtitle="Datadrevet vækst for turisme og overnatning"
+        imageAlt="Booking & tourism platform"
+        caseTitle="Service & Booking Platform"
+        caseSubtitle="Data-driven growth for tourism and accommodation"
       />
     </>
   );
 }
+
+
+export default BookingTourismSections
