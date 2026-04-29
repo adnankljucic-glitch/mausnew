@@ -9092,63 +9092,47 @@ details[open] .footer-arrow-icon {
   color: #374151;
 }
 
-/* ── BOOKING TOURISM INTEGRATIONS SPLIT ── */
-.bt-integrations-section {
+/* ── BOOKING TOURISM SPLIT LAYOUT ── */
+
+/* outer wrapper — stacking context for the floating dashboard */
+.bt-split-wrapper {
+  position: relative;
+}
+
+/* dark green band */
+.bt-split-top {
   background: #0d2818;
-  padding: 100px 0 200px;
-  overflow: visible;
-  position: relative;
-  z-index: 2;
+  padding: 100px 0 120px;
 }
 
 @media (min-width: 768px) {
-  .bt-integrations-section {
-    padding: 120px 0 240px;
+  .bt-split-top {
+    padding: 120px 0 140px;
   }
 }
 
-/* pull features section up so it underlaps the bottom of the dashboard */
-.bt-features-section {
-  margin-top: -180px;
-  padding-top: 220px;
-  position: relative;
-  z-index: 1;
-}
-
-@media (min-width: 768px) {
-  .bt-features-section {
-    margin-top: -220px;
-    padding-top: 260px;
-  }
-}
-
-/* on mobile stack normally */
-@media (max-width: 1023px) {
-  .bt-integrations-section {
-    padding-bottom: 60px;
-  }
-  .bt-features-section {
-    margin-top: 0;
-    padding-top: 80px;
-  }
-}
-
-.bt-integrations-inner {
+.bt-split-top-inner {
   display: flex;
   flex-direction: column;
   gap: 64px;
 }
 
 @media (min-width: 1024px) {
-  .bt-integrations-inner {
+  .bt-split-top-inner {
     flex-direction: row;
     align-items: flex-start;
     gap: 80px;
   }
 }
 
-/* LEFT */
+/* LEFT column */
 .bt-int-left {
+  flex: 1 1 50%;
+  min-width: 0;
+}
+
+/* invisible right-column spacer */
+.bt-int-right-spacer {
   flex: 1 1 50%;
   min-width: 0;
 }
@@ -9218,12 +9202,32 @@ details[open] .footer-arrow-icon {
   margin: 0;
 }
 
-/* RIGHT — dashboard mockup */
-.bt-int-right {
-  flex: 1 1 50%;
-  min-width: 0;
-  position: relative;
-  z-index: 2;
+/* dashboard floated to straddle the green/light colour boundary */
+.bt-dashboard-float {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .bt-dashboard-float {
+    display: block;
+    position: absolute;
+    right: max(40px, calc((100vw - 1280px) / 2 + 40px));
+    bottom: -100px;
+    width: calc(50% - max(40px, calc((100vw - 1280px) / 2 + 40px)) - 20px);
+    max-width: 660px;
+    z-index: 10;
+  }
+}
+
+/* light features section — top padding absorbs the overhanging dashboard */
+.bt-features-section {
+  padding-top: 80px;
+}
+
+@media (min-width: 1024px) {
+  .bt-features-section {
+    padding-top: 180px;
+  }
 }
 
 .bt-dashboard {

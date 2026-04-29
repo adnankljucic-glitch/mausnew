@@ -99,112 +99,110 @@ export default function BookingTourismSections() {
         ]}
       />
 
-      {/* INTEGRATIONS */}
-      <section ref={intRef} className="bt-integrations-section">
-        <div className="manyone-grid bt-integrations-inner">
+      {/* INTEGRATIONS + FEATURES wrapper — dashboard bleeds across the boundary */}
+      <div className="bt-split-wrapper" ref={intRef}>
 
-          {/* LEFT — header + 2×2 cards */}
-          <motion.div
-            className="bt-int-left"
-            initial={{ opacity: 0, x: -24 }}
-            animate={intInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <p className="hc-eyebrow" style={{ color: 'rgba(255,255,255,0.5)' }}>Integrations</p>
-            <h2 className="bt-int-headline">Plug-and-play with your existing systems.</h2>
-            <p className="bt-int-lead">Deep integrations with the platforms you already rely on — no heavy lifting required.</p>
+        {/* dark green top band */}
+        <div className="bt-split-top">
+          <div className="manyone-grid bt-split-top-inner">
 
-            <div className="bt-int-grid">
-              {integrations.map((item, i) => (
-                <motion.div
-                  key={i}
-                  className="bt-int-card"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={intInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 + i * 0.07 }}
-                >
-                  <span className="bt-int-badge">{item.badge}</span>
-                  <h3 className="bt-int-card-name">{item.name}</h3>
-                  <p className="bt-int-card-desc">{item.desc}</p>
-                </motion.div>
-              ))}
+            {/* LEFT — header + 2×2 cards */}
+            <motion.div
+              className="bt-int-left"
+              initial={{ opacity: 0, x: -24 }}
+              animate={intInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <p className="hc-eyebrow" style={{ color: 'rgba(255,255,255,0.5)' }}>Integrations</p>
+              <h2 className="bt-int-headline">Plug-and-play with your existing systems.</h2>
+              <p className="bt-int-lead">Deep integrations with the platforms you already rely on — no heavy lifting required.</p>
+
+              <div className="bt-int-grid">
+                {integrations.map((item, i) => (
+                  <motion.div
+                    key={i}
+                    className="bt-int-card"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={intInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 + i * 0.07 }}
+                  >
+                    <span className="bt-int-badge">{item.badge}</span>
+                    <h3 className="bt-int-card-name">{item.name}</h3>
+                    <p className="bt-int-card-desc">{item.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* RIGHT — spacer so left column dictates the green band height */}
+            <div className="bt-int-right-spacer" />
+          </div>
+        </div>
+
+        {/* dashboard — absolutely straddles the colour boundary */}
+        <motion.div
+          className="bt-dashboard-float"
+          initial={{ opacity: 0, y: 32 }}
+          animate={intInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+        >
+          <div className="bt-dashboard">
+            <div className="bt-dash-chrome">
+              <span className="bt-dash-dot" style={{ background: '#ff5f57' }} />
+              <span className="bt-dash-dot" style={{ background: '#febc2e' }} />
+              <span className="bt-dash-dot" style={{ background: '#28c840' }} />
+              <span className="bt-dash-title">Platform — Overview</span>
             </div>
-          </motion.div>
-
-          {/* RIGHT — platform dashboard mockup */}
-          <motion.div
-            className="bt-int-right"
-            initial={{ opacity: 0, x: 32 }}
-            animate={intInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-          >
-            <div className="bt-dashboard">
-              {/* window chrome */}
-              <div className="bt-dash-chrome">
-                <span className="bt-dash-dot" style={{ background: '#ff5f57' }} />
-                <span className="bt-dash-dot" style={{ background: '#febc2e' }} />
-                <span className="bt-dash-dot" style={{ background: '#28c840' }} />
-                <span className="bt-dash-title">Platform — Overview</span>
+            <div className="bt-dash-stats">
+              <div className="bt-dash-stat">
+                <div className="bt-dash-stat-val">1.284</div>
+                <div className="bt-dash-stat-lbl">BOOKINGS</div>
               </div>
-
-              {/* stat row */}
-              <div className="bt-dash-stats">
-                <div className="bt-dash-stat">
-                  <div className="bt-dash-stat-val">1.284</div>
-                  <div className="bt-dash-stat-lbl">BOOKINGS</div>
-                </div>
-                <div className="bt-dash-stat">
-                  <div className="bt-dash-stat-val" style={{ color: '#1a6b5a' }}>↑ 18%</div>
-                  <div className="bt-dash-stat-lbl">VS. LAST MONTH</div>
-                </div>
-                <div className="bt-dash-stat">
-                  <div className="bt-dash-stat-val">94%</div>
-                  <div className="bt-dash-stat-lbl">OCCUPANCY</div>
-                </div>
+              <div className="bt-dash-stat">
+                <div className="bt-dash-stat-val" style={{ color: '#1a6b5a' }}>↑ 18%</div>
+                <div className="bt-dash-stat-lbl">VS. LAST MONTH</div>
               </div>
-
-              {/* chart */}
-              <div className="bt-dash-chart-wrap">
-                <div className="bt-dash-chart-label">BOOKINGS — LAST 7 DAYS</div>
-                <div className="bt-dash-bars">
-                  {[40, 55, 35, 62, 88, 70, 50].map((h, i) => (
-                    <div key={i} className="bt-dash-bar-wrap">
-                      <div
-                        className="bt-dash-bar"
-                        style={{
-                          height: `${h}%`,
-                          background: i === 4 ? '#1a6b5a' : '#b8d5cc',
-                        }}
-                      />
-                    </div>
-                  ))}
-                </div>
+              <div className="bt-dash-stat">
+                <div className="bt-dash-stat-val">94%</div>
+                <div className="bt-dash-stat-lbl">OCCUPANCY</div>
               </div>
-
-              {/* property rows */}
-              <div className="bt-dash-rows">
-                {[
-                  { name: 'Toppen af Danmark', val: 'DKK 284.000', pct: '+22%' },
-                  { name: 'Ringkøbing Fjord',  val: 'DKK 142.500', pct: '+14%' },
-                  { name: 'Hvidbjerg Strand',  val: 'DKK 98.200',  pct: '+9%' },
-                ].map((row, i) => (
-                  <div key={i} className="bt-dash-row">
-                    <span className="bt-dash-row-name">{row.name}</span>
-                    <span className="bt-dash-row-right">
-                      <span className="bt-dash-row-val">{row.val}</span>
-                      <span className="bt-dash-row-pct">{row.pct}</span>
-                    </span>
+            </div>
+            <div className="bt-dash-chart-wrap">
+              <div className="bt-dash-chart-label">BOOKINGS — LAST 7 DAYS</div>
+              <div className="bt-dash-bars">
+                {[40, 55, 35, 62, 88, 70, 50].map((h, i) => (
+                  <div key={i} className="bt-dash-bar-wrap">
+                    <div
+                      className="bt-dash-bar"
+                      style={{
+                        height: `${h}%`,
+                        background: i === 4 ? '#1a6b5a' : '#b8d5cc',
+                      }}
+                    />
                   </div>
                 ))}
               </div>
             </div>
-          </motion.div>
+            <div className="bt-dash-rows">
+              {[
+                { name: 'Toppen af Danmark', val: 'DKK 284.000', pct: '+22%' },
+                { name: 'Ringkøbing Fjord',  val: 'DKK 142.500', pct: '+14%' },
+                { name: 'Hvidbjerg Strand',  val: 'DKK 98.200',  pct: '+9%' },
+              ].map((row, i) => (
+                <div key={i} className="bt-dash-row">
+                  <span className="bt-dash-row-name">{row.name}</span>
+                  <span className="bt-dash-row-right">
+                    <span className="bt-dash-row-val">{row.val}</span>
+                    <span className="bt-dash-row-pct">{row.pct}</span>
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
 
-        </div>
-      </section>
-
-      {/* FEATURES */}
-      <section ref={featuresRef} className="hc-expertise bt-features-section">
+        {/* light features band — padding-top reserves space for the overhanging dashboard */}
+        <section ref={featuresRef} className="hc-expertise bt-features-section">
         <div className="manyone-grid">
           <motion.div
             className="hc-expertise-header"
@@ -242,6 +240,8 @@ export default function BookingTourismSections() {
           </div>
         </div>
       </section>
+
+      </div>{/* end bt-split-wrapper */}
 
       {/* DATA HUB STATS */}
       <section ref={datahubRef} className="hc-expertise hc-expertise--light">
