@@ -204,18 +204,18 @@ export default function RealEstateSections() {
 
       <IndustryCaseSection
         accentColor="#f0ede8"
-        eyebrow="Case — PropTech"
-        headline="Property Intelligence Platform"
+        eyebrow="Case — PropTech AI"
+        headline="Bringing AI to Real Estate SaaS"
         body={[
-          'We built a property intelligence platform for a Nordic real estate agency — combining automated valuation models, market analytics, and a digital transaction room into a single workflow tool.',
-          'The platform reduced average deal cycle time by 30%, eliminated manual valuation reporting, and gave their agents a data advantage that directly drove new client acquisitions.',
+          'ISPINIT and Delta Access — European real estate software companies behind argo®web and Mara Hub — partnered with MAUS as a long-term embedded product team to modernise their platforms with AI and automation. A flagship deliverable was an AI assistant integrated directly into Microsoft Teams that creates Planner tasks from conversations, drafts structured emails from property search results, and keeps teams productive without leaving their existing workflows.',
+          'The collaboration delivered faster feature releases, deeper end-user automation, and a scalable foundation for LLMs, copilots, and agentic workflows — positioning both products as next-generation intelligent real estate software.',
         ]}
-        ctaLabel="See our cases"
+        ctaLabel="Read the case"
         ctaHref="/cases"
-        imageSrc="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-        imageAlt="Real estate platform"
-        caseTitle="Property Intelligence Platform"
-        caseSubtitle="AVM and deal management for modern agencies"
+        imageSrc="/86588.webp"
+        imageAlt="AI real estate platform"
+        caseTitle="ISPINIT & Delta Access"
+        caseSubtitle="AI-powered real estate SaaS platforms"
       />
     </>
   );
