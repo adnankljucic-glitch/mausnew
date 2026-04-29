@@ -66,7 +66,8 @@ export default function IndustryCaseSection({
     >
       {youtubeSrc ? (
         <iframe
-          src={`${youtubeSrc}?autoplay=0&controls=0&modestbranding=1&rel=0&mute=1`}
+          src={`${youtubeSrc}?autoplay=0&controls=1&modestbranding=1&rel=0&mute=1`}
+          title="Case video"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           className="ics-media-iframe"

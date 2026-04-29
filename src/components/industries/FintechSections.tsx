@@ -206,7 +206,7 @@ export default function FintechSections() {
           'Building a seamless, embeddable ticket purchase experience that could handle global payments and complex event logic. Development of a high-performance Ticket Purchase Widget with deep Stripe integration. Focus was placed on a "zero-friction" UX and an API-first architecture that scales with peak traffic.',
           'Real-time processing and instant digital ticket delivery.',
         ]}
-        ctaLabel="See our cases"
+        ctaLabel="Read the case"
         ctaHref="/cases"
         youtubeSrc="https://www.youtube.com/embed/iWok9PeSKcU"
         caseTitle="High-Conversion Ticket Engine"

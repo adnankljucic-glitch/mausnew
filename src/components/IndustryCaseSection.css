@@ -181,7 +181,7 @@
 
 /* ── LIGHT ACCENT VARIANT ── */
 .ics-section--light {
-  background: #1a6b5a !important;
+  background: #1a6b5a;
 }
 
 .ics-section--light .ics-eyebrow {
