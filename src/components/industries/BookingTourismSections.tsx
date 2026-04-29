@@ -258,19 +258,20 @@ export default function BookingTourismSections() {
             </p>
           </motion.div>
 
-          <div className="hc-expertise-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
+          <div className="hc-expertise-grid" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
             {datahubStats.map((stat, i) => (
               <motion.div
                 key={i}
                 className="hc-exp-card"
+                style={{ padding: '24px 20px' }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={datahubInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 + i * 0.08 }}
               >
-                <div style={{ fontSize: 'clamp(2rem, 3.5vw, 3.2rem)', fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1 }}>
+                <div style={{ fontSize: 'clamp(1.4rem, 2.2vw, 2rem)', fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1 }}>
                   {stat.value}
                 </div>
-                <p className="hc-exp-body" style={{ marginTop: '0.4rem' }}>{stat.label}</p>
+                <p className="hc-exp-body" style={{ marginTop: '0.35rem', fontSize: '13px' }}>{stat.label}</p>
               </motion.div>
             ))}
           </div>
