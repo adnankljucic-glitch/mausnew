@@ -8830,7 +8830,7 @@ details[open] .footer-arrow-icon {
 }
 
 .hc-expertise--light .hc-expertise-headline {
-  color: #0d1117;
+  color: var(--color-heading-on-light);
 }
 
 @media (min-width: 768px) {
