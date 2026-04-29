@@ -199,19 +199,18 @@ export default function FintechSections() {
       </section>
 
       <IndustryCaseSection
-        accentColor="#e8f0e8"
-        eyebrow="Case — Payment Infrastructure"
-        headline="Enterprise Payment Platform"
+        accentColor="#00bfb2"
+        eyebrow="Case — Ticket Engine"
+        headline="High-Conversion Ticket Engine for run.events"
         body={[
-          'We designed and built a high-throughput payment processing platform for a European payment service provider — handling multi-currency transactions, real-time fraud scoring, and automated regulatory reporting.',
-          'The platform processes millions of transactions monthly with 99.99% uptime, full PCI-DSS Level 1 compliance, and a developer API used by hundreds of integrated merchants.',
+          'Building a seamless, embeddable ticket purchase experience that could handle global payments and complex event logic. Development of a high-performance Ticket Purchase Widget with deep Stripe integration. Focus was placed on a "zero-friction" UX and an API-first architecture that scales with peak traffic.',
+          'Real-time processing and instant digital ticket delivery.',
         ]}
         ctaLabel="See our cases"
         ctaHref="/cases"
-        imageSrc="/pay.jpg"
-        imageAlt="Payment platform"
-        caseTitle="Enterprise Payment Platform"
-        caseSubtitle="High-throughput compliant payment processing"
+        youtubeSrc="https://www.youtube.com/embed/iWok9PeSKcU"
+        caseTitle="High-Conversion Ticket Engine"
+        caseSubtitle="Zero-friction ticket purchase with Stripe"
       />
     </>
   );

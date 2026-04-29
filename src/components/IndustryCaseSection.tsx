@@ -10,6 +10,7 @@ interface IndustryCaseSectionProps {
   ctaLabel?: string;
   ctaHref?: string;
   videoSrc?: string;
+  youtubeSrc?: string;
   imageSrc?: string;
   imageAlt?: string;
   caseTitle?: string;
@@ -27,6 +28,7 @@ export default function IndustryCaseSection({
   ctaLabel = 'Read the case',
   ctaHref = '/cases',
   videoSrc,
+  youtubeSrc,
   imageSrc,
   imageAlt = '',
   caseTitle,
@@ -62,7 +64,14 @@ export default function IndustryCaseSection({
       animate={inView ? { opacity: 1, scale: 1 } : {}}
       transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
     >
-      {videoSrc ? (
+      {youtubeSrc ? (
+        <iframe
+          src={`${youtubeSrc}?autoplay=0&controls=0&modestbranding=1&rel=0&mute=1`}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          className="ics-media-iframe"
+        />
+      ) : videoSrc ? (
         <video
           src={videoSrc}
           autoPlay
@@ -74,7 +83,7 @@ export default function IndustryCaseSection({
       ) : imageSrc ? (
         <img src={imageSrc} alt={imageAlt} className="ics-media-asset" />
       ) : null}
-      <div className="ics-media-overlay" />
+      {!youtubeSrc && <div className="ics-media-overlay" />}
     </motion.div>
   );
 

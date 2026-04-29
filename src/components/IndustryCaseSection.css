@@ -92,6 +92,15 @@
   display: block;
 }
 
+.ics-media-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
 /* Overlay for readability */
 .ics-media-overlay {
   position: absolute;
