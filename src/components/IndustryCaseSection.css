@@ -37,13 +37,14 @@
 
 @media (min-width: 900px) {
   .ics-text-panel {
-    width: 50%;
+    width: 55%;
     padding: 80px 4vw 80px 5vw;
   }
 }
 
 @media (min-width: 1440px) {
   .ics-text-panel {
+    width: 55%;
     padding: 100px 5vw 100px 6vw;
   }
 }
@@ -52,7 +53,8 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  max-width: 560px;
+  max-width: 680px;
+  width: 100%;
 }
 
 /* ── MEDIA PANEL (right 50%, edge-to-edge) ── */
@@ -66,7 +68,7 @@
 
 @media (min-width: 900px) {
   .ics-media-panel {
-    width: 50%;
+    width: 45%;
     min-height: unset;
     /* Stretch to match full section height */
     position: absolute;
@@ -169,28 +171,32 @@
 }
 
 /* ── LIGHT ACCENT VARIANT ── */
+.ics-section--light {
+  background: #1a6b5a !important;
+}
+
 .ics-section--light .ics-eyebrow {
-  color: rgba(10, 40, 20, 0.55);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .ics-section--light .ics-headline {
-  color: #0d2818;
+  color: #ffffff;
 }
 
 .ics-section--light .ics-body {
-  color: #1a3a25;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .ics-section--light .ready-cta-button.ics-cta {
   background: transparent;
-  color: #0d2818;
-  border-color: rgba(13, 40, 24, 0.5);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.45);
 }
 
 .ics-section--light .ready-cta-button.ics-cta:hover {
-  background: #0d2818;
-  color: #ffffff;
-  border-color: #0d2818;
+  background: #ffffff;
+  color: #1a6b5a;
+  border-color: #ffffff;
 }
 
 /* ── MEDIA-FIRST VARIANT (media left, text right) ── */
@@ -209,7 +215,7 @@
   }
 
   .ics-layout--media-first .ics-text-panel {
-    margin-left: 50%;
+    margin-left: 45%;
     padding: 80px 5vw 80px 4vw;
   }
 }

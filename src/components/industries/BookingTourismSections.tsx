@@ -241,6 +241,3 @@ export default function BookingTourismSections() {
     </>
   );
 }
-
-
-export default BookingTourismSections
