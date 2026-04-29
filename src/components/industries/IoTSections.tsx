@@ -201,18 +201,17 @@ export default function IoTSections() {
 
       <IndustryCaseSection
         accentColor="#e8eef8"
-        eyebrow="Case — Industrial IoT"
-        headline="Sanovo — Smart Egg Processing"
+        eyebrow="Case — IoT & Connected Devices"
+        headline="CookPerfect — Smart Cooking, Perfected"
         body={[
-          'We partnered with Sanovo Technology Group — a world leader in egg processing machinery — to build an IoT platform that connects their industrial equipment to a real-time cloud dashboard.',
-          'The platform gives operators remote visibility into machine performance, automates maintenance scheduling based on sensor data, and has reduced unplanned downtime by over 25% across customer installations worldwide.',
+          'CookPerfect came to us with a vision: a wireless smart thermometer that takes the guesswork out of cooking. We built native iOS and Android apps that integrate seamlessly with their hardware — reading five temperature sensor points simultaneously and running a proprietary algorithm to calculate the precise core temperature in real time.',
+          'The result is a kitchen companion that guides home cooks and professionals to perfect results every time — with live temperature monitoring, finish-time predictions, and a precision time manager — all built around the beauty of simplicity.',
         ]}
-        ctaLabel="See our cases"
+        ctaLabel="Read the case"
         ctaHref="/cases"
-        imageSrc="/7_750x.webp"
-        imageAlt="IoT platform"
-        caseTitle="Sanovo IoT Platform"
-        caseSubtitle="Industrial IoT for egg processing machinery"
+        youtubeSrc="https://www.youtube.com/embed/seaQIGMZn9I"
+        caseTitle="CookPerfect"
+        caseSubtitle="Smart thermometer app for iOS & Android"
       />
     </>
   );
