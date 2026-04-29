@@ -6,31 +6,31 @@ import IndustryIntroSection from '../IndustryIntroSection';
 const expertiseCards = [
   {
     num: '01',
-    category: 'Payment Infrastructure',
-    title: 'Fast, reliable transaction processing',
-    body: 'We design and build payment processing systems — from gateway integrations and acquirer connections to custom card scheme implementations — that handle high volumes with sub-second latency.',
-    tags: ['PCI-DSS', 'ISO 20022', 'Open Banking'],
+    category: 'Payment Gateway Integrations',
+    title: 'Seamless Connectivity with Market-Leading Gateways',
+    body: 'Complexity should never be a barrier to growth. We specialize in architecting robust payment ecosystems that bridge the gap between your core software and global financial gateways. By leveraging deep integration expertise with Stripe, Nets, and MobilePay, we ensure your platform handles transactions with 99.9% uptime and enterprise-grade security.',
+    tags: ['Stripe', 'MobilePay', 'Nets'],
   },
   {
     num: '02',
-    category: 'Compliance & Regulation',
-    title: 'Built for a regulated world',
-    body: 'AML, KYC, GDPR, PSD2 — regulatory compliance is not bolted on after the fact. We architect systems where compliance is a first-class concern from day one, reducing your exposure and audit overhead.',
-    tags: ['AML / KYC', 'PSD2', 'GDPR'],
+    category: 'Booking & Events',
+    title: 'High-Performance Solutions for Complex Transactional Flows',
+    body: 'Booking and event platforms face unique challenges — from handling high-volume surges to managing complex refund logic. We optimize the entire transactional lifecycle to reduce churn and manual overhead.',
+    tags: ['Split-Payments', 'Deposit Management', 'Checkout UX'],
   },
   {
     num: '03',
-    category: 'Fraud & Risk Intelligence',
-    title: 'Stop fraud before it happens',
-    body: 'Real-time transaction scoring, behavioural analytics, and adaptive rule engines — we build the intelligence layer that distinguishes legitimate customers from bad actors without adding friction.',
-    tags: ['ML Scoring', 'Real-Time Rules', 'Chargeback'],
+    category: 'Data & Visualization',
+    title: 'Strategic Dashboards: Turning Transactions into Insights',
+    body: 'Data is only valuable if it is actionable. We go beyond the transaction by developing custom payment dashboards that provide a 360-degree view of your financial health, focused on the metrics that drive ROI and operational efficiency.',
+    tags: ['Real-Time Analytics', 'Reconciliation', 'Predictive Insights'],
   },
   {
     num: '04',
-    category: 'Open Banking & APIs',
-    title: 'Connect to the financial ecosystem',
-    body: 'We build open banking integrations, financial data aggregation layers, and developer-facing APIs that let your platform become part of the broader financial infrastructure.',
-    tags: ['Open Banking', 'REST APIs', 'Webhooks'],
+    category: 'Software Optimization',
+    title: 'Engineering for Profitability and Performance',
+    body: 'At MAUS, we don\'t just "plug in" a payment gateway. We optimize your entire software architecture to ensure that your payment infrastructure supports your long-term business goals — from performance tuning to PCI-DSS compliance and ROI-driven development.',
+    tags: ['PCI-DSS', 'Performance Tuning', 'ROI-Driven Dev'],
   },
 ];
 
@@ -119,9 +119,9 @@ export default function FintechSections() {
         label="03 — Fintech & Payment Systems"
         headline={<>Financial software that earns <em>trust at every transaction</em>.</>}
         body={[
-          'The financial sector moves at speed and under scrutiny. Every transaction carries liability, every data point carries regulatory weight, and every customer interaction shapes trust. Software in this domain cannot be approximate.',
-          'We have built payment processing engines, fraud detection layers, open banking integrations, and compliance-first financial platforms — working with fintechs, banks, and payment service providers across Europe.',
-          'We understand the domain deeply: the complexity of reconciliation, the demands of PCI-DSS, the nuance of fraud scoring. We bring that knowledge directly into every line of code we write.',
+          'Complexity should never be a barrier to growth. We specialize in architecting robust payment ecosystems that bridge the gap between your core software and global financial gateways.',
+          'From Stripe\'s API-first infrastructure for international expansion to MobilePay and Nets for Scandinavian market dominance — we build bespoke middleware that syncs payment data across legacy systems and modern stacks.',
+          'Every line of code is written with the goal of increasing your bottom line through automation, better user retention, and enterprise-grade security.',
         ]}
       />
 
@@ -134,9 +134,9 @@ export default function FintechSections() {
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
             <p className="hc-eyebrow">Expertise</p>
-            <h2 className="hc-expertise-headline">Engineered for finance,<br />not experiments.</h2>
+            <h2 className="hc-expertise-headline">Four pillars of payment<br />excellence.</h2>
             <p className="hc-expertise-lead">
-              Deep compliance knowledge combined with modern distributed systems engineering — delivering financial software that regulators approve and customers trust.
+              From gateway integrations and transactional UX to real-time dashboards and full PCI-DSS compliance — we cover every layer of your payment infrastructure.
             </p>
           </motion.div>
 
