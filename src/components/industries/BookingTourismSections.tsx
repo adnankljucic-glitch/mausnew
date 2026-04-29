@@ -244,7 +244,7 @@ export default function BookingTourismSections() {
       </section>
 
       {/* DATA HUB STATS */}
-      <section ref={datahubRef} className="hc-expertise">
+      <section ref={datahubRef} className="hc-expertise hc-expertise--light">
         <div className="manyone-grid">
           <motion.div
             className="hc-expertise-header"

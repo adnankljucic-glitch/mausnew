@@ -8825,8 +8825,12 @@ details[open] .footer-arrow-icon {
   font-weight: 800;
   line-height: var(--lh-h2);
   letter-spacing: -0.025em;
-  color: #0d1117;
+  color: var(--color-heading-on-light);
   margin-bottom: 20px;
+}
+
+.hc-expertise--light .hc-expertise-headline {
+  color: #0d1117;
 }
 
 @media (min-width: 768px) {
