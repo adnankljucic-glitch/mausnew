@@ -52,7 +52,7 @@ const integrations = [
   {
     badge: 'BS',
     name: 'BookingStudio',
-    desc: 'Full integration with the most widely used booking system for holiday homes and cottages. Real-time synchronisation of availability and rates.',
+    desc: 'Full integration with the most widely used booking system for holiday homes and cottages. Real-time sync of availability and rates.',
   },
   {
     badge: 'TIG',
@@ -60,14 +60,9 @@ const integrations = [
     desc: 'Seamless integration with the Tiggets ticketing platform — used by Nordic Seaplanes and many other experience businesses.',
   },
   {
-    badge: 'DW',
-    name: 'Dynamicweb',
-    desc: 'Premium Solutions Partner. Full e-commerce integration with products, prices, and customer data synchronised in real time.',
-  },
-  {
     badge: 'PAY',
     name: 'Payment Gateway',
-    desc: 'Integration with Nets, Stripe, QuickPay, and other payment providers. PCI-compliant and secure transaction handling.',
+    desc: 'Integration with Nets, Stripe, QuickPay, and other providers. PCI-compliant and secure transaction handling.',
   },
   {
     badge: 'API',
@@ -144,47 +139,106 @@ export default function BookingTourismSections() {
       </section>
 
       {/* INTEGRATIONS */}
-      <section ref={intRef} className="hc-capabilities">
-        <div className="manyone-grid">
+      <section ref={intRef} className="bt-integrations-section">
+        <div className="manyone-grid bt-integrations-inner">
+
+          {/* LEFT — header + 2×2 cards */}
           <motion.div
-            className="hc-capabilities-header"
-            initial={{ opacity: 0, y: 20 }}
-            animate={intInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
+            className="bt-int-left"
+            initial={{ opacity: 0, x: -24 }}
+            animate={intInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className="hc-eyebrow">Integrations</p>
-            <h2 className="hc-capabilities-headline">Plug-and-play with your existing systems.</h2>
-            <p className="hc-capabilities-lead">
-              The platform is designed to work with the systems you already rely on. We have deep integrations with the leading booking systems in the industry.
-            </p>
+            <p className="hc-eyebrow" style={{ color: 'rgba(255,255,255,0.5)' }}>Integrations</p>
+            <h2 className="bt-int-headline">Plug-and-play with your existing systems.</h2>
+            <p className="bt-int-lead">Deep integrations with the platforms you already rely on — no heavy lifting required.</p>
+
+            <div className="bt-int-grid">
+              {integrations.map((item, i) => (
+                <motion.div
+                  key={i}
+                  className="bt-int-card"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={intInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 + i * 0.07 }}
+                >
+                  <span className="bt-int-badge">{item.badge}</span>
+                  <h3 className="bt-int-card-name">{item.name}</h3>
+                  <p className="bt-int-card-desc">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
 
-          <div className="hc-cap-grid">
-            {integrations.map((item, i) => (
-              <motion.div
-                key={i}
-                className="hc-cap-item"
-                initial={{ opacity: 0, y: 24 }}
-                animate={intInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 + i * 0.08 }}
-              >
-                <div
-                  className="hc-cap-icon"
-                  style={{
-                    fontSize: '0.62rem',
-                    fontWeight: 800,
-                    letterSpacing: '0.05em',
-                    lineHeight: 1.2,
-                    textAlign: 'center',
-                  }}
-                >
-                  {item.badge}
+          {/* RIGHT — platform dashboard mockup */}
+          <motion.div
+            className="bt-int-right"
+            initial={{ opacity: 0, x: 32 }}
+            animate={intInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+          >
+            <div className="bt-dashboard">
+              {/* window chrome */}
+              <div className="bt-dash-chrome">
+                <span className="bt-dash-dot" style={{ background: '#ff5f57' }} />
+                <span className="bt-dash-dot" style={{ background: '#febc2e' }} />
+                <span className="bt-dash-dot" style={{ background: '#28c840' }} />
+                <span className="bt-dash-title">Platform — Overview</span>
+              </div>
+
+              {/* stat row */}
+              <div className="bt-dash-stats">
+                <div className="bt-dash-stat">
+                  <div className="bt-dash-stat-val">1.284</div>
+                  <div className="bt-dash-stat-lbl">BOOKINGS</div>
                 </div>
-                <h3 className="hc-cap-title">{item.name}</h3>
-                <p className="hc-cap-desc">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+                <div className="bt-dash-stat">
+                  <div className="bt-dash-stat-val" style={{ color: '#1a6b5a' }}>↑ 18%</div>
+                  <div className="bt-dash-stat-lbl">VS. LAST MONTH</div>
+                </div>
+                <div className="bt-dash-stat">
+                  <div className="bt-dash-stat-val">94%</div>
+                  <div className="bt-dash-stat-lbl">OCCUPANCY</div>
+                </div>
+              </div>
+
+              {/* chart */}
+              <div className="bt-dash-chart-wrap">
+                <div className="bt-dash-chart-label">BOOKINGS — LAST 7 DAYS</div>
+                <div className="bt-dash-bars">
+                  {[40, 55, 35, 62, 88, 70, 50].map((h, i) => (
+                    <div key={i} className="bt-dash-bar-wrap">
+                      <div
+                        className="bt-dash-bar"
+                        style={{
+                          height: `${h}%`,
+                          background: i === 4 ? '#1a6b5a' : '#b8d5cc',
+                        }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* property rows */}
+              <div className="bt-dash-rows">
+                {[
+                  { name: 'Toppen af Danmark', val: 'DKK 284.000', pct: '+22%' },
+                  { name: 'Ringkøbing Fjord',  val: 'DKK 142.500', pct: '+14%' },
+                  { name: 'Hvidbjerg Strand',  val: 'DKK 98.200',  pct: '+9%' },
+                ].map((row, i) => (
+                  <div key={i} className="bt-dash-row">
+                    <span className="bt-dash-row-name">{row.name}</span>
+                    <span className="bt-dash-row-right">
+                      <span className="bt-dash-row-val">{row.val}</span>
+                      <span className="bt-dash-row-pct">{row.pct}</span>
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
         </div>
       </section>
 

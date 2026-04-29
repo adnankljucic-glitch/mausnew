@@ -9090,6 +9090,272 @@ details[open] .footer-arrow-icon {
   color: #374151;
 }
 
+/* ── BOOKING TOURISM INTEGRATIONS SPLIT ── */
+.bt-integrations-section {
+  background: #0d2818;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .bt-integrations-section {
+    padding: 120px 0;
+  }
+}
+
+.bt-integrations-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+@media (min-width: 1024px) {
+  .bt-integrations-inner {
+    flex-direction: row;
+    align-items: center;
+    gap: 80px;
+  }
+}
+
+/* LEFT */
+.bt-int-left {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.bt-int-headline {
+  font-family: var(--font-family-serif);
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 12px 0 16px;
+}
+
+.bt-int-lead {
+  font-family: var(--font-family-sans);
+  font-size: clamp(15px, 1vw, 17px);
+  line-height: 1.75;
+  color: rgba(255,255,255,0.65);
+  margin: 0 0 40px;
+  max-width: 480px;
+}
+
+.bt-int-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.bt-int-card {
+  background: rgba(255,255,255,0.04);
+  padding: 24px 22px;
+  transition: background 0.2s;
+}
+
+.bt-int-card:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.bt-int-badge {
+  display: inline-block;
+  font-family: var(--font-family-sans);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #5ecba1;
+  margin-bottom: 12px;
+}
+
+.bt-int-card-name {
+  font-family: var(--font-family-serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+
+.bt-int-card-desc {
+  font-family: var(--font-family-sans);
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.5);
+  margin: 0;
+}
+
+/* RIGHT — dashboard mockup */
+.bt-int-right {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 460px;
+}
+
+@media (min-width: 1024px) {
+  .bt-int-right {
+    width: 420px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .bt-int-right {
+    width: 460px;
+  }
+}
+
+.bt-dashboard {
+  background: #f5f2ec;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.06);
+}
+
+.bt-dash-chrome {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 16px;
+  background: #e8e4db;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+
+.bt-dash-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.bt-dash-title {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-family-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #5a5a4a;
+  margin-right: 29px;
+}
+
+.bt-dash-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  margin: 16px 16px 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.bt-dash-stat {
+  background: #ffffff;
+  padding: 14px 14px 12px;
+}
+
+.bt-dash-stat-val {
+  font-family: var(--font-family-sans);
+  font-size: clamp(16px, 1.6vw, 22px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #1a2010;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.bt-dash-stat-lbl {
+  font-family: var(--font-family-sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8a8a7a;
+}
+
+.bt-dash-chart-wrap {
+  padding: 20px 16px 8px;
+}
+
+.bt-dash-chart-label {
+  font-family: var(--font-family-sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8a8a7a;
+  margin-bottom: 12px;
+}
+
+.bt-dash-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  height: 72px;
+}
+
+.bt-dash-bar-wrap {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.bt-dash-bar {
+  width: 100%;
+  border-radius: 3px 3px 0 0;
+  transition: background 0.2s;
+}
+
+.bt-dash-rows {
+  padding: 12px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.bt-dash-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+
+.bt-dash-row:last-child {
+  border-bottom: none;
+}
+
+.bt-dash-row-name {
+  font-family: var(--font-family-sans);
+  font-size: 12px;
+  color: #2a2a1a;
+  font-weight: 500;
+}
+
+.bt-dash-row-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bt-dash-row-val {
+  font-family: var(--font-family-sans);
+  font-size: 12px;
+  font-weight: 700;
+  color: #1a2010;
+}
+
+.bt-dash-row-pct {
+  font-family: var(--font-family-sans);
+  font-size: 11px;
+  font-weight: 700;
+  color: #1a6b5a;
+}
+
 /* ── CASE ── */
 .hc-case {
   background: #081729;
