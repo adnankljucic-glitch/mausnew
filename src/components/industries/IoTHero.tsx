@@ -4,10 +4,13 @@ import ScrollIndicator from '../ScrollIndicator';
 export default function IoTHero() {
   return (
     <section className="ai-hero">
-      <img
+      <video
         className="case-study-hero-media"
-        src="/7_750x.webp"
-        alt="IoT & Smart Devices"
+        src="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/event.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
         style={{ position: 'absolute', inset: 0, zIndex: 0, width: '100%', height: '100%', objectFit: 'cover' }}
       />
       <div
