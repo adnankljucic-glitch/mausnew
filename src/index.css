@@ -9119,7 +9119,7 @@ details[open] .footer-arrow-icon {
 
 /* LEFT */
 .bt-int-left {
-  flex: 1 1 0;
+  flex: 1 1 50%;
   min-width: 0;
 }
 
@@ -9148,7 +9148,7 @@ details[open] .footer-arrow-icon {
   gap: 1px;
   background: rgba(255,255,255,0.1);
   border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 12px;
+  border-radius: 0;
   overflow: hidden;
 }
 
@@ -9190,21 +9190,8 @@ details[open] .footer-arrow-icon {
 
 /* RIGHT — dashboard mockup */
 .bt-int-right {
-  flex: 0 0 auto;
-  width: 100%;
-  max-width: 460px;
-}
-
-@media (min-width: 1024px) {
-  .bt-int-right {
-    width: 420px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .bt-int-right {
-    width: 460px;
-  }
+  flex: 1 1 50%;
+  min-width: 0;
 }
 
 .bt-dashboard {
