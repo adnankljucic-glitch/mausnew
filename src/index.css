@@ -9095,13 +9095,40 @@ details[open] .footer-arrow-icon {
 /* ── BOOKING TOURISM INTEGRATIONS SPLIT ── */
 .bt-integrations-section {
   background: #0d2818;
-  padding: 100px 0;
-  overflow: hidden;
+  padding: 100px 0 0;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
 }
 
 @media (min-width: 768px) {
   .bt-integrations-section {
-    padding: 120px 0;
+    padding: 120px 0 0;
+  }
+}
+
+/* features section after integrations — extra top padding absorbs the overflowing dashboard */
+.bt-features-section {
+  padding-top: 160px;
+}
+
+@media (min-width: 768px) {
+  .bt-features-section {
+    padding-top: 180px;
+  }
+}
+
+/* on mobile, dashboard doesn't overflow — reset to normal flow */
+@media (max-width: 1023px) {
+  .bt-int-right {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .bt-integrations-section {
+    padding-bottom: 60px;
+  }
+  .bt-features-section {
+    padding-top: 80px;
   }
 }
 
@@ -9114,7 +9141,7 @@ details[open] .footer-arrow-icon {
 @media (min-width: 1024px) {
   .bt-integrations-inner {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     gap: 80px;
   }
 }
@@ -9190,10 +9217,15 @@ details[open] .footer-arrow-icon {
   margin: 0;
 }
 
-/* RIGHT — dashboard mockup */
+/* RIGHT — dashboard mockup, overflows into the section below */
 .bt-int-right {
   flex: 1 1 50%;
   min-width: 0;
+  position: relative;
+  /* push the dashboard down so it bleeds into the next section */
+  margin-bottom: -120px;
+  padding-bottom: 120px;
+  z-index: 2;
 }
 
 .bt-dashboard {

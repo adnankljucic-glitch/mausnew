@@ -204,7 +204,7 @@ export default function BookingTourismSections() {
       </section>
 
       {/* FEATURES */}
-      <section ref={featuresRef} className="hc-expertise">
+      <section ref={featuresRef} className="hc-expertise bt-features-section">
         <div className="manyone-grid">
           <motion.div
             className="hc-expertise-header"
