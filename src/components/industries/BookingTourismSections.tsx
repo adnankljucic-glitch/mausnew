@@ -262,7 +262,7 @@ export default function BookingTourismSections() {
                 transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 + i * 0.08 }}
               >
                 <stat.icon size={22} strokeWidth={1.5} style={{ color: '#1a6b5a', marginBottom: '14px' }} />
-                <div style={{ fontSize: 'clamp(1.5rem, 2.4vw, 2.2rem)', fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 1, color: '#0d1117' }}>
+                <div style={{ fontSize: 'clamp(1.5rem, 2.4vw, 2.2rem)', fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 1, color: '#1a6b5a' }}>
                   {stat.value}
                 </div>
                 <p className="hc-exp-body" style={{ marginTop: '6px', fontSize: '13px' }}>{stat.label}</p>
