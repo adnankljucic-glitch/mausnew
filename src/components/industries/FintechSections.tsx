@@ -208,7 +208,7 @@ export default function FintechSections() {
         ]}
         ctaLabel="Read the case"
         ctaHref="/cases"
-        youtubeSrc="https://www.youtube.com/embed/iWok9PeSKcU"
+        videoSrc="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/runevents_intro.mp4"
         caseTitle="High-Conversion Ticket Engine"
         caseSubtitle="Zero-friction ticket purchase with Stripe"
       />
