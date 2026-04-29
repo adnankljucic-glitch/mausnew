@@ -8822,22 +8822,24 @@ details[open] .footer-arrow-icon {
 .hc-expertise-headline {
   font-family: var(--font-family-serif);
   font-size: var(--font-h2-mobile);
-  font-weight: 600;
+  font-weight: 800;
   line-height: var(--lh-h2);
-  letter-spacing: -0.015em;
-  color: var(--color-heading-on-light);
+  letter-spacing: -0.025em;
+  color: #0d1117;
   margin-bottom: 20px;
 }
 
 @media (min-width: 768px) {
   .hc-expertise-headline {
     font-size: var(--font-h2-tablet);
+    font-weight: 800;
   }
 }
 
 @media (min-width: 1200px) {
   .hc-expertise-headline {
     font-size: var(--font-h2-desktop);
+    font-weight: 800;
   }
 }
 
@@ -8864,27 +8866,23 @@ details[open] .footer-arrow-icon {
 }
 
 .hc-exp-card {
-  padding: 40px 36px 32px;
+  padding: 28px 24px;
   border-right: 1px solid #E3E6EB;
-  border-bottom: 1px solid #E3E6EB;
+  border-bottom: none;
   background: #F7F8FA;
   display: flex;
   flex-direction: column;
-  min-height: 300px;
   transition: background 0.25s;
 }
 
-.hc-exp-card:nth-child(2n) {
+.hc-exp-card:last-child {
   border-right: none;
-}
-
-.hc-exp-card:nth-last-child(-n+2) {
-  border-bottom: none;
 }
 
 @media (max-width: 699px) {
   .hc-exp-card {
     border-right: none;
+    border-bottom: 1px solid #E3E6EB;
   }
   .hc-exp-card:last-child {
     border-bottom: none;

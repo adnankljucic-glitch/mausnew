@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { TrendingUp, Users, Clock, Zap } from 'lucide-react';
 import IndustryCaseSection from '../IndustryCaseSection';
 import IndustryIntroSection from '../IndustryIntroSection';
 
@@ -72,10 +73,10 @@ const integrations = [
 ];
 
 const datahubStats = [
-  { value: 'DKK 2B+', label: 'Revenue processed' },
-  { value: '200+', label: 'Active clients' },
-  { value: '28 years', label: 'Industry experience' },
-  { value: 'Real-time', label: 'Data synchronisation' },
+  { value: 'DKK 2B+', label: 'Revenue processed', icon: TrendingUp },
+  { value: '200+', label: 'Active clients', icon: Users },
+  { value: '28 years', label: 'Industry experience', icon: Clock },
+  { value: 'Real-time', label: 'Data synchronisation', icon: Zap },
 ];
 
 export default function BookingTourismSections() {
@@ -263,15 +264,15 @@ export default function BookingTourismSections() {
               <motion.div
                 key={i}
                 className="hc-exp-card"
-                style={{ padding: '24px 20px' }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={datahubInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 + i * 0.08 }}
               >
-                <div style={{ fontSize: 'clamp(1.4rem, 2.2vw, 2rem)', fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1 }}>
+                <stat.icon size={22} strokeWidth={1.5} style={{ color: '#1a6b5a', marginBottom: '14px' }} />
+                <div style={{ fontSize: 'clamp(1.5rem, 2.4vw, 2.2rem)', fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 1, color: '#0d1117' }}>
                   {stat.value}
                 </div>
-                <p className="hc-exp-body" style={{ marginTop: '0.35rem', fontSize: '13px' }}>{stat.label}</p>
+                <p className="hc-exp-body" style={{ marginTop: '6px', fontSize: '13px' }}>{stat.label}</p>
               </motion.div>
             ))}
           </div>
