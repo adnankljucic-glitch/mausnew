@@ -61,7 +61,7 @@
 .ics-media-panel {
   position: relative;
   width: 100%;
-  min-height: 55vw;
+  min-height: 56vw;
   flex-shrink: 0;
   overflow: hidden;
 }
@@ -185,27 +185,27 @@
 }
 
 .ics-section--light .ics-eyebrow {
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(10, 22, 40, 0.5);
 }
 
 .ics-section--light .ics-headline {
-  color: #ffffff;
+  color: #0a1628;
 }
 
 .ics-section--light .ics-body {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(10, 22, 40, 0.75);
 }
 
 .ics-section--light .ready-cta-button.ics-cta {
   background: transparent;
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.45);
+  color: #0a1628;
+  border-color: rgba(10, 22, 40, 0.35);
 }
 
 .ics-section--light .ready-cta-button.ics-cta:hover {
-  background: #ffffff;
-  color: #1a6b5a;
-  border-color: #ffffff;
+  background: #0a1628;
+  color: #ffffff;
+  border-color: #0a1628;
 }
 
 /* ── MEDIA-FIRST VARIANT (media left, text right) ── */
