@@ -8819,6 +8819,12 @@ details[open] .footer-arrow-icon {
   margin: 0 auto 64px;
 }
 
+@media (min-width: 1024px) {
+  .hc-expertise-header {
+    max-width: 960px;
+  }
+}
+
 .hc-expertise-headline {
   font-family: var(--font-family-serif);
   font-size: var(--font-h2-mobile);
@@ -8837,6 +8843,12 @@ details[open] .footer-arrow-icon {
   .hc-expertise-headline {
     font-size: var(--font-h2-tablet);
     font-weight: 800;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hc-expertise-headline {
+    white-space: pre-line;
   }
 }
 
@@ -8990,7 +9002,7 @@ details[open] .footer-arrow-icon {
 
 @media (min-width: 1200px) {
   .hc-capabilities-header {
-    max-width: 50%;
+    max-width: 70%;
   }
 }
 
@@ -9007,6 +9019,12 @@ details[open] .footer-arrow-icon {
 @media (min-width: 768px) {
   .hc-capabilities-headline {
     font-size: var(--font-h2-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hc-capabilities-headline {
+    white-space: nowrap;
   }
 }
 
