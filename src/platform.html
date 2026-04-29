@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service- og bookingplatform // datadrevet vækst — INET DESIGN</title>
+<meta name="description" content="Datadrevet service- og bookingplatform. Værktøjer til booking, marketing og integration. Bedre drift, stærkere gæsteoplevelser, klar til fremtidens turisme.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F8F7F4; --bg2: #F2F0EB; --bg3: #ECEAE3; --surface: #FFFFFF;
+  --border: rgba(0,0,0,0.09); --border-strong: rgba(0,0,0,0.16);
+  --text: #111110; --text-dim: #6B6963; --text-muted: #A8A49F;
+  --accent: #1A6B5A; --accent-light: #E6F4F0; --accent-h: #145447;
+  --r: 2px; --r-m: 6px; --r-l: 12px;
+  --ease: cubic-bezier(0.4,0,0.2,1); --t: 0.28s;
+  --display: clamp(2.4rem,5.5vw,6.5rem);
+  --h1: clamp(2rem,4vw,4rem); --h2: clamp(1.5rem,2.5vw,2.6rem);
+  --h3: clamp(1.1rem,1.5vw,1.35rem); --body: clamp(0.93rem,1vw,1rem);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+
+/* ── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 68px; display: flex; align-items: center; justify-content: space-between;
+  padding: 0 clamp(1.5rem, 5vw, 5rem); background: var(--accent);
+}
+.nav-logo { display: flex; align-items: center; }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.75); transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: #fff; }
+.nav-cta { font-family: 'Outfit',sans-serif; font-size: 0.76rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.5rem 1.3rem; background: #E8600A; color: #fff; border: none; border-radius: 2px; cursor: pointer; transition: background 0.2s; }
+.nav-cta:hover { background: #C44E08; }
+@media (max-width: 900px) { .nav-links, .nav-cta { display: none; } }
+
+/* ── PAGE HERO ─── */
+.page-hero {
+  padding: 140px clamp(1.5rem, 5vw, 5rem) clamp(4rem, 8vh, 7rem);
+  background: var(--accent); position: relative; overflow: hidden;
+}
+.page-hero-bg {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1.5px, transparent 1.5px);
+  background-size: 28px 28px; pointer-events: none;
+}
+.page-hero-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--accent) 0%, transparent 50%, var(--accent) 100%);
+}
+.page-hero-inner { max-width: 1400px; margin: 0 auto; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 1rem; }
+.eyebrow::before { content: ''; width: 1.8rem; height: 1px; background: rgba(255,255,255,0.4); }
+.page-title { font-size: var(--display); font-weight: 800; letter-spacing: -0.03em; line-height: 1.0; color: #fff; text-wrap: balance; margin-bottom: 1.5rem; }
+.page-title span { color: rgba(255,255,255,0.4); font-weight: 300; }
+.page-sub { font-size: clamp(1rem, 1.4vw, 1.2rem); font-weight: 300; color: rgba(255,255,255,0.75); line-height: 1.75; margin-bottom: 2rem; }
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-white { font-family: 'Outfit',sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 2rem; background: #fff; color: var(--accent); border: none; border-radius: 2px; cursor: pointer; transition: all 0.25s; }
+.btn-white:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+.btn-ghost-white { font-family: 'Outfit',sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 2rem; border: 1px solid rgba(255,255,255,0.35); color: rgba(255,255,255,0.85); background: transparent; border-radius: 2px; cursor: pointer; transition: all 0.25s; }
+.btn-ghost-white:hover { border-color: #fff; color: #fff; }
+
+/* hero mockup */
+.hero-mockup { background: var(--surface); border-radius: var(--r-l); overflow: hidden; box-shadow: 0 24px 80px rgba(0,0,0,0.2); }
+.mock-bar { background: var(--accent-h); padding: 0.7rem 1rem; display: flex; align-items: center; gap: 0.5rem; }
+.mock-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.3); }
+.mock-title-bar { flex: 1; text-align: center; font-size: 0.68rem; color: rgba(255,255,255,0.8); font-weight: 600; letter-spacing: 0.1em; }
+.mock-body { padding: 1.2rem; }
+.mock-kpis { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.6rem; margin-bottom: 0.8rem; }
+.mock-kpi { background: var(--accent-light); border-radius: 4px; padding: 0.8rem; }
+.mock-kpi-n { font-size: 1.3rem; font-weight: 800; color: var(--accent); line-height: 1; }
+.mock-kpi-l { font-size: 0.6rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.2rem; }
+.mock-chart-area { background: var(--bg); border-radius: 4px; padding: 0.8rem; margin-bottom: 0.8rem; }
+.mock-chart-lbl { font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); margin-bottom: 0.6rem; }
+.mock-bars { display: flex; align-items: flex-end; gap: 4px; height: 60px; }
+.mb { flex: 1; border-radius: 2px 2px 0 0; background: var(--accent); opacity: 0.25; }
+.mb.hi { opacity: 1; } .mb.mid { opacity: 0.55; }
+.mock-rows { display: flex; flex-direction: column; gap: 0.4rem; }
+.mock-row { display: flex; align-items: center; justify-content: space-between; background: var(--bg); border-radius: 4px; padding: 0.55rem 0.7rem; font-size: 0.72rem; }
+.mock-row-lbl { color: var(--text-dim); }
+.mock-row-val { font-weight: 700; }
+.mock-badge { font-size: 0.58rem; font-weight: 700; padding: 0.15rem 0.4rem; border-radius: 2px; background: #E8F5E9; color: #2E7D32; margin-left: 0.5rem; }
+
+/* ── SECTIONS ─── */
+section { padding: clamp(4rem, 9vh, 8rem) clamp(1.5rem, 5vw, 5rem); }
+.inner { max-width: 1400px; margin: 0 auto; }
+.sec-eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
+.sec-eyebrow::before { content: ''; width: 1.8rem; height: 1px; background: var(--accent); }
+.sec-h { font-size: var(--h1); font-weight: 800; letter-spacing: -0.025em; line-height: 1.1; text-wrap: balance; color: var(--accent-h); margin-bottom: 1rem; }
+.sec-p { font-size: clamp(0.95rem, 1.2vw, 1.08rem); font-weight: 300; color: var(--text-dim); line-height: 1.75; max-width: 600px; }
+
+/* ── INTRO ─── */
+.intro { background: var(--surface); }
+.intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.intro-text { display: flex; flex-direction: column; gap: 1.2rem; }
+.intro-p { font-size: clamp(1rem, 1.3vw, 1.15rem); font-weight: 300; color: var(--text-dim); line-height: 1.8; }
+.intro-quote { font-size: clamp(1.1rem, 1.8vw, 1.4rem); font-weight: 700; line-height: 1.4; border-left: 3px solid var(--accent); padding-left: 1.4rem; color: var(--text); }
+.intro-visual { display: flex; flex-direction: column; gap: 1rem; }
+.iv-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-m); padding: 1.4rem 1.6rem; display: flex; align-items: center; gap: 1.2rem; transition: box-shadow 0.25s; }
+.iv-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.07); }
+.iv-icon { width: 44px; height: 44px; background: var(--accent-light); border-radius: var(--r); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.iv-icon svg { width: 20px; height: 20px; }
+.iv-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.15rem; }
+.iv-desc { font-size: 0.82rem; color: var(--text-dim); line-height: 1.5; }
+.iv-tag { margin-left: auto; font-size: 0.6rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 2px; background: var(--accent-light); color: var(--accent); white-space: nowrap; }
+
+/* ── FEATURES ─── */
+.features { background: var(--bg2); }
+.features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--r-m); overflow: hidden; margin-top: 3.5rem; }
+.feat-card { background: var(--surface); padding: 2.5rem 2rem; display: flex; flex-direction: column; gap: 1rem; transition: background 0.25s; }
+.feat-card:hover { background: var(--accent-light); }
+.feat-num { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; color: var(--accent); }
+.feat-icon { width: 44px; height: 44px; background: var(--accent-light); border-radius: var(--r); display: flex; align-items: center; justify-content: center; }
+.feat-icon svg { width: 20px; height: 20px; }
+.feat-title { font-size: var(--h3); font-weight: 700; line-height: 1.3; }
+.feat-desc { font-size: 0.85rem; color: var(--text-dim); line-height: 1.7; flex: 1; }
+
+/* ── BOOKING VIDEO SECTION ─── */
+.booking-video { padding: 0; position: relative; }
+.bv-wrap { position: relative; width: 100%; height: clamp(380px, 55vh, 600px); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.bv-wrap video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.bv-overlay { position: absolute; inset: 0; background: rgba(10,28,20,0.62); }
+.bv-content { position: relative; z-index: 2; text-align: center; max-width: 760px; padding: 0 2rem; }
+.bv-eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 1rem; justify-content: center; }
+.bv-eyebrow::before { content: ''; width: 1.8rem; height: 1px; background: rgba(255,255,255,0.4); }
+.bv-title { font-size: clamp(1.8rem, 4vw, 4rem); font-weight: 800; letter-spacing: -0.03em; color: #fff; margin-bottom: 1.2rem; }
+.bv-sub { font-size: clamp(0.95rem, 1.3vw, 1.1rem); font-weight: 300; color: rgba(255,255,255,0.75); line-height: 1.75; }
+
+/* ── INTEGRATIONS ─── */
+.integrations { background: var(--surface); }
+.int-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-top: 3.5rem; }
+.int-text { display: flex; flex-direction: column; gap: 1.2rem; }
+.int-list { display: flex; flex-direction: column; gap: 0; }
+.int-item { display: flex; align-items: flex-start; gap: 1.2rem; padding: 1.2rem 0; border-bottom: 1px solid var(--border); }
+.int-item:first-child { border-top: 1px solid var(--border); }
+.int-badge { width: 40px; height: 40px; background: var(--accent); border-radius: var(--r); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.65rem; font-weight: 800; color: #fff; letter-spacing: 0.05em; text-align: center; line-height: 1.2; }
+.int-name { font-size: 0.92rem; font-weight: 700; margin-bottom: 0.2rem; }
+.int-desc { font-size: 0.82rem; color: var(--text-dim); line-height: 1.5; }
+
+/* ── DATAHUB ─── */
+.datahub { background: var(--bg2); }
+.dh-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.dh-text { display: flex; flex-direction: column; gap: 1.2rem; }
+.dh-p { font-size: clamp(1rem, 1.2vw, 1.1rem); font-weight: 300; color: var(--text-dim); line-height: 1.8; }
+.dh-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--r-m); overflow: hidden; }
+.dh-stat { background: var(--surface); padding: 1.5rem; }
+.dh-stat-n { font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; color: var(--accent); line-height: 1; }
+.dh-stat-l { font-size: 0.78rem; color: var(--text-dim); margin-top: 0.3rem; }
+.dh-visual { background: var(--bg3); border-radius: var(--r-l); border: 1px solid var(--border); padding: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+.dh-chart { background: var(--surface); border-radius: var(--r-m); padding: 1.2rem; border: 1px solid var(--border); }
+.dh-chart-title { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); margin-bottom: 0.8rem; }
+.dh-line { display: flex; align-items: flex-end; gap: 3px; height: 70px; }
+.dh-bar { flex: 1; border-radius: 2px 2px 0 0; background: var(--accent); opacity: 0.2; }
+.dh-bar.hi { opacity: 1; } .dh-bar.mid { opacity: 0.5; }
+.dh-segment-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.6rem; }
+.dh-seg { background: var(--surface); border-radius: var(--r); padding: 0.8rem; border: 1px solid var(--border); text-align: center; }
+.dh-seg-n { font-size: 1.1rem; font-weight: 800; color: var(--accent); }
+.dh-seg-l { font-size: 0.6rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* ── CTA ─── */
+.cta-strip { background: var(--accent); padding: clamp(4rem, 8vh, 7rem) clamp(1.5rem, 5vw, 5rem); text-align: center; position: relative; overflow: hidden; }
+.cta-strip::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1.5px, transparent 1.5px); background-size: 28px 28px; pointer-events: none; }
+.cta-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+.cta-h { font-size: var(--h1); font-weight: 800; letter-spacing: -0.025em; line-height: 1.1; color: #fff; margin-bottom: 1rem; text-wrap: balance; }
+.cta-p { font-size: 1.05rem; font-weight: 300; color: rgba(255,255,255,0.75); margin-bottom: 2.5rem; }
+.cta-btns { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+/* ── FOOTER ─── */
+footer { background: #111110; color: rgba(255,255,255,0.9); padding: 4rem clamp(1.5rem,5vw,5rem) 2rem; }
+.footer-inner { max-width: 1400px; margin: 0 auto; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 2rem; }
+.footer-brand p { font-size: 0.85rem; color: rgba(255,255,255,0.45); line-height: 1.7; max-width: 260px; margin-top: 0.8rem; }
+.footer-col h4 { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 1rem; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+.footer-col a { font-size: 0.84rem; color: rgba(255,255,255,0.55); transition: color 0.2s; }
+.footer-col a:hover { color: #fff; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.3); }
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a { font-size: 0.75rem; color: rgba(255,255,255,0.3); }
+.footer-links a:hover { color: rgba(255,255,255,0.6); }
+
+/* ── REVEAL ─── */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s var(--ease), transform 0.65s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (max-width: 900px) {
+  .page-hero-inner, .intro-grid, .int-grid, .dh-grid { grid-template-columns: 1fr; }
+  .hero-mockup, .int-visual { display: none; }
+  .features-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="uploads/pasted-1776637131917-1.png" alt="INET DESIGN" style="height:28px;width:auto;">
+  </a>
+  <ul class="nav-links">
+    <li><a href="platform.html" class="active">Platform</a></li>
+    <li><a href="services.html">Ydelser</a></li>
+    <li><a href="cases.html">Cases</a></li>
+    <li><a href="about.html">Om os</a></li>
+    <li><a href="contact.html">Kontakt</a></li>
+  </ul>
+  <button class="nav-cta" onclick="window.location='contact.html'">Kontakt os</button>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-inner">
+    <div>
+      <div class="eyebrow">Service- og bookingplatform</div>
+      <h1 class="page-title">Datadrevet<br><span>vækst</span></h1>
+      <p class="page-sub">Værktøjer til booking, marketing og integration. Bedre drift, stærkere gæsteoplevelser, klar til fremtidens turisme.</p>
+      <div class="hero-btns">
+        <button class="btn-white" onclick="window.location='contact.html'">Få en demo →</button>
+        <button class="btn-ghost-white" onclick="document.getElementById('features').scrollIntoView()">Se funktioner</button>
+      </div>
+    </div>
+    <div class="hero-mockup">
+      <div class="mock-bar">
+        <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
+        <div class="mock-title-bar">INET Platform — Oversigt</div>
+        <div class="mock-dot"></div>
+      </div>
+      <div class="mock-body">
+        <div class="mock-kpis">
+          <div class="mock-kpi"><div class="mock-kpi-n">1.284</div><div class="mock-kpi-l">Bookinger</div></div>
+          <div class="mock-kpi"><div class="mock-kpi-n">↑ 18%</div><div class="mock-kpi-l">vs. sidste mdr.</div></div>
+          <div class="mock-kpi"><div class="mock-kpi-n">94%</div><div class="mock-kpi-l">Belægning</div></div>
+        </div>
+        <div class="mock-chart-area">
+          <div class="mock-chart-lbl">Bookinger — Seneste 7 dage</div>
+          <div class="mock-bars">
+            <div class="mb" style="height:40%"></div>
+            <div class="mb mid" style="height:55%"></div>
+            <div class="mb" style="height:35%"></div>
+            <div class="mb mid" style="height:65%"></div>
+            <div class="mb hi" style="height:100%"></div>
+            <div class="mb mid" style="height:75%"></div>
+            <div class="mb" style="height:50%"></div>
+          </div>
+        </div>
+        <div class="mock-rows">
+          <div class="mock-row"><span class="mock-row-lbl">Toppen af Danmark</span><span><span class="mock-row-val">DKK 284.000</span><span class="mock-badge">↑ 22%</span></span></div>
+          <div class="mock-row"><span class="mock-row-lbl">Ringkøbing Fjord</span><span><span class="mock-row-val">DKK 142.500</span><span class="mock-badge">↑ 14%</span></span></div>
+          <div class="mock-row"><span class="mock-row-lbl">Hvidbjerg Strand</span><span><span class="mock-row-val">DKK 98.200</span><span class="mock-badge">↑ 9%</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="intro" id="intro">
+  <div class="inner intro-grid">
+    <div class="intro-text reveal">
+      <div class="sec-eyebrow">Hvad er platformen?</div>
+      <h2 class="sec-h">Ét samlet system til turisme og overnatning</h2>
+      <blockquote class="intro-quote">"Vi samler booking, marketing og data i én platform — så du kan fokusere på at skabe gode oplevelser."</blockquote>
+      <p class="intro-p">INET Designs service- og bookingplatform er bygget specifikt til turisme- og overnatningsbranchen. Den forbinder dit bookingsystem med datadrevet marketing, gæstekommunikation og avanceret analyse — alt sammen ét sted.</p>
+      <p class="intro-p">Uanset om du driver ferieudlejning, camping, hotel eller attraktion, kan platformen tilpasses dine behov og integreres med de systemer, du allerede bruger.</p>
+    </div>
+    <div class="intro-visual reveal" style="transition-delay:0.15s;">
+      <div class="iv-card">
+        <div class="iv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
+        </div>
+        <div>
+          <div class="iv-title">Bookingintegration</div>
+          <div class="iv-desc">Plug-and-play med BookingStudio, Tiggets og andre systemer</div>
+        </div>
+        <div class="iv-tag">Live</div>
+      </div>
+      <div class="iv-card">
+        <div class="iv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="M7 16l4-4 4 4 5-5"/></svg>
+        </div>
+        <div>
+          <div class="iv-title">Analytics &amp; rapportering</div>
+          <div class="iv-desc">Dybdegående indsigt i gæsteadfærd og bookingtrends</div>
+        </div>
+        <div class="iv-tag">Realtid</div>
+      </div>
+      <div class="iv-card">
+        <div class="iv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div>
+          <div class="iv-title">Automatiseret gæstekommunikation</div>
+          <div class="iv-desc">Personaliserede beskeder og opfølgning på alle kanaler</div>
+        </div>
+        <div class="iv-tag">Automatisk</div>
+      </div>
+      <div class="iv-card">
+        <div class="iv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <div>
+          <div class="iv-title">Dynamisk prissætning</div>
+          <div class="iv-desc">AI-drevne algoritmer der optimerer priser i realtid</div>
+        </div>
+        <div class="iv-tag">AI</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="inner">
+    <div class="reveal">
+      <div class="sec-eyebrow">Funktioner</div>
+      <h2 class="sec-h">Alt hvad du har brug for</h2>
+      <p class="sec-p">Platformen er bygget til at skalere med din forretning — fra enkle bookingflows til avancerede datadrevne marketingkampagner.</p>
+    </div>
+    <div class="features-grid reveal" style="transition-delay:0.1s;">
+      <div class="feat-card">
+        <div class="feat-num">01</div>
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg></div>
+        <div class="feat-title">Booking &amp; reservationsstyring</div>
+        <div class="feat-desc">Komplet booking-universe med realtidsoversigt, kapacitetsstyring og automatiske bekræftelser. Integreret med alle større bookingsystemer.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">02</div>
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="M7 16l4-4 4 4 5-5"/></svg></div>
+        <div class="feat-title">Datahub &amp; analyse</div>
+        <div class="feat-desc">Unikke data-indsigter i overnatningsgæster. Detaljerede rapporter om bookingtrends, kanalperformance og gæsteadfærd.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">03</div>
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <div class="feat-title">Marketingautomatisering</div>
+        <div class="feat-desc">Automatiserede e-mailkampagner, personaliseret kommunikation og SEO-optimering — alt baseret på dine bookingdata.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">04</div>
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+        <div class="feat-title">Gæste-univers</div>
+        <div class="feat-desc">Gæsterne styrer bookinger, betalinger og samtykke i ét brandede self-service univers. Reducerer supporthenvendelser markant.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">05</div>
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="feat-title">Dynamisk prissætning</div>
+        <div class="feat-desc">Avancerede algoritmer der tilpasser priser baseret på efterspørgsel, sæson og konkurrenter. Øger omsætning automatisk.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">06</div>
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <div class="feat-title">Omnichannel synlighed</div>
+        <div class="feat-desc">Optimer din tilstedeværelse på alle kanaler — Google, Meta, e-mail og OTA — fra ét centralt sted med fuld attributionsdata.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING VIDEO -->
+<div class="booking-video">
+  <div class="bv-wrap">
+    <video autoplay muted loop playsinline src="https://media.inetdesign.dk/media/45oelyjp/2335856_beautiful_sea_texture_1920x1080.mp4"></video>
+    <div class="bv-overlay"></div>
+    <div class="bv-content">
+      <div class="bv-eyebrow">Powered by Datahub</div>
+      <h2 class="bv-title">Datahub er inetdesigns bankende datahjerte</h2>
+      <p class="bv-sub">Der giver et enestående indblik i trends, målgrupper og segmenter inden for turisme- og overnatningsbranchen. Brug data til at træffe bedre beslutninger — hver dag.</p>
+    </div>
+  </div>
+</div>
+
+<!-- INTEGRATIONS -->
+<section class="integrations" id="integrations">
+  <div class="inner">
+    <div class="reveal">
+      <div class="sec-eyebrow">Integrationer</div>
+      <h2 class="sec-h">Plug-and-play med dine systemer</h2>
+      <p class="sec-p">Platformen er bygget til at arbejde med de systemer, du allerede bruger. Vi har dybe integrationer til de ledende bookingsystemer i branchen.</p>
+    </div>
+    <div class="int-grid reveal" style="transition-delay:0.1s;">
+      <div class="int-list">
+        <div class="int-item">
+          <div class="int-badge">BS</div>
+          <div>
+            <div class="int-name">BookingStudio</div>
+            <div class="int-desc">Fuld integration med Danmarks mest udbredte bookingsystem for feriehuse og sommerhuse. Realtidssynkronisering af tilgængelighed og priser.</div>
+          </div>
+        </div>
+        <div class="int-item">
+          <div class="int-badge">TIG</div>
+          <div>
+            <div class="int-name">Tiggets</div>
+            <div class="int-desc">Sømløs integration med Tiggets billetplatform — brugt af Nordic Seaplanes og mange andre oplevelsesvirksomheder.</div>
+          </div>
+        </div>
+        <div class="int-item">
+          <div class="int-badge">DW</div>
+          <div>
+            <div class="int-name">Dynamicweb</div>
+            <div class="int-desc">Premium Solutions Partner. Fuld e-commerce integration med produkter, priser og kundedata synkroniseret i realtid.</div>
+          </div>
+        </div>
+        <div class="int-item">
+          <div class="int-badge">PAY</div>
+          <div>
+            <div class="int-name">Betalingsgateway</div>
+            <div class="int-desc">Integration med Nets, Stripe, QuickPay og andre betalingsudbydere. PCI-kompatibel og sikker transaktionshåndtering.</div>
+          </div>
+        </div>
+        <div class="int-item">
+          <div class="int-badge">API</div>
+          <div>
+            <div class="int-name">Åben API</div>
+            <div class="int-desc">Fleksibel REST API der giver mulighed for custom integrationer med CRM, PMS og andre systemer efter behov.</div>
+          </div>
+        </div>
+      </div>
+      <div class="dh-visual reveal" style="transition-delay:0.15s;">
+        <div class="sec-eyebrow" style="color:var(--text-dim);">Integration overview</div>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;">
+          <div style="background:var(--surface);border-radius:var(--r-m);padding:1rem 1.2rem;border:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;font-size:0.78rem;">
+            <span style="font-weight:600;">BookingStudio</span>
+            <span style="background:#E8F5E9;color:#2E7D32;font-size:0.6rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:2px;">Aktiv</span>
+          </div>
+          <div style="background:var(--surface);border-radius:var(--r-m);padding:1rem 1.2rem;border:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;font-size:0.78rem;">
+            <span style="font-weight:600;">Tiggets Billetter</span>
+            <span style="background:#E8F5E9;color:#2E7D32;font-size:0.6rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:2px;">Aktiv</span>
+          </div>
+          <div style="background:var(--surface);border-radius:var(--r-m);padding:1rem 1.2rem;border:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;font-size:0.78rem;">
+            <span style="font-weight:600;">Google Analytics 4</span>
+            <span style="background:#E8F5E9;color:#2E7D32;font-size:0.6rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:2px;">Aktiv</span>
+          </div>
+          <div style="background:var(--surface);border-radius:var(--r-m);padding:1rem 1.2rem;border:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;font-size:0.78rem;">
+            <span style="font-weight:600;">Nets Betaling</span>
+            <span style="background:#E8F5E9;color:#2E7D32;font-size:0.6rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:2px;">Aktiv</span>
+          </div>
+          <div style="background:var(--surface);border-radius:var(--r-m);padding:1rem 1.2rem;border:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;font-size:0.78rem;">
+            <span style="font-weight:600;">Meta Business Suite</span>
+            <span style="background:#E8F5E9;color:#2E7D32;font-size:0.6rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:2px;">Aktiv</span>
+          </div>
+          <div style="background:var(--bg3);border-radius:var(--r-m);padding:1rem 1.2rem;border:1px dashed var(--border-strong);display:flex;align-items:center;justify-content:space-between;font-size:0.78rem;color:var(--text-dim);">
+            <span>Custom integration</span>
+            <span style="font-size:0.6rem;font-weight:700;">+ Tilføj</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DATAHUB STATS -->
+<section class="datahub" id="datahub">
+  <div class="inner">
+    <div class="dh-grid reveal">
+      <div class="dh-text">
+        <div class="sec-eyebrow">Datahub</div>
+        <h2 class="sec-h">Unikke data-indsigter i turismebranchen</h2>
+        <p class="dh-p">Datahub er INETdesigns bankende datahjerte — og giver et enestående indblik i trends, målgrupper og segmenter inden for turisme- og overnatningsbranchen.</p>
+        <p class="dh-p">Med adgang til aggregerede data fra hundredevis af overnatningsenheder kan vi hjælpe dig med at forstå markedet, positionere dig rigtigt og reagere hurtigt på ændringer.</p>
+        <div class="dh-stats">
+          <div class="dh-stat"><div class="dh-stat-n">DKK 2B+</div><div class="dh-stat-l">Behandlet omsætning</div></div>
+          <div class="dh-stat"><div class="dh-stat-n">200+</div><div class="dh-stat-l">Aktive klienter</div></div>
+          <div class="dh-stat"><div class="dh-stat-n">28 år</div><div class="dh-stat-l">Brancheerfaring</div></div>
+          <div class="dh-stat"><div class="dh-stat-n">Realtid</div><div class="dh-stat-l">Datasynkronisering</div></div>
+        </div>
+      </div>
+      <div class="dh-visual reveal" style="transition-delay:0.15s;">
+        <div class="dh-chart">
+          <div class="dh-chart-title">Belægning — Danmark (Gennemsnit)</div>
+          <div class="dh-line">
+            <div class="dh-bar" style="height:30%"></div>
+            <div class="dh-bar mid" style="height:45%"></div>
+            <div class="dh-bar" style="height:35%"></div>
+            <div class="dh-bar mid" style="height:60%"></div>
+            <div class="dh-bar hi" style="height:95%"></div>
+            <div class="dh-bar hi" style="height:100%"></div>
+            <div class="dh-bar mid" style="height:80%"></div>
+            <div class="dh-bar" style="height:55%"></div>
+            <div class="dh-bar" style="height:40%"></div>
+            <div class="dh-bar" style="height:25%"></div>
+            <div class="dh-bar" style="height:20%"></div>
+            <div class="dh-bar mid" style="height:35%"></div>
+          </div>
+        </div>
+        <div class="dh-segment-row">
+          <div class="dh-seg"><div class="dh-seg-n">67%</div><div class="dh-seg-l">Familier</div></div>
+          <div class="dh-seg"><div class="dh-seg-n">23%</div><div class="dh-seg-l">Par</div></div>
+          <div class="dh-seg"><div class="dh-seg-n">10%</div><div class="dh-seg-l">Gruppe</div></div>
+        </div>
+        <div style="background:var(--surface);border-radius:var(--r-m);padding:1rem 1.2rem;border:1px solid var(--border);">
+          <div style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-dim);margin-bottom:0.5rem;">Bookinghorisont</div>
+          <div style="display:flex;align-items:center;gap:0.8rem;">
+            <div style="font-size:1.8rem;font-weight:800;color:var(--accent);">38</div>
+            <div style="font-size:0.8rem;color:var(--text-dim);">dage i gennemsnit<br>før ankomst</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <div class="cta-inner">
+    <h2 class="cta-h">Klar til at se platformen i aktion?</h2>
+    <p class="cta-p">Vi viser dig, hvad platformen kan gøre for din forretning — book en uforpligtende demo i dag.</p>
+    <div class="cta-btns">
+      <button class="btn-white" onclick="window.location='contact.html'">Book en demo →</button>
+      <button class="btn-ghost-white" onclick="window.location='tel:+4586122240'">+45 86 12 22 40</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="uploads/pasted-1776637131917-1.png" alt="INET DESIGN" style="height:22px;filter:brightness(0) invert(1);opacity:0.7;margin-bottom:0.8rem;">
+        <p>Creative digital agency based in Aarhus and Sarajevo — specialists in tourism, booking and data-driven digital marketing since 1996.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Ydelser</h4>
+        <ul>
+          <li><a href="platform.html">Platform</a></li>
+          <li><a href="services.html">Digital Marketing</a></li>
+          <li><a href="services.html">Website &amp; Booking</a></li>
+          <li><a href="services.html">E-Commerce</a></li>
+          <li><a href="services.html">Analytics</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Virksomhed</h4>
+        <ul>
+          <li><a href="about.html">Om os</a></li>
+          <li><a href="cases.html">Cases</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Jobs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="/cdn-cgi/l/email-protection#96fbf7fffad6fff8f3e2bbf2f3e5fff1f8b8f2fd"><span class="__cf_email__" data-cfemail="ee838f8782ae87808b9ac38a8b9d878980c08a85">[email&#160;protected]</span></a></li>
+          <li><a href="tel:+4586122240">+45 86 12 22 40</a></li>
+          <li><a href="#">Vølundsvej 1, Åbyhøj</a></li>
+          <li><a href="#">8230 Aarhus</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 INET DESIGN A/S — All rights reserved</span>
+      <div class="footer-links">
+        <a href="#">Privatlivspolitik</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const io = new IntersectionObserver(entries =>
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }),
+  { threshold: 0.1 }
+);
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
