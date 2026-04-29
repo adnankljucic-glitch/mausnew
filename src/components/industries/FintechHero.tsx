@@ -4,11 +4,13 @@ import ScrollIndicator from '../ScrollIndicator';
 export default function FintechHero() {
   return (
     <section className="ai-hero">
-      <img
-        className="case-study-hero-media"
-        src="/pay.jpg"
-        alt="Fintech & Payment Systems"
+      <video
         style={{ position: 'absolute', inset: 0, zIndex: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+        src="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/fintech.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
       />
       <div
         className="case-study-hero-overlay"
@@ -21,7 +23,7 @@ export default function FintechHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
         >
-          Fraud-resistant fintech,<br />built for compliance
+          Strategic Payment Architecture &amp; Fintech Optimization
         </motion.h1>
         <motion.p
           className="ai-hero-subheadline"
@@ -29,7 +31,7 @@ export default function FintechHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: 'easeOut', delay: 0.4 }}
         >
-          From payment gateways and open banking integrations to regulatory reporting and fraud detection — we build financial software that is secure, scalable, and ready for a regulated world.
+          Maximized ROI through seamless integrations, intelligent dashboards, and high-conversion UX for booking and event platforms.
         </motion.p>
       </div>
       <ScrollIndicator />
