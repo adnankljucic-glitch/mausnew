@@ -20,6 +20,7 @@ import FintechPage from './pages/FintechPage';
 import RealEstatePage from './pages/RealEstatePage';
 import IoTPage from './pages/IoTPage';
 import BookingTourismPage from './pages/BookingTourismPage';
+import AboutPage from './pages/AboutPage';
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
           <Route path="/industries/iot-smart-devices" element={<IoTPage />} />
           <Route path="/industries/booking-tourism" element={<BookingTourismPage />} />
           <Route path="/cases/run-events" element={<RunEventsPage />} />
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
         <Footer />
       </div>

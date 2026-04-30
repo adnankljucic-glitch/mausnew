@@ -14786,3 +14786,141 @@ details[open] .footer-arrow-icon {
   line-height: 1.7;
   color: #444;
 }
+
+/* ── ABOUT HERO ── */
+.about-hero {
+  position: relative;
+  min-height: 100svh;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding-top: calc(var(--header-height) + 32px);
+  padding-bottom: 48px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .about-hero {
+    min-height: 100vh;
+    padding-top: calc(var(--header-height) + 40px);
+    padding-bottom: 64px;
+  }
+}
+
+.about-hero-video-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.about-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(2, 8, 23, 0.45) 0%,
+    rgba(2, 8, 23, 0.35) 40%,
+    rgba(2, 8, 23, 0.75) 100%
+  );
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .about-hero-content {
+    gap: 28px;
+  }
+}
+
+.about-hero-greeting {
+  font-family: 'Barlow', sans-serif;
+  font-size: clamp(14px, 1.1vw, 18px);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+  text-transform: none;
+}
+
+.about-hero-headline {
+  font-family: var(--font-family-serif);
+  font-weight: 700;
+  font-size: var(--font-h1-mobile);
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0;
+  max-width: 22ch;
+}
+
+@media (min-width: 768px) {
+  .about-hero-headline {
+    font-size: var(--font-h1-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-hero-headline {
+    font-size: clamp(56px, 5vw, 72px);
+    max-width: 20ch;
+  }
+}
+
+@media (min-width: 1440px) {
+  .about-hero-headline {
+    font-size: var(--font-h1-desktop);
+    max-width: 18ch;
+  }
+}
+
+.about-hero-name {
+  font-style: italic;
+  color: #ffffff;
+}
+
+.about-hero-accent {
+  color: #4ade80;
+}
+
+.about-hero-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.about-hero-link {
+  font-family: 'Barlow', sans-serif;
+  font-size: clamp(11px, 0.9vw, 13px);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.about-hero-link:hover {
+  color: #ffffff;
+}
+
+.about-hero-sep {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 14px;
+  line-height: 1;
+}

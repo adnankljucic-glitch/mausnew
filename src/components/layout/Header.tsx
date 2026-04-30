@@ -166,7 +166,7 @@ function Header() {
               </button>
 
               <Link to="/cases"   className="nav-link">Cases</Link>
-              <a    href="#about" className="nav-link">About Us</a>
+              <Link to="/about" className="nav-link">About Us</Link>
             </nav>
 
             <Link className="premium-cta" to="/discovery">Let's Talk</Link>
@@ -278,7 +278,7 @@ function Header() {
             </AnimatePresence>
 
             <Link to="/cases"   onClick={() => setMobileOpen(false)}>Cases</Link>
-            <a    href="#about" onClick={() => setMobileOpen(false)}>About Us</a>
+            <Link to="/about" onClick={() => setMobileOpen(false)}>About Us</Link>
             <Link className="premium-cta mobile" to="/discovery" onClick={() => setMobileOpen(false)}>
               Let's Talk
             </Link>
