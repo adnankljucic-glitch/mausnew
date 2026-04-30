@@ -282,8 +282,7 @@ export default function BookingTourismSections() {
         ]}
         ctaLabel="Book a demo"
         ctaHref="/discovery"
-        imageSrc="/drone.webp"
-        imageAlt="Booking & tourism platform"
+        videoSrc="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/hvidbjerg.mp4"
         caseTitle="Service & Booking Platform"
         caseSubtitle="Data-driven growth for tourism and accommodation"
       />
