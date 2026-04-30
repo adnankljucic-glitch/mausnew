@@ -137,7 +137,7 @@ export default function FintechSections() {
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
             <p className="hc-eyebrow">Expertise</p>
-            <h2 className="hc-expertise-headline">Four pillars of payment<br />excellence.</h2>
+            <h2 className="hc-expertise-headline">Four pillars of payment excellence.</h2>
             <p className="hc-expertise-lead">
               From gateway integrations and transactional UX to real-time dashboards and full PCI-DSS compliance — we cover every layer of your payment infrastructure.
             </p>
