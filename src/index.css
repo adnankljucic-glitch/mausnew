@@ -8883,6 +8883,12 @@ details[open] .footer-arrow-icon {
   }
 }
 
+@media (min-width: 1024px) {
+  .datahub-stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 .hc-exp-card {
   padding: 28px 24px;
   border-right: 1px solid #E3E6EB;

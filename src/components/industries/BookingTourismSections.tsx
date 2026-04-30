@@ -252,7 +252,7 @@ export default function BookingTourismSections() {
             </p>
           </motion.div>
 
-          <div className="hc-expertise-grid" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
+          <div className="hc-expertise-grid datahub-stats-grid">
             {datahubStats.map((stat, i) => (
               <motion.div
                 key={i}
