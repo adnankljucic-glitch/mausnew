@@ -147,7 +147,7 @@
 
 @media (min-width: 1280px) {
   .ics-headline {
-    font-size: var(--font-h2-desktop);
+    font-size: clamp(40px, 3.2vw, 56px);
   }
 }
 
@@ -181,7 +181,7 @@
 
 /* ── LIGHT ACCENT VARIANT ── */
 .ics-section--light {
-  background: #1a6b5a;
+  background: #2a8a74;
 }
 
 .ics-section--light .ics-eyebrow {
