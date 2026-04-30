@@ -208,6 +208,17 @@
   border-color: #0a1628;
 }
 
+/* ── MOBILE: media always on top ── */
+@media (max-width: 899px) {
+  .ics-layout {
+    flex-direction: column-reverse;
+  }
+
+  .ics-layout--media-first {
+    flex-direction: column-reverse;
+  }
+}
+
 /* ── MEDIA-FIRST VARIANT (media left, text right) ── */
 .ics-layout--media-first {
   flex-direction: column-reverse;

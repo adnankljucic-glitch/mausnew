@@ -14683,3 +14683,99 @@ details[open] .footer-arrow-icon {
 .exp-phase-bullet:last-child {
   border-bottom: none;
 }
+
+/* ── MOBILE ACCORDION (industry pages, < 768px) ── */
+.mob-acc-list {
+  display: none;
+  flex-direction: column;
+  border-top: 1px solid #D9D9D0;
+  border-left: 1px solid #D9D9D0;
+  border-right: 1px solid #D9D9D0;
+}
+
+@media (max-width: 767px) {
+  .mob-acc-list {
+    display: flex;
+  }
+
+  .hc-cap-grid,
+  .mob-acc-list ~ .hc-cap-grid {
+    display: none;
+  }
+}
+
+.mob-acc-item {
+  border-bottom: 1px solid #D9D9D0;
+  background: #ffffff;
+}
+
+.mob-acc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px;
+  cursor: pointer;
+  user-select: none;
+  gap: 12px;
+  outline: none;
+}
+
+.mob-acc-header:focus-visible {
+  box-shadow: inset 0 0 0 2px #0a1628;
+}
+
+.mob-acc-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.mob-acc-num {
+  font-family: 'Barlow', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #9a9a90;
+  flex-shrink: 0;
+}
+
+.mob-acc-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  color: #0a1628;
+}
+
+.mob-acc-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.mob-acc-headline {
+  font-family: 'Barlow', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0a1628;
+  line-height: 1.3;
+}
+
+.mob-acc-toggle {
+  flex-shrink: 0;
+  color: #0a1628;
+  display: flex;
+  align-items: center;
+}
+
+.mob-acc-body {
+  overflow: hidden;
+}
+
+.mob-acc-body-inner {
+  padding: 0 20px 20px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #444;
+}

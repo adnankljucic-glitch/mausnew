@@ -2,6 +2,8 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import IndustryCaseSection from './IndustryCaseSection';
 import IndustryIntroSection from './IndustryIntroSection';
+import MobileAccordionItem from './MobileAccordionItem';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 const expertiseCards = [
   {
@@ -137,6 +139,7 @@ export default function HealthcareSections() {
   const capRef = useRef<HTMLElement>(null);
   const expertiseInView = useInView(expertiseRef, { once: true, amount: 0.05 });
   const capInView = useInView(capRef, { once: true, amount: 0.05 });
+  const isMobile = useIsMobile();
 
   return (
     <>
@@ -210,22 +213,32 @@ export default function HealthcareSections() {
             </p>
           </motion.div>
 
-          <div className="hc-cap-grid">
-            {capabilities.map((cap, i) => (
-              <motion.div
-                key={i}
-                className="hc-cap-item"
-                initial={{ opacity: 0, y: 24 }}
-                animate={capInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 + i * 0.07 }}
-              >
-                <span className="hc-cap-num">{cap.num}</span>
-                <div className="hc-cap-icon">{cap.icon}</div>
-                <h3 className="hc-cap-title">{cap.title}</h3>
-                <p className="hc-cap-desc">{cap.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+          {isMobile ? (
+            <div className="mob-acc-list">
+              {capabilities.map((cap, i) => (
+                <MobileAccordionItem key={i} num={cap.num} icon={cap.icon} headline={cap.title}>
+                  {cap.desc}
+                </MobileAccordionItem>
+              ))}
+            </div>
+          ) : (
+            <div className="hc-cap-grid">
+              {capabilities.map((cap, i) => (
+                <motion.div
+                  key={i}
+                  className="hc-cap-item"
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={capInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 + i * 0.07 }}
+                >
+                  <span className="hc-cap-num">{cap.num}</span>
+                  <div className="hc-cap-icon">{cap.icon}</div>
+                  <h3 className="hc-cap-title">{cap.title}</h3>
+                  <p className="hc-cap-desc">{cap.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
