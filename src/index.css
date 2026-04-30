@@ -1896,7 +1896,6 @@
   }
 
   .mobile-ind-list {
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     padding-left: 12px;
