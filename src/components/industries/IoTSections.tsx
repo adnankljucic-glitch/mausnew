@@ -222,7 +222,7 @@ export default function IoTSections() {
         ]}
         ctaLabel="Read the case"
         ctaHref="/cases"
-        youtubeSrc="https://www.youtube.com/embed/seaQIGMZn9I"
+        videoSrc="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/cp_intro.mp4"
         caseTitle="CookPerfect"
         caseSubtitle="Smart thermometer app for iOS & Android"
       />
