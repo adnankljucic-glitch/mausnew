@@ -250,7 +250,7 @@ function Header() {
               Industries
               <ChevronDown
                 size={14}
-                style={{ transition: 'transform 0.2s', transform: mobileIndOpen ? 'rotate(180deg)' : 'none' }}
+                style={{ transition: 'transform 0.2s', transform: mobileIndOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
               />
             </button>
             <AnimatePresence>
