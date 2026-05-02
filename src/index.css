@@ -1623,9 +1623,7 @@
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     background: #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    display: block;
     padding-top: calc(var(--header-height) + 20px);
     padding-inline: clamp(16px, 4vw, 40px);
     padding-bottom: 32px;
