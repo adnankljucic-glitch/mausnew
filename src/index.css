@@ -9171,60 +9171,62 @@ details[open] .footer-arrow-icon {
 
 .re-products-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border-top: 1px solid rgba(0,0,32,0.08);
-  border-left: 1px solid rgba(0,0,32,0.08);
-  margin-left: calc(-1 * (4% + 16px));
-  margin-right: calc(-1 * (4% + 16px));
+  grid-template-columns: 1fr;
+  gap: 16px;
 }
 
 @media (min-width: 768px) {
   .re-products-grid {
     grid-template-columns: repeat(2, 1fr);
-    margin-left: calc(-1 * (6% + clamp(20px, 2vw, 40px)));
-    margin-right: calc(-1 * (6% + clamp(20px, 2vw, 40px)));
-  }
-}
-
-@media (min-width: 900px) {
-  .re-products-grid {
-    grid-template-columns: repeat(4, 1fr);
-    margin-left: calc(-1 * (6% + clamp(20px, 2vw, 40px)));
-    margin-right: calc(-1 * (6% + clamp(20px, 2vw, 40px)));
+    gap: 20px;
   }
 }
 
 @media (min-width: 1280px) {
   .re-products-grid {
     grid-template-columns: repeat(4, 1fr);
-    margin-left: 0;
-    margin-right: 0;
+    gap: 20px;
   }
 }
 
 .re-product-item {
   background: #ffffff;
-  padding: 20px;
-  border-right: 1px solid rgba(0,0,32,0.08);
-  border-bottom: 1px solid rgba(0,0,32,0.08);
+  border-radius: 4px;
+  padding: 24px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   position: relative;
-  transition: background 0.18s;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.re-product-item:hover {
-  background: #F7F8FA;
+@media (min-width: 768px) {
+  .re-product-item {
+    padding: 32px 28px;
+  }
+
+  .re-product-item:hover {
+    border-color: rgba(0, 0, 0, 0.2);
+    background: rgba(249, 250, 251, 1);
+    transform: translateY(-4px);
+  }
 }
 
 @media (min-width: 1280px) {
   .re-product-item {
-    padding: 32px 28px 30px;
+    padding: 36px 32px;
   }
+}
+
+.re-product-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  cursor: pointer;
 }
 
 .re-product-icon {
   width: 32px;
   height: 32px;
-  margin-bottom: 16px;
+  flex-shrink: 0;
   color: var(--color-heading-on-light);
 }
 
@@ -9235,11 +9237,43 @@ details[open] .footer-arrow-icon {
 
 .re-product-title {
   font-family: var(--font-family-serif);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--color-heading-on-light);
-  margin-bottom: 8px;
-  line-height: 1.25;
+  line-height: 1.3;
+  flex: 1;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .re-product-title {
+    font-size: 20px;
+  }
+}
+
+.re-product-toggle {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.35);
+  font-size: 22px;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.re-product-toggle:hover {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.re-product-toggle:active {
+  transform: scale(0.9);
 }
 
 .re-product-desc {
@@ -9247,6 +9281,20 @@ details[open] .footer-arrow-icon {
   font-size: 15px;
   line-height: 1.7;
   color: #374151;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin: 0;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              margin-top 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.re-product-item-expanded .re-product-desc {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 14px;
+  padding-left: 46px;
 }
 
 /* ── BOOKING TOURISM INTEGRATIONS ── */
@@ -14246,32 +14294,27 @@ details[open] .footer-arrow-icon {
 .re-outcomes-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0;
-  margin-left: calc(-1 * (4% + 16px));
-  margin-right: calc(-1 * (4% + 16px));
+  gap: 20px;
 }
 
 @media (min-width: 700px) {
   .re-outcomes-grid {
     grid-template-columns: 1fr 1fr;
-    margin-left: calc(-1 * (6% + clamp(20px, 2vw, 40px)));
-    margin-right: calc(-1 * (6% + clamp(20px, 2vw, 40px)));
-  }
-}
-
-@media (min-width: 1280px) {
-  .re-outcomes-grid {
-    grid-template-columns: 1fr 1fr;
-    margin-left: 0;
-    margin-right: 0;
     gap: 20px;
   }
 }
 
 .re-outcome-card {
   background: #ffffff;
-  padding: 20px;
+  padding: 24px 20px;
   border: 1px solid #E3E6EB;
+  border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+  .re-outcome-card {
+    padding: 36px 32px;
+  }
 }
 
 @media (min-width: 1280px) {

@@ -326,6 +326,7 @@ export default function RunEventsSections() {
   const [videoPlaying, setVideoPlaying] = useState(false);
   const [videoHovered, setVideoHovered] = useState(false);
   const [videoReady, setVideoReady] = useState(false);
+  const [expandedProduct, setExpandedProduct] = useState<number | null>(null);
 
   const handlePlayPause = useCallback(() => {
     const v = videoRef.current;
@@ -576,14 +577,21 @@ export default function RunEventsSections() {
             {products.map((product, i) => (
               <motion.div
                 key={i}
-                className="re-product-item"
+                className={`re-product-item${expandedProduct === i ? ' re-product-item-expanded' : ''}`}
                 initial={{ opacity: 0, y: 24 }}
                 animate={capInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 + i * 0.06 }}
               >
-                <span className="hc-cap-num">{product.num}</span>
-                <div className="re-product-icon">{product.icon}</div>
-                <h3 className="re-product-title">{product.title}</h3>
+                <div
+                  className="re-product-header"
+                  onClick={() => setExpandedProduct(expandedProduct === i ? null : i)}
+                >
+                  <div className="re-product-icon">{product.icon}</div>
+                  <h3 className="re-product-title">{product.title}</h3>
+                  <button className="re-product-toggle" aria-label="Toggle content">
+                    {expandedProduct === i ? '\u2212' : '+'}
+                  </button>
+                </div>
                 <p className="re-product-desc">{product.desc}</p>
               </motion.div>
             ))}
