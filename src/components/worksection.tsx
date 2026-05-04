@@ -39,7 +39,7 @@ const projects: Project[] = [
     title: "Nordsee Holiday",
     category: "Agentic AI Commerce",
     description: "We're redefining the booking journey by moving away from endless filtering and toward natural conversations that lead straight to a reservation.",
-    image: "https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "/ocean.jpg",
     mediaType: "image",
   },
   {
