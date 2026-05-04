@@ -578,7 +578,7 @@ export default function RunEventsSections() {
         transition={{ duration: 0.7, ease: 'easeOut' }}
       >
         <video
-          src="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/realestate.mp4"
+          src="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/runevents-in-60-seconds-1.mp4"
           autoPlay
           muted
           loop
