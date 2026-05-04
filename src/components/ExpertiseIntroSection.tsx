@@ -16,7 +16,7 @@ const phases = [
   {
     phase: 'PHASE 3',
     title: 'Scaling',
-    bullets: ['A platform that', 'carries the business'],
+    bullets: ['A platform that carries the business', 'High-availability infrastructure built to grow', 'Performance optimisation at every layer', 'Scalable architecture with zero single points of failure'],
     active: false,
   },
 ];
