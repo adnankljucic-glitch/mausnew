@@ -1,6 +1,8 @@
+import ScrollIndicator from "./ScrollIndicator";
+
 export default function CasesPageHero() {
   return (
-    <section className="ai-hero">
+    <section className="ai-hero relative">
       <div className="manyone-grid ai-hero-content">
         <h1 className="ai-hero-headline">
           Real results for real businesses
@@ -11,6 +13,7 @@ export default function CasesPageHero() {
           accelerate growth, and build technology that delivers measurable impact.
         </p>
       </div>
+      <ScrollIndicator />
     </section>
   );
 }
