@@ -241,7 +241,7 @@ function SocialTrustSection() {
     const el = carouselRef.current;
     if (!el) return;
     const cardWidth = el.firstElementChild
-      ? (el.firstElementChild as HTMLElement).offsetWidth + 20
+      ? (el.firstElementChild as HTMLElement).offsetWidth + 24
       : el.offsetWidth;
     el.scrollBy({ left: dir === 'right' ? cardWidth : -cardWidth, behavior: 'smooth' });
   }, []);
@@ -256,15 +256,16 @@ function SocialTrustSection() {
   return (
     <section className="re-social-trust">
       <div className="manyone-grid">
-        <div className="re-social-trust-inner">
-          {/* Left */}
-          <motion.div
-            className="re-social-trust-left"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-          >
+
+        {/* Header row */}
+        <motion.div
+          className="re-social-trust-header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+        >
+          <div className="re-social-trust-header-left">
             <p className="re-social-trust-eyebrow">Client Stories</p>
             <h2 className="re-social-trust-heading">What our clients say</h2>
             <div className="re-social-trust-rating">
@@ -279,63 +280,68 @@ function SocialTrustSection() {
                 <strong>5-year</strong> partnership
               </span>
             </div>
-            <div className="re-social-trust-nav">
-              <button
-                className="re-social-trust-nav-btn"
-                onClick={() => scroll('left')}
-                disabled={atStart}
-                aria-label="Previous"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M19 12H5M12 5l-7 7 7 7" />
-                </svg>
-              </button>
-              <button
-                className="re-social-trust-nav-btn"
-                onClick={() => scroll('right')}
-                disabled={atEnd}
-                aria-label="Next"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </button>
-            </div>
-          </motion.div>
+          </div>
 
-          {/* Right — carousel */}
-          <div className="re-social-trust-carousel-wrap">
-            <div
-              className="re-social-trust-carousel"
-              ref={carouselRef}
-              onScroll={handleScroll}
+          <div className="re-social-trust-nav">
+            <button
+              className="re-social-trust-nav-btn"
+              onClick={() => scroll('left')}
+              disabled={atStart}
+              aria-label="Previous"
             >
-              {quotes.map((q, i) => (
-                <motion.div
-                  key={i}
-                  className="re-social-trust-card"
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.6, ease: 'easeOut', delay: i * 0.08 }}
-                >
-                  <img
-                    src={q.img}
-                    alt=""
-                    className="re-social-trust-card-img"
-                  />
-                  <div className="re-social-trust-card-body">
-                    <p className="re-social-trust-card-quote">{q.quote}</p>
-                    <div className="re-social-trust-card-author">
-                      <span className="re-social-trust-card-name">{q.name}</span>
-                      <span className="re-social-trust-card-role">{q.role}</span>
-                    </div>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M19 12H5M12 5l-7 7 7 7" />
+              </svg>
+            </button>
+            <button
+              className="re-social-trust-nav-btn"
+              onClick={() => scroll('right')}
+              disabled={atEnd}
+              aria-label="Next"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </motion.div>
+
+        {/* Carousel */}
+        <div className="re-social-trust-carousel-wrap">
+          <div
+            className="re-social-trust-carousel"
+            ref={carouselRef}
+            onScroll={handleScroll}
+          >
+            {quotes.map((q, i) => (
+              <motion.div
+                key={i}
+                className="re-social-trust-card"
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.65, ease: 'easeOut', delay: i * 0.1 }}
+              >
+                {/* Image with pillar-style aspect ratio + overlay */}
+                <div className="re-social-trust-card-media">
+                  <img src={q.img} alt="" className="re-social-trust-card-img" />
+                  <div className="re-social-trust-card-overlay" aria-hidden="true" />
+                </div>
+
+                {/* Text body */}
+                <div className="re-social-trust-card-body">
+                  <p className="re-social-trust-card-quote">{q.quote}</p>
+                  <div className="re-social-trust-card-divider" />
+                  <div className="re-social-trust-card-author">
+                    <span className="re-social-trust-card-name">{q.name}</span>
+                    <span className="re-social-trust-card-role">{q.role}</span>
                   </div>
-                </motion.div>
-              ))}
-            </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
+
       </div>
     </section>
   );
