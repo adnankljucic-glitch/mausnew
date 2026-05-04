@@ -14543,14 +14543,12 @@ details[open] .footer-arrow-icon {
 
 .re-meta-bar {
   background: #0a0a0a;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0;
 }
 
 .re-meta-bar-inner {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 @media (min-width: 768px) {
@@ -14563,21 +14561,18 @@ details[open] .footer-arrow-icon {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 28px 24px;
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 44px 24px;
 }
 
 @media (min-width: 768px) {
   .re-meta-bar-item {
-    padding: 40px 36px;
-    border-bottom: none;
+    padding: 56px 36px;
   }
 }
 
 @media (min-width: 1024px) {
   .re-meta-bar-item {
-    padding: 48px 40px;
+    padding: 64px 40px;
   }
 }
 
