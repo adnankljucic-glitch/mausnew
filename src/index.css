@@ -13534,18 +13534,24 @@ details[open] .footer-arrow-icon {
 /* PILLAR ROW — SHARED LAYOUT (used by expertise + services) */
 .pillar-row {
   width: 100%;
-  padding: 72px 0;
+  padding: 0 0 72px;
   position: relative;
   overflow: hidden;
 }
 
 @media (min-width: 768px) {
   .pillar-row {
-    padding: 90px 0;
+    padding: 0 0 90px;
   }
 }
 
 @media (min-width: 1024px) {
+  .pillar-row {
+    padding: 0 0 108px;
+  }
+}
+
+@media (min-width: 1280px) {
   .pillar-row {
     padding: 108px 0;
   }
@@ -13562,11 +13568,17 @@ details[open] .footer-arrow-icon {
 .pillar-row-inner {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 40px;
+  gap: 32px;
   align-items: center;
 }
 
 @media (min-width: 768px) {
+  .pillar-row-inner {
+    gap: 40px;
+  }
+}
+
+@media (min-width: 1280px) {
   .pillar-row-inner {
     gap: 56px;
   }
