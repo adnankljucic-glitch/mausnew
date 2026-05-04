@@ -599,7 +599,7 @@ export default function RunEventsSections() {
           >
             <p className="hc-eyebrow hc-eyebrow--light">Event Intelligence Cloud</p>
             <h2 className="re-eic-headline">
-              AI that works <em>alongside organizers</em>,<br />not around them.
+              AI that works <em>alongside organizers,</em> not around them.
             </h2>
             <p className="re-eic-lead">
               EIC was built to solve real challenges event organizers face every day: understanding attendee
