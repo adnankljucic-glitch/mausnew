@@ -5026,23 +5026,10 @@
 }
 
 .case-card-half .case-card-title {
-  font-size: var(--font-h4-mobile);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-@media (min-width: 768px) {
-  .case-card-half .case-card-title {
-    font-size: var(--font-h4-tablet);
-  }
-}
-
-@media (min-width: 1024px) {
-  .case-card-half .case-card-title {
-    font-size: var(--font-h4-desktop);
-  }
 }
 
 .case-card-description {
