@@ -6,7 +6,7 @@ export default function RunEventsHero() {
     <section className="ai-hero">
       <video
         className="case-study-hero-media"
-        src="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/runevents_intro.mp4"
+        src="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/ecs20sec.mp4"
         autoPlay
         muted
         loop
