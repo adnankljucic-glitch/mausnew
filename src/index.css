@@ -9276,6 +9276,12 @@ details[open] .footer-arrow-icon {
   transform: scale(0.9);
 }
 
+@media (min-width: 768px) {
+  .re-product-toggle {
+    display: none;
+  }
+}
+
 .re-product-desc {
   font-family: var(--font-family-sans);
   font-size: 15px;
@@ -9295,6 +9301,20 @@ details[open] .footer-arrow-icon {
   opacity: 1;
   margin-top: 14px;
   padding-left: 46px;
+}
+
+@media (min-width: 768px) {
+  .re-product-desc {
+    max-height: none;
+    opacity: 1;
+    margin-top: 14px;
+    padding-left: 46px;
+  }
+
+  .re-product-header {
+    cursor: default;
+    pointer-events: none;
+  }
 }
 
 /* ── BOOKING TOURISM INTEGRATIONS ── */
