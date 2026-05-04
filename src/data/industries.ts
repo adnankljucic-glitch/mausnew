@@ -16,18 +16,18 @@ export const industryCards: IndustryCard[] = [
     linkUrl: "/industries/fintech-payment"
   },
   {
-    title: "Healthcare",
-    description: "Partnered with one of Scandinavia's largest firms to develop healthcare systems used in hospitals.",
-    image: "/health.webp",
-    category: "Healthcare",
-    linkUrl: "/industries/healthcare"
-  },
-  {
     title: "Events & Ticketing",
     description: "Custom enterprise software for festivals, concerts, sports events, cultural venues and large conferences — built for scale and complexity.",
     image: "/expo_000100.webp",
     category: "Events",
     linkUrl: "/industries/events-ticketing"
+  },
+  {
+    title: "Healthcare",
+    description: "Partnered with one of Scandinavia's largest firms to develop healthcare systems used in hospitals.",
+    image: "/health.webp",
+    category: "Healthcare",
+    linkUrl: "/industries/healthcare"
   },
   {
     title: "Booking & Tourism",
