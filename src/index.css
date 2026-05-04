@@ -9124,15 +9124,33 @@ details[open] .footer-arrow-icon {
 }
 
 /* ── RUN.EVENTS PRODUCTS GRID ── */
+.re-products-section.hc-capabilities {
+  background: #020817 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
 .re-products-section .hc-capabilities-headline {
   white-space: normal;
+  color: #ffffff;
+}
+
+.re-products-section .hc-capabilities-lead {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.re-products-section .hc-eyebrow {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.re-products-section .hc-cap-num {
+  color: rgba(255, 255, 255, 0.35);
 }
 
 .re-products-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border-top: 1px solid rgba(0,0,32,0.08);
-  border-left: 1px solid rgba(0,0,32,0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 @media (min-width: 768px) {
@@ -9148,23 +9166,23 @@ details[open] .footer-arrow-icon {
 }
 
 .re-product-item {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.03);
   padding: 32px 28px 30px;
-  border-right: 1px solid rgba(0,0,32,0.08);
-  border-bottom: 1px solid rgba(0,0,32,0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
-  transition: background 0.18s;
+  transition: background 0.22s ease;
 }
 
 .re-product-item:hover {
-  background: #F7F8FA;
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .re-product-icon {
   width: 32px;
   height: 32px;
   margin-bottom: 16px;
-  color: #000020;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .re-product-icon svg {
@@ -9176,7 +9194,7 @@ details[open] .footer-arrow-icon {
   font-family: var(--font-family-serif);
   font-size: 17px;
   font-weight: 600;
-  color: #000020;
+  color: #ffffff;
   margin-bottom: 8px;
   line-height: 1.25;
 }
@@ -9185,7 +9203,7 @@ details[open] .footer-arrow-icon {
   font-family: var(--font-family-sans);
   font-size: 13.5px;
   line-height: 1.65;
-  color: rgba(0,0,32,0.55);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 /* ── BOOKING TOURISM INTEGRATIONS ── */
@@ -14161,7 +14179,7 @@ details[open] .footer-arrow-icon {
 
 /* Outcomes */
 .re-outcomes {
-  background: #F7F8FA;
+  background: #020817;
   padding: 100px 0;
 }
 
@@ -14174,6 +14192,18 @@ details[open] .footer-arrow-icon {
 .re-outcomes-header {
   max-width: 720px;
   margin: 0 0 64px;
+}
+
+.re-outcomes .hc-eyebrow {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.re-outcomes .hc-capabilities-headline {
+  color: #ffffff;
+}
+
+.re-outcomes .hc-capabilities-lead {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .re-outcomes-grid {
@@ -14189,9 +14219,9 @@ details[open] .footer-arrow-icon {
 }
 
 .re-outcome-card {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.04);
   padding: 44px 40px;
-  border: 1px solid #E3E6EB;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .re-outcome-label {
@@ -14199,7 +14229,7 @@ details[open] .footer-arrow-icon {
   font-size: 10.5px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: #6B7280;
+  color: rgba(255, 255, 255, 0.45);
   font-weight: 500;
   margin-bottom: 18px;
 }
@@ -14210,7 +14240,7 @@ details[open] .footer-arrow-icon {
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.01em;
-  color: var(--color-heading-on-light);
+  color: #ffffff;
   margin-bottom: 16px;
 }
 
@@ -14218,7 +14248,7 @@ details[open] .footer-arrow-icon {
   font-family: var(--font-family-sans);
   font-size: 15px;
   line-height: 1.7;
-  color: rgba(0,0,0,0.6);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 /* ─────────────────────────────────────────────
