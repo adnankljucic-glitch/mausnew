@@ -14055,6 +14055,18 @@ details[open] .footer-arrow-icon {
   text-align: center;
 }
 
+@media (min-width: 1200px) {
+  .re-eic-header {
+    max-width: 900px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .re-eic-header {
+    max-width: 1000px;
+  }
+}
+
 .re-eic-headline {
   font-family: var(--font-family-serif);
   font-size: var(--font-h2-mobile);
@@ -14079,7 +14091,13 @@ details[open] .footer-arrow-icon {
 
 @media (min-width: 1200px) {
   .re-eic-headline {
-    font-size: clamp(48px, 4vw, 58px);
+    font-size: clamp(48px, 4vw, 60px);
+  }
+}
+
+@media (min-width: 1440px) {
+  .re-eic-headline {
+    font-size: clamp(56px, 4.2vw, 66px);
   }
 }
 
