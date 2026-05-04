@@ -9122,6 +9122,71 @@ details[open] .footer-arrow-icon {
   color: #374151;
 }
 
+/* ── RUN.EVENTS PRODUCTS GRID ── */
+.re-products-section .hc-capabilities-headline {
+  white-space: normal;
+}
+
+.re-products-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid rgba(0,0,32,0.08);
+  border-left: 1px solid rgba(0,0,32,0.08);
+}
+
+@media (min-width: 768px) {
+  .re-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .re-products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.re-product-item {
+  background: #ffffff;
+  padding: 32px 28px 30px;
+  border-right: 1px solid rgba(0,0,32,0.08);
+  border-bottom: 1px solid rgba(0,0,32,0.08);
+  position: relative;
+  transition: background 0.18s;
+}
+
+.re-product-item:hover {
+  background: #F7F8FA;
+}
+
+.re-product-icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 16px;
+  color: #000020;
+}
+
+.re-product-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.re-product-title {
+  font-family: var(--font-family-serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: #000020;
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+
+.re-product-desc {
+  font-family: var(--font-family-sans);
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: rgba(0,0,32,0.55);
+}
+
 /* ── BOOKING TOURISM INTEGRATIONS ── */
 .bt-integrations-section {
   background: #0d2818;

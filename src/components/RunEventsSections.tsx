@@ -35,73 +35,101 @@ const phases = [
   },
 ];
 
-const capabilities = [
+const products = [
   {
     num: '01',
-    title: 'Cloud Architecture',
-    desc: 'Distributed, scalable infrastructure handling thousands of concurrent check-ins without breaking stride.',
+    title: 'Attendee Management',
+    desc: 'Centralised registration, CRM profiles, segmentation, and communication tools — all in one unified attendee hub.',
     icon: (
       <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round">
-        <path d="M10 28a7 7 0 0 1-.5-14 9 9 0 1 1 17.8 2.5A6 6 0 0 1 30 28z" />
-        <path d="M16 34v-6M20 34v-6M24 34v-6" />
+        <circle cx="15" cy="13" r="5" />
+        <circle cx="28" cy="13" r="4" />
+        <path d="M4 33c0-6 5-10 11-10s11 4 11 10" />
+        <path d="M28 23c3 0 7 2 7 7" />
       </svg>
     ),
   },
   {
     num: '02',
-    title: 'Mobile Apps (White-label)',
-    desc: 'Branded iOS and Android apps — one per event, fully configurable, serving as the attendee hub.',
+    title: 'Check-In & Badging',
+    desc: 'Sub-8-second on-site check-in via kiosks, staffed desks, and mobile — with live badge printing and arrival dashboards.',
     icon: (
       <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round">
-        <rect x="10" y="3" width="20" height="34" rx="2.5" />
-        <path d="M17 7h6M19 32h2" />
-        <rect x="14" y="13" width="12" height="8" rx="1" />
-        <path d="M14 24h6M14 27h9" />
+        <rect x="8" y="6" width="24" height="28" rx="2" />
+        <path d="M14 13h12M14 18h8" />
+        <path d="M14 25l3 3 6-6" strokeWidth="1.6" />
       </svg>
     ),
   },
   {
     num: '03',
-    title: 'Real-time Check-in',
-    desc: 'Sub-8-second check-ins via kiosks, staffed desks, and mobile — with offline-capable fallback.',
+    title: 'Speakers & Agenda',
+    desc: 'Drag-and-drop agenda builder, speaker portals, session scheduling, and multi-track management for events of any scale.',
     icon: (
       <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round">
-        <circle cx="20" cy="20" r="15" />
-        <path d="M20 8v12l7 4" />
-        <path d="M13 27l3-3" strokeWidth="1.8" />
+        <rect x="6" y="6" width="28" height="28" rx="2" />
+        <path d="M6 14h28M13 6v8M27 6v8" />
+        <path d="M12 21h16M12 26h10" />
       </svg>
     ),
   },
   {
     num: '04',
-    title: 'Ticketing & Payments',
-    desc: 'Flexible ticket types, discount logic, group bookings, and integrated payment processing.',
+    title: 'Event Marketing',
+    desc: 'Email campaigns, landing pages, discount codes, and referral tracking — integrated directly with registration data.',
     icon: (
       <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round">
-        <rect x="5" y="11" width="30" height="20" rx="2" />
-        <path d="M5 17h30M11 25h6M24 25h5" />
+        <rect x="4" y="10" width="32" height="22" rx="2" />
+        <path d="M4 12l16 11 16-11" />
       </svg>
     ),
   },
   {
     num: '05',
-    title: 'Gamification Engine',
-    desc: 'Points, badges, leaderboards, and challenges woven across sessions, booths, and networking.',
+    title: 'Event Mobile App',
+    desc: 'White-label iOS and Android app per event — session schedules, networking, gamification, and live notifications.',
     icon: (
       <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round">
-        <path d="M20 6l4 8 9 1.5-6.5 6.5 1.5 9L20 27l-8 4 1.5-9L7 15.5 16 14z" />
+        <rect x="11" y="3" width="18" height="34" rx="2.5" />
+        <path d="M17 7h6M19 32h2" />
+        <rect x="15" y="13" width="10" height="7" rx="1" />
+        <path d="M15 23h7M15 27h10" />
       </svg>
     ),
   },
   {
     num: '06',
-    title: 'Analytics & Reporting',
-    desc: 'Live and post-event dashboards covering revenue, engagement, session performance, and sponsor ROI.',
+    title: 'Events CRM',
+    desc: 'Full attendee lifecycle management — behavioral history, engagement scores, and sponsor lead qualification across every event.',
     icon: (
       <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round">
-        <path d="M4 34h32" />
-        <path d="M8 34V22M15 34V14M22 34V10M29 34V18" />
+        <path d="M4 34h32M8 34V22M15 34V14M22 34V10M29 34V18" />
         <circle cx="29" cy="18" r="1.5" fill="currentColor" />
+      </svg>
+    ),
+  },
+  {
+    num: '07',
+    title: 'Expo & Booth Management',
+    desc: 'Floor plan tools, exhibitor portals, lead retrieval, and booth performance analytics — linked to live attendee data.',
+    icon: (
+      <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round">
+        <rect x="5" y="17" width="9" height="17" rx="1" />
+        <rect x="15" y="11" width="10" height="23" rx="1" />
+        <rect x="26" y="20" width="9" height="14" rx="1" />
+        <path d="M4 35h32" />
+      </svg>
+    ),
+  },
+  {
+    num: '08',
+    title: 'Hybrid Events',
+    desc: 'Seamless in-person and virtual attendee experiences — unified under one platform with shared analytics and engagement tools.',
+    icon: (
+      <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round">
+        <rect x="4" y="10" width="22" height="15" rx="2" />
+        <path d="M26 14l10-4v16l-10-4" />
+        <path d="M10 25v5M16 25v5M8 30h16" />
       </svg>
     ),
   },
@@ -395,8 +423,8 @@ export default function RunEventsSections() {
         </div>
       </section>
 
-      {/* ── 03 — CAPABILITIES ────────────────────────────────────────────── */}
-      <section ref={capRef} className="hc-capabilities">
+      {/* ── 03 — PRODUCTS ────────────────────────────────────────────────── */}
+      <section ref={capRef} className="hc-capabilities re-products-section">
         <div className="manyone-grid">
           <motion.div
             className="hc-capabilities-header"
@@ -404,29 +432,29 @@ export default function RunEventsSections() {
             animate={capInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
-            <p className="hc-eyebrow">Capabilities</p>
+            <p className="hc-eyebrow">Products</p>
             <h2 className="hc-capabilities-headline">
-              Everything you need to run events that scale.
+              Eight products. One platform. Every event.
             </h2>
             <p className="hc-capabilities-lead">
-              A full-spectrum team delivering strategy, architecture, and engineering across the
-              entire event stack — one partner for the entire product lifecycle.
+              run.events is built as a suite of deeply integrated modules — each one purpose-built
+              for a specific job, all working together across the full event lifecycle.
             </p>
           </motion.div>
 
-          <div className="hc-cap-grid">
-            {capabilities.map((cap, i) => (
+          <div className="re-products-grid">
+            {products.map((product, i) => (
               <motion.div
                 key={i}
-                className="hc-cap-item"
+                className="re-product-item"
                 initial={{ opacity: 0, y: 24 }}
                 animate={capInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 + i * 0.07 }}
+                transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 + i * 0.06 }}
               >
-                <span className="hc-cap-num">{cap.num}</span>
-                <div className="hc-cap-icon">{cap.icon}</div>
-                <h3 className="hc-cap-title">{cap.title}</h3>
-                <p className="hc-cap-desc">{cap.desc}</p>
+                <span className="hc-cap-num">{product.num}</span>
+                <div className="re-product-icon">{product.icon}</div>
+                <h3 className="re-product-title">{product.title}</h3>
+                <p className="re-product-desc">{product.desc}</p>
               </motion.div>
             ))}
           </div>
