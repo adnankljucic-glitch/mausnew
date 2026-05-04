@@ -23,18 +23,18 @@ export const industryCards: IndustryCard[] = [
     linkUrl: "/industries/events-ticketing"
   },
   {
+    title: "Booking & Tourism",
+    description: "Digital booking platforms and tourism tech solutions that streamline reservations, channel management, and guest experiences.",
+    image: "/mostar.webp",
+    category: "Tourism",
+    linkUrl: "/industries/booking-tourism"
+  },
+  {
     title: "Healthcare",
     description: "Partnered with one of Scandinavia's largest firms to develop healthcare systems used in hospitals.",
     image: "/health.webp",
     category: "Healthcare",
     linkUrl: "/industries/healthcare"
-  },
-  {
-    title: "Booking & Tourism",
-    description: "Digital booking platforms and tourism tech solutions that streamline reservations, channel management, and guest experiences.",
-    image: "/view-travel-adventure-essentials.webp",
-    category: "Tourism",
-    linkUrl: "/industries/booking-tourism"
   },
   {
     title: "IoT & Smart Devices",
