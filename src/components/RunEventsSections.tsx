@@ -210,7 +210,7 @@ const productScreenshots = [
   { img: '/run1.webp',            label: 'Sponsorship Packages' },
   { img: '/run3.webp',            label: 'Ticket Management' },
   { img: '/ecs2025_1.webp',     label: 'Lead Scanning App' },
-  { img: '/runmail.png',        label: 'AI Email Builder' },
+  { img: '/run5.webp',          label: 'AI Email Builder' },
 ];
 
 // ── Product Showcase Section ───────────────────────────────────────────────
