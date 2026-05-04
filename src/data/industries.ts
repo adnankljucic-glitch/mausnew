@@ -11,7 +11,7 @@ export const industryCards: IndustryCard[] = [
   {
     title: "Fintech & Payment Systems",
     description: "Our platform brings together advanced digital booking tools with data-driven marketing that improves your operations and your guests' experiences.",
-    image: "/pay.jpg",
+    image: "/terminal.webp",
     category: "Fintech",
     linkUrl: "/industries/fintech-payment"
   },
