@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import DedicatedTeamBanner from './DedicatedTeamBanner';
 
 // ── Data ───────────────────────────────────────────────────────────────────
 
@@ -604,6 +605,9 @@ export default function RunEventsSections() {
           </div>
         </div>
       </section>
+
+      {/* ── 03b — DEDICATED TEAM BANNER ─────────────────────────────────── */}
+      <DedicatedTeamBanner />
 
       {/* ── 04 — EVENT INTELLIGENCE CLOUD (dark section) ─────────────────── */}
       <section ref={eicRef} className="re-eic">
