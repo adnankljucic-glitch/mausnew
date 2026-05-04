@@ -300,6 +300,7 @@ function SocialTrustSection() {
                 >
                   <div className="re-social-trust-card-media">
                     <img src={item.img} alt={item.label} className="re-social-trust-card-img" loading="lazy" />
+                    <div className="re-social-trust-card-overlay" />
                   </div>
                 </motion.div>
               </SwiperSlide>
@@ -620,6 +621,7 @@ export default function RunEventsSections() {
           playsInline
           className="re-case-video-player"
         />
+        <div className="re-case-video-overlay" />
         <AnimatePresence>
           {videoHovered && (
             <motion.div

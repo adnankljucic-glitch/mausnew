@@ -14240,6 +14240,19 @@ details[open] .footer-arrow-icon {
   max-height: 80vh;
 }
 
+.re-case-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 30, 33, 0.35);
+  pointer-events: none;
+  z-index: 1;
+  transition: background 0.4s ease;
+}
+
+.re-case-video:hover .re-case-video-overlay {
+  background: rgba(13, 30, 33, 0.18);
+}
+
 .re-case-video-controls {
   position: absolute;
   bottom: 24px;
