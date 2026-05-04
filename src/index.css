@@ -14301,19 +14301,19 @@ details[open] .footer-arrow-icon {
 
 .re-social-trust {
   background: #4A2D78;
-  padding: 100px 0;
+  padding: 60px 0 80px;
   overflow: hidden;
 }
 
 @media (min-width: 768px) {
   .re-social-trust {
-    padding: 140px 0;
+    padding: 80px 0 100px;
   }
 }
 
 @media (min-width: 1280px) {
   .re-social-trust {
-    padding: 160px 0;
+    padding: 80px 0 100px;
   }
 }
 
@@ -14321,8 +14321,8 @@ details[open] .footer-arrow-icon {
 .re-social-trust-header {
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  margin-bottom: 64px;
+  gap: 24px;
+  margin-bottom: 40px;
 }
 
 @media (min-width: 768px) {
@@ -14330,7 +14330,7 @@ details[open] .footer-arrow-icon {
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
-    margin-bottom: 80px;
+    margin-bottom: 48px;
   }
 }
 
@@ -14445,9 +14445,15 @@ details[open] .footer-arrow-icon {
 .re-social-trust-card-media {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+  .re-social-trust-card-media {
+    aspect-ratio: 3 / 3.2;
+  }
 }
 
 .re-social-trust-card-img {
