@@ -41,14 +41,14 @@ const caseStudies = [
     title: 'Travelsphere - holidays of a lifetime',
     description: 'Refreshed community platform and booking website.',
     imageUrl: '/mostar.webp',
-    tag: 'Travel & Tourism',
+    tag: 'Booking & Tourism',
   },
   {
     slug: 'jesperhus',
     title: 'Jesperhus - a holiday paradise for children and their parents',
     description: 'Reimagining the digital guest experience for one of Scandinavia\'s most beloved family resorts.',
     imageUrl: '/feriecenter_blomsterpark_jesperhus_078_1920px.webp',
-    tag: 'Booking and Tourism',
+    tag: 'Booking & Tourism',
   },
   {
     slug: 'solaris-energy',
