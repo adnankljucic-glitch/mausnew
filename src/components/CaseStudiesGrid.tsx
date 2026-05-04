@@ -9,11 +9,11 @@ const caseStudies = [
     tag: 'Events & Ticketing',
   },
   {
-    slug: 'horizon-innovations',
-    title: 'Horizon Ltd.',
-    description: 'Discover the success journey of Horizon Innovations — how strategic solutions elevated their market position and profitability.',
-    imageUrl: 'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    tag: 'Strategy',
+    slug: 'ispinit',
+    title: 'ISPINIT (Real Estate SaaS)',
+    description: 'Evolving traditional SaaS into an AI-first platform: Bridging legacy data with LLMs to automate market analysis and investment\u00A0forecasting.',
+    imageUrl: '/16342.webp',
+    tag: 'Legacy Modernization / Real Estate Proptech',
   },
   {
     slug: 'swift-fintech',
