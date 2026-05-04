@@ -30,6 +30,10 @@
     box-sizing: border-box;
   }
 
+  html {
+    overflow-x: clip;
+  }
+
   body {
     font-family: 'Barlow', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -9036,6 +9040,7 @@ details[open] .footer-arrow-icon {
   z-index: 1;
   padding: 100px 0;
   border-top: 1px solid #e5e7eb;
+  overflow-x: clip;
 }
 
 @media (min-width: 768px) {
@@ -14220,6 +14225,7 @@ details[open] .footer-arrow-icon {
 .re-outcomes {
   background: #F7F8FA;
   padding: 100px 0;
+  overflow-x: clip;
 }
 
 @media (min-width: 768px) {
