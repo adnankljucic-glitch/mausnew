@@ -37,11 +37,11 @@ const caseStudies = [
     tag: 'Booking & Tourism / Agentic AI Commerce',
   },
   {
-    slug: 'meridian-logistics',
-    title: 'Meridian Logistics',
-    description: 'End-to-end supply chain visibility delivered through a real-time tracking and analytics platform.',
-    imageUrl: 'https://images.pexels.com/photos/4481259/pexels-photo-4481259.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    tag: 'Enterprise',
+    slug: 'travelsphere',
+    title: 'Travelsphere - holidays of a lifetime',
+    description: 'Refreshed community platform and booking website.',
+    imageUrl: '/mostar.webp',
+    tag: 'Travel & Tourism',
   },
   {
     slug: 'zenith-retail',
