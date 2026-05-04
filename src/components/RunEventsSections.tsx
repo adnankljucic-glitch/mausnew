@@ -216,7 +216,7 @@ export default function RunEventsSections() {
   return (
     <>
       {/* ── CASE META BAR ───────────────────────────────────────────────── */}
-      <section className="re-meta-bar">
+      <section className="re-meta-bar" style={{ background: '#F7F8FA', borderBottom: '1px solid rgba(0,0,0,0.08)' }}>
         <div className="manyone-grid">
           <div className="re-meta-bar-inner">
             {[
@@ -228,13 +228,14 @@ export default function RunEventsSections() {
               <motion.div
                 key={item.label}
                 className="re-meta-bar-item"
+                style={{ borderColor: 'rgba(0,0,0,0.1)' }}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.5, delay: i * 0.08, ease: 'easeOut' }}
               >
-                <span className="re-meta-bar-label">{item.label}</span>
-                <span className="re-meta-bar-value">{item.value}</span>
+                <span className="re-meta-bar-label" style={{ color: '#6b7280' }}>{item.label}</span>
+                <span className="re-meta-bar-value" style={{ color: '#111111' }}>{item.value}</span>
               </motion.div>
             ))}
           </div>
