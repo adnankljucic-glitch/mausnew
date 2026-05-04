@@ -14233,10 +14233,23 @@ details[open] .footer-arrow-icon {
 }
 
 .re-eic-agent {
-  padding: 32px 26px 28px;
+  padding: 24px 20px;
   border: 1px solid rgba(255,255,255,0.12);
   background: rgba(255,255,255,0.02);
   transition: background 0.25s, border-color 0.25s, transform 0.25s;
+  border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+  .re-eic-agent {
+    padding: 36px 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .re-eic-agent {
+    padding: 44px 40px;
+  }
 }
 
 .re-eic-agent:hover {
