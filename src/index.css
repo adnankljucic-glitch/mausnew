@@ -14138,6 +14138,68 @@ details[open] .footer-arrow-icon {
 }
 
 /* ─────────────────────────────────────────────
+   RUN.EVENTS — CASE META BAR
+───────────────────────────────────────────── */
+
+.re-meta-bar {
+  background: #ffffff;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 0;
+}
+
+.re-meta-bar-inner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-left: 1px solid #e8e8e8;
+}
+
+@media (min-width: 768px) {
+  .re-meta-bar-inner {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.re-meta-bar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 36px 32px;
+  border-right: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+@media (min-width: 768px) {
+  .re-meta-bar-item {
+    border-bottom: none;
+    padding: 44px 40px;
+  }
+}
+
+.re-meta-bar-label {
+  font-family: 'Barlow', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #999999;
+}
+
+.re-meta-bar-value {
+  font-family: 'Inria Serif', serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #0a0a0a;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+@media (min-width: 1024px) {
+  .re-meta-bar-value {
+    font-size: 22px;
+  }
+}
+
+/* ─────────────────────────────────────────────
    RUN.EVENTS — PLATFORM SECTION
 ───────────────────────────────────────────── */
 

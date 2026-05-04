@@ -60,58 +60,6 @@ export default function RunEventsHero() {
           A five-year partnership that transformed early ideas into a polished, scalable cloud platform — reshaping how professional organizers plan, sell, execute, and analyze events of any size.
         </motion.p>
 
-        {/* Meta row */}
-        <motion.div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '0',
-            marginTop: '8px',
-            paddingTop: '32px',
-            borderTop: '1px solid rgba(255,255,255,0.15)',
-            maxWidth: '760px',
-          }}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.6 }}
-        >
-          {[
-            { label: 'Industry', value: 'Event Technology' },
-            { label: 'Engagement', value: '5-year partnership' },
-            { label: 'Platform', value: 'Cloud-based SaaS' },
-            { label: 'Scope', value: 'Full lifecycle product' },
-          ].map((item) => (
-            <div
-              key={item.label}
-              style={{
-                flex: '1 1 140px',
-                paddingRight: '32px',
-                paddingBottom: '8px',
-              }}
-            >
-              <p style={{
-                fontFamily: 'Barlow, sans-serif',
-                fontSize: '10px',
-                letterSpacing: '0.22em',
-                textTransform: 'uppercase',
-                color: 'rgba(255,255,255,0.45)',
-                fontWeight: 600,
-                marginBottom: '8px',
-              }}>
-                {item.label}
-              </p>
-              <p style={{
-                fontFamily: 'Inria Serif, serif',
-                fontSize: '17px',
-                fontWeight: 500,
-                color: '#ffffff',
-                letterSpacing: '-0.01em',
-              }}>
-                {item.value}
-              </p>
-            </div>
-          ))}
-        </motion.div>
       </div>
 
       <ScrollIndicator />

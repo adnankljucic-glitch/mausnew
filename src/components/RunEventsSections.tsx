@@ -187,6 +187,32 @@ export default function RunEventsSections() {
 
   return (
     <>
+      {/* ── CASE META BAR ───────────────────────────────────────────────── */}
+      <section className="re-meta-bar">
+        <div className="manyone-grid">
+          <div className="re-meta-bar-inner">
+            {[
+              { label: 'Industry', value: 'Event Technology' },
+              { label: 'Engagement', value: '5-year partnership' },
+              { label: 'Platform', value: 'Cloud-based SaaS' },
+              { label: 'Scope', value: 'Full lifecycle product' },
+            ].map((item, i) => (
+              <motion.div
+                key={item.label}
+                className="re-meta-bar-item"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.5, delay: i * 0.08, ease: 'easeOut' }}
+              >
+                <span className="re-meta-bar-label">{item.label}</span>
+                <span className="re-meta-bar-value">{item.value}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── 01 — PLATFORM SECTION ───────────────────────────────────────── */}
       <section ref={phasesRef} className="re-platform work-section">
         <div className="manyone-grid">
