@@ -51,11 +51,11 @@ const caseStudies = [
     tag: 'Booking & Tourism',
   },
   {
-    slug: 'solaris-energy',
-    title: 'Solaris Energy',
-    description: 'Smart grid management and resource optimisation platform deployed across 12 European markets.',
-    imageUrl: 'https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    tag: 'Energy & Utilities',
+    slug: 'envidan',
+    title: 'Envidan - Envidan helps utilities, municipalities and industries with sustainable solutions within the entire water cycle.',
+    description: 'Helping utilities, municipalities and industries with sustainable solutions within the entire water cycle.',
+    imageUrl: '/envidan_case_.webp',
+    tag: 'Sustainability & Water Cycle',
   },
   {
     slug: 'verdant-proptech',
