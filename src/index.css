@@ -14294,7 +14294,7 @@ details[open] .footer-arrow-icon {
   display: block;
   width: 36px;
   height: 1.5px;
-  background: rgba(10, 31, 92, 0.3);
+  background: rgba(0, 0, 32, 0.2);
   flex-shrink: 0;
 }
 
@@ -14304,17 +14304,35 @@ details[open] .footer-arrow-icon {
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(10, 31, 92, 0.5);
+  color: rgba(0, 0, 32, 0.4);
 }
 
 .re-platform-headline {
   font-family: var(--font-family-serif);
-  font-size: clamp(36px, 4.5vw, 58px);
-  font-weight: 700;
+  font-size: var(--font-h2-mobile);
+  font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.02em;
-  color: #0A1F5C;
+  color: #000020;
   margin-bottom: 28px;
+}
+
+@media (min-width: 768px) {
+  .re-platform-headline {
+    font-size: var(--font-h2-tablet);
+  }
+}
+
+@media (min-width: 1200px) {
+  .re-platform-headline {
+    font-size: var(--font-h2-desktop);
+  }
+}
+
+@media (min-width: 1440px) {
+  .re-platform-headline {
+    font-size: var(--font-h2-wide);
+  }
 }
 
 /* Vision body text (3 paragraphs) */
@@ -14322,14 +14340,14 @@ details[open] .footer-arrow-icon {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  margin-bottom: 36px;
+  margin-bottom: 40px;
 }
 
 .re-platform-vision p {
   font-family: var(--font-family-sans);
   font-size: 15px;
-  line-height: 1.75;
-  color: rgba(10, 31, 92, 0.6);
+  line-height: 1.65;
+  color: rgba(0, 0, 32, 0.55);
 }
 
 /* Stats mini-row */
@@ -14337,26 +14355,32 @@ details[open] .footer-arrow-icon {
   display: flex;
   flex-wrap: wrap;
   gap: 0;
-  margin-bottom: 40px;
-  border-top: 1px solid rgba(10,31,92,0.12);
-  border-left: 1px solid rgba(10,31,92,0.12);
+  margin-bottom: 48px;
+  border-top: 1px solid rgba(0,0,32,0.08);
+  border-left: 1px solid rgba(0,0,32,0.08);
 }
 
 .re-platform-stat {
   flex: 1 1 100px;
   padding: 16px 20px 14px;
-  border-right: 1px solid rgba(10,31,92,0.12);
-  border-bottom: 1px solid rgba(10,31,92,0.12);
+  border-right: 1px solid rgba(0,0,32,0.08);
+  border-bottom: 1px solid rgba(0,0,32,0.08);
 }
 
 .re-platform-stat-value {
   font-family: var(--font-family-serif);
-  font-size: clamp(22px, 2.8vw, 32px);
-  font-weight: 700;
-  color: #0A1F5C;
+  font-size: var(--font-h3-mobile);
+  font-weight: 600;
+  color: #000020;
   line-height: 1;
   letter-spacing: -0.02em;
   margin-bottom: 5px;
+}
+
+@media (min-width: 1024px) {
+  .re-platform-stat-value {
+    font-size: var(--font-h3-desktop);
+  }
 }
 
 .re-platform-stat-label {
@@ -14364,7 +14388,7 @@ details[open] .footer-arrow-icon {
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(10,31,92,0.45);
+  color: rgba(0,0,32,0.4);
   font-weight: 500;
 }
 
@@ -14382,34 +14406,34 @@ details[open] .footer-arrow-icon {
   align-items: flex-start;
   gap: 16px;
   padding: 18px 0;
-  border-bottom: 1px solid rgba(10,31,92,0.1);
+  border-bottom: 1px solid rgba(0,0,32,0.08);
 }
 
 .re-platform-feature:first-child {
-  border-top: 1px solid rgba(10,31,92,0.1);
+  border-top: 1px solid rgba(0,0,32,0.08);
 }
 
 .re-platform-feature-icon {
   flex-shrink: 0;
   margin-top: 2px;
-  color: rgba(10,31,92,0.5);
+  color: rgba(0,0,32,0.35);
   line-height: 0;
 }
 
 .re-platform-feature-title {
   font-family: var(--font-family-sans);
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 700;
-  color: #0A1F5C;
+  color: #000020;
   margin-bottom: 4px;
   letter-spacing: 0.01em;
 }
 
 .re-platform-feature-desc {
   font-family: var(--font-family-sans);
-  font-size: 13px;
-  line-height: 1.6;
-  color: rgba(10,31,92,0.5);
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: rgba(0,0,32,0.55);
 }
 
 /* ── Right column — browser mockup ── */
