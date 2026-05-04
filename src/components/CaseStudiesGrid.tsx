@@ -44,11 +44,11 @@ const caseStudies = [
     tag: 'Travel & Tourism',
   },
   {
-    slug: 'zenith-retail',
-    title: 'Zenith Retail',
-    description: 'Omnichannel retail transformation — unified inventory, personalised experiences, accelerated growth.',
-    imageUrl: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    tag: 'Digital Products',
+    slug: 'jesperhus',
+    title: 'Jesperhus - a holiday paradise for children and their parents',
+    description: 'Reimagining the digital guest experience for one of Scandinavia\'s most beloved family resorts.',
+    imageUrl: '/feriecenter_blomsterpark_jesperhus_078_1920px.webp',
+    tag: 'Booking and Tourism',
   },
   {
     slug: 'solaris-energy',
