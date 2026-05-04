@@ -1,6 +1,5 @@
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { useRef, useState, useCallback } from 'react';
-import { Play, Pause } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
@@ -398,18 +397,13 @@ export default function RunEventsSections() {
               {/* Vision text */}
               <div className="re-platform-vision">
                 <p>
-                  run.events envisioned a modern, cloud-based platform capable of handling every aspect of event
-                  management — from planning to execution and analytics. Over five years, our teams worked closely
-                  together, transforming raw ideas and early wireframes into a polished, scalable product.
+                  run.events envisioned a modern, cloud-based platform capable of handling every aspect of event management — from planning to execution and analytics. Over five years, our teams worked closely together, transforming raw ideas and early wireframes into a polished, scalable&nbsp;product.
                 </p>
                 <p>
-                  From day one the goal was clear: create an intuitive, powerful platform that removes friction
-                  for organizers and improves experiences for attendees. The result is a unified suite that
-                  replaces multiple disconnected tools with a single, AI-augmented ecosystem.
+                  From day one the goal was clear: create an intuitive, powerful platform that removes friction for organizers and improves experiences for attendees. The result is a unified suite that replaces multiple disconnected tools with a single, AI-augmented&nbsp;ecosystem.
                 </p>
                 <p>
-                  Today, run.events helps professional organizers plan, sell, execute, and analyze events of any
-                  size — with gamification, real-time intelligence, and data-driven insights baked into every workflow.
+                  Today, run.events helps professional organizers plan, sell, execute, and analyze events of any size — with gamification, real-time intelligence, and data-driven insights baked into every&nbsp;workflow.
                 </p>
               </div>
 
@@ -571,8 +565,7 @@ export default function RunEventsSections() {
               Eight products. One platform. Every event.
             </h2>
             <p className="hc-capabilities-lead">
-              run.events is built as a suite of deeply integrated modules — each one purpose-built
-              for a specific job, all working together across the full event lifecycle.
+              run.events is built as a suite of deeply integrated modules — each one purpose-built for a specific job, all working together across the full event&nbsp;lifecycle.
             </p>
           </motion.div>
 
@@ -630,9 +623,14 @@ export default function RunEventsSections() {
                 aria-label={videoPlaying ? 'Pause video' : 'Play video'}
               >
                 {videoPlaying ? (
-                  <Pause size={28} strokeWidth={2.5} />
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" strokeWidth="1.5" stroke="white" width="28" height="28">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+                  </svg>
                 ) : (
-                  <Play size={28} strokeWidth={2.5} style={{ marginLeft: 3 }} />
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" strokeWidth="1.5" stroke="white" width="28" height="28">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" />
+                  </svg>
                 )}
               </button>
             </motion.div>
@@ -655,9 +653,7 @@ export default function RunEventsSections() {
               AI that works <em>alongside organizers,</em> not around them.
             </h2>
             <p className="re-eic-lead">
-              EIC was built to solve real challenges event organizers face every day: understanding attendee
-              behavior, improving engagement, and making smarter decisions based on data — not intuition.
-              Recommendations that stay fully under organizer control.
+              EIC was built to solve real challenges event organizers face every day: understanding attendee behavior, improving engagement, and making smarter decisions based on data — not intuition. Recommendations that stay fully under organizer&nbsp;control.
             </p>
           </motion.div>
 
@@ -693,8 +689,7 @@ export default function RunEventsSections() {
               A partnership measured in <em>continuous improvement</em>.
             </h2>
             <p className="hc-capabilities-lead">
-              The result isn't just a product launch — it's a compounding platform that makes every event
-              smarter than the last, creating a continuous improvement cycle for organizers.
+              The result isn't just a product launch — it's a compounding platform that makes every event smarter than the last, creating a continuous improvement cycle for&nbsp;organizers.
             </p>
           </motion.div>
 
