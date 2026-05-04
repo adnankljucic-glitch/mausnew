@@ -13925,12 +13925,11 @@ details[open] .footer-arrow-icon {
 .pillar-row-media {
   position: relative;
   width: 100vw;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  margin-left: calc(-1 * (100vw - 100%) / 2);
   aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: 0;
-  justify-self: center;
+  justify-self: stretch;
   order: -1;
   max-width: none;
   max-height: none;
@@ -13941,10 +13940,10 @@ details[open] .footer-arrow-icon {
     order: unset;
     width: 100%;
     margin-left: 0;
-    transform: none;
     border-radius: 4px;
     max-width: 560px;
     max-height: 700px;
+    justify-self: end;
   }
 }
 
