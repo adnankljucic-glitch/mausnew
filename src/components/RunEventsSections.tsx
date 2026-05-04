@@ -1,6 +1,5 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState, useCallback } from 'react';
-import { Link } from 'react-router-dom';
 import DedicatedTeamBanner from './DedicatedTeamBanner';
 
 // ── Data ───────────────────────────────────────────────────────────────────
@@ -661,62 +660,22 @@ export default function RunEventsSections() {
         </div>
       </section>
 
-      {/* ── 06 — CASE SPOTLIGHT (pillar-row dark) ────────────────────────── */}
+      {/* ── 06 — CASE VIDEO ────────────────────────────────────────────── */}
       <motion.section
-        className="pillar-row pillar-row-dark"
+        className="re-case-video"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.1 }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
       >
-        <div className="manyone-grid">
-          <div className="pillar-row-inner">
-            <motion.div
-              className="pillar-row-content"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <p className="pillar-row-eyebrow">Partnership — 5 Years</p>
-              <h2 className="pillar-row-headline">run.events</h2>
-              <p className="pillar-row-intro">
-                What started as wireframes became a full cloud platform used by professional event organizers
-                to manage thousands of attendees — planning, ticketing, execution, and post-event analytics in one place.
-              </p>
-              <p className="pillar-row-intro">
-                The Event Intelligence Cloud layer now gives organizers AI-driven matchmaking, content
-                personalization, and revenue optimization tools that improve with every event.
-              </p>
-              <Link to="/discovery" className="ready-cta-button" style={{ marginTop: '8px' }}>
-                Start a conversation
-              </Link>
-            </motion.div>
-
-            <motion.div
-              className="pillar-row-media"
-              initial={{ opacity: 0, scale: 0.96 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-            >
-              <video
-                src="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/runevents_intro.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="pillar-row-image"
-              />
-              <div className="pillar-row-image-overlay">
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <h3 className="pillar-row-image-title">run.events</h3>
-                  <p className="pillar-row-image-subtitle">Full lifecycle event management platform</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
+        <video
+          src="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/realestate.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="re-case-video-player"
+        />
       </motion.section>
     </>
   );

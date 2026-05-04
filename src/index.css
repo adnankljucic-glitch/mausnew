@@ -14221,6 +14221,24 @@ details[open] .footer-arrow-icon {
 }
 
 /* ─────────────────────────────────────────────
+   RUN.EVENTS — CASE VIDEO
+───────────────────────────────────────────── */
+
+.re-case-video {
+  width: 100%;
+  background: #000;
+  overflow: hidden;
+}
+
+.re-case-video-player {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 80vh;
+}
+
+/* ─────────────────────────────────────────────
    RUN.EVENTS — SOCIAL TRUST / CLIENT QUOTES
 ───────────────────────────────────────────── */
 
