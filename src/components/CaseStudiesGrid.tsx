@@ -5,7 +5,7 @@ const caseStudies = [
     slug: 'run-events',
     title: 'Run.Events',
     description: 'Explore how we partnered with Run.Events, building a powerful event management platform that streamlines ticketing and attendee engagement.',
-    imageUrl: 'https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    imageUrl: '/ecs_keynote2.webp',
     tag: 'Events & Ticketing',
   },
   {
