@@ -7111,7 +7111,7 @@ details[open] .footer-arrow-icon {
 .dedicated-team-headline {
   font-family: var(--font-family-serif);
   font-weight: 700;
-  font-size: 28px;
+  font-size: 36px;
   line-height: 1.15;
   letter-spacing: -0.02em;
   color: #ffffff;
@@ -7122,7 +7122,7 @@ details[open] .footer-arrow-icon {
 
 @media (min-width: 768px) {
   .dedicated-team-headline {
-    font-size: 36px;
+    font-size: 48px;
     margin-bottom: 20px;
     white-space: nowrap;
   }
@@ -7130,7 +7130,7 @@ details[open] .footer-arrow-icon {
 
 @media (min-width: 1024px) {
   .dedicated-team-headline {
-    font-size: 42px;
+    font-size: 56px;
     margin: 0 auto 24px auto;
   }
 }
