@@ -247,7 +247,10 @@ function SocialTrustSection() {
           transition={{ duration: 0.7, ease: 'easeOut' }}
         >
           <div className="re-social-trust-header-left">
-            <p className="re-social-trust-eyebrow">Product in action</p>
+            <div className="re-social-trust-eyebrow-row">
+              <span className="re-social-trust-rule" />
+              <span className="re-social-trust-eyebrow">Product in action</span>
+            </div>
             <h2 className="re-social-trust-heading">See how it looks.</h2>
           </div>
 

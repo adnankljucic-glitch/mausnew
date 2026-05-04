@@ -14247,18 +14247,32 @@ details[open] .footer-arrow-icon {
   gap: 20px;
 }
 
+.re-social-trust-eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.re-social-trust-rule {
+  display: block;
+  width: 36px;
+  height: 1.5px;
+  background: rgba(255, 255, 255, 0.25);
+  flex-shrink: 0;
+}
+
 .re-social-trust-eyebrow {
-  font-family: 'Barlow', sans-serif;
+  font-family: var(--font-family-sans);
   font-size: 11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
   font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .re-social-trust-heading {
-  font-family: 'Inria Serif', serif;
-  font-size: 40px;
+  font-family: var(--font-family-serif);
+  font-size: var(--font-h2-mobile);
   font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.02em;
@@ -14267,19 +14281,19 @@ details[open] .footer-arrow-icon {
 
 @media (min-width: 768px) {
   .re-social-trust-heading {
-    font-size: 56px;
+    font-size: var(--font-h2-tablet);
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1200px) {
   .re-social-trust-heading {
-    font-size: 64px;
+    font-size: var(--font-h2-desktop);
   }
 }
 
 @media (min-width: 1440px) {
   .re-social-trust-heading {
-    font-size: 64px;
+    font-size: var(--font-h2-wide);
   }
 }
 
@@ -14404,7 +14418,7 @@ details[open] .footer-arrow-icon {
   bottom: 20px;
   left: 24px;
   z-index: 3;
-  font-family: 'Barlow', sans-serif;
+  font-family: var(--font-family-sans);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.18em;
