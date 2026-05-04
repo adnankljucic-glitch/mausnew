@@ -32,7 +32,7 @@ export const industryCards: IndustryCard[] = [
   {
     title: "Booking & Tourism",
     description: "Digital booking platforms and tourism tech solutions that streamline reservations, channel management, and guest experiences.",
-    image: "/drone.webp",
+    image: "/view-travel-adventure-essentials.webp",
     category: "Tourism",
     linkUrl: "/industries/booking-tourism"
   },
