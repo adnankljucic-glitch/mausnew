@@ -39,7 +39,6 @@ function copyPublicDirExcludingSpaceFiles() {
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), copyPublicDirExcludingSpaceFiles()],
-  publicDir: false,
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
