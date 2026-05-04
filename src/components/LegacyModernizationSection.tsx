@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { ImageWithSkeleton } from './ImageWithSkeleton';
 
 interface ModernizationBox {
   title: string;
@@ -59,7 +60,7 @@ export default function LegacyModernizationSection() {
             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
           >
             <div className="legacy-modernization-image-wrapper">
-              <img
+              <ImageWithSkeleton
                 src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                 alt="Cloud Computing Infrastructure"
                 className="legacy-modernization-image"

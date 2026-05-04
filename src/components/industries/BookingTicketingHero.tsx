@@ -1,9 +1,14 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import ScrollIndicator from '../ScrollIndicator';
+import { SkeletonLoader } from '../SkeletonLoader';
 
 export default function BookingTicketingHero() {
+  const [videoReady, setVideoReady] = useState(false);
+
   return (
     <section className="ai-hero">
+      {!videoReady && <SkeletonLoader />}
       <video
         className="case-study-hero-media"
         src="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/runevents_intro.mp4"
@@ -11,7 +16,8 @@ export default function BookingTicketingHero() {
         muted
         loop
         playsInline
-        style={{ position: 'absolute', inset: 0, zIndex: 0 }}
+        onCanPlay={() => setVideoReady(true)}
+        style={{ position: 'absolute', inset: 0, zIndex: 0, opacity: videoReady ? 1 : 0, transition: 'opacity 0.5s ease' }}
       />
       <div
         className="case-study-hero-overlay"

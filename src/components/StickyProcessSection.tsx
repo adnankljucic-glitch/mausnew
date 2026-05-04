@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Plus, Star } from 'lucide-react';
+import { ImageWithSkeleton } from './ImageWithSkeleton';
 
 interface ProcessStep {
   number: string;
@@ -124,7 +125,7 @@ export default function StickyProcessSection({
       ref={sectionRef}
       className="relative overflow-hidden min-h-[120svh] py-20 md:py-28"
     >
-      <img
+      <ImageWithSkeleton
         src={backgroundImageUrl}
         alt=""
         className="absolute inset-0 w-full h-full object-cover"

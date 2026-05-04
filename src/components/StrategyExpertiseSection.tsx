@@ -2,6 +2,7 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
 import Dot from './Dot';
+import { ImageWithSkeleton } from './ImageWithSkeleton';
 
 interface ServiceCategory {
   title: string;
@@ -72,7 +73,7 @@ export default function StrategyExpertiseSection() {
           >
             <div className="ai-expert-card">
               <div className="ai-expert-image-wrapper">
-                <img
+                <ImageWithSkeleton
                   src="/davor.webp"
                   alt="Davor Zlotrg, MAUS CEO"
                   className="ai-expert-image"

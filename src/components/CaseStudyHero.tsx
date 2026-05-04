@@ -1,5 +1,8 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
+import { ImageWithSkeleton } from './ImageWithSkeleton';
+import { SkeletonLoader } from './SkeletonLoader';
 
 interface CaseStudyHeroProps {
   industryLabel: string;
@@ -22,6 +25,7 @@ export default function CaseStudyHero({
   overlayColor,
   overlayOpacity,
 }: CaseStudyHeroProps) {
+  const [videoReady, setVideoReady] = useState(false);
   const handleScrollDown = () => {
     window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
   };
@@ -72,16 +76,21 @@ export default function CaseStudyHero({
 
       <div className="case-study-hero-right">
         {mediaType === 'video' ? (
-          <video
-            className="case-study-hero-media"
-            src={mediaUrl}
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
+          <>
+            {!videoReady && <SkeletonLoader />}
+            <video
+              className="case-study-hero-media"
+              src={mediaUrl}
+              autoPlay
+              muted
+              loop
+              playsInline
+              onCanPlay={() => setVideoReady(true)}
+              style={{ opacity: videoReady ? 1 : 0, transition: 'opacity 0.5s ease' }}
+            />
+          </>
         ) : (
-          <img
+          <ImageWithSkeleton
             className="case-study-hero-media"
             src={mediaUrl}
             alt={headline}

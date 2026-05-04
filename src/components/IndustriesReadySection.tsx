@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { ImageWithSkeleton } from './ImageWithSkeleton';
 
 export default function IndustriesReadySection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -68,7 +69,7 @@ export default function IndustriesReadySection() {
           </motion.div>
 
           <motion.div className="pillar-row-media" variants={imageVariants}>
-            <img
+            <ImageWithSkeleton
               src="/davor.webp"
               alt="Team member at work"
               className="pillar-row-image"

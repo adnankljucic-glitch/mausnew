@@ -1,6 +1,8 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { industryCards } from '../../data';
+import { ImageWithSkeleton } from '../ImageWithSkeleton';
+import { VideoWithSkeleton } from '../VideoWithSkeleton';
 
 interface IndustriesSectionProps {
   visible: boolean;
@@ -10,7 +12,7 @@ function CardLink({ card, className }: { card: typeof industryCards[0]; classNam
   const inner = (
     <>
       {card.videoUrl ? (
-        <video
+        <VideoWithSkeleton
           src={card.videoUrl}
           poster={card.image}
           autoPlay
@@ -21,7 +23,7 @@ function CardLink({ card, className }: { card: typeof industryCards[0]; classNam
           className="industries-grid-card-img"
         />
       ) : (
-        <img src={card.image} alt={card.title} className="industries-grid-card-img" />
+        <ImageWithSkeleton src={card.image} alt={card.title} className="industries-grid-card-img" />
       )}
       <div className="industries-grid-card-overlay" />
       <div className="industries-grid-card-content">

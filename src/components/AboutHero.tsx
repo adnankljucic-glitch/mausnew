@@ -1,8 +1,10 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import { SkeletonLoader } from './SkeletonLoader';
 
 export default function AboutHero() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -14,6 +16,7 @@ export default function AboutHero() {
     <section className="about-hero">
       {/* Video background */}
       <div className="about-hero-video-wrap">
+        {!videoReady && <SkeletonLoader />}
         <video
           ref={videoRef}
           src="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/2025_video.mp4"
@@ -22,6 +25,8 @@ export default function AboutHero() {
           loop
           playsInline
           className="about-hero-video"
+          onCanPlay={() => setVideoReady(true)}
+          style={{ opacity: videoReady ? 1 : 0, transition: 'opacity 0.5s ease' }}
         />
         <div className="about-hero-overlay" />
       </div>

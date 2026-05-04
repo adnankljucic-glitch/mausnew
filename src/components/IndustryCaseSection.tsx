@@ -1,7 +1,9 @@
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './IndustryCaseSection.css';
+import { ImageWithSkeleton } from './ImageWithSkeleton';
+import { VideoWithSkeleton } from './VideoWithSkeleton';
 
 interface IndustryCaseSectionProps {
   eyebrow?: string;
@@ -74,7 +76,7 @@ export default function IndustryCaseSection({
           className="ics-media-iframe"
         />
       ) : videoSrc ? (
-        <video
+        <VideoWithSkeleton
           src={videoSrc}
           autoPlay
           muted
@@ -83,7 +85,7 @@ export default function IndustryCaseSection({
           className="ics-media-asset"
         />
       ) : imageSrc ? (
-        <img src={imageSrc} alt={imageAlt} className="ics-media-asset" />
+        <ImageWithSkeleton src={imageSrc} alt={imageAlt} className="ics-media-asset" />
       ) : null}
       {!youtubeSrc && <div className="ics-media-overlay" />}
     </motion.div>

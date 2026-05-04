@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import { SkeletonLoader } from './SkeletonLoader';
 
 interface HeroCase {
   title: string;
@@ -32,10 +33,19 @@ export default function CasesHero() {
   const [heroCases, setHeroCases] = useState<HeroCase[]>(fallbackCases);
   const [currentCase, setCurrentCase] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [videosReady, setVideosReady] = useState<boolean[]>([]);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
+
+  const handleVideoReady = useCallback((index: number) => {
+    setVideosReady(prev => {
+      const next = [...prev];
+      next[index] = true;
+      return next;
+    });
+  }, []);
 
   const goToCase = (index: number) => {
     if (isTransitioning || index === currentCase) return;
@@ -107,6 +117,7 @@ export default function CasesHero() {
             key={index}
             className={`cases-hero-case ${index === currentCase ? 'active' : ''} ${index < currentCase ? 'prev' : ''}`}
           >
+            {!videosReady[index] && index === currentCase && <SkeletonLoader />}
             <video
               ref={(el) => (videoRefs.current[index] = el)}
               className="cases-hero-video"
@@ -114,6 +125,8 @@ export default function CasesHero() {
               loop
               muted
               playsInline
+              onCanPlay={() => handleVideoReady(index)}
+              style={{ opacity: videosReady[index] ? 1 : 0, transition: 'opacity 0.5s ease' }}
             />
             <div className="cases-hero-case-overlay" />
           </div>

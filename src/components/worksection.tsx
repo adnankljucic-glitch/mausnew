@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ImageWithSkeleton } from "./ImageWithSkeleton";
+import { VideoWithSkeleton } from "./VideoWithSkeleton";
 
 interface Project {
   id: number;
@@ -143,7 +145,7 @@ const WorkSection = () => {
             >
               <div className="cases-card-media-wrapper">
                 {project.videoUrl ? (
-                  <video
+                  <VideoWithSkeleton
                     src={project.videoUrl}
                     poster={project.posterImage}
                     autoPlay
@@ -154,7 +156,7 @@ const WorkSection = () => {
                     className="cases-card-media"
                   />
                 ) : (
-                  <img
+                  <ImageWithSkeleton
                     src={project.image}
                     alt={project.title}
                     className="cases-card-media"

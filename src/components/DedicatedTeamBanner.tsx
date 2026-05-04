@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import { SkeletonLoader } from './SkeletonLoader';
 
 interface DedicatedTeamBannerProps {
   variant?: 'default' | 'blue';
@@ -8,6 +9,7 @@ interface DedicatedTeamBannerProps {
 export default function DedicatedTeamBanner({ variant = 'default' }: DedicatedTeamBannerProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
+  const [videoReady, setVideoReady] = useState(false);
 
   const containerVariants = {
     hidden: { opacity: 0, y: 12 },
@@ -74,12 +76,15 @@ export default function DedicatedTeamBanner({ variant = 'default' }: DedicatedTe
             className="dedicated-team-video-wrapper"
             variants={videoVariants}
           >
+            {!videoReady && <SkeletonLoader />}
             <video
               className="dedicated-team-video"
               autoPlay
               loop
               muted
               playsInline
+              onCanPlay={() => setVideoReady(true)}
+              style={{ opacity: videoReady ? 1 : 0, transition: 'opacity 0.5s ease' }}
             >
               <source src="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/proptech.mp4" type="video/mp4" />
             </video>

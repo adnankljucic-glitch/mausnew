@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Plus, Star } from 'lucide-react';
+import { ImageWithSkeleton } from './ImageWithSkeleton';
 
 interface Step {
   number: string;
@@ -85,7 +86,7 @@ export default function HowWeWorkSection() {
       style={{ backgroundColor: '#041432' }}
     >
       <div className="absolute inset-0">
-        <img
+        <ImageWithSkeleton
           src="/office_kolega.webp"
           alt=""
           className="w-full h-full object-cover object-center"

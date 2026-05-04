@@ -3,6 +3,8 @@ import { useRef, useState, useCallback } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
+import { ImageWithSkeleton } from './ImageWithSkeleton';
+import { SkeletonLoader } from './SkeletonLoader';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 
@@ -298,7 +300,7 @@ function SocialTrustSection() {
                   transition={{ duration: 0.65, ease: 'easeOut', delay: i * 0.08 }}
                 >
                   <div className="re-social-trust-card-media">
-                    <img src={item.img} alt={item.label} className="re-social-trust-card-img" loading="lazy" />
+                    <ImageWithSkeleton src={item.img} alt={item.label} className="re-social-trust-card-img" loading="lazy" />
                     <div className="re-social-trust-card-overlay" />
                   </div>
                 </motion.div>
@@ -323,6 +325,7 @@ export default function RunEventsSections() {
 
   const [videoPlaying, setVideoPlaying] = useState(false);
   const [videoHovered, setVideoHovered] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
 
   const handlePlayPause = useCallback(() => {
     const v = videoRef.current;
@@ -598,6 +601,7 @@ export default function RunEventsSections() {
         onMouseEnter={() => setVideoHovered(true)}
         onMouseLeave={() => setVideoHovered(false)}
       >
+        {!videoReady && <SkeletonLoader className="re-case-video-player" />}
         <video
           ref={videoRef}
           src="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/runevents-in-60-seconds-1.mp4"
@@ -605,6 +609,8 @@ export default function RunEventsSections() {
           loop
           playsInline
           className="re-case-video-player"
+          onCanPlay={() => setVideoReady(true)}
+          style={{ opacity: videoReady ? 1 : 0, transition: 'opacity 0.5s ease' }}
         />
         <div className="re-case-video-overlay" />
         <AnimatePresence>

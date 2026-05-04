@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { ImageWithSkeleton } from './ImageWithSkeleton';
 
 const pillars = [
   {
@@ -48,7 +49,7 @@ export default function AIAutomationDetailSection() {
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
             <div className="cross-industry-image-wrapper">
-              <img
+              <ImageWithSkeleton
                 src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                 alt="AI Neural Network"
                 className="cross-industry-image"

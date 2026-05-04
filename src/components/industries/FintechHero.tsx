@@ -1,16 +1,22 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import ScrollIndicator from '../ScrollIndicator';
+import { SkeletonLoader } from '../SkeletonLoader';
 
 export default function FintechHero() {
+  const [videoReady, setVideoReady] = useState(false);
+
   return (
     <section className="ai-hero">
+      {!videoReady && <SkeletonLoader />}
       <video
-        style={{ position: 'absolute', inset: 0, zIndex: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+        style={{ position: 'absolute', inset: 0, zIndex: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: videoReady ? 1 : 0, transition: 'opacity 0.5s ease' }}
         src="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/fintech.mp4"
         autoPlay
         muted
         loop
         playsInline
+        onCanPlay={() => setVideoReady(true)}
       />
       <div
         className="case-study-hero-overlay"

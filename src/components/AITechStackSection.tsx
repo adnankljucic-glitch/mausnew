@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { ImageWithSkeleton } from './ImageWithSkeleton';
 
 interface FeatureItem {
   title: string;
@@ -49,7 +50,7 @@ export default function AITechStackSection() {
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
           >
             <div className="ai-tech-stack-image-wrapper">
-              <img
+              <ImageWithSkeleton
                 src="/llm.png"
                 alt="AI technology and data visualization"
                 className="ai-tech-stack-image"

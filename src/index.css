@@ -4,6 +4,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Skeleton Shimmer Animation */
+@keyframes skeleton-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    #1a1a1a 0%,
+    #2a2a2a 40%,
+    #1a1a1a 80%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+}
+
 @layer base {
   * {
     margin: 0;

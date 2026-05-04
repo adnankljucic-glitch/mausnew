@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowDown, ArrowRight, CheckCircle, Loader2 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import HeroServicesWrapper from '../components/HeroServicesWrapper';
+import { ImageWithSkeleton } from '../components/ImageWithSkeleton';
 
 interface FormData {
   name: string;
@@ -157,7 +158,7 @@ export default function DiscoveryCallPage() {
                 {specialists.map((specialist, index) => (
                   <div key={index} className="discovery-specialist-card">
                     <div className="discovery-specialist-avatar">
-                      <img src={specialist.image} alt={specialist.name} />
+                      <ImageWithSkeleton src={specialist.image} alt={specialist.name} skeletonBorderRadius="50%" />
                     </div>
                     <div className="discovery-specialist-info">
                       <h4 className="discovery-specialist-name">{specialist.name}</h4>

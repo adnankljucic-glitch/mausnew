@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { industryCards } from '../data';
+import { ImageWithSkeleton } from './ImageWithSkeleton';
+import { VideoWithSkeleton } from './VideoWithSkeleton';
 
 export default function IndustriesBento() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -76,7 +78,7 @@ export default function IndustriesBento() {
               <>
                 <div className="industries-bento-card-image-wrapper">
                   {industry.videoUrl ? (
-                    <video
+                    <VideoWithSkeleton
                       src={industry.videoUrl}
                       poster={industry.image}
                       autoPlay
@@ -86,7 +88,7 @@ export default function IndustriesBento() {
                       className="industries-bento-card-image"
                     />
                   ) : (
-                    <img
+                    <ImageWithSkeleton
                       src={industry.image}
                       alt={industry.title}
                       className="industries-bento-card-image"

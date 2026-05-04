@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { ImageWithSkeleton } from './ImageWithSkeleton';
 
 interface ReadySectionProps {
   headline?: string;
@@ -74,7 +75,7 @@ export default function ReadySection({ headline = "Ready for our customer-centri
           </motion.div>
 
           <motion.div className="pillar-row-media" variants={imageVariants}>
-            <img
+            <ImageWithSkeleton
               src="/davor.webp"
               alt="Team member at work"
               className="pillar-row-image"

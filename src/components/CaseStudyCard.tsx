@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import { ImageWithSkeleton } from './ImageWithSkeleton';
 
 interface CaseStudyCardProps {
   slug: string;
@@ -32,8 +33,7 @@ export default function CaseStudyCard({
       transition={{ duration: 0.7, ease: 'easeOut', delay: index * 0.06 }}
     >
       <Link to={`/cases/${slug}`} className="case-card-link">
-        {/* Background image */}
-        <img src={imageUrl} alt={title} className="case-card-image" />
+        <ImageWithSkeleton src={imageUrl} alt={title} className="case-card-image" />
 
         {/* Deep cinematic overlay — same pattern as hero sections */}
         <div className="case-card-overlay" />

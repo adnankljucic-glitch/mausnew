@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
 import ScrollIndicator from '../ScrollIndicator';
+import { ImageWithSkeleton } from '../ImageWithSkeleton';
 
 export default function SustainabilityHero() {
   return (
     <section className="ai-hero">
-      <img
+      <ImageWithSkeleton
         className="case-study-hero-media"
         src="https://images.pexels.com/photos/18140302/pexels-photo-18140302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
         alt="Sustainability & Water Cycle"

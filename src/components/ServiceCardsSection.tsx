@@ -2,6 +2,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { serviceCards } from '../data';
+import { ImageWithSkeleton } from './ImageWithSkeleton';
 
 export default function ServiceCardsSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -30,7 +31,7 @@ export default function ServiceCardsSection() {
             >
               <Link to={card.linkUrl} className="kontrapunkt-card-link">
                 <div className="kontrapunkt-card-image-wrapper">
-                  <img
+                  <ImageWithSkeleton
                     src={card.image}
                     alt={card.title}
                     className="kontrapunkt-card-image"
