@@ -1,6 +1,6 @@
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { useRef, useState, useCallback } from 'react';
-import { Play, Square } from 'lucide-react';
+import { Play, Pause } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
@@ -337,13 +337,6 @@ export default function RunEventsSections() {
     }
   }, []);
 
-  const handleStop = useCallback(() => {
-    const v = videoRef.current;
-    if (!v) return;
-    v.pause();
-    v.currentTime = 0;
-    setVideoPlaying(false);
-  }, []);
 
   const phasesInView   = useInView(phasesRef,   { once: true, amount: 0.05 });
   const capInView      = useInView(capRef,       { once: true, amount: 0.05 });
@@ -623,13 +616,13 @@ export default function RunEventsSections() {
         />
         <div className="re-case-video-overlay" />
         <AnimatePresence>
-          {videoHovered && (
+          {(videoHovered || !videoPlaying) && (
             <motion.div
               className="re-case-video-controls"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.25 }}
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.85 }}
+              transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
             >
               <button
                 onClick={handlePlayPause}
@@ -637,17 +630,10 @@ export default function RunEventsSections() {
                 aria-label={videoPlaying ? 'Pause video' : 'Play video'}
               >
                 {videoPlaying ? (
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+                  <Pause size={28} strokeWidth={2.5} />
                 ) : (
-                  <Play size={18} fill="currentColor" />
+                  <Play size={28} strokeWidth={2.5} style={{ marginLeft: 3 }} />
                 )}
-              </button>
-              <button
-                onClick={handleStop}
-                className="re-case-video-btn"
-                aria-label="Stop video"
-              >
-                <Square size={16} fill="currentColor" />
               </button>
             </motion.div>
           )}

@@ -14255,31 +14255,44 @@ details[open] .footer-arrow-icon {
 
 .re-case-video-controls {
   position: absolute;
-  bottom: 24px;
-  left: 24px;
-  display: flex;
-  gap: 8px;
-  z-index: 10;
-}
-
-.re-case-video-btn {
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.re-case-video-btn {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   border: none;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
-  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  color: #fff;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.15s ease;
+  transition: background 0.25s ease, transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease;
 }
 
 .re-case-video-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.08);
+  background: #0D1E21;
+  box-shadow:
+    0 8px 32px rgba(13, 30, 33, 0.4),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}
+
+.re-case-video-btn:active {
+  transform: scale(0.95);
 }
 
 /* ─────────────────────────────────────────────
