@@ -1,5 +1,6 @@
-import { motion, useInView } from 'framer-motion';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { useRef, useState, useCallback } from 'react';
+import { Play, Square } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
@@ -318,6 +319,30 @@ export default function RunEventsSections() {
   const capRef       = useRef<HTMLElement>(null);
   const eicRef       = useRef<HTMLElement>(null);
   const outcomesRef  = useRef<HTMLElement>(null);
+  const videoRef     = useRef<HTMLVideoElement>(null);
+
+  const [videoPlaying, setVideoPlaying] = useState(true);
+  const [videoHovered, setVideoHovered] = useState(false);
+
+  const handlePlayPause = useCallback(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) {
+      v.play();
+      setVideoPlaying(true);
+    } else {
+      v.pause();
+      setVideoPlaying(false);
+    }
+  }, []);
+
+  const handleStop = useCallback(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.pause();
+    v.currentTime = 0;
+    setVideoPlaying(false);
+  }, []);
 
   const phasesInView   = useInView(phasesRef,   { once: true, amount: 0.05 });
   const capInView      = useInView(capRef,       { once: true, amount: 0.05 });
@@ -583,8 +608,11 @@ export default function RunEventsSections() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.1 }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
+        onMouseEnter={() => setVideoHovered(true)}
+        onMouseLeave={() => setVideoHovered(false)}
       >
         <video
+          ref={videoRef}
           src="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/runevents-in-60-seconds-1.mp4"
           autoPlay
           muted
@@ -592,6 +620,36 @@ export default function RunEventsSections() {
           playsInline
           className="re-case-video-player"
         />
+        <AnimatePresence>
+          {videoHovered && (
+            <motion.div
+              className="re-case-video-controls"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+            >
+              <button
+                onClick={handlePlayPause}
+                className="re-case-video-btn"
+                aria-label={videoPlaying ? 'Pause video' : 'Play video'}
+              >
+                {videoPlaying ? (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+                ) : (
+                  <Play size={18} fill="currentColor" />
+                )}
+              </button>
+              <button
+                onClick={handleStop}
+                className="re-case-video-btn"
+                aria-label="Stop video"
+              >
+                <Square size={16} fill="currentColor" />
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.section>
 
       {/* ── 04 — EVENT INTELLIGENCE CLOUD (dark section) ─────────────────── */}

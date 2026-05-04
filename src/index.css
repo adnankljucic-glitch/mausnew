@@ -14226,6 +14226,7 @@ details[open] .footer-arrow-icon {
 ───────────────────────────────────────────── */
 
 .re-case-video {
+  position: relative;
   width: 100%;
   background: #000;
   overflow: hidden;
@@ -14237,6 +14238,35 @@ details[open] .footer-arrow-icon {
   display: block;
   object-fit: cover;
   max-height: 80vh;
+}
+
+.re-case-video-controls {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.re-case-video-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.re-case-video-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.08);
 }
 
 /* ─────────────────────────────────────────────
