@@ -7099,7 +7099,7 @@ details[open] .footer-arrow-icon {
   letter-spacing: -0.02em;
   color: #ffffff;
   margin: 0 0 16px 0;
-  max-width: 56rem;
+  max-width: 100%;
   text-align: center;
 }
 
@@ -7107,6 +7107,7 @@ details[open] .footer-arrow-icon {
   .dedicated-team-headline {
     font-size: 36px;
     margin-bottom: 20px;
+    white-space: nowrap;
   }
 }
 

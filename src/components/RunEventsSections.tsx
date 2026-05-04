@@ -1,6 +1,5 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState, useCallback } from 'react';
-import DedicatedTeamBanner from './DedicatedTeamBanner';
 
 // ── Data ───────────────────────────────────────────────────────────────────
 
@@ -570,8 +569,23 @@ export default function RunEventsSections() {
         </div>
       </section>
 
-      {/* ── 03b — DEDICATED TEAM BANNER ─────────────────────────────────── */}
-      <DedicatedTeamBanner />
+      {/* ── 03b — CASE VIDEO ─────────────────────────────────────────────── */}
+      <motion.section
+        className="re-case-video"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+      >
+        <video
+          src="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/realestate.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="re-case-video-player"
+        />
+      </motion.section>
 
       {/* ── 04 — EVENT INTELLIGENCE CLOUD (dark section) ─────────────────── */}
       <section ref={eicRef} className="re-eic">
@@ -660,23 +674,6 @@ export default function RunEventsSections() {
         </div>
       </section>
 
-      {/* ── 06 — CASE VIDEO ────────────────────────────────────────────── */}
-      <motion.section
-        className="re-case-video"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.1 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
-      >
-        <video
-          src="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/realestate.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="re-case-video-player"
-        />
-      </motion.section>
     </>
   );
 }
