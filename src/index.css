@@ -13922,10 +13922,11 @@ details[open] .footer-arrow-icon {
 }
 
 /* Media (image) - 4:5 aspect ratio for ALL pillar rows */
+/* On mobile: grid is 96vw wide with 16px padding each side, so left edge of content = 2vw+16px from viewport */
 .pillar-row-media {
   position: relative;
   width: 100vw;
-  margin-left: calc(-1 * (100vw - 100%) / 2);
+  margin-left: calc(-2vw - 16px);
   aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: 0;
@@ -13933,6 +13934,13 @@ details[open] .footer-arrow-icon {
   order: -1;
   max-width: none;
   max-height: none;
+}
+
+@media (min-width: 768px) {
+  .pillar-row-media {
+    /* grid is 88vw wide with clamp(20px, 2vw, 40px) padding; left edge = 6vw + clamp(20px,2vw,40px) */
+    margin-left: calc(-6vw - clamp(20px, 2vw, 40px));
+  }
 }
 
 @media (min-width: 1280px) {
