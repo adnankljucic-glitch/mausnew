@@ -16,11 +16,11 @@ const caseStudies = [
     tag: 'Legacy Modernization / Real Estate Proptech',
   },
   {
-    slug: 'swift-fintech',
-    title: 'Swift Fintech',
-    description: 'A strategic partnership that redefined the payment experience for millions of users across Europe.',
-    imageUrl: 'https://images.pexels.com/photos/7567460/pexels-photo-7567460.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    tag: 'Fintech & Payments',
+    slug: 'systematic-healthcare',
+    title: 'Systematic Healthcare',
+    description: 'A strategic partnership that redefined the payment experience for millions of users across\u00A0Europe.',
+    imageUrl: '/health.webp',
+    tag: 'AI & Automation',
   },
   {
     slug: 'nova-healthcare',
