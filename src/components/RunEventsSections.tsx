@@ -321,7 +321,7 @@ export default function RunEventsSections() {
   const outcomesRef  = useRef<HTMLElement>(null);
   const videoRef     = useRef<HTMLVideoElement>(null);
 
-  const [videoPlaying, setVideoPlaying] = useState(true);
+  const [videoPlaying, setVideoPlaying] = useState(false);
   const [videoHovered, setVideoHovered] = useState(false);
 
   const handlePlayPause = useCallback(() => {
@@ -601,7 +601,6 @@ export default function RunEventsSections() {
         <video
           ref={videoRef}
           src="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/runevents-in-60-seconds-1.mp4"
-          autoPlay
           muted
           loop
           playsInline
@@ -609,7 +608,7 @@ export default function RunEventsSections() {
         />
         <div className="re-case-video-overlay" />
         <AnimatePresence>
-          {(videoHovered || !videoPlaying) && (
+          {(!videoPlaying || videoHovered) && (
             <motion.div
               className="re-case-video-controls"
               initial={{ opacity: 0, scale: 0.85 }}
@@ -623,11 +622,11 @@ export default function RunEventsSections() {
                 aria-label={videoPlaying ? 'Pause video' : 'Play video'}
               >
                 {videoPlaying ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" strokeWidth="1.5" stroke="white" width="28" height="28">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="white" width="28" height="28">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
                   </svg>
                 ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" strokeWidth="1.5" stroke="white" width="28" height="28">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="white" width="28" height="28">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" />
                   </svg>
