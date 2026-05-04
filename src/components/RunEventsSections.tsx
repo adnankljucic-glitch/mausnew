@@ -1,5 +1,10 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState, useCallback } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FreeMode } from 'swiper/modules';
+import type { Swiper as SwiperType } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/free-mode';
 
 // ── Data ───────────────────────────────────────────────────────────────────
 
@@ -211,24 +216,13 @@ const productScreenshots = [
 // ── Product Showcase Section ───────────────────────────────────────────────
 
 function SocialTrustSection() {
-  const carouselRef = useRef<HTMLDivElement>(null);
+  const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(false);
 
-  const scroll = useCallback((dir: 'left' | 'right') => {
-    const el = carouselRef.current;
-    if (!el) return;
-    const cardWidth = el.firstElementChild
-      ? (el.firstElementChild as HTMLElement).offsetWidth + 24
-      : el.offsetWidth;
-    el.scrollBy({ left: dir === 'right' ? cardWidth : -cardWidth, behavior: 'smooth' });
-  }, []);
-
-  const handleScroll = useCallback(() => {
-    const el = carouselRef.current;
-    if (!el) return;
-    setAtStart(el.scrollLeft <= 4);
-    setAtEnd(el.scrollLeft + el.offsetWidth >= el.scrollWidth - 4);
+  const handleSlideChange = useCallback((swiper: SwiperType) => {
+    setAtStart(swiper.isBeginning);
+    setAtEnd(swiper.isEnd);
   }, []);
 
   return (
@@ -254,7 +248,7 @@ function SocialTrustSection() {
           <div className="re-social-trust-nav">
             <button
               className="re-social-trust-nav-btn"
-              onClick={() => scroll('left')}
+              onClick={() => swiperInstance?.slidePrev()}
               disabled={atStart}
               aria-label="Previous"
             >
@@ -264,7 +258,7 @@ function SocialTrustSection() {
             </button>
             <button
               className="re-social-trust-nav-btn"
-              onClick={() => scroll('right')}
+              onClick={() => swiperInstance?.slideNext()}
               disabled={atEnd}
               aria-label="Next"
             >
@@ -275,28 +269,41 @@ function SocialTrustSection() {
           </div>
         </motion.div>
 
-        {/* Carousel — images only */}
+        {/* Swiper Carousel */}
         <div className="re-social-trust-carousel-wrap">
-          <div
-            className="re-social-trust-carousel"
-            ref={carouselRef}
-            onScroll={handleScroll}
+          <Swiper
+            modules={[FreeMode]}
+            onSwiper={setSwiperInstance}
+            onSlideChange={handleSlideChange}
+            onReachBeginning={() => setAtStart(true)}
+            onReachEnd={() => setAtEnd(true)}
+            onFromEdge={() => { setAtStart(false); setAtEnd(false); }}
+            spaceBetween={20}
+            slidesPerView={1.3}
+            freeMode={{ enabled: true, sticky: true }}
+            grabCursor
+            breakpoints={{
+              640: { slidesPerView: 1.8, spaceBetween: 20 },
+              900: { slidesPerView: 2.5, spaceBetween: 24 },
+              1280: { slidesPerView: 2.5, spaceBetween: 28 },
+            }}
           >
             {productScreenshots.map((item, i) => (
-              <motion.div
-                key={i}
-                className="re-social-trust-card"
-                initial={{ opacity: 0, y: 32 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.65, ease: 'easeOut', delay: i * 0.08 }}
-              >
-                <div className="re-social-trust-card-media">
-                  <img src={item.img} alt={item.label} className="re-social-trust-card-img" />
-                </div>
-              </motion.div>
+              <SwiperSlide key={i}>
+                <motion.div
+                  className="re-social-trust-card"
+                  initial={{ opacity: 0, y: 32 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.15 }}
+                  transition={{ duration: 0.65, ease: 'easeOut', delay: i * 0.08 }}
+                >
+                  <div className="re-social-trust-card-media">
+                    <img src={item.img} alt={item.label} className="re-social-trust-card-img" loading="lazy" />
+                  </div>
+                </motion.div>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
 
       </div>
