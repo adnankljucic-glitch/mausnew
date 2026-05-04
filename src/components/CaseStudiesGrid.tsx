@@ -52,7 +52,7 @@ const caseStudies = [
   },
   {
     slug: 'envidan',
-    title: 'Envidan - Envidan helps utilities, municipalities and industries with sustainable solutions within the entire water cycle.',
+    title: 'Envidan',
     description: 'Helping utilities, municipalities and industries with sustainable solutions within the entire water cycle.',
     imageUrl: '/envidan_case_.webp',
     tag: 'Sustainability & Water Cycle',
