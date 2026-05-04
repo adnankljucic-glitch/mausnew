@@ -23,10 +23,10 @@ const caseStudies = [
     tag: 'AI & Automation',
   },
   {
-    slug: 'nova-healthcare',
-    title: 'Nova Healthcare',
+    slug: 'neuro-plus-academy',
+    title: 'Neuro+ Academy',
     description: 'Secure, compliant clinical systems built to scale — from patient onboarding to real-time diagnostics.',
-    imageUrl: 'https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    imageUrl: '/Casque_photobiomodulation_adulte_Neuro.webp',
     tag: 'Healthcare',
   },
   {
