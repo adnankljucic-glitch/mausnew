@@ -14420,8 +14420,8 @@ details[open] .footer-arrow-icon {
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: #f3f4f6;
-  border-radius: 8px;
+  background: #1a1a2e;
+  border-radius: 4px;
 }
 
 .re-social-trust-card-img {
