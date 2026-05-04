@@ -1,5 +1,6 @@
 import CasesPageHero from '../components/CasesPageHero';
 import CaseStudiesGrid from '../components/CaseStudiesGrid';
+import DedicatedTeamBanner from '../components/DedicatedTeamBanner';
 import HeroServicesWrapper from '../components/HeroServicesWrapper';
 
 export default function CasesPage() {
@@ -9,6 +10,7 @@ export default function CasesPage() {
         <CasesPageHero />
       </HeroServicesWrapper>
       <CaseStudiesGrid />
+      <DedicatedTeamBanner variant="blue" />
     </>
   );
 }

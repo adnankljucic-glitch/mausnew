@@ -7002,6 +7002,15 @@ details[open] .footer-arrow-icon {
   }
 }
 
+.dedicated-team-section.dedicated-team-blue {
+  background: #0a1628;
+}
+
+.dedicated-team-blue .dedicated-team-headline,
+.dedicated-team-blue .dedicated-team-subline {
+  color: #ffffff;
+}
+
 .dedicated-team-container {
   position: relative;
 }

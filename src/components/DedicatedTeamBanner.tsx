@@ -1,7 +1,11 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
-export default function DedicatedTeamBanner() {
+interface DedicatedTeamBannerProps {
+  variant?: 'default' | 'blue';
+}
+
+export default function DedicatedTeamBanner({ variant = 'default' }: DedicatedTeamBannerProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
@@ -59,7 +63,7 @@ export default function DedicatedTeamBanner() {
   return (
     <motion.section
       ref={sectionRef}
-      className="dedicated-team-section"
+      className={`dedicated-team-section${variant === 'blue' ? ' dedicated-team-blue' : ''}`}
       initial="hidden"
       animate={isInView ? 'visible' : 'hidden'}
       variants={containerVariants}
