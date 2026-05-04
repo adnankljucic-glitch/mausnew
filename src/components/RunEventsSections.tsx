@@ -202,8 +202,8 @@ function FadeIn({ children, delay = 0, className }: { children: React.ReactNode;
 // ── Product Showcase Data ───────────────────────────────────────────────────
 
 const productScreenshots = [
-  { img: '/run1.webp',           label: 'Sponsorship Packages' },
-  { img: '/run_2.png',          label: 'Ticket Management' },
+  { img: '/runscreen.png',       label: 'Sponsorship Packages' },
+  { img: '/run1.webp',           label: 'Ticket Management' },
   { img: '/ecs2025_1.webp',     label: 'Lead Scanning App' },
   { img: '/runmail.png',        label: 'AI Email Builder' },
 ];
