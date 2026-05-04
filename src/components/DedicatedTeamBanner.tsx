@@ -78,7 +78,7 @@ export default function DedicatedTeamBanner() {
               muted
               playsInline
             >
-              <source src="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/runevents_intro.mp4" type="video/mp4" />
+              <source src="https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/proptech.mp4" type="video/mp4" />
             </video>
             <motion.div
               className="dedicated-team-overlay"
