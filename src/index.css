@@ -14701,8 +14701,9 @@ details[open] .footer-arrow-icon {
 
 .re-platform-vision p {
   font-family: var(--font-family-sans);
-  font-size: 15px;
-  line-height: 1.65;
+  font-size: 18px;
+  line-height: 30.6px;
+  font-weight: 400;
   color: #374151;
 }
 
