@@ -1,5 +1,5 @@
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 
 // ── Data ───────────────────────────────────────────────────────────────────
@@ -197,6 +197,146 @@ function FadeIn({ children, delay = 0, className }: { children: React.ReactNode;
     >
       {children}
     </motion.div>
+  );
+}
+
+// ── Social Trust Data ──────────────────────────────────────────────────────
+
+const quotes = [
+  {
+    img: '/dashboard.webp',
+    quote: '"The platform transformed how we manage our flagship annual congress. Registration, check-in, and analytics — all in one place for the first time."',
+    name: 'Lars Kanstrup',
+    role: 'Event Director, Nordic Tech Conference',
+  },
+  {
+    img: '/expo_000100.webp',
+    quote: '"Exhibitor management used to be a spreadsheet nightmare. Now our whole team works from a single dashboard and the setup takes hours, not weeks."',
+    name: 'Maja Eriksson',
+    role: 'Head of Operations, ExpoNord',
+  },
+  {
+    img: '/mobile.png',
+    quote: '"Attendees loved the branded app. Engagement scores went up 40% compared to our previous event, and the networking features drove real connections."',
+    name: 'Davor Petrović',
+    role: 'CEO, EventTech Adriatic',
+  },
+  {
+    img: '/analytucs.webp',
+    quote: '"Post-event reporting used to take two weeks. With run.events we had complete sponsor ROI dashboards ready the morning after the event closed."',
+    name: 'Sina Müller',
+    role: 'Marketing Manager, Summit Group',
+  },
+];
+
+// ── Social Trust Section ───────────────────────────────────────────────────
+
+function SocialTrustSection() {
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
+
+  const scroll = useCallback((dir: 'left' | 'right') => {
+    const el = carouselRef.current;
+    if (!el) return;
+    const cardWidth = el.firstElementChild
+      ? (el.firstElementChild as HTMLElement).offsetWidth + 20
+      : el.offsetWidth;
+    el.scrollBy({ left: dir === 'right' ? cardWidth : -cardWidth, behavior: 'smooth' });
+  }, []);
+
+  const handleScroll = useCallback(() => {
+    const el = carouselRef.current;
+    if (!el) return;
+    setAtStart(el.scrollLeft <= 4);
+    setAtEnd(el.scrollLeft + el.offsetWidth >= el.scrollWidth - 4);
+  }, []);
+
+  return (
+    <section className="re-social-trust">
+      <div className="manyone-grid">
+        <div className="re-social-trust-inner">
+          {/* Left */}
+          <motion.div
+            className="re-social-trust-left"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+          >
+            <p className="re-social-trust-eyebrow">Client Stories</p>
+            <h2 className="re-social-trust-heading">What our clients say</h2>
+            <div className="re-social-trust-rating">
+              <div className="re-social-trust-stars">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                ))}
+              </div>
+              <span className="re-social-trust-rating-text">
+                <strong>5-year</strong> partnership
+              </span>
+            </div>
+            <div className="re-social-trust-nav">
+              <button
+                className="re-social-trust-nav-btn"
+                onClick={() => scroll('left')}
+                disabled={atStart}
+                aria-label="Previous"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M19 12H5M12 5l-7 7 7 7" />
+                </svg>
+              </button>
+              <button
+                className="re-social-trust-nav-btn"
+                onClick={() => scroll('right')}
+                disabled={atEnd}
+                aria-label="Next"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </motion.div>
+
+          {/* Right — carousel */}
+          <div className="re-social-trust-carousel-wrap">
+            <div
+              className="re-social-trust-carousel"
+              ref={carouselRef}
+              onScroll={handleScroll}
+            >
+              {quotes.map((q, i) => (
+                <motion.div
+                  key={i}
+                  className="re-social-trust-card"
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.6, ease: 'easeOut', delay: i * 0.08 }}
+                >
+                  <img
+                    src={q.img}
+                    alt=""
+                    className="re-social-trust-card-img"
+                  />
+                  <div className="re-social-trust-card-body">
+                    <p className="re-social-trust-card-quote">{q.quote}</p>
+                    <div className="re-social-trust-card-author">
+                      <span className="re-social-trust-card-name">{q.name}</span>
+                      <span className="re-social-trust-card-role">{q.role}</span>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -423,6 +563,9 @@ export default function RunEventsSections() {
           </div>
         </div>
       </section>
+
+      {/* ── 02b — SOCIAL TRUST ──────────────────────────────────────────── */}
+      <SocialTrustSection />
 
       {/* ── 03 — PRODUCTS ────────────────────────────────────────────────── */}
       <section ref={capRef} className="hc-capabilities re-products-section">
