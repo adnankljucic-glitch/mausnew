@@ -30,11 +30,11 @@ const caseStudies = [
     tag: 'Healthcare',
   },
   {
-    slug: 'apex-manufacturing',
-    title: 'Apex Manufacturing',
-    description: 'Discover how predictive IoT systems and smart factory automation elevated Apex\'s operational efficiency by 40%.',
-    imageUrl: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    tag: 'AI & Manufacturing',
+    slug: 'nordsee-holiday',
+    title: 'Nordsee Holiday',
+    description: 'We\'re redefining the booking journey by moving away from endless filtering and toward natural conversations that lead straight to a reservation.',
+    imageUrl: '/ocean.webp',
+    tag: 'Booking & Tourism / Agentic AI Commerce',
   },
   {
     slug: 'meridian-logistics',
