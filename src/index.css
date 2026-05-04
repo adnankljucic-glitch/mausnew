@@ -14145,18 +14145,19 @@ details[open] .footer-arrow-icon {
 
 .re-eic-agent-title {
   font-family: var(--font-family-serif);
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 600;
   color: #ffffff;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   line-height: 1.25;
 }
 
 .re-eic-agent-desc {
   font-family: var(--font-family-sans);
-  font-size: 13px;
-  line-height: 1.65;
-  color: rgba(255,255,255,0.62);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25.6px;
+  color: rgba(255,255,255,0.75);
 }
 
 /* Outcomes */
