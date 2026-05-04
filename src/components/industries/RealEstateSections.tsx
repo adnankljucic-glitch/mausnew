@@ -225,7 +225,7 @@ export default function RealEstateSections() {
         ]}
         ctaLabel="Read the case"
         ctaHref="/cases"
-        imageSrc="/86588.webp"
+        imageSrc="/16342.webp"
         imageAlt="AI real estate platform"
         caseTitle="ISPINIT & Delta Access"
         caseSubtitle="AI-powered real estate SaaS platforms"
