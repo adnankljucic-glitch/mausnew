@@ -32,10 +32,9 @@ export default function DedicatedTeamBanner() {
   };
 
   const overlayVariants = {
-    hidden: { opacity: 1, y: 20 },
+    hidden: { opacity: 1 },
     visible: {
-      opacity: 0.75,
-      y: 0,
+      opacity: 1,
       transition: {
         duration: 0.8,
         ease: 'easeOut',
