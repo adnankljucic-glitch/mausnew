@@ -12,7 +12,7 @@ const caseStudies = [
     slug: 'ispinit',
     title: 'ISPINIT (Real Estate SaaS)',
     description: 'Evolving traditional SaaS into an AI-first platform: Bridging legacy data with LLMs to automate market analysis and investment\u00A0forecasting.',
-    imageUrl: '/16342.webp',
+    imageUrl: '/3379.webp',
     tag: 'Legacy Modernization / Real Estate Proptech',
   },
   {
