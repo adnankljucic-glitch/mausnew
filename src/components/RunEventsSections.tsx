@@ -201,36 +201,17 @@ function FadeIn({ children, delay = 0, className }: { children: React.ReactNode;
   );
 }
 
-// ── Social Trust Data ──────────────────────────────────────────────────────
+// ── Product Showcase Data ───────────────────────────────────────────────────
 
-const quotes = [
-  {
-    img: '/dashboard.webp',
-    quote: '"The platform transformed how we manage our flagship annual congress. Registration, check-in, and analytics — all in one place for the first time."',
-    name: 'Lars Kanstrup',
-    role: 'Event Director, Nordic Tech Conference',
-  },
-  {
-    img: '/expo_000100.webp',
-    quote: '"Exhibitor management used to be a spreadsheet nightmare. Now our whole team works from a single dashboard and the setup takes hours, not weeks."',
-    name: 'Maja Eriksson',
-    role: 'Head of Operations, ExpoNord',
-  },
-  {
-    img: '/mobile.png',
-    quote: '"Attendees loved the branded app. Engagement scores went up 40% compared to our previous event, and the networking features drove real connections."',
-    name: 'Davor Petrović',
-    role: 'CEO, EventTech Adriatic',
-  },
-  {
-    img: '/analytucs.webp',
-    quote: '"Post-event reporting used to take two weeks. With run.events we had complete sponsor ROI dashboards ready the morning after the event closed."',
-    name: 'Sina Müller',
-    role: 'Marketing Manager, Summit Group',
-  },
+const productScreenshots = [
+  { img: '/dashboard.webp',     label: 'Event Dashboard' },
+  { img: '/expo_000100.webp',   label: 'Expo Floor View' },
+  { img: '/mobile.png',         label: 'Attendee App' },
+  { img: '/analytucs.webp',     label: 'Analytics' },
+  { img: '/ecs2025_1.webp',     label: 'Check-in' },
 ];
 
-// ── Social Trust Section ───────────────────────────────────────────────────
+// ── Product Showcase Section ───────────────────────────────────────────────
 
 function SocialTrustSection() {
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -266,20 +247,8 @@ function SocialTrustSection() {
           transition={{ duration: 0.7, ease: 'easeOut' }}
         >
           <div className="re-social-trust-header-left">
-            <p className="re-social-trust-eyebrow">Client Stories</p>
-            <h2 className="re-social-trust-heading">What our clients say</h2>
-            <div className="re-social-trust-rating">
-              <div className="re-social-trust-stars">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                  </svg>
-                ))}
-              </div>
-              <span className="re-social-trust-rating-text">
-                <strong>5-year</strong> partnership
-              </span>
-            </div>
+            <p className="re-social-trust-eyebrow">Product in action</p>
+            <h2 className="re-social-trust-heading">See how it looks.</h2>
           </div>
 
           <div className="re-social-trust-nav">
@@ -306,36 +275,26 @@ function SocialTrustSection() {
           </div>
         </motion.div>
 
-        {/* Carousel */}
+        {/* Carousel — images only */}
         <div className="re-social-trust-carousel-wrap">
           <div
             className="re-social-trust-carousel"
             ref={carouselRef}
             onScroll={handleScroll}
           >
-            {quotes.map((q, i) => (
+            {productScreenshots.map((item, i) => (
               <motion.div
                 key={i}
                 className="re-social-trust-card"
                 initial={{ opacity: 0, y: 32 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.65, ease: 'easeOut', delay: i * 0.1 }}
+                transition={{ duration: 0.65, ease: 'easeOut', delay: i * 0.08 }}
               >
-                {/* Image with pillar-style aspect ratio + overlay */}
                 <div className="re-social-trust-card-media">
-                  <img src={q.img} alt="" className="re-social-trust-card-img" />
+                  <img src={item.img} alt={item.label} className="re-social-trust-card-img" />
                   <div className="re-social-trust-card-overlay" aria-hidden="true" />
-                </div>
-
-                {/* Text body */}
-                <div className="re-social-trust-card-body">
-                  <p className="re-social-trust-card-quote">{q.quote}</p>
-                  <div className="re-social-trust-card-divider" />
-                  <div className="re-social-trust-card-author">
-                    <span className="re-social-trust-card-name">{q.name}</span>
-                    <span className="re-social-trust-card-role">{q.role}</span>
-                  </div>
+                  <span className="re-social-trust-card-label">{item.label}</span>
                 </div>
               </motion.div>
             ))}
