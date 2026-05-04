@@ -25,7 +25,7 @@ export const industryCards: IndustryCard[] = [
   {
     title: "Events & Ticketing",
     description: "Custom enterprise software for festivals, concerts, sports events, cultural venues and large conferences — built for scale and complexity.",
-    videoUrl: "https://ttycsupkjrsqjvqaxtca.supabase.co/storage/v1/object/public/MAUS%20VIDEOS/runevents_intro.mp4",
+    image: "/expo_000100.webp",
     category: "Events",
     linkUrl: "/industries/events-ticketing"
   },
