@@ -295,8 +295,6 @@ function SocialTrustSection() {
               >
                 <div className="re-social-trust-card-media">
                   <img src={item.img} alt={item.label} className="re-social-trust-card-img" />
-                  <div className="re-social-trust-card-overlay" aria-hidden="true" />
-                  <span className="re-social-trust-card-label">{item.label}</span>
                 </div>
               </motion.div>
             ))}
