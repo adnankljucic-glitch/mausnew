@@ -54,7 +54,7 @@ export const industryCards: IndustryCard[] = [
   {
     title: "Real Estate & PropTech",
     description: "Automated valuation models, tenant management portals, and property intelligence platforms built for modern real estate.",
-    image: "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image: "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     category: "PropTech",
     linkUrl: "/industries/real-estate-proptech"
   }
