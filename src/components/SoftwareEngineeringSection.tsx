@@ -23,7 +23,7 @@ export default function SoftwareEngineeringSection() {
       headline="Where business logic meets Human Centricity"
       intro="We don't just design for aesthetics; we design for conversion and operational efficiency. For larger organizations, this means creating design systems that can scale across departments and platforms while maintaining a seamless brand experience."
       bulletsTitled={bulletPoints}
-      image="/ux2 copy.webp"
+      image="/ux2.webp"
       imageOverlayTitle="High-Fidelity UX/UI Design"
       imageAlt="High-Fidelity UX/UI Design"
     />

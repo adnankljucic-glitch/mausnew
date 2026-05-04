@@ -352,7 +352,7 @@ export default function RunEventsSections() {
       </section>
 
       {/* ── 01 — PLATFORM SECTION ───────────────────────────────────────── */}
-      <section ref={phasesRef} className="re-platform work-section">
+      <section ref={phasesRef} className="re-platform">
         <div className="manyone-grid">
           <div className="re-platform-inner">
 
