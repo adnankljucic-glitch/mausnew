@@ -14233,6 +14233,10 @@ details[open] .footer-arrow-icon {
   margin: 0 0 64px;
 }
 
+.re-outcomes-header .hc-capabilities-headline {
+  white-space: normal;
+}
+
 .re-outcomes-grid {
   display: grid;
   grid-template-columns: 1fr;
