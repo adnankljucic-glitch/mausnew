@@ -204,11 +204,10 @@ function FadeIn({ children, delay = 0, className }: { children: React.ReactNode;
 // ── Product Showcase Data ───────────────────────────────────────────────────
 
 const productScreenshots = [
-  { img: '/dashboard.webp',     label: 'Event Dashboard' },
-  { img: '/expo_000100.webp',   label: 'Expo Floor View' },
-  { img: '/mobile.png',         label: 'Attendee App' },
-  { img: '/analytucs.webp',     label: 'Analytics' },
-  { img: '/ecs2025_1.webp',     label: 'Check-in' },
+  { img: '/runscreen.png',      label: 'Sponsorship Packages' },
+  { img: '/run_2.png',          label: 'Ticket Management' },
+  { img: '/ecs2025_1.webp',     label: 'Lead Scanning App' },
+  { img: '/runmail.png',        label: 'AI Email Builder' },
 ];
 
 // ── Product Showcase Section ───────────────────────────────────────────────
