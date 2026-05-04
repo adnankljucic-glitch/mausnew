@@ -9166,20 +9166,34 @@ details[open] .footer-arrow-icon {
 
 .re-products-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   border-top: 1px solid rgba(0,0,32,0.08);
   border-left: 1px solid rgba(0,0,32,0.08);
+  margin-left: calc(-1 * (4% + 16px));
+  margin-right: calc(-1 * (4% + 16px));
 }
 
 @media (min-width: 768px) {
   .re-products-grid {
     grid-template-columns: repeat(2, 1fr);
+    margin-left: calc(-1 * (6% + clamp(20px, 2vw, 40px)));
+    margin-right: calc(-1 * (6% + clamp(20px, 2vw, 40px)));
   }
 }
 
 @media (min-width: 900px) {
   .re-products-grid {
     grid-template-columns: repeat(4, 1fr);
+    margin-left: calc(-1 * (6% + clamp(20px, 2vw, 40px)));
+    margin-right: calc(-1 * (6% + clamp(20px, 2vw, 40px)));
+  }
+}
+
+@media (min-width: 1280px) {
+  .re-products-grid {
+    grid-template-columns: repeat(4, 1fr);
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -14685,8 +14699,8 @@ details[open] .footer-arrow-icon {
   font-family: var(--font-family-serif);
   font-size: var(--font-h2-mobile);
   font-weight: 600;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
+  line-height: var(--lh-h2);
+  letter-spacing: -0.015em;
   color: var(--color-brand-secondary);
   margin-bottom: 28px;
 }
