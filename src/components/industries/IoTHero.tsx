@@ -12,7 +12,7 @@ export default function IoTHero() {
         {!videoLoaded && (
           <motion.img
             key="fallback"
-            src="/drone.webp"
+            src="/fallback.webp"
             alt=""
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
