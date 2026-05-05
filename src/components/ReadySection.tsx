@@ -7,7 +7,7 @@ interface ReadySectionProps {
   headline?: string;
 }
 
-export default function ReadySection({ headline = "Ready for our customer-centric agility and adaptability?" }: ReadySectionProps) {
+export default function ReadySection({ headline = "Ready to work together?" }: ReadySectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
