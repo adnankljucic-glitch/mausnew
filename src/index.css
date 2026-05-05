@@ -2289,7 +2289,8 @@
     .outcomes-slideshow-mobile {
       display: block;
       overflow: hidden;
-      border-radius: 4px;
+      width: 100vw;
+      border-radius: 0;
     }
   }
 

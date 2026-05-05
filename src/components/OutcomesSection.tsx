@@ -135,13 +135,12 @@ export default function OutcomesSection({ backgroundColor }: OutcomesSectionProp
         ))}
       </div>
 
-      <div className="manyone-grid">
-        <div
-          className="outcomes-slideshow-mobile"
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
+      <div
+        className="outcomes-slideshow-mobile"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide}
@@ -182,8 +181,9 @@ export default function OutcomesSection({ backgroundColor }: OutcomesSectionProp
               </div>
             </motion.div>
           </AnimatePresence>
-        </div>
+      </div>
 
+      <div className="manyone-grid">
         <motion.div
           className="outcomes-cta-wrapper"
           initial={{ opacity: 0, y: 20 }}
