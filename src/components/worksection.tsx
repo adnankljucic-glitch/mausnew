@@ -52,14 +52,6 @@ const projects: Project[] = [
     image: "/frankfurt.png",
     mediaType: "image",
   },
-  {
-    id: 5,
-    title: "Fintech & payment systems",
-    category: "High Conversion Ticket Engine",
-    description: "A high-throughput payment and ticketing platform engineered for peak-load reliability — turning browsers into buyers with frictionless, conversion-optimised checkout flows.",
-    image: "/finance.webp",
-    mediaType: "image",
-  },
 ];
 
 const WorkSection = () => {
