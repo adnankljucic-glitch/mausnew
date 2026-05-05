@@ -58,18 +58,18 @@ const caseStudies = [
     tag: 'Sustainability & Water Cycle',
   },
   {
-    slug: 'verdant-proptech',
-    title: 'Verdant PropTech',
-    description: 'Automated valuation models and tenant management portals that cut operational overhead by 35%.',
-    imageUrl: 'https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    tag: 'Real Estate & PropTech',
+    slug: 'first8-lms',
+    title: 'Learning Management System for First 8',
+    description: 'A complete LMS platform enabling First 8 to deliver, track and scale first-aid training across Denmark.',
+    imageUrl: '/first8.webp',
+    tag: 'EdTech & LMS',
   },
   {
-    slug: 'atlas-insurance',
-    title: 'Atlas Insurance',
-    description: 'AI-driven claims processing and fraud detection — reducing turnaround time from weeks to hours.',
-    imageUrl: 'https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    tag: 'Fintech & Payments',
+    slug: 'witt-cookperfect',
+    title: 'Witt CookPerfect',
+    description: 'IoT-connected cooking device with companion app — bringing precision temperature control to every kitchen.',
+    imageUrl: '/cook.webp',
+    tag: 'IoT & Smart Devices',
   },
 ];
 
