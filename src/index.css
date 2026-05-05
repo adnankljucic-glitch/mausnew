@@ -13625,7 +13625,7 @@ details[open] .footer-arrow-icon {
 
 @media (min-width: 1280px) {
   .pillar-row-content {
-    max-width: 50%;
+    max-width: 100%;
   }
 }
 
@@ -13669,25 +13669,25 @@ details[open] .footer-arrow-icon {
 
 @media (min-width: 1024px) {
   .pillar-row-headline {
-    font-size: 44px;
+    font-size: 52px;
   }
 }
 
 @media (min-width: 1280px) {
   .pillar-row-headline {
-    font-size: 48px;
+    font-size: 60px;
   }
 }
 
 @media (min-width: 1440px) {
   .pillar-row-headline {
-    font-size: 52px;
+    font-size: 64px;
   }
 }
 
 @media (min-width: 1920px) {
   .pillar-row-headline {
-    font-size: 56px;
+    font-size: 72px;
   }
 }
 
