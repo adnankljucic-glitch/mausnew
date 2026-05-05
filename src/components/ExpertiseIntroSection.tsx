@@ -84,14 +84,13 @@ export default function ExpertiseIntroSection() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
             >
-              <div className="exp-phase-card-top">
-                <p className="exp-phase-label">{phase.phase}</p>
-                {i === 0 && (
+              {i === 0 && (
+                <div className="exp-phase-icon-wrap">
                   <span className="exp-phase-smart-icon" aria-hidden="true">
                     <SmartIcon />
                   </span>
-                )}
-              </div>
+                </div>
+              )}
               <h3 className="service-card-title">{phase.title}</h3>
               <ul className="exp-phase-bullets">
                 {phase.bullets.map((b) => (

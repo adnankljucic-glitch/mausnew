@@ -15298,26 +15298,28 @@ details[open] .footer-arrow-icon {
   border-color: transparent;
 }
 
-.exp-phase-card-top {
+.exp-phase-icon-wrap {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 16px;
-  min-height: 64px;
+  justify-content: flex-start;
+  margin-bottom: 24px;
 }
 
 .exp-phase-smart-icon {
-  opacity: 0.6;
-  flex-shrink: 0;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  opacity: 0.85;
   transition: opacity 0.3s ease;
 }
 
 .exp-phase-smart-icon svg {
-  width: 72px;
-  height: 66px;
+  width: 52px;
+  height: 48px;
 }
 
 .exp-phase-card:hover .exp-phase-smart-icon {
