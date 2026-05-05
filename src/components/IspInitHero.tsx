@@ -4,12 +4,12 @@ import ScrollIndicator from './ScrollIndicator';
 export default function IspInitHero() {
   return (
     <section className="ai-hero">
-      <div
+      <img
+        src="/3379.webp"
+        alt="ispinit hero"
         className="case-study-hero-media"
-        style={{ position: 'absolute', inset: 0, zIndex: 0, background: '#0a1628' }}
-      >
-        {/* TODO: Add ispinit hero image or video here */}
-      </div>
+        style={{ position: 'absolute', inset: 0, zIndex: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+      />
 
       <div
         className="case-study-hero-overlay"
