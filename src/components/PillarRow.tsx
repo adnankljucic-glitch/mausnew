@@ -148,7 +148,7 @@ export default function PillarRow({
       style={bgOverride ? { background: bgOverride } : undefined}
     >
       <div className="manyone-grid">
-        <div className="pillar-row-inner">
+        <div className={`pillar-row-inner${reverse ? ' pillar-row-inner--reverse' : ''}`}>
           {reverse ? mediaBlock : contentBlock}
           {reverse ? contentBlock : mediaBlock}
         </div>
