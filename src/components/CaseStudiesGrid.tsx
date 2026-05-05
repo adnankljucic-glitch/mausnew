@@ -71,6 +71,13 @@ const caseStudies = [
     imageUrl: '/cook.webp',
     tag: 'IoT & Smart Devices',
   },
+  {
+    slug: 'fintech-payment-systems',
+    title: 'Fintech & Payment Systems',
+    description: 'A high-throughput payment and ticketing platform engineered for peak-load reliability — turning browsers into buyers with frictionless, conversion-optimised checkout flows.',
+    imageUrl: '/finance.webp',
+    tag: 'High Conversion Ticket Engine',
+  },
 ];
 
 export default function CaseStudiesGrid() {
@@ -105,6 +112,9 @@ export default function CaseStudiesGrid() {
         <CaseStudyCard {...caseStudies[8]} variant="half" contentPosition="bottom" index={8} />
         <CaseStudyCard {...caseStudies[9]} variant="half" contentPosition="bottom" index={9} />
       </div>
+
+      {/* 11 — full */}
+      <CaseStudyCard {...caseStudies[10]} variant="full" contentPosition="bottom" index={10} />
     </section>
   );
 }
