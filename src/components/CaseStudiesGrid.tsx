@@ -73,10 +73,10 @@ const caseStudies = [
   },
   {
     slug: 'fintech-payment-systems',
-    title: 'Fintech & Payment Systems',
+    title: 'High Conversion Ticket Engine',
     description: 'A high-throughput payment and ticketing platform engineered for peak-load reliability — turning browsers into buyers with frictionless, conversion-optimised checkout flows.',
     imageUrl: '/finance.webp',
-    tag: 'High Conversion Ticket Engine',
+    tag: 'Fintech & Payment Systems',
   },
 ];
 
