@@ -13534,20 +13534,20 @@ details[open] .footer-arrow-icon {
 /* PILLAR ROW — SHARED LAYOUT (used by expertise + services) */
 .pillar-row {
   width: 100%;
-  padding: 0 0 72px;
+  padding: 0 0 48px;
   position: relative;
   overflow: hidden;
 }
 
 @media (min-width: 768px) {
   .pillar-row {
-    padding: 0 0 90px;
+    padding: 0 0 72px;
   }
 }
 
 @media (min-width: 1024px) {
   .pillar-row {
-    padding: 0 0 108px;
+    padding: 0 0 90px;
   }
 }
 
@@ -13568,13 +13568,13 @@ details[open] .footer-arrow-icon {
 .pillar-row-inner {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 32px;
+  gap: 0;
   align-items: center;
 }
 
 @media (min-width: 768px) {
   .pillar-row-inner {
-    gap: 40px;
+    gap: 32px;
   }
 }
 
@@ -13614,6 +13614,13 @@ details[open] .footer-arrow-icon {
   flex-direction: column;
   gap: 20px;
   max-width: 680px;
+  padding-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .pillar-row-content {
+    padding-top: 0;
+  }
 }
 
 @media (min-width: 1280px) {
