@@ -21,6 +21,24 @@ const phases = [
   },
 ];
 
+function ArchitectureIcon() {
+  return (
+    <svg width="58" height="58" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" x="4" y="6" width="44" height="30" rx="2.5"/>
+      <rect fill="none" stroke="white" strokeWidth="1.1" strokeLinecap="round" x="8" y="10" width="36" height="22" rx="1.5"/>
+      <line stroke="#00c9a7" strokeWidth="1.6" strokeLinecap="round" x1="12" y1="16" x2="20" y2="16"/>
+      <line stroke="white" strokeWidth="1.3" strokeLinecap="round" x1="22" y1="16" x2="34" y2="16"/>
+      <line stroke="white" strokeWidth="1.3" strokeLinecap="round" x1="14" y1="20" x2="30" y2="20"/>
+      <line stroke="#00c9a7" strokeWidth="1.6" strokeLinecap="round" x1="14" y1="24" x2="18" y2="24"/>
+      <line stroke="white" strokeWidth="1.3" strokeLinecap="round" x1="20" y1="24" x2="32" y2="24"/>
+      <line stroke="white" strokeWidth="1.3" strokeLinecap="round" x1="12" y1="28" x2="24" y2="28"/>
+      <line stroke="white" strokeWidth="1.5" strokeLinecap="round" x1="26" y1="36" x2="26" y2="43"/>
+      <line stroke="white" strokeWidth="1.5" strokeLinecap="round" x1="18" y1="43" x2="34" y2="43"/>
+      <circle fill="#00c9a7" cx="40" cy="13" r="2.2"/>
+    </svg>
+  );
+}
+
 function SmartIcon() {
   return (
     <svg width="58" height="58" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -77,10 +95,10 @@ export default function ExpertiseIntroSection() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
             >
-              {i === 0 && (
+              {(i === 0 || i === 1) && (
                 <div className="exp-phase-icon-wrap">
                   <span className="exp-phase-smart-icon" aria-hidden="true">
-                    <SmartIcon />
+                    {i === 0 ? <SmartIcon /> : <ArchitectureIcon />}
                   </span>
                 </div>
               )}
