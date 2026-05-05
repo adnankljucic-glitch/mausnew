@@ -13538,7 +13538,7 @@ details[open] .footer-arrow-icon {
 /* PILLAR ROW — SHARED LAYOUT (used by expertise + services) */
 .pillar-row {
   width: 100%;
-  padding: 0 0 48px;
+  padding: 40px 0 48px;
   position: relative;
   overflow: hidden;
 }
@@ -13618,11 +13618,13 @@ details[open] .footer-arrow-icon {
   flex-direction: column;
   gap: 20px;
   max-width: 680px;
+  padding-top: 40px;
 }
 
 @media (min-width: 1280px) {
   .pillar-row-content {
     max-width: 100%;
+    padding-top: 0;
   }
 }
 
