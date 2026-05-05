@@ -23,32 +23,25 @@ const phases = [
 
 function SmartIcon() {
   return (
-    <svg width="44" height="40" viewBox="0 0 120 110" overflow="visible" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <circle fill="rgba(255,255,255,0.2)" cx="18" cy="12" r="2"/>
-      <circle fill="#00c9a7" cx="104" cy="14" r="1.8"/>
-      <circle fill="rgba(255,255,255,0.2)" cx="12" cy="28" r="1.5"/>
-
-      <rect fill="none" stroke="rgba(255,255,255,0.75)" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" x="28" y="16" width="64" height="72" rx="3"/>
-      <circle fill="rgba(255,255,255,0.75)" cx="28" cy="28" r="2"/>
-      <circle fill="rgba(255,255,255,0.75)" cx="28" cy="38" r="2"/>
-      <circle fill="rgba(255,255,255,0.75)" cx="28" cy="48" r="2"/>
-
-      <rect fill="none" stroke="rgba(255,255,255,0.75)" strokeWidth="1.1" strokeLinecap="round" x="36" y="24" width="48" height="28" rx="2"/>
-      <line stroke="rgba(255,255,255,0.75)" strokeWidth="1.1" strokeLinecap="round" x1="36" y1="36" x2="84" y2="36"/>
-      <rect fill="none" stroke="rgba(255,255,255,0.75)" strokeWidth="1.1" strokeLinecap="round" x="36" y="40" width="18" height="10" rx="1"/>
-      <line stroke="rgba(255,255,255,0.75)" strokeWidth="1.1" strokeLinecap="round" x1="58" y1="43" x2="82" y2="43"/>
-      <line stroke="rgba(255,255,255,0.75)" strokeWidth="1.1" strokeLinecap="round" x1="58" y1="47" x2="76" y2="47"/>
-      <line stroke="#00c9a7" strokeWidth="1.4" strokeLinecap="round" x1="36" y1="66" x2="68" y2="66"/>
-
-      <g transform="translate(76, 60) rotate(-40)">
-        <rect fill="none" stroke="rgba(255,255,255,0.75)" strokeWidth="1.1" strokeLinecap="round" x="-3" y="-11" width="6" height="13" rx="1"/>
-        <path fill="none" stroke="rgba(255,255,255,0.75)" strokeWidth="1.1" strokeLinecap="round" d="M-3 2 L0 7 L3 2"/>
-        <line stroke="#00c9a7" strokeWidth="1.4" strokeLinecap="round" x1="-3" y1="0" x2="3" y2="0"/>
+    <svg width="58" height="58" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" x="7" y="4" width="32" height="40" rx="2.5"/>
+      <circle fill="white" cx="7" cy="13" r="1.6"/>
+      <circle fill="white" cx="7" cy="21" r="1.6"/>
+      <circle fill="white" cx="7" cy="29" r="1.6"/>
+      <rect fill="none" stroke="white" strokeWidth="1.4" strokeLinecap="round" x="13" y="10" width="20" height="12" rx="1.5"/>
+      <line stroke="white" strokeWidth="1.4" strokeLinecap="round" x1="13" y1="17" x2="33" y2="17"/>
+      <rect fill="none" stroke="white" strokeWidth="1.4" strokeLinecap="round" x="13" y="26" width="8" height="8" rx="1.2"/>
+      <line stroke="white" strokeWidth="1.3" strokeLinecap="round" x1="13" y1="28.5" x2="16" y2="31.5"/>
+      <line stroke="white" strokeWidth="1.3" strokeLinecap="round" x1="16" y1="31.5" x2="21" y2="26"/>
+      <line stroke="white" strokeWidth="1.4" strokeLinecap="round" x1="24" y1="28" x2="33" y2="28"/>
+      <line stroke="white" strokeWidth="1.4" strokeLinecap="round" x1="24" y1="31.5" x2="31" y2="31.5"/>
+      <line stroke="#00c9a7" strokeWidth="2.2" strokeLinecap="round" x1="13" y1="40" x2="28" y2="40"/>
+      <circle fill="#00c9a7" cx="30.5" cy="40" r="1.4"/>
+      <g transform="translate(37, 35) rotate(-38)">
+        <rect fill="none" stroke="white" strokeWidth="1.4" strokeLinecap="round" x="-2.5" y="-9" width="5" height="11" rx="1"/>
+        <path fill="none" stroke="white" strokeWidth="1.4" strokeLinecap="round" d="M-2.5 2 L0 6.5 L2.5 2"/>
+        <line stroke="#00c9a7" strokeWidth="2" strokeLinecap="round" x1="-2.5" y1="0.5" x2="2.5" y2="0.5"/>
       </g>
-
-      <line stroke="#00c9a7" strokeWidth="3" strokeLinecap="round" x1="30" y1="98" x2="90" y2="98"/>
-      <circle fill="rgba(255,255,255,0.2)" cx="22" cy="98" r="2.5"/>
-      <circle fill="rgba(255,255,255,0.2)" cx="98" cy="98" r="2"/>
     </svg>
   );
 }
