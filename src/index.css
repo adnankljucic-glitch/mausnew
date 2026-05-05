@@ -14366,8 +14366,32 @@ details[open] .footer-arrow-icon {
   margin: 0 0 64px;
 }
 
+@media (min-width: 1024px) {
+  .re-outcomes-header {
+    max-width: 50%;
+  }
+}
+
 .re-outcomes-header .hc-capabilities-headline {
   white-space: normal;
+}
+
+@media (min-width: 1024px) {
+  .re-outcomes-header .hc-capabilities-headline {
+    font-size: 44px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .re-outcomes-header .hc-capabilities-headline {
+    font-size: 48px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .re-outcomes-header .hc-capabilities-headline {
+    font-size: 52px;
+  }
 }
 
 .re-outcomes-grid {
