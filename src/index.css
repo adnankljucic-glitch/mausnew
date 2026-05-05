@@ -7653,7 +7653,7 @@ details[open] .footer-arrow-icon {
 .ready-section {
   position: relative;
   background: #0A1F5C !important;
-  padding: 40px 0;
+  padding: 0 0 40px;
 }
 
 @media (min-width: 768px) {
@@ -13529,7 +13529,7 @@ details[open] .footer-arrow-icon {
 /* PILLAR ROW — SHARED LAYOUT (used by expertise + services) */
 .pillar-row {
   width: 100%;
-  padding: 40px 0 48px;
+  padding: 0 0 48px;
   position: relative;
   overflow: hidden;
 }
