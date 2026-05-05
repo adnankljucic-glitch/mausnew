@@ -1,10 +1,9 @@
-import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { useRef, useState, useCallback } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 import { ImageWithSkeleton } from './ImageWithSkeleton';
-import { SkeletonLoader } from './SkeletonLoader';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 
@@ -238,24 +237,8 @@ export default function IspInitSections() {
   const capRef      = useRef<HTMLElement>(null);
   const eicRef      = useRef<HTMLElement>(null);
   const outcomesRef = useRef<HTMLElement>(null);
-  const videoRef    = useRef<HTMLVideoElement>(null);
 
-  const [videoPlaying, setVideoPlaying] = useState(false);
-  const [videoHovered, setVideoHovered] = useState(false);
-  const [videoReady, setVideoReady] = useState(false);
   const [expandedProduct, setExpandedProduct] = useState<number | null>(null);
-
-  const handlePlayPause = useCallback(() => {
-    const v = videoRef.current;
-    if (!v) return;
-    if (v.paused) {
-      v.play();
-      setVideoPlaying(true);
-    } else {
-      v.pause();
-      setVideoPlaying(false);
-    }
-  }, []);
 
   const phasesInView   = useInView(phasesRef,   { once: true, amount: 0.05 });
   const capInView      = useInView(capRef,       { once: true, amount: 0.05 });
@@ -509,59 +492,6 @@ export default function IspInitSections() {
           </div>
         </div>
       </section>
-
-      {/* ── 03b — CASE VIDEO ─────────────────────────────────────────────── */}
-      <motion.section
-        className="re-case-video"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.1 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
-        onMouseEnter={() => setVideoHovered(true)}
-        onMouseLeave={() => setVideoHovered(false)}
-      >
-        {!videoReady && <SkeletonLoader className="re-case-video-player" />}
-        <video
-          ref={videoRef}
-          src=""
-          muted
-          loop
-          playsInline
-          className="re-case-video-player"
-          onCanPlay={() => setVideoReady(true)}
-          style={{ opacity: videoReady ? 1 : 0, transition: 'opacity 0.5s ease' }}
-        />
-        {/* TODO: Add ispinit product video */}
-        <div className="re-case-video-overlay" />
-        <AnimatePresence>
-          {(!videoPlaying || videoHovered) && (
-            <motion.div
-              className="re-case-video-controls"
-              initial={{ opacity: 0, scale: 0.85 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.85 }}
-              transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
-            >
-              <button
-                onClick={handlePlayPause}
-                className="re-case-video-btn"
-                aria-label={videoPlaying ? 'Pause video' : 'Play video'}
-              >
-                {videoPlaying ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="white" width="28" height="28">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
-                  </svg>
-                ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="white" width="28" height="28">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" />
-                  </svg>
-                )}
-              </button>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.section>
 
       {/* ── 04 — LOYALTY INTELLIGENCE (dark section) ─────────────────────── */}
       <section ref={eicRef} className="re-eic">
