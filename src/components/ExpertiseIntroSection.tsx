@@ -21,6 +21,22 @@ const phases = [
   },
 ];
 
+function ScalingIcon() {
+  return (
+    <svg width="58" height="58" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <line stroke="white" strokeWidth="1.5" strokeLinecap="round" x1="6" y1="46" x2="48" y2="46"/>
+      <line stroke="white" strokeWidth="1.5" strokeLinecap="round" x1="6" y1="8" x2="6" y2="46"/>
+      <rect fill="none" stroke="white" strokeWidth="1.4" strokeLinecap="round" x="10" y="36" width="8" height="10" rx="1.5"/>
+      <rect fill="none" stroke="white" strokeWidth="1.4" strokeLinecap="round" x="22" y="28" width="8" height="18" rx="1.5"/>
+      <rect fill="none" stroke="white" strokeWidth="1.4" strokeLinecap="round" x="34" y="16" width="8" height="30" rx="1.5"/>
+      <rect fill="rgba(0,201,167,0.15)" stroke="#00c9a7" strokeWidth="1.8" strokeLinecap="round" x="34" y="16" width="8" height="30" rx="1.5"/>
+      <circle fill="#00c9a7" cx="38" cy="14" r="2.2"/>
+      <path fill="none" stroke="#00c9a7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" d="M38 8 L46 4"/>
+      <path fill="none" stroke="#00c9a7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" d="M42 4 L46 4 L46 8"/>
+    </svg>
+  );
+}
+
 function ArchitectureIcon() {
   return (
     <svg width="58" height="58" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -95,10 +111,10 @@ export default function ExpertiseIntroSection() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
             >
-              {(i === 0 || i === 1) && (
+              {(i === 0 || i === 1 || i === 2) && (
                 <div className="exp-phase-icon-wrap">
                   <span className="exp-phase-smart-icon" aria-hidden="true">
-                    {i === 0 ? <SmartIcon /> : <ArchitectureIcon />}
+                    {i === 0 ? <SmartIcon /> : i === 1 ? <ArchitectureIcon /> : <ScalingIcon />}
                   </span>
                 </div>
               )}
