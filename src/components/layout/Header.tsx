@@ -3,6 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { X, Menu, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+const MotionLink = motion(Link);
+
 const INDUSTRIES = [
   {
     label: 'Healthcare',
@@ -240,74 +242,97 @@ function Header() {
             exit={{ x: '100%' }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
-            {/* Staggered nav items */}
-            {[
-              <Link key="services"  to="/services"  onClick={() => setMobileOpen(false)}>Services</Link>,
-              <Link key="expertise" to="/expertise" onClick={() => setMobileOpen(false)}>Expertise</Link>,
+            <MotionLink
+              to="/services"
+              onClick={() => setMobileOpen(false)}
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
+            >
+              Services
+            </MotionLink>
 
-              // Industries accordion trigger
-              <button
-                key="ind-trigger"
-                className="mobile-ind-trigger"
-                onClick={() => setMobileInd(o => !o)}
+            <MotionLink
+              to="/expertise"
+              onClick={() => setMobileOpen(false)}
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.19 }}
+            >
+              Expertise
+            </MotionLink>
+
+            <motion.button
+              className="mobile-ind-trigger"
+              onClick={() => setMobileInd(o => !o)}
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.26 }}
+            >
+              Industries
+              <motion.span
+                animate={{ rotate: mobileIndOpen ? 180 : 0 }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                style={{ display: 'inline-flex', transformOrigin: 'center' }}
               >
-                Industries
-                <motion.span
-                  animate={{ rotate: mobileIndOpen ? 180 : 0 }}
-                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                  style={{ display: 'inline-flex', transformOrigin: 'center' }}
+                <ChevronDown size={14} />
+              </motion.span>
+            </motion.button>
+
+            <AnimatePresence>
+              {mobileIndOpen && (
+                <motion.div
+                  className="mobile-ind-list"
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                  style={{ overflow: 'hidden', width: '100%' }}
                 >
-                  <ChevronDown size={14} />
-                </motion.span>
-              </button>,
+                  {INDUSTRIES.map((item, i) => (
+                    <Link
+                      key={item.label}
+                      to={item.to}
+                      className="mobile-ind-item"
+                      onClick={() => { setMobileOpen(false); setMobileInd(false); }}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
 
-              // Industries accordion body — always rendered as a list item
-              <AnimatePresence key="ind-list">
-                {mobileIndOpen && (
-                  <motion.div
-                    className="mobile-ind-list"
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                    style={{ overflow: 'hidden', width: '100%' }}
-                  >
-                    {INDUSTRIES.map((item, i) => (
-                      <motion.div
-                        key={item.label}
-                        initial={{ opacity: 0, y: 8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1], delay: i * 0.06 }}
-                      >
-                        <Link
-                          to={item.to}
-                          className="mobile-ind-item"
-                          onClick={() => { setMobileOpen(false); setMobileInd(false); }}
-                        >
-                          {item.label}
-                        </Link>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>,
+            <MotionLink
+              to="/cases"
+              onClick={() => setMobileOpen(false)}
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.33 }}
+            >
+              Cases
+            </MotionLink>
 
-              <Link key="cases" to="/cases" onClick={() => setMobileOpen(false)}>Cases</Link>,
-              <Link key="about" to="/about" onClick={() => setMobileOpen(false)}>About Us</Link>,
-              <Link key="cta" className="premium-cta mobile" to="/discovery" onClick={() => setMobileOpen(false)}>
-                Let's Talk
-              </Link>,
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.1 + i * 0.07 }}
-                style={{ width: '100%' }}
-              >
-                {item}
-              </motion.div>
-            ))}
+            <MotionLink
+              to="/about"
+              onClick={() => setMobileOpen(false)}
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.40 }}
+            >
+              About Us
+            </MotionLink>
+
+            <MotionLink
+              className="premium-cta mobile"
+              to="/discovery"
+              onClick={() => setMobileOpen(false)}
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.47 }}
+            >
+              Let's Talk
+            </MotionLink>
           </motion.div>
         )}
       </AnimatePresence>
