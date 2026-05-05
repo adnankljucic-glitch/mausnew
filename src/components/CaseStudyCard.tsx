@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { ImageWithSkeleton } from './ImageWithSkeleton';
 
+const EASE = [0.22, 1, 0.36, 1] as const;
+
 interface CaseStudyCardProps {
   slug: string;
   title: string;
@@ -27,15 +29,25 @@ export default function CaseStudyCard({
   return (
     <motion.div
       className={`case-card case-card-${variant}`}
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-100px' }}
-      transition={{ duration: 0.7, ease: 'easeOut', delay: index * 0.06 }}
+      viewport={{ once: true, margin: '-15%' }}
+      transition={{ duration: 0.9, ease: EASE, delay: index * 0.08 }}
     >
       <Link to={`/cases/${slug}`} className="case-card-link">
-        <ImageWithSkeleton src={imageUrl} alt={title} className="case-card-image" />
+        {/* Image wrapper — Framer Motion owns hover zoom + clip-path reveal */}
+        <motion.div
+          className="case-card-image-wrap"
+          initial={{ clipPath: 'inset(8% 8% 8% 8%)', opacity: 0 }}
+          whileInView={{ clipPath: 'inset(0% 0% 0% 0%)', opacity: 1 }}
+          whileHover={{ scale: 1.05 }}
+          viewport={{ once: true, margin: '-15%' }}
+          transition={{ duration: 1.4, ease: EASE }}
+        >
+          <ImageWithSkeleton src={imageUrl} alt={title} className="case-card-image" />
+        </motion.div>
 
-        {/* Deep cinematic overlay — same pattern as hero sections */}
+        {/* Deep cinematic overlay */}
         <div className="case-card-overlay" />
 
         {/* Content */}
