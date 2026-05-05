@@ -13616,6 +13616,12 @@ details[open] .footer-arrow-icon {
   max-width: 680px;
 }
 
+@media (min-width: 1280px) {
+  .pillar-row-content {
+    max-width: 50%;
+  }
+}
+
 .pillar-row-eyebrow {
   font-family: 'Barlow', sans-serif;
   font-weight: 600;
@@ -13656,13 +13662,25 @@ details[open] .footer-arrow-icon {
 
 @media (min-width: 1024px) {
   .pillar-row-headline {
-    font-size: var(--font-h2-desktop);
+    font-size: 44px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .pillar-row-headline {
+    font-size: 48px;
   }
 }
 
 @media (min-width: 1440px) {
   .pillar-row-headline {
-    font-size: var(--font-h2-wide);
+    font-size: 52px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .pillar-row-headline {
+    font-size: 56px;
   }
 }
 
