@@ -16,6 +16,7 @@ import DiscoveryCallPage from './pages/DiscoveryCallPage';
 import HealthcarePage from './pages/HealthcarePage';
 import RunEventsPage from './pages/RunEventsPage';
 import IspInitPage from './pages/IspInitPage';
+import DeltaAccessPage from './pages/DeltaAccessPage';
 import EventsTicketingPage from './pages/EventsTicketingPage';
 import FintechPage from './pages/FintechPage';
 import RealEstatePage from './pages/RealEstatePage';
@@ -50,6 +51,7 @@ function App() {
           <Route path="/industries/booking-tourism" element={<BookingTourismPage />} />
           <Route path="/cases/run-events" element={<RunEventsPage />} />
           <Route path="/cases/ispinit" element={<IspInitPage />} />
+          <Route path="/cases/delta-access" element={<DeltaAccessPage />} />
           <Route path="/about" element={<AboutPage />} />
         </Routes>
         <Footer />
