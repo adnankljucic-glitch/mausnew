@@ -15298,6 +15298,24 @@ details[open] .footer-arrow-icon {
   border-color: transparent;
 }
 
+.exp-phase-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.exp-phase-smart-icon {
+  opacity: 0.55;
+  flex-shrink: 0;
+  transition: opacity 0.3s ease;
+  margin-top: -4px;
+}
+
+.exp-phase-card:hover .exp-phase-smart-icon {
+  opacity: 0.9;
+}
+
 .exp-phase-label {
   font-family: var(--font-family-sans);
   font-weight: 600;
@@ -15305,7 +15323,7 @@ details[open] .footer-arrow-icon {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.45);
-  margin-bottom: 16px;
+  margin-bottom: 0;
 }
 
 .exp-phase-card--active .exp-phase-label {
