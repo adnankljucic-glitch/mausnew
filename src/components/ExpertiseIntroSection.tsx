@@ -86,9 +86,11 @@ export default function ExpertiseIntroSection() {
             >
               <div className="exp-phase-card-top">
                 <p className="exp-phase-label">{phase.phase}</p>
-                <span className="exp-phase-smart-icon" aria-hidden="true">
-                  <SmartIcon />
-                </span>
+                {i === 0 && (
+                  <span className="exp-phase-smart-icon" aria-hidden="true">
+                    <SmartIcon />
+                  </span>
+                )}
               </div>
               <h3 className="service-card-title">{phase.title}</h3>
               <ul className="exp-phase-bullets">
