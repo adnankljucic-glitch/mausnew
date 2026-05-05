@@ -195,10 +195,10 @@ function Header() {
             className="ind-mega"
             role="menu"
             aria-label="Industries submenu"
-            initial={{ opacity: 0, x: '-50%', y: -8 }}
+            initial={{ opacity: 0, x: '-50%', y: -12 }}
             animate={{ opacity: 1, x: '-50%', y: 0 }}
-            exit={{ opacity: 0, x: '-50%', y: -8 }}
-            transition={{ duration: 0.18, ease: 'easeOut' }}
+            exit={{ opacity: 0, x: '-50%', y: -12 }}
+            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
           >
             {/* Left: intro text */}
             <div className="ind-mega-left">
@@ -235,53 +235,79 @@ function Header() {
         {isMobile && mobileOpen && (
           <motion.div
             className="premium-mobile-menu menu-active"
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
-            <Link to="/services"  onClick={() => setMobileOpen(false)}>Services</Link>
-            <Link to="/expertise" onClick={() => setMobileOpen(false)}>Expertise</Link>
+            {/* Staggered nav items */}
+            {[
+              <Link key="services"  to="/services"  onClick={() => setMobileOpen(false)}>Services</Link>,
+              <Link key="expertise" to="/expertise" onClick={() => setMobileOpen(false)}>Expertise</Link>,
 
-            <button
-              className="mobile-ind-trigger"
-              onClick={() => setMobileInd(o => !o)}
-            >
-              Industries
-              <ChevronDown
-                size={14}
-                style={{ transition: 'transform 0.2s', transform: mobileIndOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
-              />
-            </button>
-            <AnimatePresence>
-              {mobileIndOpen && (
-                <motion.div
-                  className="mobile-ind-list"
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.22 }}
-                  style={{ overflow: 'hidden' }}
+              // Industries accordion trigger
+              <button
+                key="ind-trigger"
+                className="mobile-ind-trigger"
+                onClick={() => setMobileInd(o => !o)}
+              >
+                Industries
+                <motion.span
+                  animate={{ rotate: mobileIndOpen ? 180 : 0 }}
+                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  style={{ display: 'inline-flex', transformOrigin: 'center' }}
                 >
-                  {INDUSTRIES.map((item) => (
-                    <Link
-                      key={item.label}
-                      to={item.to}
-                      className="mobile-ind-item"
-                      onClick={() => { setMobileOpen(false); setMobileInd(false); }}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
+                  <ChevronDown size={14} />
+                </motion.span>
+              </button>,
 
-            <Link to="/cases"   onClick={() => setMobileOpen(false)}>Cases</Link>
-            <Link to="/about" onClick={() => setMobileOpen(false)}>About Us</Link>
-            <Link className="premium-cta mobile" to="/discovery" onClick={() => setMobileOpen(false)}>
-              Let's Talk
-            </Link>
+              // Industries accordion body — always rendered as a list item
+              <AnimatePresence key="ind-list">
+                {mobileIndOpen && (
+                  <motion.div
+                    className="mobile-ind-list"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                    style={{ overflow: 'hidden', width: '100%' }}
+                  >
+                    {INDUSTRIES.map((item, i) => (
+                      <motion.div
+                        key={item.label}
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1], delay: i * 0.06 }}
+                      >
+                        <Link
+                          to={item.to}
+                          className="mobile-ind-item"
+                          onClick={() => { setMobileOpen(false); setMobileInd(false); }}
+                        >
+                          {item.label}
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>,
+
+              <Link key="cases" to="/cases" onClick={() => setMobileOpen(false)}>Cases</Link>,
+              <Link key="about" to="/about" onClick={() => setMobileOpen(false)}>About Us</Link>,
+              <Link key="cta" className="premium-cta mobile" to="/discovery" onClick={() => setMobileOpen(false)}>
+                Let's Talk
+              </Link>,
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.1 + i * 0.07 }}
+                style={{ width: '100%' }}
+              >
+                {item}
+              </motion.div>
+            ))}
           </motion.div>
         )}
       </AnimatePresence>
